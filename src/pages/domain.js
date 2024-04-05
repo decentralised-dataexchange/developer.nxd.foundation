@@ -26,7 +26,7 @@ export default function Domain() {
           script.async = false;
           script.onload = function () {
             window.ui = SwaggerUIBundle({
-              url: '/openapi/datamarketplace.yaml',
+              url: '/openapi/domainSpecific.yaml',
               dom_id: '#swagger-ui',
             });
           };
