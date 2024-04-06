@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Crane API
+  title: Domain-Specific Services APIs
   version: '4.0'
 paths:
   "/api/Authenticate/Login":
