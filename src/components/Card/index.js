@@ -9,7 +9,7 @@ export default function Card({ title, description, link }) {
                     {title}
                 </p>
                 {
-                    description && (<p className="text-[black] w-2/3 mt-2 text-[14px] text-center">
+                    description && (<p className="text-[black] w-full mt-2 text-[14px] text-center">
                         {description}
                     </p>)
                 }
