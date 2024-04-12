@@ -40,7 +40,7 @@ export default function DataMarketplace() {
         {() => {
 
           const script = document.createElement("script");
-          script.src = 'https://unpkg.com/rapidoc/dist/rapidoc-min.js'; // whatever url you want here
+          script.src = 'https://cdn.jsdelivr.net/gh/rapi-doc/RapiDoc@9.3.4/dist/rapidoc.js'; // whatever url you want here
           script.type = 'module'
           script.charset = "utf-8";
           script.crossOrigin = true;
