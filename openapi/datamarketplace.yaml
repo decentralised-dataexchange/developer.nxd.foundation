@@ -1,1159 +1,1805 @@
 components:
-  schemas:
-    Organisation:
-      type: object
-      title: Organisation
-      properties:
-        id:
-          type: string
-        coverImageUrl:
-          type: string
-        logoUrl:
-          type: string
-        name:
-          type: string
-        sector:
-          type: string
-        location:
-          type: string
-        policyUrl:
-          type: string
-        description:
-          type: string
-        openApiUrl:
-          type: string
-      required:
-        - id
-        - coverImageUrl
-        - logoUrl
-        - name
-        - sector
-        - location
-        - policyUrl
-        - description
-    PersonalData:
-      title: Personal Data
-      type: object
-      properties:
-        attributeId:
-          type: string
-        attributeName:
-          type: string
-        attributeSensitive:
-          type: string
-        attributeCategory:
-          type: string
-      required:
-        - attributeId
-        - attributeName
-        - attributeSensitive
-        - attributeCategory
-    DataDisclosureAgreement:
-      title: Data Disclosure Agreement
-      type: object
-      properties:
-        language:
-          type: string
-        version:
-          type: string
-        templateId:
-          type: string
-        templateVersion:
-          type: string
-        dataController:
-          $ref: '#/components/schemas/DataController'
-        agreementPeriod:
-          type: number
-        dataSharingRestrictions:
-          $ref: '#/components/schemas/DataSharingRestriction'
-        purpose:
-          type: string
-        purposeDescription:
-          type: string
-        lawfulBasis:
-          type: string
-        personalData:
-          type: array
-          items:
-            $ref: '#/components/schemas/PersonalData'
-        codeOfConduct:
-          type: string
-        status:
-          $ref: '#/components/schemas/Status'
-      required:
-        - language
-        - version
-        - templateId
-        - templateVersion
-        - dataController
-        - agreementPeriod
-        - dataSharingRestrictions
-        - purpose
-        - purposeDescription
-        - lawfulBasis
-        - personalData
-        - codeOfConduct
-    DataUsingService:
-      type: object
-      title: Data Using Service
-      properties:
-        did:
-          type: string
-        name:
-          type: string
-        legalId:
-          type: string
-        url:
-          type: string
-        industrySector:
-          type: string
-        usagePurposes:
-          type: string
-        jurisdiction:
-          type: string
-        withdrawal:
-          type: string
-        privacyRights:
-          type: string
-        signatureContact:
-          type: string
-      required:
-        - did
-        - name
-        - legalId
-        - url
-        - industrySector
-        - usagePurposes
-        - jurisdiction
-        - withdrawal
-        - privacyRights
-        - signatureContact
-    Proof:
-      type: object
-      title: Proof
-      properties:
-        id:
-          type: string
-        type:
-          type: string
-        created:
-          type: string
-        verificationMethod:
-          type: string
-        proofPurpose:
-          type: string
-        proofValue:
-          type: string
-      required:
-        - id
-        - type
-        - created
-        - verificationMethod
-        - proofPurpose
-        - proofValue
-    DataSharingRestriction:
-      type: object
-      title: Data Sharing Restriction
-      properties:
-        policyUrl:
-          type: string
-        jurisdiction:
-          type: string
-        industrySector:
-          type: string
-        dataRetentionPeriod:
-          type: number
-        geographicRestriction:
-          type: string
-        storageLocation:
-          type: string
-      required:
-        - policyUrl
-        - jurisdiction
-        - industrySector
-        - dataRetentionPeriod
-        - geographicRestriction
-        - storageLocation
-    DataController:
-      type: object
-      title: Data Controller
-      properties:
-        did:
-          type: string
-        name:
-          type: string
-        legalId:
-          type: string
-        url:
-          type: string
-        industrySector:
-          type: string
-      required:
-        - did
-        - name
-        - legalId
-        - url
-        - industrySector
-    Pagination:
-      type: object
-      title: Pagination
-      properties:
-        currentPage:
-          type: integer
-          description: Current page number
-        totalItems:
-          type: integer
-          description: Total number of items available
-        totalPages:
-          type: integer
-          description: Total number of pages based on limit
-        limit:
-          type: integer
-          description: Number of items per page
-        hasPrevious:
-          type: boolean
-          description: Indicates if there's a previous page
-        hasNext:
-          type: boolean
-          description: Indicates if there's a next page
-    InvitationUrl:
-      type: object
-      title: InvitationUrl
-      properties:
-        invitationUrl:
-          type: string
-      required:
-        - invitationUrl
-    Connection:
-      type: object
-      title: Connection
-      properties:
-        id:
-          type: string
-        connectionId:
-          type: string
-        connectionRecord:
-          $ref: '#/components/schemas/ConnectionRecord'
-        connectionState:
-          type: string
-        dataSourceId:
-          type: string
-    Verification:
-      type: object
-      title: Verification
-      properties:
-        id:
-          type: string
-        dataSourceId:
-          type: string
-        presentationExchangeId:
-          type: string
-        presentationState:
-          type: string
-        presentationRecord:
-          type: object
-      required:
-        - id
-        - dataSourceId
-        - presentationExchangeId
-        - presentationState
-    Status:
-      type: string
-      title: Data Disclosure Agreement Status
-      enum:
-        - unlisted
-        - awaitingForApproval
-        - approved
-        - rejected
-        - listed
-    ConnectionRecord:
-      title: Connection Record
-      type: object
-      properties:
-        accept:
-          type: string
-        invitation_key:
-          type: string
-        created_at:
-          type: string
-        state:
-          type: string
-        initiator:
-          type: string
-        routing_state:
-          type: string
-        invitation_mode:
-          type: string
-        their_label:
-          type: string
-        their_did:
-          type: string
-        connection_id:
-          type: string
-        updated_at:
-          type: string
-        my_did:
-          type: string
-        controller_details:
-          type: object
-          properties: {}
-          required: []
-        org_flag:
-          type: boolean
-        marketplace_flag:
-          type: boolean
-      required:
-        - accept
-        - invitation_key
-        - created_at
-        - state
-        - initiator
-        - routing_state
-        - invitation_mode
-        - their_label
-        - their_did
-        - connection_id
-        - updated_at
-        - my_did
-        - controller_details
-        - org_flag
-        - marketplace_flag
-    CreateConnectionResponse:
-      title: Create Connection Response
-      type: object
-      properties:
-        connection:
-          type: object
-          properties:
-            connectionId:
-              type: string
-            invitation:
-              type: object
-              properties:
-                '@type':
-                  type: string
-                '@id':
-                  type: string
-                serviceEndpoint:
-                  type: string
-                label:
-                  type: string
-                imageUrl:
-                  type: string
-                recipientKeys:
-                  type: array
-                  items:
-                    type: string
-              required:
-                - '@type'
-                - '@id'
-                - serviceEndpoint
-                - label
-                - imageUrl
-                - recipientKeys
-            invitationUrl:
-              type: string
-          required:
-            - connectionId
-            - invitation
-            - invitationUrl
-        firebaseDynamicLink:
-          type: string
-      required:
-        - connection
-        - firebaseDynamicLink
   securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: Authorization
     BearerAuth:
       bearerFormat: JWT
       description: Access token passed with Bearer prefix in Authorization header
       scheme: bearer
       type: http
-info:
-  contact:
-    email: support@igrant.io
-    name: iGrant.io
-    url: 'https://igrant.io'
-  description: 'iGrant.io (™) is a Swedish data exchange and verification service provider. It uses self-sovereign identity, verifiable credentials, a digital wallet and solid pod technologies, enabling a new level of interoperability and automating compliance with data regulations in a fully auditable manner.'
-  license:
-    name: Apache 2.0
-    url: 'https://www.apache.org/licenses/LICENSE-2.0'
-  title: Data Marketplace APIs
-  version: 2024.3.1
 openapi: 3.1.0
 paths:
-  /webhook/topic/connections/:
+  /v3/config/data-disclosure-agreement:
     post:
-      summary: Create webhook connection
-      description: This endpoint is used to create webhook connection
-      operationId: createWebhookConnection
+      description: Creates a Data Disclosure Agreement Template.
       requestBody:
         content:
           application/json:
             schema:
-              title: Connection Webhook Event
-              type: object
               properties:
-                initiator:
-                  type: string
-                connection_id:
-                  type: string
-                accept:
-                  type: string
-                routing_state:
-                  type: string
-                updated_at:
-                  type: string
-                state:
-                  type: string
-                created_at:
-                  type: string
-                their_did:
-                  type: string
-                invitation_key:
-                  type: string
-                invitation_mode:
-                  type: string
-                my_did:
-                  type: string
-                their_label:
-                  type: string
-              required:
-                - initiator
-                - connection_id
-                - accept
-                - routing_state
-                - updated_at
-                - state
-                - created_at
-                - their_did
-                - invitation_key
-                - invitation_mode
-                - my_did
-                - their_label
-        required: true
-      responses:
-        '200':
-          description: OK
-      tags:
-        - Webhook
-  /webhook/topic/present_proof/:
-    post:
-      summary: Create webhook present proof
-      description: This endpoint is used to create webhook present proof
-      operationId: createWebhookPresentProof
-      requestBody:
-        content:
-          application/json:
-            schema:
-              title: Present Proof Webhook Event
-              type: object
-              properties:
-                data_agreement_id:
-                  type: string
-                trace:
-                  type: boolean
-                presentation_request:
+                dataDisclosureAgreementTemplate:
+                  description: Required fields to create a Data Disclosure Agreement Template
                   type: object
-                  properties:
-                    name:
-                      type: string
-                    version:
-                      type: string
-                    requested_attributes:
-                      type: object
-                      properties:
-                        additionalProp1:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                            restrictions:
-                              type: array
-                              items: {}
-                          required:
-                            - name
-                            - restrictions
-                        additionalProp2:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                            restrictions:
-                              type: array
-                              items: {}
-                          required:
-                            - name
-                            - restrictions
-                      required:
-                        - additionalProp1
-                        - additionalProp2
-                    requested_predicates:
-                      type: object
-                      properties: {}
-                      required: []
-                    nonce:
-                      type: string
+                  title: DataDisclosureAgreementTemplate
                   required:
-                    - name
-                    - version
-                    - requested_attributes
-                    - requested_predicates
-                    - nonce
-                updated_at:
-                  type: string
-                created_at:
-                  type: string
-                initiator:
-                  type: string
-                auto_present:
-                  type: boolean
-                presentation_request_dict:
-                  type: object
-                  properties:
-                    '@type':
-                      type: string
-                    '@id':
-                      type: string
-                    ~data-agreement-context:
-                      type: object
-                      properties:
-                        message_type:
-                          type: string
-                        message:
-                          type: object
-                          properties:
-                            '@type':
-                              type: string
-                            '@id':
-                              type: string
-                            created_time:
-                              type: string
-                            from:
-                              type: string
-                            body:
-                              type: object
-                              properties:
-                                '@context':
-                                  type: array
-                                  items:
-                                    type: string
-                                id:
-                                  type: string
-                                version:
-                                  type: number
-                                template_id:
-                                  type: string
-                                template_version:
-                                  type: number
-                                data_controller_name:
-                                  type: string
-                                data_controller_url:
-                                  type: string
-                                purpose:
-                                  type: string
-                                purpose_description:
-                                  type: string
-                                lawful_basis:
-                                  type: string
-                                method_of_use:
-                                  type: string
-                                data_policy:
-                                  type: object
-                                  properties:
-                                    data_retention_period:
-                                      type: number
-                                    policy_URL:
-                                      type: string
-                                    jurisdiction:
-                                      type: string
-                                    industry_sector:
-                                      type: string
-                                    geographic_restriction:
-                                      type: string
-                                    storage_location:
-                                      type: string
-                                  required:
-                                    - data_retention_period
-                                    - policy_URL
-                                    - jurisdiction
-                                    - industry_sector
-                                    - geographic_restriction
-                                    - storage_location
-                                personal_data:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      attribute_id:
-                                        type: string
-                                      attribute_name:
-                                        type: string
-                                      attribute_sensitive:
-                                        type: boolean
-                                      attribute_category:
-                                        type: string
-                                      attribute_description:
-                                        type: string
-                                    required:
-                                      - attribute_id
-                                      - attribute_name
-                                      - attribute_sensitive
-                                      - attribute_category
-                                      - attribute_description
-                                dpia:
-                                  type: object
-                                  properties:
-                                    dpia_date:
-                                      type: string
-                                    dpia_summary_url:
-                                      type: string
-                                  required:
-                                    - dpia_date
-                                    - dpia_summary_url
-                                event:
-                                  type: array
-                                  items:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: string
-                                      time_stamp:
-                                        type: string
-                                      did:
-                                        type: string
-                                      state:
-                                        type: string
-                                    required:
-                                      - id
-                                      - time_stamp
-                                      - did
-                                      - state
-                                proof:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: string
-                                    type:
-                                      type: string
-                                    created:
-                                      type: string
-                                    verificationMethod:
-                                      type: string
-                                    proofPurpose:
-                                      type: string
-                                    proofValue:
-                                      type: string
-                                  required:
-                                    - id
-                                    - type
-                                    - created
-                                    - verificationMethod
-                                    - proofPurpose
-                                    - proofValue
-                                data_subject_did:
-                                  type: string
-                              required:
-                                - '@context'
-                                - id
-                                - version
-                                - template_id
-                                - template_version
-                                - data_controller_name
-                                - data_controller_url
-                                - purpose
-                                - purpose_description
-                                - lawful_basis
-                                - method_of_use
-                                - data_policy
-                                - personal_data
-                                - dpia
-                                - event
-                                - proof
-                                - data_subject_did
-                            to:
-                              type: string
-                          required:
-                            - '@type'
-                            - '@id'
-                            - created_time
-                            - from
-                            - body
-                            - to
-                      required:
-                        - message_type
-                        - message
-                    request_presentations~attach:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          '@id':
-                            type: string
-                          mime-type:
-                            type: string
-                          data:
-                            type: object
-                            properties:
-                              base64:
-                                type: string
-                            required:
-                              - base64
-                        required:
-                          - '@id'
-                          - mime-type
-                          - data
-                    comment:
-                      type: string
-                  required:
-                    - '@type'
-                    - '@id'
-                    - ~data-agreement-context
-                    - request_presentations~attach
-                    - comment
-                state:
-                  type: string
-                data_agreement_status:
-                  type: string
-                presentation_exchange_id:
-                  type: string
-                thread_id:
-                  type: string
-                connection_id:
-                  type: string
-                data_agreement_template_id:
-                  type: string
-                role:
-                  type: string
-                data_agreement:
-                  type: object
-                  properties:
-                    '@context':
-                      type: array
-                      items:
-                        type: string
-                    id:
-                      type: string
-                    version:
-                      type: number
-                    template_id:
-                      type: string
-                    template_version:
-                      type: number
-                    data_controller_name:
-                      type: string
-                    data_controller_url:
-                      type: string
-                    purpose:
-                      type: string
-                    purpose_description:
-                      type: string
-                    lawful_basis:
-                      type: string
-                    method_of_use:
-                      type: string
-                    data_policy:
-                      type: object
-                      properties:
-                        data_retention_period:
-                          type: number
-                        policy_URL:
-                          type: string
-                        jurisdiction:
-                          type: string
-                        industry_sector:
-                          type: string
-                        geographic_restriction:
-                          type: string
-                        storage_location:
-                          type: string
-                      required:
-                        - data_retention_period
-                        - policy_URL
-                        - jurisdiction
-                        - industry_sector
-                        - geographic_restriction
-                        - storage_location
-                    personal_data:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          attribute_id:
-                            type: string
-                          attribute_name:
-                            type: string
-                          attribute_sensitive:
-                            type: boolean
-                          attribute_category:
-                            type: string
-                          attribute_description:
-                            type: string
-                        required:
-                          - attribute_id
-                          - attribute_name
-                          - attribute_sensitive
-                          - attribute_category
-                          - attribute_description
-                    dpia:
-                      type: object
-                      properties:
-                        dpia_date:
-                          type: string
-                        dpia_summary_url:
-                          type: string
-                      required:
-                        - dpia_date
-                        - dpia_summary_url
-                    event:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: string
-                          time_stamp:
-                            type: string
-                          did:
-                            type: string
-                          state:
-                            type: string
-                        required:
-                          - id
-                          - time_stamp
-                          - did
-                          - state
-                    proof:
-                      type: object
-                      properties:
-                        id:
-                          type: string
-                        type:
-                          type: string
-                        created:
-                          type: string
-                        verificationMethod:
-                          type: string
-                        proofPurpose:
-                          type: string
-                        proofValue:
-                          type: string
-                      required:
-                        - id
-                        - type
-                        - created
-                        - verificationMethod
-                        - proofPurpose
-                        - proofValue
-                    data_subject_did:
-                      type: string
-                  required:
-                    - '@context'
-                    - id
-                    - version
-                    - template_id
-                    - template_version
-                    - data_controller_name
-                    - data_controller_url
-                    - purpose
-                    - purpose_description
-                    - lawful_basis
-                    - method_of_use
-                    - data_policy
-                    - personal_data
-                    - dpia
-                    - event
-                    - proof
-                    - data_subject_did
-              required:
-                - data_agreement_id
-                - trace
-                - presentation_request
-                - updated_at
-                - created_at
-                - initiator
-                - auto_present
-                - presentation_request_dict
-                - state
-                - data_agreement_status
-                - presentation_exchange_id
-                - thread_id
-                - connection_id
-                - data_agreement_template_id
-                - role
-                - data_agreement
-        required: true
-      responses:
-        '200':
-          description: OK
-      tags:
-        - Webhook
-  /webhook/topic/published_data_disclosure_agreement/:
-    post:
-      summary: Create webhook data disclosure agreement
-      description: This endpoint is used to create webhook data disclosure agreement
-      operationId: createWebhookDataDisclosureAgreement
-      requestBody:
-        content:
-          application/json:
-            schema:
-              title: Publish Data Disclosure Agreement Webhook Event
-              type: object
-              properties:
-                connection_url:
-                  type: string
-                updated_at:
-                  type: string
-                created_at:
-                  type: string
-                industry_sector:
-                  type: string
-                connection_id:
-                  type: string
-                template_id:
-                  type: string
-                dda:
-                  type: object
-                  properties:
-                    '@context':
-                      type: array
-                      items:
-                        type: string
-                    '@id':
-                      type: string
-                    '@type':
-                      type: array
-                      items:
-                        type: string
-                    version:
-                      type: string
-                    language:
-                      type: string
-                    dataController:
-                      type: object
-                      properties:
-                        did:
-                          type: string
-                        name:
-                          type: string
-                        legalId:
-                          type: string
-                        url:
-                          type: string
-                        industrySector:
-                          type: string
-                      required:
-                        - did
-                        - name
-                        - legalId
-                        - url
-                        - industrySector
-                    agreementPeriod:
-                      type: number
-                    dataSharingRestrictions:
-                      type: object
-                      properties:
-                        policyUrl:
-                          type: string
-                        jurisdiction:
-                          type: string
-                        industrySector:
-                          type: string
-                        dataRetentionPeriod:
-                          type: number
-                        geographicRestriction:
-                          type: string
-                        storageLocation:
-                          type: string
-                      required:
-                        - policyUrl
-                        - jurisdiction
-                        - industrySector
-                        - dataRetentionPeriod
-                        - geographicRestriction
-                        - storageLocation
-                    purpose:
-                      type: string
-                    purposeDescription:
-                      type: string
-                    lawfulBasis:
-                      type: string
-                    personalData:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          attributeId:
-                            type: string
-                          attributeName:
-                            type: string
-                          attributeDescription:
-                            type: string
-                        required:
-                          - attributeId
-                          - attributeName
-                          - attributeDescription
-                    codeOfConduct:
-                      type: string
-                  required:
-                    - '@context'
-                    - '@id'
-                    - '@type'
-                    - version
                     - language
                     - dataController
                     - agreementPeriod
                     - dataSharingRestrictions
-                    - purpose
-                    - purposeDescription
-                    - lawfulBasis
-                    - personalData
                     - codeOfConduct
+                    - dataAgreementId
+                    - dataAgreementRevisionId
+                    - dataAgreementRevisionHash
+                    - presentationDefinitionId
+                    - active
+                  properties:
+                    language:
+                      type: string
+                      description: ISO 639-1 language code (e.g. 'en' or 'sv')
+                      example: en
+                    dataController:
+                      $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementTemplate/properties/dataController'
+                      type: object
+                    agreementPeriod:
+                      type: integer
+                      minimum: 1
+                      description: Days for which the agreement is valid
+                      example: 365
+                    dataSharingRestrictions:
+                      $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementTemplate/properties/dataSharingRestrictions'
+                      type: object
+                    purpose:
+                      type: string
+                      maxLength: 100
+                      description: 'Required if active=true, unless present already from the draft version'
+                    purposeDescription:
+                      type: string
+                      maxLength: 500
+                      description: 'Required if active=true, unless present already from the draft version'
+                    lawfulBasis:
+                      type: string
+                      enum:
+                        - contract
+                      description: 'Required if active=true, unless present already from the draft version'
+                    codeOfConduct:
+                      type: string
+                      format: uri
+                      description: URL to code of conduct
+                    dataAgreementId:
+                      type: string
+                      description: ID of the connected Data Agreement
+                    dataAgreementRevisionId:
+                      type: string
+                      description: ID of the connected Data Agreement Revision
+                    dataAgreementRevisionHash:
+                      type: string
+                      description: Hash of the connected Data Agreement Revision
+                    presentationDefinitionId:
+                      type: string
+                      description: ID of the connected Presentation Definition
+                    active:
+                      type: boolean
+                      description: Publish immediately if true
               required:
-                - connection_url
-                - updated_at
-                - created_at
-                - industry_sector
-                - connection_id
-                - template_id
-                - dda
-        required: true
+                - dataDisclosureAgreementTemplate
+              type: object
       responses:
         '200':
-          description: OK
+          description: Data Disclosure Agreement Template created
+          content:
+            application/json:
+              schema:
+                properties:
+                  dataDisclosureAgreementTemplate:
+                    type: object
+                    description: |
+                      A template outlines an agreement between a Data Source and  Data Using Service that can be signed by both.
+                    required:
+                      - context
+                      - id
+                      - type
+                      - language
+                      - version
+                      - templateId
+                      - templateVersion
+                      - dataController
+                      - agreementPeriod
+                      - dataSharingRestrictions
+                      - purpose
+                      - purposeDescription
+                      - lawfulBasis
+                      - dataAttributes
+                      - codeOfConduct
+                      - dataAgreementId
+                      - dataAgreementRevisionId
+                      - dataAgreementRevisionHash
+                      - presentationDefinitionId
+                      - active
+                    properties:
+                      context:
+                        type: array
+                        items:
+                          type: string
+                        description: Array of URIs of JSON-LD contexts
+                      id:
+                        type: string
+                        description: Unique Data Disclosure Agreement Template identifier
+                      type:
+                        type: array
+                        items:
+                          type: string
+                        example:
+                          - DataDisclosureAgreement
+                        description: The Data Disclosure Agreement type from context
+                      language:
+                        type: string
+                        description: ISO 639-1 language code (e.g. 'en' or 'sv')
+                      version:
+                        type: string
+                        description: The version of this Data Disclosure Agreement Template
+                      templateId:
+                        type: string
+                        description: Unique Data Disclosure Agreement Template identifier (derived from 'id')
+                      templateVersion:
+                        type: string
+                        description: The version of this Data Disclosure Agreement Template (derived from 'version')
+                      dataController:
+                        type: object
+                        description: An organisation constituted as a legally defined entity in any jurisdiction
+                        required:
+                          - did
+                          - name
+                          - legalId
+                          - url
+                          - industrySector
+                        properties:
+                          publicKey:
+                            type: string
+                            description: Data controller public key
+                          name:
+                            type: string
+                            maxLength: 50
+                            description: Data controller name
+                          legalId:
+                            type: string
+                            description: Data controller legal identifier
+                          url:
+                            type: string
+                            format: uri
+                            description: Data controller URL
+                          industrySector:
+                            type: string
+                            maxLength: 50
+                            description: Data controller industry sector
+                      agreementPeriod:
+                        type: integer
+                        description: Days for which agreement is valid
+                      dataSharingRestrictions:
+                        type: object
+                        description: |
+                          Restrictions on how the data is shared. OBS! Object should be 'dataSharingRestrictions'
+                        required:
+                          - policyUrl
+                          - jurisdiction
+                          - dataRetentionPeriod
+                          - geographicRestriction
+                          - storageLocation
+                        properties:
+                          policyUrl:
+                            type: string
+                            format: uri
+                            description: Where to find the policy
+                          jurisdiction:
+                            type: string
+                            description: Jurisdiction where the data sharing restrictions apply
+                          dataRetentionPeriod:
+                            type: integer
+                            minimum: 1
+                            description: How many days the data can be kept
+                          geographicRestriction:
+                            type: string
+                            description: Where the data can be shared to
+                          storageLocation:
+                            type: string
+                            description: Where the data is stored
+                      purpose:
+                        type: string
+                        description: Purpose of the Data Disclosure Agreement
+                      purposeDescription:
+                        type: string
+                        description: Description of the Data Disclosure Agreement
+                      lawfulBasis:
+                        type: string
+                        enum:
+                          - contract
+                        description: Lawful basis for the Data Disclosure Agreement
+                      dataAttributes:
+                        type: array
+                        items:
+                          type: object
+                          description: Data attributes contain specifications of exactly what is collected.
+                          x-not-in-database: false
+                          required:
+                            - name
+                            - description
+                          properties:
+                            id:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: Data attribute ID
+                            name:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: 'Name of the attribute, for instance "name" or "age"'
+                            description:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: Description of the attribute
+                            sensitivity:
+                              type: boolean
+                              format: ''
+                              example: ''
+                              description: Sensitivity of data attribute
+                            category:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: Category of data attribute
+                            scope:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: Scope required for data attribute
+                      codeOfConduct:
+                        type: string
+                        description: URL to code of conduct
+                      dataAgreementId:
+                        type: string
+                        description: ID of the connected Data Agreement
+                      dataAgreementRevisionId:
+                        type: string
+                        description: ID of the connected Data Agreement Revision
+                      dataAgreementRevisionHash:
+                        type: string
+                        description: Hash of the connected Data Agreement Revision
+                      active:
+                        type: boolean
+                        description: Whether the Data Disclosure Agreement is published or not
+                      presentationDefinitionId:
+                        type: string
+                        description: ID of the connected Presentation Definition
+                      openApiSpecification:
+                        type: object
+                        description: 'OpenAPI specification of the Data Agreement, defining available APIs for Data Using Services'
+                  revision:
+                    type: object
+                    title: Revision
+                    description: |-
+                      A *generic* revision model captures the serialised contents of any schema's single row. This is then subject to 1) cryptographic signature and 2) auditing.
+
+                      Aside from the "successor" column, a revision should be considered locked.
+                    x-not-in-database: false
+                    required:
+                      - id
+                      - schemaName
+                      - objectId
+                      - objectData
+                      - serizalizedSnapshot
+                      - serializedHash
+                      - timestamp
+                    properties:
+                      id:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Revision ID
+                      schemaName:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Previously "schema" but for technical reasons should be called "schemaName"
+                        enum:
+                          - dataAgreement
+                          - policy
+                          - dataAgreementRecord
+                      objectId:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: The PK of the object that was serialised
+                      objectData:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: The object that is serialised
+                      signedWithoutObjectId:
+                        type: boolean
+                        format: ''
+                        example: ''
+                        description: Indicates that objectId was left blank in serizalizedSnapshot when calculating serializedHash. objectId may subsequently be filled in.
+                      serizalizedSnapshot:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: |
+                          Revisioned data (sed as JSON) as a dict. Apply JSON Canonicalization Scheme as per IETF RFC 8785.  It contains all the fields of the schema except sucessorId, serializedHash, serializedSnapshot.
+                      serializedHash:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Hash of serizalizedSnapshot (SHA-1)
+                      timestamp:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Timestamp of when revisioning happened. It should be ISO 8601 UTC date time
+                      authorizedByIndividualId:
+                        description: Individual ID
+                        type: string
+                      authorizedByOtherId:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Reference to an admin user that has created this revision
+                      successorId:
+                        x-fk-model: Revision
+                        type: string
+                        description: 'If this revision is no longer the latest revision, refer to its successor'
+                      predecessorHash:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'Tamper-resistent artifact from previous record, copied from serializedHash'
+                      predecessorSignature:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Tamper-resistent artifact from previous record (we don't know if the previous record was signed or not)
+                type: object
+                required:
+                  - dataDisclosureAgreementTemplate
+                  - revision
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Create Data Disclosure Agreement Template
       tags:
-        - Webhook
-  '/service/data-source/{dataSourceId}/coverimage':
+        - Data Disclosure Agreements
+  '/v3/config/data-disclosure-agreement/{dataDisclosureAgreementTemplateId}':
     get:
-      deprecated: false
-      description: Get data source cover image
-      operationId: serviceReadDataSourceCoverImage
+      description: Reads a Data Disclosure Agreement Template.
       parameters:
-        - $ref: '#/paths/~1service~1data-source~1%7BdataSourceId%7D~1logoimage/get/parameters/0'
-      responses:
-        '200':
-          headers: {}
-      tags:
-        - Service
-  '/service/data-source/{dataSourceId}/logoimage':
-    get:
-      deprecated: false
-      description: Get data source logo image
-      operationId: serviceReadDataSourceLogoImage
-      parameters:
-        - description: Unique ID of an object
+        - name: dataDisclosureAgreementTemplateId
           in: path
-          name: dataSourceId
+          description: Unique ID of a Data Disclosure Template
           required: true
           schema:
             type: string
       responses:
         '200':
-          headers: {}
-      tags:
-        - Service
-  /service/data-sources/:
-    get:
-      summary: List data source
-      description: |
-        This endpoint is used to list data source
-      operationId: serviceListDataSource
-      parameters:
-        - $ref: '#/paths/~1config~1connections~1/get/parameters/0'
-        - $ref: '#/paths/~1config~1connections~1/get/parameters/1'
-        - name: dataSourceId
-          in: query
-          description: Filter by data source ID
-          required: false
-          schema:
-            type: string
-      responses:
-        '200':
-          description: OK
+          description: Data Disclosure Agreement Template Read
           content:
             application/json:
               schema:
-                type: object
                 properties:
-                  dataSources:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        dataDisclosureAgreements:
-                          type: array
-                          description: Data disclosure agreement
-                          items:
-                            type: object
-                            properties:
-                              dataDisclosureAgreement:
-                                $ref: '#/components/schemas/DataDisclosureAgreement'
-                              connection:
-                                $ref: '#/components/schemas/InvitationUrl'
-                        api:
-                          type: array
-                          items:
-                            type: string
-                        dataSource:
-                          $ref: '#/components/schemas/Organisation'
-                        verification:
-                          $ref: '#/components/schemas/Verification'
-                  pagination:
-                    $ref: '#/components/schemas/Pagination'
-        '400':
-          description: bad input parameter
-      tags:
-        - Service
-  /config/verification/templates:
-    get:
-      summary: List verification templates
-      description: This endpoint is used to list verification templates
-      operationId: configListVerificationTemplate
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
+                  dataDisclosureAgreementTemplate:
+                    $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementTemplate'
+                  revision:
+                    $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/revision'
+                type: object
+                required:
+                  - dataDisclosureAgreementTemplate
+                  - revision
+          headers:
+            Content-Type:
               schema:
-                type: object
-                properties:
-                  verificationTemplates:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        verificationTemplateName:
-                          type: string
-                        walletName:
-                          type: string
-                        walletLocation:
-                          type: string
-                        issuerName:
-                          type: string
-                        issuerLocation:
-                          type: string
-                        issuerLogoUrl:
-                          type: string
-        '400':
-          description: bad input parameter
-      tags:
-        - Config
+                type: json
+                example: application/json
+              description: Content-Type header
       security:
         - BearerAuth: []
-  /config/open-api/url:
+        - ApiKey: []
+      summary: Read Data Disclosure Agreement Template
+      tags:
+        - Data Disclosure Agreements
     put:
-      summary: Update Open API URL
-      description: This endpoint is used to update Open API URL for data source
-      operationId: configUpdateOpenApiUrl
+      description: |
+        Updates a Data Disclosure Agreement Template. Partial updates are supported.  If publishing (set active=true), purpose,  purpose description, and lawful basis must either be provided or already be present from the draft version.  If changing the Data Agreement, all three fields must be provided (ID,  revision ID, and revision hash).
+      parameters:
+        - $ref: '#/paths/~1v3~1config~1data-disclosure-agreement~1%7BdataDisclosureAgreementTemplateId%7D/get/parameters/0'
       requestBody:
         content:
           application/json:
             schema:
               properties:
-                dataSource:
+                dataDisclosureAgreementTemplate:
+                  description: Fields which can be updated in a Data Disclosure Agreement Template
                   type: object
+                  title: DataDisclosureAgreementTemplate
                   properties:
-                    openApiUrl:
+                    language:
                       type: string
+                      description: ISO 639-1 language code (e.g. 'en' or 'sv')
+                      example: en
+                    dataController:
+                      $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementTemplate/properties/dataController'
+                      type: object
+                    agreementPeriod:
+                      type: integer
+                      minimum: 1
+                      description: Days for which the agreement is valid
+                      example: 365
+                    dataSharingRestrictions:
+                      $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementTemplate/properties/dataSharingRestrictions'
+                      type: object
+                    purpose:
+                      type: string
+                      maxLength: 100
+                      description: 'Required if active=true, unless present already from the draft version'
+                    purposeDescription:
+                      type: string
+                      maxLength: 500
+                      description: 'Required if active=true, unless present already from the draft version'
+                    lawfulBasis:
+                      type: string
+                      enum:
+                        - contract
+                      description: 'Required if active=true, unless present already from the draft version'
+                    codeOfConduct:
+                      type: string
+                      format: uri
+                      description: URL to code of conduct
+                    dataAgreementId:
+                      type: string
+                      description: 'ID of the connected Data Agreement, if included, must provide revision ID and hash'
+                    dataAgreementRevisionId:
+                      type: string
+                      description: 'ID of the connected Data Agreement Revision, if included, must provide Data Agreement ID and revision hash'
+                    dataAgreementRevisionHash:
+                      type: string
+                      description: 'Hash of the connected Data Agreement Revision, if included, must provide Data Agreement ID and revision ID'
+                    presentationDefinitionId:
+                      type: string
+                      description: ID of the connected Presentation Definition
+                    active:
+                      type: boolean
+                      description: Publish if true
+              type: object
+              required:
+                - dataDisclosureAgreementTemplate
+      responses:
+        '200':
+          description: Data Disclosure Agreement Template updated
+          content:
+            application/json:
+              schema:
+                properties:
+                  dataDisclosureAgreementTemplate:
+                    $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementTemplate'
+                  revision:
+                    $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/revision'
+                type: object
+                required:
+                  - dataDisclosureAgreementTemplate
+                  - revision
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Update Data Disclosure Agreement Template
+      tags:
+        - Data Disclosure Agreements
+    delete:
+      description: Deletes a Data Disclosure Agreement Template.
+      parameters:
+        - $ref: '#/paths/~1v3~1config~1data-disclosure-agreement~1%7BdataDisclosureAgreementTemplateId%7D/get/parameters/0'
+      responses:
+        '200':
+          description: Data Disclosure Agreement Template Deleted
+          content:
+            application/json:
+              schema:
+                properties:
+                  revision:
+                    $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/revision'
+                type: object
+                required:
+                  - revision
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Delete Data Disclosure Agreement Template
+      tags:
+        - Data Disclosure Agreements
+  /v3/config/data-disclosure-agreements:
+    get:
+      description: Lists Data Disclosure Agreement Templates.
+      parameters:
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/0'
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/1'
+        - description: Filtering data disclosure agreement templates by draft/published status
+          in: query
+          name: active
+          required: false
+          schema:
+            type: boolean
+            default: false
+            description: |
+              If true, only published templates are returned.
+      responses:
+        '200':
+          description: Data Disclosure Agreement Template List
+          content:
+            application/json:
+              schema:
+                properties:
+                  dataDisclosureAgreementTemplates:
+                    type: array
+                    items:
+                      type: object
+                      description: |
+                        A template outlines an agreement between a Data Source and  Data Using Service that can be signed by both.
+                      required:
+                        - context
+                        - id
+                        - type
+                        - language
+                        - version
+                        - templateId
+                        - templateVersion
+                        - dataController
+                        - agreementPeriod
+                        - dataSharingRestrictions
+                        - purpose
+                        - purposeDescription
+                        - lawfulBasis
+                        - dataAttributes
+                        - codeOfConduct
+                        - dataAgreementId
+                        - dataAgreementRevisionId
+                        - dataAgreementRevisionHash
+                        - presentationDefinitionId
+                        - active
+                      properties:
+                        context:
+                          type: array
+                          items:
+                            type: string
+                          description: Array of URIs of JSON-LD contexts
+                        id:
+                          type: string
+                          description: Unique Data Disclosure Agreement Template identifier
+                        type:
+                          type: array
+                          items:
+                            type: string
+                          example:
+                            - DataDisclosureAgreement
+                          description: The Data Disclosure Agreement type from context
+                        language:
+                          type: string
+                          description: ISO 639-1 language code (e.g. 'en' or 'sv')
+                        version:
+                          type: string
+                          description: The version of this Data Disclosure Agreement Template
+                        templateId:
+                          type: string
+                          description: Unique Data Disclosure Agreement Template identifier (derived from 'id')
+                        templateVersion:
+                          type: string
+                          description: The version of this Data Disclosure Agreement Template (derived from 'version')
+                        dataController:
+                          $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementTemplate/properties/dataController'
+                        agreementPeriod:
+                          type: integer
+                          description: Days for which agreement is valid
+                        dataSharingRestrictions:
+                          $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementTemplate/properties/dataSharingRestrictions'
+                        purpose:
+                          type: string
+                          description: Purpose of the Data Disclosure Agreement
+                        purposeDescription:
+                          type: string
+                          description: Description of the Data Disclosure Agreement
+                        lawfulBasis:
+                          type: string
+                          enum:
+                            - contract
+                          description: Lawful basis for the Data Disclosure Agreement
+                        dataAttributes:
+                          type: array
+                          items:
+                            $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementTemplate/properties/dataAttributes/items'
+                        codeOfConduct:
+                          type: string
+                          description: URL to code of conduct
+                        dataAgreementId:
+                          type: string
+                          description: ID of the connected Data Agreement
+                        dataAgreementRevisionId:
+                          type: string
+                          description: ID of the connected Data Agreement Revision
+                        dataAgreementRevisionHash:
+                          type: string
+                          description: Hash of the connected Data Agreement Revision
+                        active:
+                          type: boolean
+                          description: Whether the Data Disclosure Agreement is published or not
+                        presentationDefinitionId:
+                          type: string
+                          description: ID of the connected Presentation Definition
+                        openApiSpecification:
+                          type: object
+                          description: 'OpenAPI specification of the Data Agreement, defining available APIs for Data Using Services'
+                        revisions:
+                          type: array
+                          items:
+                            $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/revision'
+                          description: List of revisions for this Data Disclosure Agreement Template
+                  pagination:
+                    type: object
+                    $ref: '#/paths/~1v2~1config~1webhooks/get/responses/200/content/application~1json/schema/properties/pagination'
+                type: object
+                reqiured:
+                  - dataDisclosureAgreementTemplates
+                  - pagination
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List Data Disclosure Agreement Templates
+      tags:
+        - Data Disclosure Agreements
+  '/v3/config/data-disclosure-agreement/{dataDisclosureAgreementTemplateId}/revision/{dataDisclosureAgreementTemplateRevisionId}':
+    get:
+      description: Reads a Data Disclosure Agreement Template Revision.
+      parameters:
+        - $ref: '#/paths/~1v3~1config~1data-disclosure-agreement~1%7BdataDisclosureAgreementTemplateId%7D/get/parameters/0'
+        - $ref: '#/paths/~1v3~1config~1data-disclosure-agreement~1%7BdataDisclosureAgreementTemplateRevisionId%7D~1record~1%7BdataDisclosureAgreementRecordId%7D/get/parameters/0'
+      responses:
+        '200':
+          description: Data Disclosure Agreement Template Revision Read
+          content:
+            application/json:
+              schema:
+                properties:
+                  dataDisclosureAgreementTemplate:
+                    $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementTemplate'
+                  revision:
+                    $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/revision'
+                type: object
+                required:
+                  - dataDisclosureAgreementTemplate
+                  - revision
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read Data Disclosure Agreement Template Revision
+      tags:
+        - Data Disclosure Agreements
+  '/v3/config/data-disclosure-agreement/{dataDisclosureAgreementTemplateId}/revisions':
+    get:
+      description: Lists Data Disclosure Agreement Template Revisions.
+      parameters:
+        - $ref: '#/paths/~1v3~1config~1data-disclosure-agreement~1%7BdataDisclosureAgreementTemplateId%7D/get/parameters/0'
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/0'
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/1'
+      responses:
+        '200':
+          description: Data Disclosure Agreement Template Revisions List
+          content:
+            application/json:
+              schema:
+                properties:
+                  dataDisclosureAgreementTemplate:
+                    $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementTemplate'
+                  revisions:
+                    type: array
+                    items:
+                      $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/revision'
+                  pagination:
+                    type: object
+                    $ref: '#/paths/~1v2~1config~1webhooks/get/responses/200/content/application~1json/schema/properties/pagination'
+                type: object
+                required:
+                  - dataDisclosureAgreementTemplate
+                  - revisions
+                  - pagination
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List Data Disclosure Agreement Template Revisions
+      tags:
+        - Data Disclosure Agreements
+  '/v3/config/data-disclosure-agreement/{dataDisclosureAgreementTemplateRevisionId}/record/{dataDisclosureAgreementRecordId}':
+    get:
+      description: Reads a Data Disclosure Agreement Record.
+      parameters:
+        - name: dataDisclosureAgreementTemplateRevisionId
+          in: path
+          description: Unique ID of a Data Disclosure Template Revision
+          required: true
+          schema:
+            type: string
+        - name: dataDisclosureAgreementRecordId
+          in: path
+          description: Unique ID of a Data Disclosure Record
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Data Disclosure Agreement Record Read
+          content:
+            application/json:
+              schema:
+                properties:
+                  dataDisclosureAgreementRecord:
+                    type: object
+                    description: |
+                      A record represents an Agreement between a Data Source and Data Using Service  that can be signed by both, based on the updated Go structure. The Opt-In value determines whether the record is active and data can be shared to the Data Using Service. The Opt-In value is only valid for records containing both signatures.
+                    required:
+                      - id
+                      - canonicalId
+                      - dataDisclosureAgreementTemplateRevision
+                      - dataSourceSignature
+                      - dataUsingServiceSignature
+                      - optIn
+                      - timestamp
+                      - organisationId
+                      - organisationRole
+                      - isDeleted
+                    properties:
+                      id:
+                        type: string
+                        description: Unique Data Disclosure Agreement Record identifier.
+                      canonicalId:
+                        type: string
+                        description: The cross-organisational identifier for the record.
+                      dataDisclosureAgreementTemplateRevision:
+                        description: The full revision object of the Data Disclosure Agreement Template which the record is based on.
+                        $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/revision'
+                      dataSourceSignature:
+                        description: The signature provided by the Data Source.
+                        type: object
+                        title: Signature
+                        x-not-in-database: false
+                        required:
+                          - id
+                          - payload
+                          - signature
+                          - signatureDecoded
+                          - verificationMethod
+                          - verificationPayload
+                          - verificationPayloadHash
+                          - verificationSignedBy
+                          - verificationSignedAs
+                          - verificationJwsHeader
+                          - timestamp
+                          - signedWithoutObjectReference
+                          - objectType
+                          - objectReference
+                        properties:
+                          id:
+                            type: string
+                            description: Unique signature identifier
+                          payload:
+                            type: string
+                            description: The Data Disclosure Agreement Record (as a stringified JSON object)
+                          signature:
+                            type: string
+                            description: JWT signature
+                          signatureDecoded:
+                            type: object
+                            description: 'Decoded signature, containing claims used from the signature JWT'
+                          verificationMethod:
+                            type: string
+                            description: 'A well-known string denoting which method is used. Valid values: ''keybinding_jwt'''
+                          verificationPayload:
+                            type: string
+                            description: The keybinding JWT payload that was signed to produce the signature
+                          verificationPayloadHash:
+                            type: string
+                            description: 'Internally generated cryptographic hash of the value to be signed, i.e. the value of verificationPayload'
+                          verificationSignedBy:
+                            type: string
+                            description: 'Because an identifier''s information may change over time, there is a need to store that information at the time of signing. In the case of a cryptographic signature, this field should contain some identifier for looking up or verifying the public key of the signing party.'
+                          verificationSignedAs:
+                            type: string
+                            description: Either signed as a "data_source" or as a "data_using_service"
+                            enum:
+                              - data_source
+                              - data_using_service
+                          verificationJwsHeader:
+                            type: string
+                            description: 'Alternative to the verificationMethod, verificationHash and verificationSignature, give a JWS serialised object (RFC7515)'
+                          timestamp:
+                            type: string
+                            description: Timestamp of signature
+                          signedWithoutObjectReference:
+                            type: boolean
+                            description: 'Indicates that objectReference was left blank in the serialised version that was signed, always false for Data Disclosure Agreement Record signatures'
+                          objectType:
+                            type: string
+                            description: 'Name of the schema model that objectReference points to, in this case "data_disclosure_agreement_record"'
+                            enum:
+                              - data_disclosure_agreement_record
+                          objectReference:
+                            type: string
+                            description: 'In the case of a data_disclosure_agreement_record, this is the ID of the record that was signed'
+                      dataUsingServiceSignature:
+                        description: The signature provided by the Data Using Service.
+                        $ref: '#/paths/~1v3~1config~1data-disclosure-agreement~1%7BdataDisclosureAgreementTemplateRevisionId%7D~1record~1%7BdataDisclosureAgreementRecordId%7D/get/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementRecord/properties/dataSourceSignature'
+                      optIn:
+                        type: boolean
+                        description: Whether the record is active and data can be shared to the Data Using Service.
+                      timestamp:
+                        type: string
+                        description: The timestamp of when the latest signature was added.
+                      organisationId:
+                        type: string
+                        description: The ID of the organisation this record belongs to (both organisation keep a copy).
+                      organisationRole:
+                        type: string
+                        description: 'The role of the organisation in this agreement (e.g., data_source).'
+                        enum:
+                          - data_source
+                          - data_using_service
+                      isDeleted:
+                        type: boolean
+                        description: If the record is deleted.
+                  revision:
+                    $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/revision'
+                type: object
+                required:
+                  - dataDisclosureAgreementRecord
+                  - revision
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read Data Disclosure Agreement Record
+      tags:
+        - Data Disclosure Agreements
+  /v3/config/data-disclosure-agreement/records:
+    get:
+      description: |
+        Lists all Data Disclosure Agreement Records for the organisation, depending on  the role of the organisation for the record, "data_source" or  "data_using_service".
+      parameters:
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/0'
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/1'
+        - name: organisationRole
+          in: query
+          description: 'Filter by Organisation Role for the Data Disclosure Record, "data_source" or "data_using_service"'
+          required: true
+          schema:
+            type: string
+        - name: signStatus
+          in: query
+          description: Filter by whether the status of the Data Disclosure Record is "sign" or "unsign" (e.g. active or inactive)
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Data Disclosure Agreement Record List
+          content:
+            application/json:
+              schema:
+                properties:
+                  dataDisclosureAgreementRecords:
+                    type: array
+                    items:
+                      $ref: '#/paths/~1v3~1config~1data-disclosure-agreement~1%7BdataDisclosureAgreementTemplateRevisionId%7D~1record~1%7BdataDisclosureAgreementRecordId%7D/get/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementRecord'
+                  pagination:
+                    $ref: '#/paths/~1v2~1config~1webhooks/get/responses/200/content/application~1json/schema/properties/pagination'
+                type: object
+                required:
+                  - dataDisclosureAgreementRecords
+                  - pagination
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List all Data Disclosure Agreement Records
+      tags:
+        - Data Disclosure Agreement Records
+  '/v3/config/data-disclosure-agreement/{dataDisclosureAgreementTemplateRevisionId}/record/{dataDisclosureAgreementRecordId}/revision/{dataDisclosureAgreementRecordRevisionId}':
+    get:
+      description: Reads a Data Disclosure Agreement Record Revision.
+      parameters:
+        - $ref: '#/paths/~1v3~1config~1data-disclosure-agreement~1%7BdataDisclosureAgreementTemplateRevisionId%7D~1record~1%7BdataDisclosureAgreementRecordId%7D/get/parameters/0'
+        - $ref: '#/paths/~1v3~1config~1data-disclosure-agreement~1%7BdataDisclosureAgreementTemplateRevisionId%7D~1record~1%7BdataDisclosureAgreementRecordId%7D/get/parameters/1'
+        - name: dataDisclosureAgreementRecordRevisionId
+          in: path
+          description: Unique ID of a Data Disclosure Record Revision
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Data Disclosure Agreement Record Revision Read
+          content:
+            application/json:
+              schema:
+                properties:
+                  dataDisclosureAgreementRecord:
+                    $ref: '#/paths/~1v3~1config~1data-disclosure-agreement~1%7BdataDisclosureAgreementTemplateRevisionId%7D~1record~1%7BdataDisclosureAgreementRecordId%7D/get/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementRecord'
+                  revision:
+                    $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/revision'
+                type: object
+                required:
+                  - dataDisclosureAgreementRecord
+                  - revision
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read Data Disclosure Agreement Record Revision
+      tags:
+        - Data Disclosure Agreements
+  '/v3/config/data-disclosure-agreement/{dataDisclosureAgreementTemplateRevisionId}/record/{dataDisclosureAgreementRecordId}/revisions':
+    get:
+      description: Lists Data Disclosure Agreement Record Revisions for a specific record.
+      parameters:
+        - $ref: '#/paths/~1v3~1config~1data-disclosure-agreement~1%7BdataDisclosureAgreementTemplateRevisionId%7D~1record~1%7BdataDisclosureAgreementRecordId%7D/get/parameters/0'
+        - $ref: '#/paths/~1v3~1config~1data-disclosure-agreement~1%7BdataDisclosureAgreementTemplateRevisionId%7D~1record~1%7BdataDisclosureAgreementRecordId%7D/get/parameters/1'
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/0'
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/1'
+      responses:
+        '200':
+          description: Data Disclosure Agreement Record Revision List
+          content:
+            application/json:
+              schema:
+                properties:
+                  dataDisclosureAgreementRecord:
+                    $ref: '#/paths/~1v3~1config~1data-disclosure-agreement~1%7BdataDisclosureAgreementTemplateRevisionId%7D~1record~1%7BdataDisclosureAgreementRecordId%7D/get/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementRecord'
+                  revisions:
+                    type: array
+                    items:
+                      $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/revision'
+                  pagination:
+                    $ref: '#/paths/~1v2~1config~1webhooks/get/responses/200/content/application~1json/schema/properties/pagination'
+                type: object
+                required:
+                  - dataDisclosureAgreementRecord
+                  - revisions
+                  - pagination
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List Data Disclosure Agreement Record Revisions
+      tags:
+        - Data Disclosure Agreements
+  /v3/config/data-disclosure-agreement/records/revisions:
+    get:
+      description: |
+        Lists all revisions of Data Disclosure Agreement Records, optionally filtered  by organisation role and/or DDA Template Revision.
+      parameters:
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/0'
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/1'
+        - $ref: '#/paths/~1v3~1config~1data-disclosure-agreement~1records/get/parameters/2'
+        - name: dataDisclosureAgreementTemplateRevisionId
+          in: query
+          description: Unique ID of a Data Disclosure Template Revision
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Data Disclosure Agreement Record Revision List
+          content:
+            application/json:
+              schema:
+                properties:
+                  revisions:
+                    type: array
+                    items:
+                      $ref: '#/paths/~1v3~1config~1data-disclosure-agreement/post/responses/200/content/application~1json/schema/properties/revision'
+                  pagination:
+                    $ref: '#/paths/~1v2~1config~1webhooks/get/responses/200/content/application~1json/schema/properties/pagination'
+                type: object
+                required:
+                  - revisions
+                  - pagination
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List all revisions for all Data Disclosure Agreement Records
+      tags:
+        - Data Disclosure Agreements
+  /v3/config/data-space/base-configurations:
+    post:
+      description: Creates Base Configurations related to a Data Marketplace.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                id:
+                  description: ID
+                  type: string
+                baseUrl:
+                  description: URL of the Data Marketplace's metadata
+                  type: string
+                clientId:
+                  description: Client ID of the Data Marketplace
+                  type: string
+                clientSecret:
+                  description: Client Secret of the Data Marketplace
+                  type: string
+              required:
+                - id
+                - baseUrl
+                - clientId
+                - clientSecret
+              type: object
+      responses:
+        '200':
+          description: Data Marketplace Base Configurations created
+          content:
+            application/json:
+              schema:
+                properties:
+                  baseConfigurations:
+                    $ref: '#/paths/~1v3~1config~1data-space~1base-configurations/post/requestBody/content/application~1json/schema'
+                required:
+                  - baseConfigurations
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Create Base Configurations
+      tags:
+        - Base Configurations
+    get:
+      description: Reads Base Configurations related to a Data Marketplace.
+      responses:
+        '200':
+          description: Data Marketplace Base Configurations read
+          content:
+            application/json:
+              schema:
+                properties:
+                  baseConfigurations:
+                    $ref: '#/paths/~1v3~1config~1data-space~1base-configurations/post/requestBody/content/application~1json/schema'
+                required:
+                  - baseConfigurations
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read Base Configurations
+      tags:
+        - Base Configurations
+    put:
+      description: Updates Base Configurations related to a Data Marketplace.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                baseUrl:
+                  description: URL of the Data Marketplace's metadata
+                  type: string
+                clientId:
+                  description: Client ID of the Data Marketplace
+                  type: string
+                clientSecret:
+                  description: Client Secret of the Data Marketplace
+                  type: string
+              required:
+                - baseUrl
+                - clientId
+                - clientSecret
+              type: object
+      responses:
+        '200':
+          description: Data Marketplace Base Configurations updated
+          content:
+            application/json:
+              schema:
+                properties:
+                  baseConfigurations:
+                    $ref: '#/paths/~1v3~1config~1data-space~1base-configurations/post/requestBody/content/application~1json/schema'
+                required:
+                  - baseConfigurations
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Update Base Configurations
+      tags:
+        - Base Configurations
+    delete:
+      description: Deletes Base Configurations related to a Data Marketplace.
+      responses:
+        '200':
+          description: Data Marketplace Base Configurations delete
+          content:
+            application/json:
+              schema:
+                properties:
+                  baseConfigurations:
+                    $ref: '#/paths/~1v3~1config~1data-space~1base-configurations/post/requestBody/content/application~1json/schema'
+                required:
+                  - baseConfigurations
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Delete Base Configurations
+      tags:
+        - Base Configurations
+  /v3/config/data-space/access-point-endpoint:
+    get:
+      description: Reads Access Point Configuration of the organisation.
+      responses:
+        '200':
+          description: Data Marketplace Base Configurations read
+          content:
+            application/json:
+              schema:
+                properties:
+                  accessPointEndpoint:
+                    description: The access point configuration of the organisation
+                    type: string
+                required:
+                  - accessPointEndpoint
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read Access Point Configuration
+      tags:
+        - Base Configurations
+  /v3/config/data-space/oauth2-client:
+    post:
+      description: Creates an OAuth2 Client for use with a Data Marketplace.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                clientName:
+                  description: Client Name of the OAuth2 Client
+                  type: string
+                clientDescription:
+                  description: Client Description of the OAuth2 Client
+                  type: string
+              required:
+                - clientName
+              type: object
+      responses:
+        '200':
+          description: Data Marketplace related OAuth2 Client created
+          content:
+            application/json:
+              schema:
+                properties:
+                  oauth2Client:
+                    type: object
+                    $ref: '#/paths/~1v3~1config~1data-space~1oauth2-clients/get/responses/200/content/application~1json/schema/properties/oauth2Clients/items'
+                type: object
+                reqiured:
+                  - oauth2Client
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+      summary: Create OAuth2.0 Client
+      tags:
+        - Base Configurations
+  '/v3/config/data-space/oauth2-client/{clientId}':
+    get:
+      description: Reads a Data Marketplace related OAuth2 Client.
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Data Marketplace related OAuth2 Client read
+          content:
+            application/json:
+              schema:
+                properties:
+                  oauth2Client:
+                    type: object
+                    $ref: '#/paths/~1v3~1config~1data-space~1oauth2-clients/get/responses/200/content/application~1json/schema/properties/oauth2Clients/items'
+                type: object
+                reqiured:
+                  - oauth2Client
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+      summary: Read OAuth2.0 Client
+      tags:
+        - Base Configurations
+    put:
+      description: Updates an OAuth2 Client for use with a Data Marketplace.
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/paths/~1v3~1config~1data-space~1oauth2-client/post/requestBody/content/application~1json/schema'
+      responses:
+        '200':
+          description: Data Marketplace related OAuth2 Client updated
+          content:
+            application/json:
+              schema:
+                properties:
+                  oauth2Client:
+                    type: object
+                    $ref: '#/paths/~1v3~1config~1data-space~1oauth2-clients/get/responses/200/content/application~1json/schema/properties/oauth2Clients/items'
+                type: object
+                reqiured:
+                  - oauth2Client
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+      summary: Update OAuth2.0 Client
+      tags:
+        - Base Configurations
+    delete:
+      description: Deletes a Data Marketplace related OAuth2 Client.
+      parameters:
+        - name: clientId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Data Marketplace related OAuth2 Client deleted
+          content:
+            application/json:
+              schema:
+                properties:
+                  oauth2Client:
+                    type: object
+                    $ref: '#/paths/~1v3~1config~1data-space~1oauth2-clients/get/responses/200/content/application~1json/schema/properties/oauth2Clients/items'
+                type: object
+                reqiured:
+                  - oauth2Client
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+      summary: Delete OAuth2.0 Client
+      tags:
+        - Base Configurations
+  /v3/config/data-space/oauth2-clients:
+    get:
+      description: Lists OAuth2 Clients for use with a Data Marketplace.
+      parameters:
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/0'
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/1'
+      responses:
+        '200':
+          description: Data Marketplace related OAuth2 Clients listed
+          content:
+            application/json:
+              schema:
+                properties:
+                  oauth2Clients:
+                    type: array
+                    items:
+                      properties:
+                        clientId:
+                          description: ID of the OAuth2 Client
+                          type: string
+                        clientSecret:
+                          description: Secret of the OAuth2 Client
+                          type: string
+                        clientName:
+                          description: Name of the OAuth2 Client
+                          type: string
+                        clientDescription:
+                          description: Description of the OAuth2 Client
+                          type: string
+                        grantTypes:
+                          description: Grant Types allowed for the OAuth2 Client
+                          type: string
+                        timestamp:
+                          description: Timestamp of the OAuth2 Client creation or last modification
+                          type: int
+                      required:
+                        - clientId
+                        - clientSecret
+                        - clientName
+                        - grantTypes
+                        - timestamp
+                      type: object
+                  pagination:
+                    type: object
+                    $ref: '#/paths/~1v2~1config~1webhooks/get/responses/200/content/application~1json/schema/properties/pagination'
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+      summary: List OAuth2.0 Clients
+      tags:
+        - Base Configurations
+  /v3/config/data-space/pull-data:
+    post:
+      description: |
+        The Pull Data endpoint allows a Data Using Service to Pull Data according to a  specific Data Disclosure Agreement record signed by themselves and a Data  Source, either anonymously or for a specific individual.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dataDisclosureAgreementRecordId:
+                  type: string
+                  description: Data Disclosure Agreement Record ID
+                individualId:
+                  type: string
+                  description: Individual ID
+              required:
+                - dataDisclosureAgreementRecordId
+      responses:
+        '200':
+          description: Successful Access Token release
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+                    description: Access token to be used at Resource Server
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Pull Data Endpoint
+      tags:
+        - Data Marketplace
+  '/v3/config/data-space/pull-data-record/{pullDataRecordId}':
+    get:
+      description: Reads a specific Pull Data Record.
+      parameters:
+        - description: ID of the Pull Data Record between a Data Source and Data Using Service
+          in: path
+          name: pullDataRecordId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Pull Data Record read
+          content:
+            application/json:
+              schema:
+                properties:
+                  pullDataRecord:
+                    type: object
+                    $ref: '#/paths/~1v3~1config~1data-space~1pull-data-records/get/responses/200/content/application~1json/schema/properties/pullDataRecords/items'
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read Pull Data Record
+      tags:
+        - Signed Agreements
+  /v3/config/data-space/pull-data-records:
+    get:
+      description: |
+        Lists Pull Data Records, optionally filtered by Data Disclosure Agreement  Template (Revision ID) and/or Data Disclosure Agreement Record (Revision ID).
+      parameters:
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/0'
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/1'
+        - description: Filter by Data Disclosure Agreement Template Revision ID
+          in: query
+          name: dataDisclosureAgreementTemplateRevisionId
+          required: false
+          schema:
+            type: string
+        - description: Filter by Data Disclosure Agreement Record Revision ID
+          in: query
+          name: dataDisclosureAgreementRecordRevisionId
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Pull Data Records listed
+          content:
+            application/json:
+              schema:
+                properties:
+                  pullDataRecords:
+                    type: array
+                    items:
+                      description: Record of a Pull Data request
+                      properties:
+                        id:
+                          description: ID of the Pull Data Record between a Data Source and Data Using Service
+                          type: string
+                        dataDisclosureAgreementTemplateRevisionId:
+                          description: ID of the Data Disclosure Agreement Template Revision that defines data was pulled against
+                          type: string
+                        dataDisclosureAgreementRecordRevisionId:
+                          description: ID of the Data Disclosure Agreement Record Revision that defines the agreement between the Data Source and Data Using Service
+                          type: string
+                        nonce:
+                          description: Randomly generated nonce
+                          type: string
+                        createdAt:
+                          description: Timestamp of the Pull Data Record creation
+                          type: int
+                        token:
+                          description: The Access Token used for pulling data
+                          type: string
+                      required:
+                        - id
+                        - dataDisclosureAgreementTemplateRevisionId
+                        - dataDisclosureAgreementRecordRevisionId
+                        - nonce
+                        - createdAt
+                        - token
+                      type: object
+                  pagination:
+                    type: object
+                    $ref: '#/paths/~1v2~1config~1webhooks/get/responses/200/content/application~1json/schema/properties/pagination'
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List Pull Data Records
+      tags:
+        - Signed Agreements
+  /v2/config/webhook:
+    post:
+      deprecated: false
+      description: This endpoint is used to create a webhook to trigger events to an external IT system.
+      operationId: configCreateWebhook
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                webhook:
+                  required:
+                    - payloadUrl
+                    - contentType
+                    - subscribedEvents
+                    - disabled
+                    - secretKey
+                    - skipSslVerification
+                    - timestamp
+                  type: object
+                  title: Webhook
+                  properties:
+                    payloadUrl:
+                      type: string
+                      description: Webhook payload Url
+                    contentType:
+                      type: string
+                      description: Webhook payload content type
+                      enum:
+                        - application/json
+                        - application/x-www-form-urlencoded
+                    subscribedEvents:
+                      type: object
+                      title: subscribedEvents
+                      properties:
+                        consentManagementWebhook:
+                          type: array
+                          items:
+                            type: string
+                            description: Subscribed event
+                            enum:
+                              - data.update.initiated
+                              - data.update.cancelled
+                              - consent.allowed
+                              - consent.disallowed
+                              - consent.auto_expiry
+                              - org.unsubscribed
+                              - data.delete.initiated
+                              - data.download.initiated
+                              - data.delete.cancelled
+                              - data.download.cancelled
+                              - org.subscribed
+                        digitalWalletWebhook:
+                          type: array
+                          items:
+                            type: string
+                            description: Subscribed event
+                            enum:
+                              - digitalwallet.connection.init
+                              - digitalwallet.connection.invitation
+                              - digitalwallet.connection.request
+                              - digitalwallet.connection.response
+                              - digitalwallet.connection.active
+                              - digitalwallet.connection.error
+                              - digitalwallet.connection.inactive
+                              - digitalwallet.connection.delete
+                              - digitalwallet.credential.proposal_sent
+                              - digitalwallet.credential.proposal_received
+                              - digitalwallet.credential.offer_sent
+                              - digitalwallet.credential.offer_received
+                              - digitalwallet.credential.request_sent
+                              - digitalwallet.credential.request_received
+                              - digitalwallet.credential.credential_issued
+                              - digitalwallet.credential.credential_received
+                              - digitalwallet.credential.credential_acked
+                              - digitalwallet.presentation.proposal_sent
+                              - digitalwallet.presentation.proposal_received
+                              - digitalwallet.presentation.request_sent
+                              - digitalwallet.presentation.request_received
+                              - digitalwallet.presentation.presentation_sent
+                              - digitalwallet.presentation.presentation_received
+                              - digitalwallet.presentation.verified
+                              - digitalwallet.presentation.presentation_acked
+                              - openid.credential.offer_sent
+                              - openid.credential.offer_received
+                              - openid.credential.credential_issued
+                              - openid.credential.credential_acked
+                              - openid.credential.credential_pending
+                              - openid.presentation.request_sent
+                              - openid.presentation.request_sent.v3
+                              - openid.presentation.request_received
+                              - openid.presentation.request_received.v3
+                              - openid.presentation.presentation_acked
+                              - openid.presentation.presentation_acked.v3
+                              - openid.presentation.presentation_pending
+                              - openid.presentation.presentation_pending.v3
+                        dataMarketplaceWebhook:
+                          type: array
+                          items:
+                            type: string
+                            description: Subscribed event
+                            enum:
+                              - datamarketplace.data_disclosure_agreement_record
+                    disabled:
+                      type: boolean
+                      description: Is webhook disabled or not
+                    secretKey:
+                      type: string
+                      description: Secret key for checking authenticity of the source
+                    skipSslVerification:
+                      type: boolean
+                      description: Skip SSL verification for webhook Url
+              type: object
+        required: true
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                properties:
+                  webhook:
+                    required:
+                      - payloadUrl
+                      - contentType
+                      - subscribedEvents
+                      - disabled
+                      - secretKey
+                      - skipSslVerification
+                      - timestamp
+                    type: object
+                    title: Webhook
+                    properties:
+                      id:
+                        type: string
+                        description: Webhook ID
+                      orgId:
+                        type: string
+                        description: Organisation ID
+                      payloadUrl:
+                        type: string
+                        description: Webhook payload Url
+                      contentType:
+                        type: string
+                        description: Webhook payload content type
+                        enum:
+                          - application/json
+                          - application/x-www-form-urlencoded
+                      subscribedEvents:
+                        $ref: '#/paths/~1v2~1config~1webhook/post/requestBody/content/application~1json/schema/properties/webhook/properties/subscribedEvents'
+                      disabled:
+                        type: boolean
+                        description: Is webhook disabled or not
+                      secretKey:
+                        type: string
+                        description: Secret key for checking authenticity of the source
+                      skipSslVerification:
+                        type: boolean
+                        description: Skip SSL verification for webhook Url
+                      timestamp:
+                        type: string
+                        description: Creation timestamp
+                type: object
+          description: Created
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Create webhook
+      tags:
+        - Webhook
+  '/v2/config/webhook/{webhookId}':
+    get:
+      deprecated: false
+      description: This endpoint is used to read a webhook by its ID.
+      operationId: configReadWebhook
+      parameters:
+        - in: path
+          name: webhookId
+          required: true
+          schema:
+            type: string
+          style: simple
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  webhook:
+                    $ref: '#/paths/~1v2~1config~1webhook/post/responses/201/content/application~1json/schema/properties/webhook'
+                type: object
+          description: OK
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read webhook
+      tags:
+        - Webhook
+    put:
+      deprecated: false
+      description: This endpoint is used to update an existing webhook to trigger events to an external IT system.
+      operationId: configUpdateWebhook
+      parameters:
+        - in: path
+          name: webhookId
+          required: true
+          schema:
+            type: string
+          style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                webhook:
+                  $ref: '#/paths/~1v2~1config~1webhook/post/requestBody/content/application~1json/schema/properties/webhook'
               type: object
         required: true
       responses:
@@ -1162,34 +1808,50 @@ paths:
             application/json:
               schema:
                 properties:
-                  dataSource:
-                    $ref: '#/components/schemas/Organisation'
-          description: Updated the organisation
+                  webhook:
+                    $ref: '#/paths/~1v2~1config~1webhook/post/responses/201/content/application~1json/schema/properties/webhook'
+                type: object
+          description: OK
+          headers: {}
       security:
         - BearerAuth: []
+        - ApiKey: []
+      summary: Update webhook
       tags:
-        - Config
-  /config/connection/:
-    post:
-      summary: Create connection with data intermediary
-      description: This endpoint is used to establish connection with data intermediary
-      operationId: configCreateConnection
+        - Webhook
+    delete:
+      deprecated: false
+      description: This endpoint is used to delete an existing webhook that was defined to trigger events to an external IT system.
+      operationId: configDeleteWebhook
+      parameters:
+        - in: path
+          name: webhookId
+          required: true
+          schema:
+            type: string
+          style: simple
       responses:
         '200':
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateConnectionResponse'
+                properties:
+                  webhook:
+                    $ref: '#/paths/~1v2~1config~1webhook/post/responses/201/content/application~1json/schema/properties/webhook'
+                type: object
           description: OK
+          headers: {}
       security:
         - BearerAuth: []
+        - ApiKey: []
+      summary: Delete webhook
       tags:
-        - Config
-  /config/connections/:
+        - Webhook
+  /v2/config/webhooks:
     get:
-      summary: List connections
-      description: This endpoint is used to list connections
-      operationId: configListConnection
+      deprecated: false
+      description: This endpoint is used to get all webhooks that was defined to trigger events to an external IT system.
+      operationId: configListWebhooks
       parameters:
         - description: Requested index for start of resources to be provided in response requested by client
           in: query
@@ -1199,562 +1861,468 @@ paths:
             type: integer
         - name: limit
           in: query
-          description: Number of items returned per page. Requested number of resources to be provided in response requested by client
+          description: Number of items returned per page. Requested number of resources to be provided in response requested by client.
           required: false
           schema:
             type: integer
             default: 10
       responses:
         '200':
-          description: OK
           content:
             application/json:
               schema:
-                type: object
                 properties:
-                  connections:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Connection'
                   pagination:
-                    $ref: '#/components/schemas/Pagination'
-        '400':
-          description: bad input parameter
-      tags:
-        - Config
-      security:
-        - BearerAuth: []
-  '/config/connection/{connectionId}/':
-    delete:
-      summary: Delete connection
-      description: |
-        This endpoint is used to delete connection by ID.
-      operationId: configDeleteConnection
-      parameters:
-        - description: Unique ID of an object
-          in: path
-          name: connectionId
-          required: true
-          schema:
-            type: string
-      responses:
-        '204':
-          description: OK
-        '400':
-          description: bad input parameter
-      security:
-        - BearerAuth: []
-      tags:
-        - Config
-  '/config/data-disclosure-agreement/{dataDisclosureAgreementId}/':
-    get:
-      summary: Read data disclosure agreement
-      description: |
-        This endpoint is used to read data disclosure agreement by ID.
-      operationId: configReadDataDisclosureAgreement
-      parameters:
-        - description: Unique ID of an object
-          in: path
-          name: dataDisclosureAgreementId
-          required: true
-          schema:
-            type: string
-        - description: Version of an object. It follows semantic versioning (x.y.z).
-          in: query
-          name: version
-          required: false
-          schema:
-            type: string
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  dataDisclosureAgreement:
-                    $ref: '#/components/schemas/DataDisclosureAgreement'
-          description: ''
-        '400':
-          description: bad input parameter
-      security:
-        - BearerAuth: []
-      tags:
-        - Config
-    delete:
-      summary: Delete data disclosure agreement
-      description: |
-        This endpoint is used to delete data disclosure agreement by ID.
-      operationId: configDeleteDataDisclosureAgreement
-      parameters:
-        - $ref: '#/paths/~1config~1data-disclosure-agreement~1%7BdataDisclosureAgreementId%7D~1/get/parameters/0'
-      responses:
-        '204':
-          description: OK
-        '400':
-          description: bad input parameter
-      security:
-        - BearerAuth: []
-      tags:
-        - Config
-  '/config/data-disclosure-agreement/{dataDisclosureAgreementId}/status/':
-    put:
-      summary: Update data disclosure agreement status
-      description: |
-        This endpoint is used to update data disclosure agreement status. 
-        Approved and rejected status are reserved for super admins to choose.
-      operationId: configUpdateDataDisclosureAgreementStatus
-      parameters:
-        - $ref: '#/paths/~1config~1data-disclosure-agreement~1%7BdataDisclosureAgreementId%7D~1/get/parameters/0'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                status:
-                  $ref: '#/components/schemas/Status'
-              type: object
-        required: true
-      responses:
-        '204':
-          description: OK
-        '400':
-          description: bad input parameter
-      security:
-        - BearerAuth: []
-      tags:
-        - Config
-  /config/data-disclosure-agreements/:
-    get:
-      summary: List data disclosure agreements
-      description: This endpoint is used to list data disclosure agreements
-      operationId: configListDataDisclosureAgreement
-      parameters:
-        - $ref: '#/paths/~1config~1connections~1/get/parameters/0'
-        - $ref: '#/paths/~1config~1connections~1/get/parameters/1'
-        - description: To filter data disclosure agreements by status
-          in: query
-          name: status
-          required: false
-          schema:
-            $ref: '#/components/schemas/Status'
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  dataDisclosureAgreements:
-                    type: array
+                    type: object
+                    title: Pagination
+                    properties:
+                      currentPage:
+                        type: integer
+                        description: Current page number
+                      totalItems:
+                        type: integer
+                        description: Total number of items available
+                      totalPages:
+                        type: integer
+                        description: Total number of pages based on limit
+                      limit:
+                        type: integer
+                        description: Number of items per page
+                      hasPrevious:
+                        type: boolean
+                        description: Indicates if there's a previous page
+                      hasNext:
+                        type: boolean
+                        description: Indicates if there's a next page
+                  webhooks:
                     items:
-                      type: object
-                      properties:
-                        dataDisclosureAgreement:
-                          $ref: '#/components/schemas/DataDisclosureAgreement'
-                        revisions:
-                          type: array
-                          description: List of previous data disclosure agreements
-                          items:
-                            $ref: '#/components/schemas/DataDisclosureAgreement'
-                  pagination:
-                    $ref: '#/components/schemas/Pagination'
-        '400':
-          description: bad input parameter
-      tags:
-        - Config
-      security:
-        - BearerAuth: []
-  /config/data-source/verification/:
-    post:
-      summary: Create verification
-      description: This endpoint is used to send verification request to connected wallet of data source
-      operationId: configCreateVerification
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                properties:
-                  verification:
-                    $ref: '#/components/schemas/Verification'
+                      description: Webhook
+                      oneOf:
+                        - $ref: '#/paths/~1v2~1config~1webhook/post/responses/201/content/application~1json/schema/properties/webhook'
+                    type: array
                 type: object
           description: OK
-      security:
-        - BearerAuth: []
-      tags:
-        - Config
-    get:
-      summary: Read verification
-      description: This endpoint is used to read verification for a data source
-      operationId: configReadVerification
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                properties:
-                  verification:
-                    $ref: '#/components/schemas/Verification'
-                type: object
-          description: OK
-      security:
-        - BearerAuth: []
-      tags:
-        - Config
-  /config/data-source/:
-    post:
-      summary: Create data source
-      description: This endpoint is used to create data source
-      operationId: configCreateDataSource
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                dataSource:
-                  type: object
-                  properties:
-                    description:
-                      type: string
-                    location:
-                      type: string
-                    name:
-                      type: string
-                    policyUrl:
-                      type: string
-                    sector:
-                      - name
-                      - location
-                      - description
-                      - policyUrl
-              type: object
-        required: true
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                properties:
-                  dataSource:
-                    $ref: '#/components/schemas/Organisation'
-                  verification:
-                    $ref: '#/components/schemas/Verification'
-          description: OK
-      security:
-        - BearerAuth: []
-      tags:
-        - Config
-    get:
-      summary: Read data source
-      description: This endpoint is used to read the data source details for the organisation admin
-      operationId: configReadDataSource
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                properties:
-                  dataSource:
-                    $ref: '#/components/schemas/Organisation'
-                  verification:
-                    $ref: '#/components/schemas/Verification'
-                type: object
-          description: OK
-      security:
-        - BearerAuth: []
-      tags:
-        - Config
-    put:
-      summary: Update data source
-      description: This endpoint is used to update data source
-      operationId: configUpdateDataSource
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                dataSource:
-                  type: object
-                  properties:
-                    description:
-                      type: string
-                    location:
-                      type: string
-                    name:
-                      type: string
-                    policyUrl:
-                      type: string
-                    required:
-                      - name
-                      - location
-                      - description
-                      - policyUrl
-              type: object
-        required: true
-      responses:
-        '200':
-          content:
-            application/json:
-              schema:
-                properties:
-                  dataSource:
-                    $ref: '#/components/schemas/Organisation'
-                  verification:
-                    $ref: '#/components/schemas/Verification'
-          description: Updated the organisation
-      security:
-        - BearerAuth: []
-      tags:
-        - Config
-  /config/data-source/coverimage/:
-    get:
-      deprecated: false
-      description: Get data source cover image
-      operationId: configReadDataSourceCoverImage
-      responses:
-        '200':
           headers: {}
       security:
         - BearerAuth: []
+        - ApiKey: []
+      summary: List all webhooks
       tags:
-        - Config
-    put:
-      deprecated: false
-      description: Update data source cover image
-      operationId: configUpdateDataSourceCoverImage
-      requestBody:
-        content:
-          multipart/form-data:
-            encoding: {}
-            schema:
-              properties:
-                orgimage:
-                  format: binary
-                  type: string
-              required:
-                - orgimage
-              type: object
-        required: false
-      responses:
-        '200':
-          description: OK
-      security:
-        - BearerAuth: []
-      tags:
-        - Config
-  /config/data-source/logoimage/:
+        - Webhook
+  /v2/config/webhooks/event-types:
     get:
       deprecated: false
-      description: Get data source logo image
-      operationId: configReadDataSourceLogoImage
+      description: This endpoint is used to list all webhook event types.
+      operationId: configReadWebhookEventTypes
       responses:
         '200':
-          headers: {}
-      security:
-        - BearerAuth: []
-      tags:
-        - Config
-    put:
-      deprecated: false
-      description: Update data source logo image
-      operationId: configUpdateDataSourceLogoImage
-      requestBody:
-        content:
-          multipart/form-data:
-            encoding: {}
-            schema:
-              properties:
-                orgimage:
-                  format: binary
-                  type: string
-              required:
-                - orgimage
-              type: object
-        required: false
-      responses:
-        '200':
-          description: OK
-      security:
-        - BearerAuth: []
-      tags:
-        - Config
-  /config/admin/:
-    get:
-      summary: Read admin
-      description: This endpoint is used to read admin details
-      operationId: configReadAdmin
-      responses:
-        '200':
-          description: OK
           content:
             application/json:
               schema:
-                type: object
                 properties:
-                  id:
-                    type: number
-                  email:
-                    type: string
-                  name:
-                    type: string
+                  consentManagementWebhookEventTypes:
+                    items:
+                      type: string
+                      title: consentManagementWebhookEventTypes
+                      enum:
+                        - consent.allowed
+                        - consent.auto_expiry
+                        - data.delete.initiated
+                        - data.update.initiated
+                        - data.download.cancelled
+                        - data.update.cancelled
+                        - data.download.initiated
+                        - data.delete.cancelled
+                        - consent.disallowed
+                    type: array
+                  digitalWalletWebhookEventTypes:
+                    items:
+                      type: string
+                      title: digitalWalletWebhookEventTypes
+                      enum:
+                        - digitalwallet.connection.init
+                        - digitalwallet.connection.invitation
+                        - digitalwallet.connection.request
+                        - digitalwallet.connection.response
+                        - digitalwallet.connection.active
+                        - digitalwallet.connection.error
+                        - digitalwallet.connection.inactive
+                        - digitalwallet.connection.delete
+                        - digitalwallet.credential.proposal_sent
+                        - digitalwallet.credential.proposal_received
+                        - digitalwallet.credential.offer_sent
+                        - digitalwallet.credential.offer_received
+                        - digitalwallet.credential.request_sent
+                        - digitalwallet.credential.request_received
+                        - digitalwallet.credential.credential_issued
+                        - digitalwallet.credential.credential_received
+                        - digitalwallet.credential.credential_acked
+                        - digitalwallet.presentation.proposal_sent
+                        - digitalwallet.presentation.proposal_received
+                        - digitalwallet.presentation.request_sent
+                        - digitalwallet.presentation.request_received
+                        - digitalwallet.presentation.presentation_sent
+                        - digitalwallet.presentation.presentation_received
+                        - digitalwallet.presentation.verified
+                        - digitalwallet.presentation.presentation_acked
+                        - openid.credential.offer_sent
+                        - openid.credential.offer_received
+                        - openid.credential.credential_issued
+                        - openid.credential.credential_acked
+                        - openid.credential.credential_pending
+                        - openid.presentation.request_sent
+                        - openid.presentation.request_sent.v3
+                        - openid.presentation.request_received
+                        - openid.presentation.request_received.v3
+                        - openid.presentation.presentation_acked
+                        - openid.presentation.presentation_acked.v3
+                        - openid.presentation.presentation_pending
+                        - openid.presentation.presentation_pending.v3
+                    type: array
+                  dataMarketplaceWebhookEventTypes:
+                    items:
+                      type: string
+                      title: dataMarketplaceWebhookEventTypes
+                      enum:
+                        - datamarketplace.data_disclosure_agreement_record
+                    type: array
                 required:
-                  - email
-                  - name
+                  - consentManagementWebhookEventTypes
+                  - digitalWalletWebhookEventTypes
+                type: object
+          description: OK
+          headers: {}
       security:
         - BearerAuth: []
+        - ApiKey: []
+      summary: Read webhook event types
       tags:
-        - Config
-    put:
-      summary: Update admin
-      description: This endpoint is used to update admin details
-      operationId: configUpdateAdmin
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                name:
-                  type: string
-              type: object
-        required: true
+        - Webhook
+  /v2/config/webhooks/payload/content-types:
+    get:
+      deprecated: false
+      description: This endpoint is used to get webhook content types.
+      operationId: getWebhookPayloadContentTypes.yaml
       responses:
         '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/paths/~1config~1admin~1/get/responses/200/content/application~1json/schema'
-      security:
-        - BearerAuth: []
-      tags:
-        - Config
-  /config/admin/reset-password/:
-    post:
-      summary: Password reset
-      description: This endpoint is used to reset admin
-      operationId: onboardPasswordReset
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                old_password:
-                  type: string
-                new_password1:
-                  type: string
-                new_password2:
-                  type: string
-              type: object
-        required: true
-      responses:
-        '200':
-          description: OK
-      security:
-        - BearerAuth: []
-      tags:
-        - Config
-  /onboard/login/:
-    post:
-      summary: Login
-      description: This endpoint is used to login as data source organisation admin
-      operationId: onboardLogin
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                email:
-                  type: string
-                password:
-                  type: string
-              type: object
-        required: true
-      responses:
-        '200':
-          description: OK
           content:
             application/json:
               schema:
                 properties:
-                  refresh:
-                    type: string
-                  access:
-                    type: string
+                  ContentTypes:
+                    items:
+                      enum:
+                        - application/json
+                        - application/x-www-form-urlencoded
+                      type: string
+                    type: array
+                required:
+                  - ContentTypes
                 type: object
+          description: OK
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List all webhook content types
       tags:
-        - Onboard
-  /onboard/register/:
-    post:
-      summary: Register
-      description: This endpoint is used to register as data source organisation admin
-      operationId: onboardRegister
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                email:
-                  type: string
-                password:
-                  type: string
-                name:
-                  type: string
-              type: object
-        required: true
+        - Webhook
+  '/v3/config/data-space/validate-access-record/{validateAccessRecordId}':
+    get:
+      description: Reads a specific Validate Access Record.
+      parameters:
+        - description: ID of the Validate Access Record
+          in: path
+          name: validateAccessRecordId
+          required: true
+          schema:
+            type: string
       responses:
         '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/paths/~1config~1admin~1/get/responses/200/content/application~1json/schema'
-      tags:
-        - Onboard
-  /onboard/token/refresh/:
-    post:
-      summary: Refresh token
-      description: This endpoint is used to refresh token
-      operationId: onboardRefreshtoken
-      requestBody:
-        content:
-          application/json:
-            schema:
-              properties:
-                refresh:
-                  type: string
-              type: object
-        required: true
-      responses:
-        '200':
-          description: OK
+          description: Validate Access Record read
           content:
             application/json:
               schema:
                 properties:
-                  access:
-                    type: string
-                type: object
+                  validateAccessRecord:
+                    type: object
+                    $ref: '#/paths/~1v3~1config~1data-space~1validate-access-records/get/responses/200/content/application~1json/schema/properties/validateAccessRecords/items'
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
       security:
         - BearerAuth: []
+        - ApiKey: []
+      summary: Read Validate Access Record
       tags:
-        - Onboard
+        - Access Logs
+  /v3/config/data-space/validate-access-records:
+    get:
+      description: |
+        Lists Validate Access Records which show every time an access token was checked at the token verification and authorisation endpoint (validate access).
+      parameters:
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/0'
+        - $ref: '#/paths/~1v2~1config~1webhooks/get/parameters/1'
+      responses:
+        '200':
+          description: Validate Access Records listed
+          content:
+            application/json:
+              schema:
+                properties:
+                  validateAccessRecords:
+                    type: array
+                    items:
+                      description: Record of an access token validation and authorisation attempt
+                      properties:
+                        id:
+                          type: string
+                          description: Unique identifier for the validation record
+                        requestedDataDisclosureAgreementRecordId:
+                          type: string
+                          description: ID of the Data Disclosure Agreement Record connected to the access token
+                        requestedDataClassification:
+                          type: string
+                          description: 'Data classification requested (e.g., "pii", "anonymous") in the access token'
+                          enum:
+                            - pii
+                            - anonymous
+                        requestedExternalIdType:
+                          type: string
+                          description: Type of external ID requested (only for PII classification)
+                        requestedExternalId:
+                          type: string
+                          description: External ID value requested (only for PII classification)
+                        connectedAgreementIds:
+                          type: object
+                          description: |
+                            Holds the specific revision ID for the record connected to the access token, as well as the connected Data Disclosure Agreement Template Revision ID and the underlying Data Agreement Revision ID.
+                          properties:
+                            dataDisclosureAgreementRecordRevisionId:
+                              type: string
+                              description: ID of the specific Data Disclosure Agreement Record Revision the token was released for
+                            dataDisclosureAgreementTemplateRevisionId:
+                              type: string
+                              description: ID of the specific Data Disclosure Agreement Template Revision that the record was signed for
+                            dataAgreementRevisionId:
+                              type: string
+                              description: ID of the underlying Data Agreement Revision that defines the data to be shared between the Data Source and Data Using Service
+                        request:
+                          type: object
+                          description: The original validation request
+                          properties:
+                            accessToken:
+                              type: string
+                              description: The JWT Access Token that was validated
+                            httpMethod:
+                              type: string
+                              description: The HTTP method that was requested
+                            path:
+                              type: string
+                              description: The API path that was requested
+                          required:
+                            - accessToken
+                            - httpMethod
+                            - path
+                        response:
+                          oneOf:
+                            - type: object
+                              description: Successful access token validation response
+                              properties:
+                                verified:
+                                  type: boolean
+                                  description: Whether the access token was verified and authorized
+                                  enum:
+                                    - true
+                                  example: true
+                                dataClassification:
+                                  type: string
+                                  description: Data classification of the validated access
+                                  enum:
+                                    - pii
+                                    - anonymous
+                                individuals:
+                                  type: array
+                                  description: List of individuals associated with this access
+                                  items:
+                                    allOf:
+                                      - type: object
+                                        title: Individual
+                                        description: 'Shallowly models an Individual which may reference some instance in an external system (registration system, functional ID, foundational ID etc). An Individual instance of this model is not to be mistaken with a unique natural individual. It is up to the system owner to decide if this record permits mapping to a natural individual and/or if a single Individual row can map to several consent agreements.'
+                                        x-not-in-database: false
+                                        properties:
+                                          id:
+                                            type: string
+                                            format: ''
+                                            example: ''
+                                            description: The unique ID of an Individual row.
+                                          externalId:
+                                            type: string
+                                            format: ''
+                                            example: ''
+                                            description: 'Reference to another foundational/functional ID, which is likely PII'
+                                          externalIdType:
+                                            type: string
+                                            format: ''
+                                            example: ''
+                                            description: External ID type specifier. A string. For instance "email" or "foundational ID". Can be used in later queries.
+                                          identityProviderId:
+                                            type: string
+                                            format: ''
+                                            example: ''
+                                            description: 'This could be an FK, but for now we do not have a mapping of identity providers. IDBB may have more requirements.'
+                                      - type: object
+                                        title: IndividualExtras
+                                        required:
+                                          - name
+                                          - email
+                                          - phone
+                                        properties:
+                                          name:
+                                            type: string
+                                            description: Name of the individual
+                                          iamId:
+                                            type: string
+                                            description: Create a user in keycloak and save the `id` as `iamId`
+                                          email:
+                                            type: string
+                                            description: Email ID
+                                          phone:
+                                            type: string
+                                            description: Phone
+                                          pushNotificationToken:
+                                            type: string
+                                            description: Device token of the individual
+                                          deviceType:
+                                            type: string
+                                            description: Device type(OS) of the individual
+                                            enum:
+                                              - android
+                                              - ios
+                                          mapperId:
+                                            type: string
+                                            description: Defines the mapper id of the individual
+                                decodedClaims:
+                                  type: object
+                                  description: The decoded JWT claims. The fields listed below will be present; additional claims are allowed.
+                                  properties:
+                                    aud:
+                                      type: string
+                                      description: The audience of the JWT
+                                    dataClassification:
+                                      type: string
+                                      enum:
+                                        - anonymous
+                                        - pii
+                                      description: The data classification of the requested resource
+                                    dataDisclosureAgreementRecordId:
+                                      type: string
+                                      description: The ID of the Data Disclosure Agreement Record associated with this token
+                                    exp:
+                                      type: integer
+                                      description: The expiration time of the JWT
+                                    iat:
+                                      type: integer
+                                      description: The issued at time of the JWT
+                                    iss:
+                                      type: string
+                                      description: The issuer of the JWT
+                                    jti:
+                                      type: string
+                                      description: The unique identifier for the JWT
+                                  required:
+                                    - aud
+                                    - dataClassification
+                                    - dataDisclosureAgreementRecordId
+                                    - exp
+                                    - iat
+                                    - iss
+                                    - jti
+                                  additionalProperties: true
+                              required:
+                                - verified
+                                - dataClassification
+                                - individuals
+                                - decodedClaims
+                            - type: object
+                              description: Failed access token validation response
+                              properties:
+                                verified:
+                                  type: boolean
+                                  description: Whether the access token was verified and authorized
+                                  enum:
+                                    - false
+                                  example: false
+                                reason:
+                                  type: string
+                                  description: The reason why validation failed
+                              required:
+                                - verified
+                                - reason
+                          description: The validation response (success or failure)
+                        timestamp:
+                          type: integer
+                          format: int64
+                          description: Unix timestamp when the validation occurred
+                      required:
+                        - id
+                        - requestedDataDisclosureAgreementRecordId
+                        - requestedDataClassification
+                        - connectedAgreementIds
+                        - request
+                        - response
+                        - timestamp
+                      type: object
+                  pagination:
+                    type: object
+                    $ref: '#/paths/~1v2~1config~1webhooks/get/responses/200/content/application~1json/schema/properties/pagination'
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List Validate Access Records
+      tags:
+        - Access Logs
 servers:
-  - description: Development server
-    url: 'http://localhost:8000'
-  - description: Live server
-    url: 'https://api.nxd.foundation'
+  - description: Demo server
+    url: 'https://demo-api.igrant.io'
+  - description: Staging server
+    url: 'https://staging-api.igrant.io'
 tags:
-  - description: This consists of endpoints available to organisation admins to manage data disclosure agreements and connections.
-    name: Config
+  - description: This consists of endpoints available for data disclosure agreements.
+    name: Base Configurations
     x-tag-expanded: true
-  - description: 'This consists of endpoints towards data using services to list and connect to data sources, view data disclosure agreements and APIs.'
-    name: Service
+  - description: This consists of endpoints available for data disclosure agreements.
+    name: Data Disclosure Agreements
     x-tag-expanded: true
-  - description: This consists of endpoints towards authentication and authorisation.
-    name: Onboard
+  - description: This consists of endpoints available for data agreements.
+    name: Signed Agreements
     x-tag-expanded: true
-  - description: This consists of endpoints towards webhook.
+  - description: This consists of endpoints available for authorisation server.
+    name: Authorisation Server
+    x-tag-expanded: true
+  - description: This consists of endpoints available for access logs.
+    name: Access Logs
+    x-tag-expanded: true
+  - description: This consists of endpoints for configuring webhooks.
     name: Webhook
     x-tag-expanded: true
+info:
+  contact:
+    email: support@igrant.io
+    name: iGrant.io
+    url: 'https://igrant.io'
+  description: 'iGrant.io (™) is a Swedish data exchange and verification service provider. It uses self-sovereign identity, verifiable credentials, a digital wallet and solid pod technologies, enabling a new level of interoperability and automating compliance with data regulations in a fully auditable manner.'
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0'
+  title: iGrant.io API documentation
+  version: 2024.3.1
