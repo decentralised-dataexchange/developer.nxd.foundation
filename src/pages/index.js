@@ -17,7 +17,7 @@ const CardList = [
   },
   {
     title: "Domain-Specific Services APIs",
-    link: "/domain",
+    link: "https://dataspace.nxd.foundation",
     description: (<>
       Get started with dHDSI domain specific service APIs
     </>),
