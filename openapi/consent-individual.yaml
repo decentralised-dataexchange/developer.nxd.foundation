@@ -1,0 +1,1734 @@
+components:
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: Authorization
+    BearerAuth:
+      bearerFormat: JWT
+      description: Access token passed with Bearer prefix in Authorization header
+      scheme: bearer
+      type: http
+openapi: 3.1.0
+paths:
+  /service/organisation/coverimage:
+    get:
+      deprecated: false
+      description: This endpoint is used to retrieve the existing cover image for the organisation. The cover image is used to display in the privacy dashboard.
+      operationId: serviceReadOrganisationCoverImage
+      responses:
+        '200':
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read organisation cover image
+      tags:
+        - Organisation
+  /service/organisation/logoimage:
+    get:
+      deprecated: false
+      description: Read organisation logo image This endpoint is used to retrieve the existing logo image for the organisation. The logo image is used to display in the privacy dashboard as well in data sharing UIs.
+      operationId: serviceReadOrganisationLogoImage
+      responses:
+        '200':
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read organisation logo image
+      tags:
+        - Organisation
+  /service/organisation:
+    get:
+      deprecated: false
+      description: 'This endpoint is used to read the organisation information as configured by the organisation in the consent building block. This is used, for e.g., in the privacy dashboard.'
+      operationId: serviceReadOrganisation
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  organisation:
+                    items:
+                      allOf:
+                        - required:
+                            - name
+                            - location
+                            - description
+                            - policyUrl
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              description: Organisation ID
+                            name:
+                              type: string
+                              description: Name of the organisation
+                            description:
+                              type: string
+                              description: Overview for the organisation
+                            sector:
+                              type: string
+                              description: Sector
+                            location:
+                              type: string
+                              description: Location
+                            policyUrl:
+                              type: string
+                              description: Policy Url
+                        - type: object
+                          title: OrganisationExtras
+                          properties:
+                            coverImageId:
+                              type: string
+                              description: Cover image ID
+                            coverImageUrl:
+                              type: string
+                              description: Cover image url
+                            logoImageId:
+                              type: string
+                              description: Logo image ID
+                            logoImageUrl:
+                              type: string
+                              description: Logo image url
+                required:
+                  - organisation
+                type: object
+          description: OK
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read organisation
+      tags:
+        - Organisation
+  '/service/image/{imageId}':
+    get:
+      deprecated: false
+      description: This endpoint is used to read an organisation image as defined in the consent building block.
+      operationId: serviceReadOrganisationImage
+      responses:
+        '200':
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read organisation image
+      tags:
+        - Organisation
+  /service/idp/open-id:
+    get:
+      description: This endpoint is used to read the IdP details configured by the organisation in the consent building block.
+      operationId: serviceReadIdp
+      parameters:
+        - description: Unique ID of an object
+          in: path
+          name: idpId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  idp:
+                    type: object
+                    x-not-in-database: false
+                    required:
+                      - id
+                      - logoutUrl
+                      - clientId
+                    properties:
+                      id:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: IDP ID
+                      logoutUrl:
+                        type: string
+                        description: Logout Url
+                      clientId:
+                        type: string
+                        description: Client ID
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read IdP details
+      tags:
+        - Identity Provider
+  /service/data-agreements:
+    get:
+      description: This endpoint is used to list all active data agreements by the organisation in consent building block. The results are returned with pagination.
+      operationId: serviceAgreementList
+      parameters:
+        - description: An object with ID revisionId
+          in: query
+          name: revisionId
+          required: false
+          schema:
+            type: string
+        - $ref: '#/paths/~1service~1individuals/get/parameters/0'
+        - $ref: '#/paths/~1service~1individuals/get/parameters/1'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  dataAgreements:
+                    items:
+                      type: object
+                      title: DataAgreement
+                      description: |
+                        An agreement contains the specification of a single purpose that can be consented to.  A DataAgreement is universal and can be consented to by *many* individuals through a DataAgreementRecord.
+                      x-not-in-database: false
+                      required:
+                        - purpose
+                        - purposeDescription
+                        - controllerUrl
+                        - controllerName
+                        - policy
+                        - lawfulBasis
+                        - methodOfUse
+                        - active
+                        - forgettable
+                        - lifecycle
+                      properties:
+                        id:
+                          type: string
+                          format: ''
+                          example: ''
+                          description: ''
+                        version:
+                          type: string
+                          format: ''
+                          example: ''
+                          description: The version of this specification to which a receipt conforms
+                        controllerId:
+                          type: string
+                          description: ID of the controller
+                        controllerUrl:
+                          type: string
+                          description: URL of data controller (may be omitted if no data involved)
+                        controllerName:
+                          type: string
+                          description: Name of data controller (may be omitted if no data involved)
+                        policy:
+                          $ref: '#/paths/~1service~1policy~1%7BpolicyId%7D/get/responses/200/content/application~1json/schema/properties/policy'
+                          description: |
+                            Policy under which this DataAgreement shall be governed.  When creating a data agreement, the latest policy can be used to fill the default value,  and organisation admin can decide to change it in the data agreement level.
+                        dataAttributes:
+                          type: array
+                          items:
+                            allOf:
+                              - $ref: '#/paths/~1service~1data-agreement~1%7BdataAgreementId%7D~1data-attributes/get/responses/200/content/application~1json/schema/properties/dataAttributes/items'
+                              - type: object
+                                properties:
+                                  restrictions:
+                                    type: array
+                                    items:
+                                      type: object
+                                      description: List of restrictions
+                                      x-not-in-database: false
+                                      properties:
+                                        credDefId:
+                                          type: string
+                                          format: ''
+                                          example: 'H3DW1MUWZyBkP5LG4rTYRH:3:CL:80:default'
+                                          description: Credential definition ID
+                                        schemaId:
+                                          type: string
+                                          format: ''
+                                          example: 'H3DW1MUWZyBkP5LG4rTYRH:2:Certificate Of Registration:6.0.0'
+                                          description: Schema ID
+                          description: |
+                            Data attributes contain specifications of exactly what is collected.
+                        purpose:
+                          type: string
+                          description: Name of purpose
+                        purposeDescription:
+                          type: string
+                          description: Description of purpose
+                        lawfulBasis:
+                          type: string
+                          format: ''
+                          example: ''
+                          description: Lawful basis of the agreement - consent / legal_obligation / contract / vital_interest / public_task / legitimate_interest
+                          enum:
+                            - consent
+                            - legal_obligation
+                            - contract
+                            - vital_interest
+                            - public_task
+                            - legitimate_interest
+                        methodOfUse:
+                          type: string
+                          format: ''
+                          example: ''
+                          description: Method of use - null / data_source / data_using_service
+                          enum:
+                            - null
+                            - data_source
+                            - data_using_service
+                        dpiaDate:
+                          type: string
+                          format: ''
+                          example: ''
+                          description: The date on which the DPIA report is generated after a DPIA
+                        dpiaSummaryUrl:
+                          type: string
+                          description: 'The URl providing the DPIA result reports, summary etc that can be verified by any interested parties'
+                        signature:
+                          $ref: '#/paths/~1service~1individual~1record~1consent-record/post/responses/200/content/application~1json/schema/properties/signature'
+                          x-fk-model: Signature
+                          description: |
+                            Signature of authorising party of DataAgreement (Signatures may be chained in the case of multiple signatures)
+                        active:
+                          type: boolean
+                          format: ''
+                          example: ''
+                          description: DataAgreement is active and new DataAgreementRecords can be created
+                        forgettable:
+                          type: boolean
+                          format: ''
+                          example: ''
+                          description: 'DataAgreementRecord may be deleted when consent is withdrawn, as its existence is not necessary for auditability.'
+                        compatibleWithVersionId:
+                          type: string
+                          format: ''
+                          x-fk-model: DataAgreement
+                          description: |
+                            WIP: This field indicates that Data Agreement Records may be transferred from this  compatible previous revision of the same DataAgreement
+                        lifecycle:
+                          type: string
+                          description: |
+                            WIP: Current Lifecycle state of the DataAgreement.  Lifecycle states are used to manage internal workflows and  should not be assigned semantic meanings for active Data Agreement Records.
+                          enum:
+                            - draft
+                            - complete
+                        dataUsingServices:
+                          type: array
+                          items:
+                            - type: object
+                              description: Data using service organisation for the data agreement
+                              x-not-in-database: false
+                              required:
+                                - name
+                                - sector
+                                - location
+                              properties:
+                                name:
+                                  type: string
+                                  format: ''
+                                  example: ''
+                                  description: Name of the data using service organisation
+                                sector:
+                                  type: string
+                                  format: ''
+                                  example: ''
+                                  description: Defines sector of the organisation
+                                location:
+                                  type: string
+                                  format: ''
+                                  example: ''
+                                  description: Defines location of the organisation
+                                privacyDashboardUrl:
+                                  type: string
+                                  format: ''
+                                  example: ''
+                                  description: Defines privacy dashboard url of the organisation
+                        openApiSpecification:
+                          type: object
+                          description: 'This field contains OpenAPI specification document describing the API''s endpoints, models, and operations.'
+                        dataSources:
+                          type: array
+                          items:
+                            - type: object
+                              description: Data source organisation for the data agreement
+                              x-not-in-database: false
+                              required:
+                                - name
+                                - sector
+                                - location
+                              properties:
+                                name:
+                                  type: string
+                                  format: ''
+                                  example: ''
+                                  description: Name of the data source organisation
+                                sector:
+                                  type: string
+                                  format: ''
+                                  example: ''
+                                  description: Defines sector of the organisation
+                                location:
+                                  type: string
+                                  format: ''
+                                  example: ''
+                                  description: Defines location of the organisation
+                                privacyDashboardUrl:
+                                  type: string
+                                  format: ''
+                                  example: ''
+                                  description: Defines privacy dashboard url of the organisation
+                    type: array
+                  pagination:
+                    $ref: '#/paths/~1service~1individuals/get/responses/200/content/application~1json/schema/properties/pagination'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List all active data agreements
+      tags:
+        - Data Agreement
+  '/service/data-agreement/{dataAgreementId}':
+    get:
+      description: This endpoint is used to read the data agreement defined by the organisation in consent building block.
+      operationId: serviceAgreementRead
+      parameters:
+        - description: Unique ID of an object
+          in: path
+          name: dataAgreementId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                items:
+                  properties:
+                    dataAgreement:
+                      $ref: '#/paths/~1service~1data-agreements/get/responses/200/content/application~1json/schema/properties/dataAgreements/items'
+                    revision:
+                      $ref: '#/paths/~1service~1policy~1%7BpolicyId%7D/get/responses/200/content/application~1json/schema/properties/revision'
+                  type: object
+                type: array
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read data agreement
+      tags:
+        - Data Agreement
+  '/service/data-agreement/{dataAgreementId}/data-attributes':
+    get:
+      description: This endpoint is used to read the data attributes defined in a particular data agreement revision.
+      operationId: serviceAgreementDataRead
+      parameters:
+        - description: Unique ID of an object
+          in: path
+          name: dataAgreementId
+          required: true
+          schema:
+            type: string
+        - $ref: '#/paths/~1service~1individuals/get/parameters/0'
+        - $ref: '#/paths/~1service~1individuals/get/parameters/1'
+        - $ref: '#/paths/~1service~1data-agreements/get/parameters/0'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  dataAttributes:
+                    items:
+                      type: object
+                      description: Data attributes contain specifications of exactly what is collected.
+                      x-not-in-database: false
+                      required:
+                        - name
+                        - description
+                      properties:
+                        id:
+                          type: string
+                          format: ''
+                          example: ''
+                          description: Data attribute ID
+                        name:
+                          type: string
+                          format: ''
+                          example: ''
+                          description: 'Name of the attribute, for instance "name" or "age"'
+                        description:
+                          type: string
+                          format: ''
+                          example: ''
+                          description: Description of the attribute
+                        sensitivity:
+                          type: boolean
+                          format: ''
+                          example: ''
+                          description: Sensitivity of data attribute
+                        category:
+                          type: string
+                          format: ''
+                          example: ''
+                          description: Category of data attribute
+                        scope:
+                          type: string
+                          format: ''
+                          example: ''
+                          description: Scope required for data attribute
+                    type: array
+                  pagination:
+                    $ref: '#/paths/~1service~1individuals/get/responses/200/content/application~1json/schema/properties/pagination'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List data attributes
+      tags:
+        - Data Agreement
+  '/service/policy/{policyId}':
+    get:
+      description: This endpoint is used to read latest version of data policy defined in the organisation in the consent building block.
+      operationId: servicePolicyRead
+      parameters:
+        - description: Unique ID of an object
+          in: path
+          name: policyId
+          required: true
+          schema:
+            type: string
+        - $ref: '#/paths/~1service~1data-agreements/get/parameters/0'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  policy:
+                    type: object
+                    title: Policy
+                    description: A policy governs data and DataAgreement in the realm of an organisation that is refered to as "data controller" (GDPR) and owner of referencing Agreements.
+                    x-not-in-database: false
+                    required:
+                      - name
+                      - url
+                    properties:
+                      id:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: ''
+                      name:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Name of the policy
+                      version:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Version of the policy (it can follow the semver format)
+                      url:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'Permanent URL at which this very version of the Policy can be read, should not be allowed to change over time'
+                      jurisdiction:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Jurisdiction
+                      industrySector:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Industry sector
+                      dataRetentionPeriodDays:
+                        type: integer
+                        format: ''
+                        example: ''
+                        description: Data retention period in days
+                      geographicRestriction:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Geographic restriction
+                      storageLocation:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Storage location
+                      thirdPartyDataSharing:
+                        type: boolean
+                        format: ''
+                        example: true
+                        description: Third party data sharing
+                  revision:
+                    type: object
+                    title: Revision
+                    description: |-
+                      A *generic* revision model captures the serialised contents of any schema's single row. This is then subject to 1) cryptographic signature and 2) auditing.
+
+                      Aside from the "successor" column, a revision should be considered locked.
+                    x-not-in-database: false
+                    required:
+                      - id
+                      - schemaName
+                      - objectId
+                      - objectData
+                      - serizalizedSnapshot
+                      - serializedHash
+                      - timestamp
+                    properties:
+                      id:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Revision ID
+                      schemaName:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Previously "schema" but for technical reasons should be called "schemaName"
+                        enum:
+                          - dataAgreement
+                          - policy
+                          - dataAgreementRecord
+                      objectId:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: The PK of the object that was serialised
+                      objectData:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: The object that is serialised
+                      signedWithoutObjectId:
+                        type: boolean
+                        format: ''
+                        example: ''
+                        description: Indicates that objectId was left blank in serizalizedSnapshot when calculating serializedHash. objectId may subsequently be filled in.
+                      serizalizedSnapshot:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: |
+                          Revisioned data (sed as JSON) as a dict. Apply JSON Canonicalization Scheme as per IETF RFC 8785.  It contains all the fields of the schema except sucessorId, serializedHash, serializedSnapshot.
+                      serializedHash:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Hash of serizalizedSnapshot (SHA-1)
+                      timestamp:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Timestamp of when revisioning happened. It should be ISO 8601 UTC date time
+                      authorizedByIndividualId:
+                        description: Individual ID
+                        type: string
+                      authorizedByOtherId:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Reference to an admin user that has created this revision
+                      successorId:
+                        x-fk-model: Revision
+                        type: string
+                        description: 'If this revision is no longer the latest revision, refer to its successor'
+                      predecessorHash:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'Tamper-resistent artifact from previous record, copied from serializedHash'
+                      predecessorSignature:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Tamper-resistent artifact from previous record (we don't know if the previous record was signed or not)
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read data policy
+      tags:
+        - Data Policy
+      x-specification-crudl-model: Policy
+      x-specification-pii-or-sensitive: 'False'
+      x-specification-scenario: ''
+      x-specification-usecase: UC-C-PIC-A-003
+  /service/verification/data-agreements:
+    get:
+      description: This endpoint is used to list all data agreements available for an organisation defined in the consent building block. The results are paginated.
+      operationId: serviceVerificationAgreementList
+      parameters:
+        - $ref: '#/paths/~1service~1individuals/get/parameters/0'
+        - $ref: '#/paths/~1service~1individuals/get/parameters/1'
+        - $ref: '#/paths/~1service~1data-agreements/get/parameters/0'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  dataAgreements:
+                    items:
+                      $ref: '#/paths/~1service~1data-agreements/get/responses/200/content/application~1json/schema/properties/dataAgreements/items'
+                    type: array
+                  pagination:
+                    $ref: '#/paths/~1service~1individuals/get/responses/200/content/application~1json/schema/properties/pagination'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List all data agreements
+      tags:
+        - Verification
+  '/service/verification/consent-record/{consentRecordId}':
+    get:
+      description: This endpoint is used to read the latest consent record for an organisation in the consent building block.
+      operationId: serviceVerificationAgreementConsentRecordRead
+      parameters:
+        - description: Unique ID of an object
+          in: path
+          name: consentRecordId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  consentRecord:
+                    $ref: '#/paths/~1service~1individual~1record~1consent-record/post/responses/200/content/application~1json/schema/properties/consentRecord'
+                  revision:
+                    $ref: '#/paths/~1service~1policy~1%7BpolicyId%7D/get/responses/200/content/application~1json/schema/properties/revision'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read latest consent record
+      tags:
+        - Verification
+      x-specification-crudl-model: ''
+      x-specification-pii-or-sensitive: 'False'
+      x-specification-scenario: '1.2'
+      x-specification-usecase: UC-C-PIC-A-003
+  /service/verification/consent-records:
+    get:
+      description: This endpoint is used to list all consent records available for an organisation defined in the consent building block. The results are paginated.
+      operationId: serviceVerificationConsentRecordList
+      parameters:
+        - $ref: '#/paths/~1service~1individuals/get/parameters/0'
+        - $ref: '#/paths/~1service~1individuals/get/parameters/1'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  consentRecords:
+                    items:
+                      $ref: '#/paths/~1service~1individual~1record~1consent-record/post/responses/200/content/application~1json/schema/properties/consentRecord'
+                    type: array
+                  pagination:
+                    $ref: '#/paths/~1service~1individuals/get/responses/200/content/application~1json/schema/properties/pagination'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List all consent records
+      tags:
+        - Verification
+      x-specification-crudl-model: ''
+      x-specification-pii-or-sensitive: 'True'
+      x-specification-scenario: '3.1, 1.2'
+      x-specification-usecase: UC-C-PIC-A-003
+  '/service/individual/record/data-agreement/{dataAgreementId}':
+    post:
+      description: This endpoint is used to create a consent record when an individial records their consent (e.g. in the privacy dashboard) against a data agreement.
+      operationId: serviceCreateIndividualConsentRecord
+      parameters:
+        - $ref: '#/paths/~1service~1data-agreement~1%7BdataAgreementId%7D~1data-attributes/get/parameters/0'
+        - $ref: '#/paths/~1service~1data-agreements/get/parameters/0'
+        - $ref: '#/paths/~1service~1individual~1record/delete/parameters/0'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  consentRecord:
+                    $ref: '#/paths/~1service~1individual~1record~1consent-record/post/responses/200/content/application~1json/schema/properties/consentRecord'
+                  revision:
+                    $ref: '#/paths/~1service~1policy~1%7BpolicyId%7D/get/responses/200/content/application~1json/schema/properties/revision'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Create consent record
+      tags:
+        - Consent Record
+    get:
+      description: This endpoint is used to read a consent record for an individial for a chosen data agreement. There should be one unambiguous consent record for an individual.
+      operationId: serviceReadIndividualRecordRead
+      parameters:
+        - $ref: '#/paths/~1service~1data-agreement~1%7BdataAgreementId%7D~1data-attributes/get/parameters/0'
+        - $ref: '#/paths/~1service~1individual~1record/delete/parameters/0'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  consentRecord:
+                    $ref: '#/paths/~1service~1individual~1record~1consent-record/post/responses/200/content/application~1json/schema/properties/consentRecord'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read consent record
+      tags:
+        - Consent Record
+  /service/individual/record/consent-record/draft:
+    post:
+      description: This endpoint is used to create a draft (unsaved) consent record and signature object (without a PKI) for a data agreement.
+      operationId: serviceCreateIndividualConsentRecordDraft
+      parameters:
+        - description: An object with ID individualId
+          in: query
+          name: individualId
+          required: true
+          schema:
+            type: string
+        - description: An object with ID dataAgreementId
+          in: query
+          name: dataAgreementId
+          required: true
+          schema:
+            type: string
+        - description: An object with ID revisionId
+          in: query
+          name: revisionId
+          required: false
+          schema:
+            type: string
+        - $ref: '#/paths/~1service~1individual~1record/delete/parameters/0'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  consentRecord:
+                    $ref: '#/paths/~1service~1individual~1record~1consent-record/post/responses/200/content/application~1json/schema/properties/consentRecord'
+                  signature:
+                    $ref: '#/paths/~1service~1individual~1record~1consent-record/post/responses/200/content/application~1json/schema/properties/signature'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Create draft consent record
+      tags:
+        - Consent Record
+  /service/individual/record/consent-record:
+    post:
+      description: This endpoint is used to create a consent record and signature object. This returns the same objects with the PK defined.
+      operationId: serviceCreateIndividualConsentRecordAndSignature
+      parameters:
+        - $ref: '#/paths/~1service~1individual~1record/delete/parameters/0'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                consentRecord:
+                  $ref: '#/paths/~1service~1individual~1record~1consent-record/post/responses/200/content/application~1json/schema/properties/consentRecord'
+                  description: An object of type DataAgreementRecord
+                signature:
+                  $ref: '#/paths/~1service~1individual~1record~1consent-record/post/responses/200/content/application~1json/schema/properties/signature'
+                  description: An object of type Signature
+              required:
+                - consentRecord
+                - signature
+              type: object
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  consentRecord:
+                    type: object
+                    title: ConsentRecord
+                    description: 'A consent record expresses consent (as defined in this building block''s specification) to a single DataAgreement. There must be a UNIQUE constraint on (data agreement revision, individual)'
+                    x-not-in-database: false
+                    required:
+                      - id
+                      - agreementRevisionHash
+                      - state
+                    properties:
+                      id:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'Objects may be passed back by some API endpoints without an ID (PK), denoting that they are a "draft", i.e. a ConsentRecord that is not yet stored in the database and only exist in transit. Draft ConsentRecords do not have a Revision, but if paired up with a Signature, a valid Revision should be generated.'
+                      dataAgreementId:
+                        type: string
+                        x-fk-model: DataAgreement
+                        description: The DataAgreement to which consent has been given
+                      dataAgreementRevisionId:
+                        type: string
+                        x-fk-model: Revision
+                        description: The Revision of the data agreement which consent has been given to
+                      dataAgreementRevisionHash:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Copy of the revision hash. The hash is the included in the signature and ensures against tampering with the original agreement.
+                      individualId:
+                        type: string
+                        x-fk-model: Individual
+                        description: The Individual who has signed this consent record
+                      optIn:
+                        type: boolean
+                        format: ''
+                        example: ''
+                        description: 'True: The individual has positively opted in. False: The individual has explicitly said no (or withdrawn a previous consent).'
+                      state:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'The state field is used to record state changes after-the-fact. It is maintained by the Consent BB itself. Valid states: unsigned/pending more signatures/signed'
+                        enum:
+                          - unsigned
+                          - signed
+                      signatureId:
+                        type: string
+                        x-fk-model: Signature
+                        description: 'A signature that hashes all the values of the consent record and has signed it with the key of the Invidiual, making it verifiable and tamper-proof. TBD: Relation to a Signature schema?'
+                      sectorPreferences:
+                        type: array
+                        items:
+                          type: object
+                          description: specifies the preferred sector details
+                          x-not-in-database: false
+                          required:
+                            - sector
+                            - location
+                          properties:
+                            sector:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: Name of the sector
+                            optIn:
+                              type: boolean
+                              description: Defines sector is opted in or not
+                            isLastUpdated:
+                              type: boolean
+                              description: Defines consent record for this sector is last updated
+                  revision:
+                    $ref: '#/paths/~1service~1policy~1%7BpolicyId%7D/get/responses/200/content/application~1json/schema/properties/revision'
+                  signature:
+                    type: object
+                    title: Signature
+                    description: |
+                      A generic signature contains a cryptographic hash of some value,  together with a signature created by some private key in another system.  Required signing methods: Revision object or another Signature object.
+                    x-not-in-database: false
+                    required:
+                      - payload
+                      - signature
+                      - verificationMethod
+                      - verificationPayload
+                      - verificationPayloadHash
+                      - verificationSignedBy
+                      - timestamp
+                    properties:
+                      id:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'Objects may be passed back by some API endpoints without an id (PK), denoting that they are a "draft", i.e. a Signature that is not yet stored in the database and only exists in transit.'
+                      payload:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'The final payload that is signed, constructed as a JSON serialisation of fields {verificationPayload: ..., verificationPayloadHash: ..., verificationMethod: ..., verificationArtifact: ..., verificationSignedBy: ..., verificationJwsHeader, timestamp: ..., signedWithoutObjectReference: ..., objectType: ..., objectReference: ...}. Serialised as a JSON dict. If the signature is generated before anything is stored in the database (and has a PK), then the objectReference should be omitted from the payload but filled in afterwards.'
+                      signature:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'Signature of payload hash, the format of the signature should be specified by either verificationMethod or verificationJwsHeader'
+                      verificationMethod:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'A well-known string denoting which method is used. Valid values: TBD. This might be expanded with supported verification methods. There may be a minimal set of supported methods necessary.'
+                      verificationPayload:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: Internally generated serialised version of the data referenced by objectType and objectReference - by extracting and serialising their data as JSON
+                      verificationPayloadHash:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'Internally generated cryptographic hash of the value to be signed, i.e. the value of verificationPayload'
+                      verificationArtifact:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'A verification artifact in the form of a scanned object, image, signature etc'
+                      verificationSignedBy:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'Because an identifier''s information may change over time, there is a need to store that information at the time of signing. In the case of a cryptographic signature, this field should contain some identifier for looking up or verifying the public key of the signing party. In the case of a non-cryptographic signature, this field could contain a natural individual''s names, personal number, email addresses - store a snapshot that binds to the signature at the time of signing. In the case of a cryptographic signature, this may be the fingerprint of the individual''s public key or in some cases, a token from the user''s ID session.'
+                      verificationSignedAs:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'DRAFT FIELD: Specifies the relationship between the authorising signature and the invidual which the payload concerns. This is relevant for Consent Records. Possible values: "individual" / "delegate".'
+                      verificationJwsHeader:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'Alternative to the verificationMethod, verificationHash and verificationSignature, give a JWS serialised object (RFC7515)'
+                      timestamp:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'Timestamp of signature, currently this field isn''t part of the payload so it''s not tamper-proof'
+                      signedWithoutObjectReference:
+                        type: boolean
+                        format: ''
+                        example: ''
+                        description: Indicates that objectReference was left blank in the serialised version that was signed
+                      objectType:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'Name of the schema model that objectReference points to. Values: "signature" or "revision"'
+                        enum:
+                          - revision
+                          - signature
+                      objectReference:
+                        type: string
+                        format: ''
+                        example: ''
+                        description: 'A symmetric relation / back reference to the objectType that was signed. We are currently just modelling signing another signature (a chain) or signing a Revision (which can be a revision of a consent record, an agreement, policy etc).'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Create consent record and signature
+      tags:
+        - Consent Record
+      x-specification-crudl-model: ''
+      x-specification-pii-or-sensitive: 'True'
+      x-specification-scenario: '1.2'
+      x-specification-usecase: UC-C-PIC-I-002
+    get:
+      description: This endpoint is used to list all consent records for an individual belonging to an organiation defined in the consent building block.
+      operationId: serviceListIndividualConsentRecordList
+      parameters:
+        - $ref: '#/paths/~1service~1individuals/get/parameters/0'
+        - $ref: '#/paths/~1service~1individuals/get/parameters/1'
+        - $ref: '#/paths/~1service~1individual~1record/delete/parameters/0'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  consentRecords:
+                    items:
+                      $ref: '#/paths/~1service~1individual~1record~1consent-record/post/responses/200/content/application~1json/schema/properties/consentRecord'
+                    type: array
+                  pagination:
+                    $ref: '#/paths/~1service~1individuals/get/responses/200/content/application~1json/schema/properties/pagination'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List all consent records for individual
+      tags:
+        - Consent Record
+      x-specification-crudl-model: ''
+      x-specification-pii-or-sensitive: 'True'
+      x-specification-scenario: ''
+      x-specification-usecase: UC-C-PIC-I-001
+  /service/individual/record:
+    delete:
+      description: 'This endpoint is used to delete all consent records for an individual belonging to an organiation defined in the consent building block. This could be used, for example to exercise digital rights (Right to be forgotten) and deletes all consent records that shall not be retained and have a "forgettable" data agreement. This may also delete an unsigned consent record, for instance in cases where the user exits the signing process.'
+      operationId: serviceDeleteAllRecords
+      parameters:
+        - in: header
+          name: X-ConsentBB-IndividualId
+          required: true
+          schema:
+            type: string
+          description: Individual ID
+      responses:
+        '200':
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Delete all consent records
+      tags:
+        - Consent Record
+  '/service/individual/record/consent-record/{consentRecordId}':
+    put:
+      description: This endpoint is used to update an existing consent record for a given data agreement for an organiation defined in the consent building block. Note that updating a signed consent record invalidates its earlier signature.
+      operationId: serviceUpdateIndividualConsentRecord
+      parameters:
+        - $ref: '#/paths/~1service~1verification~1consent-record~1%7BconsentRecordId%7D/get/parameters/0'
+        - description: An object with ID individualId
+          in: query
+          name: individualId
+          required: true
+          schema:
+            type: string
+        - description: An object with ID dataAgreementId
+          in: query
+          name: dataAgreementId
+          required: true
+          schema:
+            type: string
+        - description: An object with ID revisionId
+          in: query
+          name: revisionId
+          required: false
+          schema:
+            type: string
+        - $ref: '#/paths/~1service~1individual~1record/delete/parameters/0'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - type: object
+                  properties:
+                    optIn:
+                      description: 'True: The individual has positively opted in. False: The individual has explicitly said no (or withdrawn a previous consent).'
+                      example: ''
+                      format: ''
+                      type: boolean
+                - type: object
+                  properties:
+                    sectorPreference:
+                      type: object
+                      properties:
+                        sector:
+                          type: string
+                          format: ''
+                          example: ''
+                          description: Name of the sector
+                        optIn:
+                          type: boolean
+                          description: Defines sector is opted in or not
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  consentRecord:
+                    $ref: '#/paths/~1service~1individual~1record~1consent-record/post/responses/200/content/application~1json/schema/properties/consentRecord'
+                  revision:
+                    $ref: '#/paths/~1service~1policy~1%7BpolicyId%7D/get/responses/200/content/application~1json/schema/properties/revision'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Update consent record
+      tags:
+        - Consent Record
+  '/service/individual/record/consent-record/{consentRecordId}/signature':
+    post:
+      description: This endpoint is used to create a blank signature object for the consent record for an individual in an organiation defined in the consent building block. Creates and returns a blank Signature object for the consent record.
+      operationId: serviceCreateIndividualConsentRecordSignature
+      parameters:
+        - description: Unique ID of an object
+          in: path
+          name: consentRecordId
+          required: true
+          schema:
+            type: string
+        - $ref: '#/paths/~1service~1individual~1record/delete/parameters/0'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  signature:
+                    $ref: '#/paths/~1service~1individual~1record~1consent-record/post/responses/200/content/application~1json/schema/properties/signature'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Creates blank signature
+      tags:
+        - Consent Record
+    put:
+      description: This endpoint is used to update a signature object for the consent record for an individual in an organiation defined in the consent building block.
+      operationId: serviceUpdateIndividualConsentRecordSignature
+      parameters:
+        - description: Unique ID of an object
+          in: path
+          name: consentRecordId
+          required: true
+          schema:
+            type: string
+        - $ref: '#/paths/~1service~1individual~1record/delete/parameters/0'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                signature:
+                  $ref: '#/paths/~1service~1individual~1record~1consent-record/post/responses/200/content/application~1json/schema/properties/signature'
+                  description: An object of type Signature
+              required:
+                - signature
+              type: object
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  signature:
+                    $ref: '#/paths/~1service~1individual~1record~1consent-record/post/responses/200/content/application~1json/schema/properties/signature'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Update consent record signature
+      tags:
+        - Consent Record
+  '/service/individual/record/data-agreement/{dataAgreementId}/all':
+    get:
+      description: This endpoint is used to list all consent records existing for a data agreement for an organisation defined in the consent building block. The response is paginated.
+      operationId: serviceListIndividualAgreementConsentRecordList
+      parameters:
+        - $ref: '#/paths/~1service~1data-agreement~1%7BdataAgreementId%7D~1data-attributes/get/parameters/0'
+        - $ref: '#/paths/~1service~1individuals/get/parameters/0'
+        - $ref: '#/paths/~1service~1individuals/get/parameters/1'
+        - $ref: '#/paths/~1service~1individual~1record/delete/parameters/0'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  consentRecords:
+                    items:
+                      $ref: '#/paths/~1service~1individual~1record~1consent-record/post/responses/200/content/application~1json/schema/properties/consentRecord'
+                    type: array
+                  pagination:
+                    $ref: '#/paths/~1service~1individuals/get/responses/200/content/application~1json/schema/properties/pagination'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List all consent records
+      tags:
+        - Consent Record
+  /service/individual/record/consent-record/history:
+    get:
+      deprecated: false
+      description: This endpoint is used to list all consent record history existing for an individual in an organisation defined in the consent building block. The response is paginated.
+      operationId: serviceListDataAgreementRecordHistory
+      parameters:
+        - $ref: '#/paths/~1service~1individuals/get/parameters/0'
+        - $ref: '#/paths/~1service~1individuals/get/parameters/1'
+        - $ref: '#/paths/~1service~1individual~1record/delete/parameters/0'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  consentRecordHistory:
+                    required:
+                      - id
+                      - organisationId
+                      - dataAgreementId
+                      - log
+                      - timestamp
+                    type: object
+                    title: ConsentRecordHistory
+                    properties:
+                      id:
+                        type: string
+                        description: Data agreement record history ID
+                      organisationId:
+                        type: string
+                        description: Organisation ID
+                      dataAgreementId:
+                        type: string
+                        description: Data agreement ID
+                      log:
+                        type: string
+                        description: Log string
+                      timestamp:
+                        type: string
+                        description: Timestamp in ISO 8601 date time format
+                    example:
+                      id: 64e91591e2f6a8000142c665
+                      organisationId: 603e683c69dd720001c74f93
+                      dataAgreementId: 61e183127c81650001f97d43
+                      log: Updated consent value to <Allow> for the purpose <Customer Loyalty Card Issuance> in organisation <The Retail Company (Germany)>
+                      timestamp: '2023-08-25T20:56:49Z'
+                  pagination:
+                    $ref: '#/paths/~1service~1individuals/get/responses/200/content/application~1json/schema/properties/pagination'
+                type: object
+          description: OK
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List consent record history
+      tags:
+        - Consent Record
+  /service/individual:
+    post:
+      description: This endpoint creates an individual for an organisation in the consent building block. This is used to onboard existing or new users.
+      operationId: configCreatePolicy
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                individual:
+                  allOf:
+                    - type: object
+                      title: Individual
+                      description: 'Shallowly models an Individual which may reference some instance in an external system (registration system, functional ID, foundational ID etc). An Individual instance of this model is not to be mistaken with a unique natural individual. It is up to the system owner to decide if this record permits mapping to a natural individual and/or if a single Individual row can map to several consent agreements.'
+                      x-not-in-database: false
+                      properties:
+                        id:
+                          type: string
+                          format: ''
+                          example: ''
+                          description: The unique ID of an Individual row.
+                        externalId:
+                          type: string
+                          format: ''
+                          example: ''
+                          description: 'Reference to another foundational/functional ID, which is likely PII'
+                        externalIdType:
+                          type: string
+                          format: ''
+                          example: ''
+                          description: External ID type specifier. A string. For instance "email" or "foundational ID". Can be used in later queries.
+                        identityProviderId:
+                          type: string
+                          format: ''
+                          example: ''
+                          description: 'This could be an FK, but for now we do not have a mapping of identity providers. IDBB may have more requirements.'
+                    - type: object
+                      title: IndividualExtras
+                      required:
+                        - name
+                        - email
+                        - phone
+                      properties:
+                        name:
+                          type: string
+                          description: Name of the individual
+                        iamId:
+                          type: string
+                          description: Create a user in keycloak and save the `id` as `iamId`
+                        email:
+                          type: string
+                          description: Email ID
+                        phone:
+                          type: string
+                          description: Phone
+                        pushNotificationToken:
+                          type: string
+                          description: Device token of the individual
+                        deviceType:
+                          type: string
+                          description: Device type(OS) of the individual
+                          enum:
+                            - android
+                            - ios
+                        mapperId:
+                          type: string
+                          description: Defines the mapper id of the individual
+                  description: An object of type Individual
+              required:
+                - individual
+              type: object
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  individual:
+                    allOf:
+                      - $ref: '#/paths/~1service~1individual/post/requestBody/content/application~1json/schema/properties/individual/allOf/0'
+                      - $ref: '#/paths/~1service~1individual/post/requestBody/content/application~1json/schema/properties/individual/allOf/1'
+                    description: An object of type Individual
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Create individual
+      tags:
+        - Individual
+  '/service/individual/{individualId}':
+    get:
+      description: 'This endpoint is used to read the individual''s information as defined by the organisation in the consent building block. This is used in privacy dashboard where the individuals can mark their consents, sign data agreement etc.'
+      operationId: configReadIndividual
+      parameters:
+        - description: Unique ID of an object
+          in: path
+          name: individualId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  individual:
+                    allOf:
+                      - $ref: '#/paths/~1service~1individual/post/requestBody/content/application~1json/schema/properties/individual/allOf/0'
+                      - $ref: '#/paths/~1service~1individual/post/requestBody/content/application~1json/schema/properties/individual/allOf/1'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read individual
+      tags:
+        - Individual
+    put:
+      description: This endpoint is used to udpated an individual for an organisation defined in the consent building block.
+      operationId: configUpdateIndividual
+      parameters:
+        - description: Unique ID of an object
+          in: path
+          name: individualId
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                individual:
+                  allOf:
+                    - $ref: '#/paths/~1service~1individual/post/requestBody/content/application~1json/schema/properties/individual/allOf/0'
+                    - $ref: '#/paths/~1service~1individual/post/requestBody/content/application~1json/schema/properties/individual/allOf/1'
+                  description: An object of type Individual
+              required:
+                - individual
+              type: object
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  individual:
+                    allOf:
+                      - $ref: '#/paths/~1service~1individual/post/requestBody/content/application~1json/schema/properties/individual/allOf/0'
+                      - $ref: '#/paths/~1service~1individual/post/requestBody/content/application~1json/schema/properties/individual/allOf/1'
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Update individual
+      tags:
+        - Individual
+  /service/individuals:
+    get:
+      description: lists individuals in the system This endpoint is used to list all individuals in the organisation defined in the consent building block.
+      operationId: serviceListIndividuals
+      parameters:
+        - description: Requested index for start of resources to be provided in response requested by client
+          in: query
+          name: offset
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Number of items returned per page. Requested number of resources to be provided in response requested by client.
+          required: false
+          schema:
+            type: integer
+            default: 10
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  individuals:
+                    items:
+                      allOf:
+                        - $ref: '#/paths/~1service~1individual/post/requestBody/content/application~1json/schema/properties/individual/allOf/0'
+                        - $ref: '#/paths/~1service~1individual/post/requestBody/content/application~1json/schema/properties/individual/allOf/1'
+                    type: array
+                  pagination:
+                    type: object
+                    title: Pagination
+                    properties:
+                      currentPage:
+                        type: integer
+                        description: Current page number
+                      totalItems:
+                        type: integer
+                        description: Total number of items available
+                      totalPages:
+                        type: integer
+                        description: Total number of pages based on limit
+                      limit:
+                        type: integer
+                        description: Number of items per page
+                      hasPrevious:
+                        type: boolean
+                        description: Indicates if there's a previous page
+                      hasNext:
+                        type: boolean
+                        description: Indicates if there's a next page
+                type: object
+          description: ''
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: List all individuals
+      tags:
+        - Individual
+  /service/data-sharing:
+    get:
+      description: This endpoint is used to render the data sharing UI during a data exchange as defined by a (data source) organisation in the consent building block.
+      operationId: serviceReadDataSharingUi
+      parameters:
+        - description: ID for data agreement
+          in: query
+          name: dataAgreementId
+          required: true
+          schema:
+            type: string
+        - description: Access token for authentication
+          in: query
+          name: accessToken
+          required: false
+          schema:
+            type: string
+        - description: API key for authorisation
+          in: query
+          name: apiKey
+          required: false
+          schema:
+            type: string
+        - description: ID for the individual
+          in: query
+          name: individualId
+          required: false
+          schema:
+            type: string
+        - description: Name of the third-party organisation
+          in: query
+          name: thirdPartyOrgName
+          required: true
+          schema:
+            type: string
+        - description: URL for the third-party organisation's logo image
+          in: query
+          name: thirdPartyOrgLogoImageUrl
+          required: false
+          schema:
+            type: string
+        - description: Redirect URL for data sharing UI
+          in: query
+          name: dataSharingUiRedirectUrl
+          required: true
+          schema:
+            type: string
+        - description: Authorization Code
+          in: query
+          name: code
+          required: false
+          schema:
+            type: string
+        - description: Redirect URL for authorisation
+          in: query
+          name: authorisationRedirectUrl
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Ok
+          headers: {}
+        '400':
+          description: bad input parameter
+          headers: {}
+      security:
+        - BearerAuth: []
+        - ApiKey: []
+      summary: Read data sharing UI
+      tags:
+        - Data Sharing
+servers:
+  - description: Demo server
+    url: 'https://demo-api.igrant.io/v2'
+  - description: Staging server
+    url: 'https://staging-api.igrant.io/v2'
+tags:
+  - description: This consists of endpoints for organisation.
+    name: Organisation
+    x-tag-expanded: true
+  - description: This consists of endpoint for identity provider.
+    name: Identity Provider
+    x-tag-expanded: true
+  - description: This consists of endpoint for data agreement.
+    name: Data Agreement
+    x-tag-expanded: true
+  - description: This consists of endpoint for data policy.
+    name: Data Policy
+    x-tag-expanded: true
+  - description: This consists of endpoint for verification.
+    name: Verification
+    x-tag-expanded: true
+  - description: This consists of endpoint for consent records.
+    name: Consent Record
+    x-tag-expanded: true
+  - description: This consists of endpoint for data sharing.
+    name: Data Sharing
+    x-tag-expanded: true
+info:
+  contact:
+    email: support@igrant.io
+    name: iGrant.io
+    url: 'https://igrant.io'
+  description: 'iGrant.io (™) is a Swedish data exchange and verification service provider. It uses self-sovereign identity, verifiable credentials, a digital wallet and solid pod technologies, enabling a new level of interoperability and automating compliance with data regulations in a fully auditable manner.'
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0'
+  title: iGrant.io API documentation
+  version: 2024.3.1

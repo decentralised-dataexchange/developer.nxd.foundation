@@ -1,0 +1,674 @@
+components:
+  securitySchemes:
+    ApiKey:
+      type: apiKey
+      in: header
+      name: Authorization
+    BearerAuth:
+      bearerFormat: JWT
+      description: Access token passed with Bearer prefix in Authorization header
+      scheme: bearer
+      type: http
+openapi: 3.1.0
+paths:
+  '/v3/service/data-space/{organisationId}/.well-known/access-point-configuration':
+    get:
+      description: The Access Point Configuration Metadata endpoint for an organisation's capabilities in regards to a Data Marketplace.
+      parameters:
+        - description: The ID of the organisation
+          in: path
+          name: organisationId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Get Access Point Configurations Metadata
+          content:
+            application/json:
+              schema:
+                properties:
+                  access_point_endpoint:
+                    type: string
+                    description: Access Point Configuration endpoint URL
+                  authorization_server:
+                    type: string
+                    description: OAuth Authorization Server URL for the organisation
+                  get_verification_request_endpoint:
+                    type: string
+                    description: 'Get Verification Request endpoint URL for the organisation, where a verification request can be initiated'
+                  post_verification_request_endpoint:
+                    type: string
+                    description: 'Post Verification Request endpoint URL for the organisation, where a verification request can be received'
+                type: object
+                reqiured:
+                  - access_point_endpoint
+                  - authorization_server
+                  - get_verification_request_endpoint
+                  - post_verification_request_endpoint
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      summary: Access Point Configurations
+      tags:
+        - Authorisation Server
+  '/v3/service/data-space/{organisationId}/.well-known/oauth-authorization-server':
+    get:
+      description: The Authorisation Server Metadata endpoint for an organisation's capabilities in regards to a Data Marketplace.
+      parameters:
+        - $ref: '#/paths/~1v3~1service~1data-space~1%7BorganisationId%7D~1.well-known~1access-point-configuration/get/parameters/0'
+      responses:
+        '200':
+          description: Get Authorisation Server Metadata
+          content:
+            application/json:
+              schema:
+                properties:
+                  issuer:
+                    type: string
+                    description: Issuer Identifier for the OAuth Authorization Server
+                  token_endpoint:
+                    type: string
+                    description: Token endpoint URL for the OAuth Authorization Server
+                  registration_endpoint:
+                    type: string
+                    description: Registration endpoint URL for the OAuth Authorization Server
+                  validate_token_endpoint:
+                    type: string
+                    description: Where an Access Token from a Pull-Data request can be verified and authorised
+                type: object
+                reqiured:
+                  - issuer
+                  - token_endpoint
+                  - registration_endpoint
+                  - validate_token_endpoint
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      summary: Authorisation Server Metadata
+      tags:
+        - Authorisation Server
+  /v3/service/data-space/validate-access:
+    post:
+      description: |
+        The Token Verification and Authorisation endpoint for an organisation in  regards to a Data Marketplace. An Access Token issued as a result of a Pull-Data request can be verified here, and an authorisation decision can be made  against the requested resource (defined by OpenAPI method and path). The  resource is checked against the OpenAPI specification of the underlying  Data Agreement within the Data Disclosure Agreement Record's Template  connected to the Access Token.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accessToken:
+                  type: string
+                  description: The JWT Access Token to be verified and authorised
+                httpMethod:
+                  type: string
+                  description: The HTTP Method to be checked against the OpenAPI specification
+                path:
+                  type: string
+                  description: The path to be checked against the OpenAPI specification
+                excludeDataClassification:
+                  type: bool
+                  description: Whether to exclude the data classification from the result
+                  default: false
+                excludeIndividuals:
+                  type: bool
+                  description: Whether to exclude the individuals from the result
+                  default: false
+                excludeDecodedClaims:
+                  type: bool
+                  description: Whether to exclude the decoded claims from the result
+                  default: false
+              required:
+                - accessToken
+                - httpMethod
+                - path
+      responses:
+        '200':
+          description: Access token verification result
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - properties:
+                      verified:
+                        type: boolean
+                        description: Whether the access token was verified and authorised
+                        example: true
+                      dataClassification:
+                        type: string
+                        description: The data classification of the requested resource
+                        enum:
+                          - anonymous
+                          - pii
+                      individuals:
+                        type: array
+                        items:
+                          allOf:
+                            - $ref: '#/paths/~1v3~1service~1data-disclosure-agreement~1record~1%7BdataDisclosureAgreementRecordId%7D~1individual~1%7BindividualId%7D/get/responses/200/content/application~1json/schema/properties/individual/allOf/0'
+                            - $ref: '#/paths/~1v3~1service~1data-disclosure-agreement~1record~1%7BdataDisclosureAgreementRecordId%7D~1individual~1%7BindividualId%7D/get/responses/200/content/application~1json/schema/properties/individual/allOf/1'
+                          description: 'Data for an individual, returned if the Pull-Data request was made for a specific individual'
+                      decodedClaims:
+                        type: object
+                        description: The decoded JWT claims. The fields listed below will be present; additional claims are allowed.
+                        properties:
+                          aud:
+                            type: string
+                            description: The audience of the JWT
+                          dataClassification:
+                            type: string
+                            enum:
+                              - anonymous
+                              - pii
+                            description: The data classification of the requested resource
+                          dataDisclosureAgreementRecordId:
+                            type: string
+                            description: The ID of the Data Disclosure Agreement Record associated with this token
+                          exp:
+                            type: integer
+                            description: The expiration time of the JWT
+                          iat:
+                            type: integer
+                            description: The issued at time of the JWT
+                          iss:
+                            type: string
+                            description: The issuer of the JWT
+                          jti:
+                            type: string
+                            description: The unique identifier for the JWT
+                        required:
+                          - aud
+                          - dataClassification
+                          - dataDisclosureAgreementRecordId
+                          - exp
+                          - iat
+                          - iss
+                          - jti
+                        additionalProperties: true
+                    type: object
+                    required:
+                      - verified
+                      - dataClassification
+                      - individuals
+                      - decodedClaims
+                  - properties:
+                      verified:
+                        type: boolean
+                        description: Whether the access token was verified and authorised
+                        example: false
+                      reason:
+                        type: string
+                        description: The reason why the access token verification failed
+                        example: Invalid signature
+                    type: object
+                    required:
+                      - verified
+                      - reason
+        headers:
+          Content-Type:
+            schema:
+              type: string
+              example: application/json
+            description: Content-Type header
+      security:
+        - ApiKey: []
+      summary: Token Verification and Authorisation
+      tags:
+        - Authorisation Server
+  /v3/service/data-disclosure-agreement/records:
+    get:
+      description: |
+        Lists all Data Disclosure Agreement Records for the organisation, depending on  the role of the organisation for the record, "data_source" or  "data_using_service".
+      parameters:
+        - description: Requested index for start of resources to be provided in response requested by client
+          in: query
+          name: offset
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Number of items returned per page. Requested number of resources to be provided in response requested by client.
+          required: false
+          schema:
+            type: integer
+            default: 10
+        - name: organisationRole
+          in: query
+          description: 'Filter by Organisation Role for the Data Disclosure Record, "data_source" or "data_using_service"'
+          required: true
+          schema:
+            type: string
+        - name: signStatus
+          in: query
+          description: Filter by whether the status of the Data Disclosure Record is "sign" or "unsign" (e.g. active or inactive)
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Data Disclosure Agreement Record List
+          content:
+            application/json:
+              schema:
+                properties:
+                  dataDisclosureAgreementRecords:
+                    type: array
+                    items:
+                      type: object
+                      description: |
+                        A record represents an Agreement between a Data Source and Data Using Service  that can be signed by both, based on the updated Go structure. The Opt-In value determines whether the record is active and data can be shared to the Data Using Service. The Opt-In value is only valid for records containing both signatures.
+                      required:
+                        - id
+                        - canonicalId
+                        - dataDisclosureAgreementTemplateRevision
+                        - dataSourceSignature
+                        - dataUsingServiceSignature
+                        - optIn
+                        - timestamp
+                        - organisationId
+                        - organisationRole
+                        - isDeleted
+                      properties:
+                        id:
+                          type: string
+                          description: Unique Data Disclosure Agreement Record identifier.
+                        canonicalId:
+                          type: string
+                          description: The cross-organisational identifier for the record.
+                        dataDisclosureAgreementTemplateRevision:
+                          description: The full revision object of the Data Disclosure Agreement Template which the record is based on.
+                          type: object
+                          title: Revision
+                          x-not-in-database: false
+                          required:
+                            - id
+                            - schemaName
+                            - objectId
+                            - objectData
+                            - serizalizedSnapshot
+                            - serializedHash
+                            - timestamp
+                          properties:
+                            id:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: Revision ID
+                            schemaName:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: Previously "schema" but for technical reasons should be called "schemaName"
+                              enum:
+                                - dataAgreement
+                                - policy
+                                - dataAgreementRecord
+                            objectId:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: The PK of the object that was serialised
+                            objectData:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: The object that is serialised
+                            signedWithoutObjectId:
+                              type: boolean
+                              format: ''
+                              example: ''
+                              description: Indicates that objectId was left blank in serizalizedSnapshot when calculating serializedHash. objectId may subsequently be filled in.
+                            serizalizedSnapshot:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: |
+                                Revisioned data (sed as JSON) as a dict. Apply JSON Canonicalization Scheme as per IETF RFC 8785.  It contains all the fields of the schema except sucessorId, serializedHash, serializedSnapshot.
+                            serializedHash:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: Hash of serizalizedSnapshot (SHA-1)
+                            timestamp:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: Timestamp of when revisioning happened. It should be ISO 8601 UTC date time
+                            authorizedByIndividualId:
+                              description: Individual ID
+                              type: string
+                            authorizedByOtherId:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: Reference to an admin user that has created this revision
+                            successorId:
+                              x-fk-model: Revision
+                              type: string
+                              description: 'If this revision is no longer the latest revision, refer to its successor'
+                            predecessorHash:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: 'Tamper-resistent artifact from previous record, copied from serializedHash'
+                            predecessorSignature:
+                              type: string
+                              format: ''
+                              example: ''
+                              description: Tamper-resistent artifact from previous record (we don't know if the previous record was signed or not)
+                        dataSourceSignature:
+                          description: The signature provided by the Data Source.
+                          type: object
+                          title: Signature
+                          x-not-in-database: false
+                          required:
+                            - id
+                            - payload
+                            - signature
+                            - signatureDecoded
+                            - verificationMethod
+                            - verificationPayload
+                            - verificationPayloadHash
+                            - verificationSignedBy
+                            - verificationSignedAs
+                            - verificationJwsHeader
+                            - timestamp
+                            - signedWithoutObjectReference
+                            - objectType
+                            - objectReference
+                          properties:
+                            id:
+                              type: string
+                              description: Unique signature identifier
+                            payload:
+                              type: string
+                              description: The Data Disclosure Agreement Record (as a stringified JSON object)
+                            signature:
+                              type: string
+                              description: JWT signature
+                            signatureDecoded:
+                              type: object
+                              description: 'Decoded signature, containing claims used from the signature JWT'
+                            verificationMethod:
+                              type: string
+                              description: 'A well-known string denoting which method is used. Valid values: ''keybinding_jwt'''
+                            verificationPayload:
+                              type: string
+                              description: The keybinding JWT payload that was signed to produce the signature
+                            verificationPayloadHash:
+                              type: string
+                              description: 'Internally generated cryptographic hash of the value to be signed, i.e. the value of verificationPayload'
+                            verificationSignedBy:
+                              type: string
+                              description: 'Because an identifier''s information may change over time, there is a need to store that information at the time of signing. In the case of a cryptographic signature, this field should contain some identifier for looking up or verifying the public key of the signing party.'
+                            verificationSignedAs:
+                              type: string
+                              description: Either signed as a "data_source" or as a "data_using_service"
+                              enum:
+                                - data_source
+                                - data_using_service
+                            verificationJwsHeader:
+                              type: string
+                              description: 'Alternative to the verificationMethod, verificationHash and verificationSignature, give a JWS serialised object (RFC7515)'
+                            timestamp:
+                              type: string
+                              description: Timestamp of signature
+                            signedWithoutObjectReference:
+                              type: boolean
+                              description: 'Indicates that objectReference was left blank in the serialised version that was signed, always false for Data Disclosure Agreement Record signatures'
+                            objectType:
+                              type: string
+                              description: 'Name of the schema model that objectReference points to, in this case "data_disclosure_agreement_record"'
+                              enum:
+                                - data_disclosure_agreement_record
+                            objectReference:
+                              type: string
+                              description: 'In the case of a data_disclosure_agreement_record, this is the ID of the record that was signed'
+                        dataUsingServiceSignature:
+                          description: The signature provided by the Data Using Service.
+                          $ref: '#/paths/~1v3~1service~1data-disclosure-agreement~1records/get/responses/200/content/application~1json/schema/properties/dataDisclosureAgreementRecords/items/properties/dataSourceSignature'
+                        optIn:
+                          type: boolean
+                          description: Whether the record is active and data can be shared to the Data Using Service.
+                        timestamp:
+                          type: string
+                          description: The timestamp of when the latest signature was added.
+                        organisationId:
+                          type: string
+                          description: The ID of the organisation this record belongs to (both organisation keep a copy).
+                        organisationRole:
+                          type: string
+                          description: 'The role of the organisation in this agreement (e.g., data_source).'
+                          enum:
+                            - data_source
+                            - data_using_service
+                        isDeleted:
+                          type: boolean
+                          description: If the record is deleted.
+                  pagination:
+                    type: object
+                    title: Pagination
+                    properties:
+                      currentPage:
+                        type: integer
+                        description: Current page number
+                      totalItems:
+                        type: integer
+                        description: Total number of items available
+                      totalPages:
+                        type: integer
+                        description: Total number of pages based on limit
+                      limit:
+                        type: integer
+                        description: Number of items per page
+                      hasPrevious:
+                        type: boolean
+                        description: Indicates if there's a previous page
+                      hasNext:
+                        type: boolean
+                        description: Indicates if there's a next page
+                type: object
+                required:
+                  - dataDisclosureAgreementRecords
+                  - pagination
+          headers:
+            Content-Type:
+              schema:
+                type: json
+                example: application/json
+              description: Content-Type header
+      security:
+        - ApiKey: []
+      summary: List all Data Disclosure Agreement Records
+      tags:
+        - Data Disclosure Agreements
+  /v3/service/data-space/pull-data:
+    post:
+      description: |
+        The Pull Data endpoint allows a Data Using Service to Pull Data according to a  specific Data Disclosure Agreement record signed by themselves and a Data  Source, either anonymously or for a specific individual.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                dataDisclosureAgreementRecordId:
+                  type: string
+                  description: Data Disclosure Agreement Record ID
+                individualId:
+                  type: string
+                  description: Individual ID
+              required:
+                - dataDisclosureAgreementRecordId
+      responses:
+        '200':
+          description: Successful Access Token release
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+                    description: Access token to be used at Resource Server
+      security:
+        - ApiKey: []
+      summary: Pull Data Endpoint
+      tags:
+        - Signed Agreements
+  '/v3/service/data-disclosure-agreement/record/{dataDisclosureAgreementRecordId}/individuals':
+    get:
+      description: |
+        Lists individuals that have opted-in to the underlying Data Agreement within the specified Data Disclosure Agreement Record.
+      parameters:
+        - name: dataDisclosureAgreementRecordId
+          in: path
+          description: Unique ID of a Data Disclosure Record
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of Opted-In Individuals
+          content:
+            application/json:
+              schema:
+                properties:
+                  individuals:
+                    type: array
+                    items:
+                      allOf:
+                        - $ref: '#/paths/~1v3~1service~1data-disclosure-agreement~1record~1%7BdataDisclosureAgreementRecordId%7D~1individual~1%7BindividualId%7D/get/responses/200/content/application~1json/schema/properties/individual/allOf/0'
+                        - $ref: '#/paths/~1v3~1service~1data-disclosure-agreement~1record~1%7BdataDisclosureAgreementRecordId%7D~1individual~1%7BindividualId%7D/get/responses/200/content/application~1json/schema/properties/individual/allOf/1'
+                      description: Data for an individual who has opted-in to the Data Agreement
+                type: object
+                required:
+                  - individuals
+      security:
+        - ApiKey: []
+      summary: List Opted-In Individuals
+      tags:
+        - Data Disclosure Agreements
+  '/v3/service/data-disclosure-agreement/record/{dataDisclosureAgreementRecordId}/individual/{individualId}':
+    get:
+      description: |
+        Checks whether the individual is opted-in to the underlying  Data Agreement within the specified Data Disclosure Agreement Record.
+      parameters:
+        - $ref: '#/paths/~1v3~1service~1data-disclosure-agreement~1record~1%7BdataDisclosureAgreementRecordId%7D~1individuals/get/parameters/0'
+        - description: Unique ID of an object
+          in: path
+          name: individualId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Check if an Individual is Opted-In to Data Agreement
+          content:
+            application/json:
+              schema:
+                properties:
+                  optIn:
+                    type: boolean
+                    description: Indicates if the individual is opted-in to the Data Agreement
+                  individual:
+                    allOf:
+                      - type: object
+                        title: Individual
+                        description: 'Shallowly models an Individual which may reference some instance in an external system (registration system, functional ID, foundational ID etc). An Individual instance of this model is not to be mistaken with a unique natural individual. It is up to the system owner to decide if this record permits mapping to a natural individual and/or if a single Individual row can map to several consent agreements.'
+                        x-not-in-database: false
+                        properties:
+                          id:
+                            type: string
+                            format: ''
+                            example: ''
+                            description: The unique ID of an Individual row.
+                          externalId:
+                            type: string
+                            format: ''
+                            example: ''
+                            description: 'Reference to another foundational/functional ID, which is likely PII'
+                          externalIdType:
+                            type: string
+                            format: ''
+                            example: ''
+                            description: External ID type specifier. A string. For instance "email" or "foundational ID". Can be used in later queries.
+                          identityProviderId:
+                            type: string
+                            format: ''
+                            example: ''
+                            description: 'This could be an FK, but for now we do not have a mapping of identity providers. IDBB may have more requirements.'
+                      - type: object
+                        title: IndividualExtras
+                        required:
+                          - name
+                          - email
+                          - phone
+                        properties:
+                          name:
+                            type: string
+                            description: Name of the individual
+                          iamId:
+                            type: string
+                            description: Create a user in keycloak and save the `id` as `iamId`
+                          email:
+                            type: string
+                            description: Email ID
+                          phone:
+                            type: string
+                            description: Phone
+                          pushNotificationToken:
+                            type: string
+                            description: Device token of the individual
+                          deviceType:
+                            type: string
+                            description: Device type(OS) of the individual
+                            enum:
+                              - android
+                              - ios
+                          mapperId:
+                            type: string
+                            description: Defines the mapper id of the individual
+                    description: Data for an individual who has opted-in to the Data Agreement
+                type: object
+      security:
+        - ApiKey: []
+      summary: Get Individual is Opted-In
+      tags:
+        - Data Disclosure Agreements
+servers:
+  - description: Demo server
+    url: 'https://demo-api.igrant.io'
+  - description: Staging server
+    url: 'https://staging-api.igrant.io'
+tags:
+  - description: This consists of endpoints available for data disclosure agreements.
+    name: Base Configurations
+    x-tag-expanded: true
+  - description: This consists of endpoints available for data disclosure agreements.
+    name: Data Disclosure Agreements
+    x-tag-expanded: true
+  - description: This consists of endpoints available for data agreements.
+    name: Signed Agreements
+    x-tag-expanded: true
+  - description: This consists of endpoints available for authorisation server.
+    name: Authorisation Server
+    x-tag-expanded: true
+info:
+  contact:
+    email: support@igrant.io
+    name: iGrant.io
+    url: 'https://igrant.io'
+  description: 'iGrant.io (™) is a Swedish data exchange and verification service provider. It uses self-sovereign identity, verifiable credentials, a digital wallet and solid pod technologies, enabling a new level of interoperability and automating compliance with data regulations in a fully auditable manner.'
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0'
+  title: iGrant.io API documentation
+  version: 2024.3.1
