@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer').themes.github;
-const darkCodeTheme = require('prism-react-renderer').themes.dracula;
+const lightCodeTheme = require("prism-react-renderer").themes.github;
+const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -45,7 +45,9 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: false,
+        docs: {
+          sidebarPath: require.resolve("./sidebars.js"),
+        },
         blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -128,6 +130,12 @@ const config = {
             type: "custom-nordxdataspace-logo",
             label: "",
             position: "left",
+          },
+          {
+            type: "doc",
+            docId: "overview",
+            position: "left",
+            label: "Getting Started",
           },
           {
             type: "custom-local-dropdown",

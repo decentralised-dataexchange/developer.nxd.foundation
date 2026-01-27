@@ -8,6 +8,57 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fix Docusaurus Breadcrumbs vertical alignment */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbs__item {
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumbs__link {
+  display: flex;
+  align-items: center;
+}
+
+/* Restore basic Markdown styles reset by Tailwind Preflight */
+.markdown h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.markdown h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+.markdown h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.markdown ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+.markdown ol {
+  list-style-type: decimal;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+.markdown li {
+  margin-bottom: 0.25rem;
+}
+.markdown p {
+  margin-bottom: 1rem;
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #03182b;
@@ -25,7 +76,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #03182b;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
