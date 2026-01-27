@@ -13,23 +13,26 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-  // By default, Docusaurus generates a sidebar from the docs folder structure
-  tutorialSidebar: [
+  // Sidebar for Getting Started section
+  gettingStartedSidebar: [
     {
       type: "category",
       label: "Getting Started",
       collapsed: false,
       items: ["overview"],
     },
+  ],
+  // Sidebar for Developer APIs section
+  developerApisSidebar: [
     {
       type: "category",
       label: "Developer APIs",
       link: {
         type: "doc",
-        id: "developer-apis", // Was overview
+        id: "developer-apis",
       },
       items: [
-        "developer-apis", // Was overview
+        "developer-apis",
         {
           type: "category",
           label: "Data Marketplace API",

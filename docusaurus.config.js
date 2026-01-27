@@ -32,6 +32,11 @@ const config = {
           `Broken markdown link to '${url}' found in '${sourceFilePath}'`,
         );
       },
+      onBrokenMarkdownImages: ({ url, sourceFilePath }) => {
+        console.warn(
+          `Broken markdown image '${url}' found in '${sourceFilePath}'`,
+        );
+      },
     },
   },
 
@@ -163,11 +168,13 @@ const config = {
             to: "/docs/getting-started",
             position: "left",
             label: "Getting Started",
+            sidebarId: "gettingStartedSidebar",
           },
           {
             to: "/docs/developer-apis",
             label: "Developer APIs",
             position: "left",
+            sidebarId: "developerApisSidebar",
           },
           {
             type: "custom-local-dropdown",

@@ -3,6 +3,7 @@ id: developer-apis
 title: Developer APIs
 sidebar_label: Overview
 sidebar_position: 1
+sidebar_id: developerApisSidebar
 ---
 
 import ApiCards from "@site/src/components/ApiCards";
