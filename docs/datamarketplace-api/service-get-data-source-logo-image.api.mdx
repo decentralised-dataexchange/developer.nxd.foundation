@@ -1,0 +1,72 @@
+---
+id: service-get-data-source-logo-image
+title: "Get data source logo image"
+description: "Get data source logo image"
+sidebar_label: "Get data source logo image"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1z2zYQ/SuYPbUZmHTUnniqnToeZTxtp06mh8SHNbgkMQYBBFhKVjX875klKVmxOm11EQjs2/f2cw+MbYbqM2RKG2sIHjSESAnZBr+uoTo83BL/ioz3YUiG7kIb1j22BBoymSFZ3kH1+UFDxIQ9MSVxugePPUEF9RG5rkGD9VBBRO5AQ6Kvg01UQ8VpIA3ZdNQjVHvgXRRs5mR9CxqakHpkqGAYbA3j+CDgHIPPlMV+dXkpfzVlk2wU/VDBQaUJnsmzGFi5Kt/I8X+QPVqPaQej/PQr57fESkJTeYpNudAGZRfGnrgLksCWGPQcbgXlks5ScBczrtyf5mcsxc0sckpv2hyyOSQHFXTMMVdlidEW/rkumjD4eqoXvBZ4ZzekZg8g+TrU6l7inrN2TZgoXQ2i7pgGoYClFvL9OBmBXg7vD8n58NfHM84rYyhnxeGJvIqYM9Vqa7lTM5OKiRr7rKxXQhqS/XvSrjrCWmRquMZszX8pEpsz7gmpcOCOPFszO25CUr+Lu5UyzpJnZRLVYoAuq8aFLUhprW/CRGjZCYN0e45oSF2jeSJfq6s/1meM70IfHTHJo6qDGXry/MLLHalzRxcK576hZ9Ohb0mhr9WGkm0Oopc2UTGFja0pFV/8p0xZZXLNRQ4bSmRbr+wUB+/0gsZHR6fh6clzbVvL6NQWnSNWTKbzwYXWUp5UTloStYObyY0EZdEbKr5IU0kDzuGuLlc/Fz8Vb5eJQjNN1DLl9jah58IG0EA9WmnWPMQYEv9i25e379v45WXU4Kwhn+nE6VVE05FaFZdnyO12W+D0XITUlgs2l3frdze/3d9cCEYqG0PmHv2J038d3O8KfGxApmcuo0PrReckZL8M9cvy1HAy1qCherX4jpMNGmTTdiGz4Pf7R8z0KblxlOuvA6Vln24wTUWd5r+2Wc41VA26TGdSj0sOfvhzWas/KtD/HMJyiX4nFUY3yBdoeKLd6409PowalvkUHbOJDHrkE/BhscqmOW6/25uPMI7fAJCUNOo=
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get data source logo image"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/service/data-source/{dataSourceId}/logoimage/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get data source logo image
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"dataSourceId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Image","content":{"image/*":{"schema":{"type":"string","format":"binary"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

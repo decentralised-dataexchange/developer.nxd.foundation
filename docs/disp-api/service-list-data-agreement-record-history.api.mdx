@@ -1,0 +1,72 @@
+---
+id: service-list-data-agreement-record-history
+title: "List consent record history"
+description: "This endpoint is used to list all consent record history existing for an individual in an organisation defined in the consent building block. The response is paginated."
+sidebar_label: "List consent record history"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVV11v2zYU/SsEH7YWUPyVxEmEIpjrdJ3XtA0SFxsW5OFaupbZSCRLUok9Q/99uJRkyx9p2gLDsKfEInl47uW555JLHqM2GIHDmIdTSC0GPEYbGaGdUJKHfDwTlqGMtRLSMWFZbjFmTrFUWMcgTVmkpEXpmMFImZjNhHXKLBjOhXVCJmyqDAPJhIzFg4hzSJmQ9EGZBKSwQBuxGKdCYkxDboYrzEku0phAJqmK7ltsPENm0GoaJjIaEiGJfYsHXGk0Hm0U85BbNA8iwkth3QU4GCQGMUPprj3N30qWPOAaDGTo0Fge3i63or/GLzla54nFOPexWAfGMTUlIio3EVpKxwSZNupBxGUQK5JmhTBZsCgVKB0PuCDwLzl6BhIy5CFX06lFGqQlwjROxEYzzICHS+4WmqYK6TBBw4siWNbLU5GJHejNaD7k2QQNURcOM8sMutxQ1jUaSiW22DpguZr8o3G2visWIjuFPHU87HZ8YD6SGULsR6sw/zwYltp4/fpgtJLUKN7Yy5l831bWGSETXmznZY3DRhe8uCOoMixLq3udDv2JlHR0euGSg9apiLzW2p8tYSwbu2lDSnSiXF1JeVN24bLB9pYLot+sBx9P3JSt/5KqhAfciQytg0zzu6AOTU0+Y+T8oEvpw3DftsEWNxHvZmc7OVQ8DGoa21VO+dqh/izmx2bplxDbwX4vrxKFEvTsykuVsLUU1tl8duG4nkrKH918ZKf9TpfF4JARCrlDBo6qkuMcMk0HUSaZ94/wrHt81sXetA+nnU6ne9SL+v3j3XMPeb9ziP3Tw6h/FscnPZobnRxNzw73SCLk/S52Tw+7vZPotNs/psnTs5P46LBSS8g/aSIYryz1AdIcqZJfDdJUPZ57TyPP1bnRyiJ7NcytUxkadqkWkLoFG4KJ2cjaHGSE5xT8hne/Ile+RgciZUOVaZAL9uItmgzk4uX5hmBD3uv0Dg86pwe943GvEx73w6Ozv3zGKisXZTU9Jeur9axtMUe5MSjdFST4hL00z3JYzva2V3mdV4NykI7IHb8BY0yTG0ZZuio8gEhhkuIKjyj9CB5xs2wC1HGVZKXDk8r9P8/jbft9bfOEMQN7ZfBBqLzJbKJUiiB3kMgh6ZZgmZiSWAz+bBkwXSE0UT/g3P04osS5q9AKUsWmDvynLSt5x4OqSVAgfobFKDfCLXxDf41g0AxyN+Ph7R31lYEW73Dhf5GBQkKdvzZMVjomWWuGbqaoxhLfljUQBG9XF4v2+kLTLk2xXZXYQfVztnJdWrL/gnGBmWLlMA94blJqec5pG7bbMWbqALRoicSAdC2hONHfBLhxVBHJUxi2HN6GuVsn6Yb6VinPOjGrw4PyQ7C/FVNOlRF/l+VYBBupXmEQE141Yy8IP4kH1T+/lp4Z8t//GO+IZBBFaOnacY+SabBUCI/CzVi5E+lvKuZkSBtcWMWUtCDkVHk2lYFcjG6u2OBqxC5UlJOL1mZCB1Tu2uv0jlqHre6uZ6hs4m+ptD5urvcmWivoPUhIyq70YhBnQrKf2PqK8ZKBjJnvXu/B3KPTKUS4f2YlNUs3Kbp+QORLq8q/eFufZ8AxA0HnbnOtlXG/rM96WxFNMfFURCgtNkAHGqIZsl6rs7Py8fGxBX64pUzSrtba9uVo+ObDzZsDWuOdXFmXgWyA0iX8iXfCdpIb96z/09ujErvDuWvrFISvB5++ZWUct/WLxJdTzcdfW73hBHzTPsjWqhTdBXymrCOM5ZLawSeTFgV9Lu/53laEpZ7zxDOumdV/602zNwX35Cfrp42/fPCQl0b2zZT/g4fLV6KpX1rrYO7ohxG+6fsmU3vl953Mi+vqTfCSbT5JvkrnKy+ijXSXs8lSdZP9zlumaLa+t2/IlWHT0rcs3EdZdwy5aGAvl+WMMRl4UfCasjd0XtwVRfEPPPe5eg==
+sidebar_class_name: "get api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List consent record history"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/service/individual/record/consent-record/history"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint is used to list all consent record history existing for an individual in an organisation defined in the consent building block. The response is paginated.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Requested index for start of resources to be provided in response requested by client","in":"query","name":"offset","required":false,"schema":{"type":"integer"}},{"name":"limit","in":"query","description":"Number of items returned per page. Requested number of resources to be provided in response requested by client.","required":false,"schema":{"type":"integer","default":10}},{"in":"header","name":"X-ConsentBB-IndividualId","required":true,"schema":{"type":"string"},"description":"Individual ID"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"properties":{"consentRecordHistory":{"required":["id","organisationId","dataAgreementId","log","timestamp"],"type":"object","title":"ConsentRecordHistory","properties":{"id":{"type":"string","description":"Data agreement record history ID"},"organisationId":{"type":"string","description":"Organisation ID"},"dataAgreementId":{"type":"string","description":"Data agreement ID"},"log":{"type":"string","description":"Log string"},"timestamp":{"type":"string","description":"Timestamp in ISO 8601 date time format"}},"example":{"id":"64e91591e2f6a8000142c665","organisationId":"603e683c69dd720001c74f93","dataAgreementId":"61e183127c81650001f97d43","log":"Updated consent value to <Allow> for the purpose <Customer Loyalty Card Issuance> in organisation <The Retail Company (Germany)>","timestamp":"2023-08-25T20:56:49Z"}},"pagination":{"type":"object","title":"Pagination","properties":{"currentPage":{"type":"integer","description":"Current page number"},"totalItems":{"type":"integer","description":"Total number of items available"},"totalPages":{"type":"integer","description":"Total number of pages based on limit"},"limit":{"type":"integer","description":"Number of items per page"},"hasPrevious":{"type":"boolean","description":"Indicates if there's a previous page"},"hasNext":{"type":"boolean","description":"Indicates if there's a next page"}}}},"type":"object"}}},"description":"OK","headers":{}}}}
+>
+  
+</StatusCodes>
+
+
+      

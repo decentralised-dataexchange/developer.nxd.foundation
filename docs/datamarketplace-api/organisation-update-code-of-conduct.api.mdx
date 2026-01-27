@@ -1,0 +1,72 @@
+---
+id: organisation-update-code-of-conduct
+title: "Update code of conduct acceptance"
+description: "Update code of conduct acceptance"
+sidebar_label: "Update code of conduct acceptance"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVk1zIjcQ/SuqPg/gkJw4BXudlFOu2OW1Kwcvh0bqmdFaI2klDZhQ899TrcHLYCibQ3zAMP31uvX6abaQsIowewYXKrQ6YtLOwqIA5ynkHzcKZgfWJ68w0ZVTdFdeOatamaCASLINOm1g9ryFS8JAYd6mGmbPi25RQKAfLcV06dQGZtv8UwdSMEuhpQKks4lsYhN6b7TMlSbfo7P8LMqaGuRvaeOJ8Sy/Uy7rAwNNmiJb5QGovfvSOUNooct/jCZ6Z2MfNL2Y8j9FUQbtc/8z6JtU8L9BO5jvp95aDXxiCtpWUEDpQoMJZtC2WkFXgMWGjh27fBrJhZMm4+R7EHvjwRBO2L0zWm6egvkYXtDsLN2Kwk2DFZ0ZYFzlznR1nuzc6zO9VxR0uTu5h56JTw+394FK/XqyTxlIkU0azV1ZUri2yjtt00lflJJivGf7h34+6BXKzReM9dJhUCex57F9QuIMj9k5P1Fo0DwzeJR0QxzS9oQ+P6QrIOlk2O9uyN3ubYlOLYxg8MKVQvbwBQ/HJ7SSoICGUu1YTnybKY+sDzCRzpa6mgw3ZMJ5Rq4cyYHAhBWFmPWl5dFBnZKPs8kEvR7bVzUuXWtVD/I9ulu9ItFnAJajN7X6ytvbr9xQs35OiEtw7ezGZ5CdoNh9+eNtbn/983hUc555IZJ7ISs8xkhKrHWqRV9J+Ew/oa3goi7ofzN2URMqhlnAJUYtP0PEPke1c6TANtXM4p74onRB3HG6qZBGk01iT/MoSuPW+dRZ2R72cn39io03dEJeWbq7ArQtXQa4Y8sXTBg9ShKXKF/IKjG/vzlCeOU4ayI2CuVk25BNe5ypJnGcaCRQKEwo6FXWaCsSaJUYbnc+ZC1J+OBWWlEYf7NPkaKIZMpRZEUiXVmhc99pU+yicWloOI4iZ1a60gmNWKMxlEQiWVtnXKUpZpQZS6CqNX1xyU1pZvv4G5OQCdu3O72Y/jb+dfzL7kLBfrN7/Qb9Z0CbxtpBAdSgZnLH1nsX0u+62tsOab+3sHRqSTbSIOnco6xJTMcXR5Hr9XqM2Tx2oZrsYuPk9ubq+u+v1yOO6bLax9SgHSQ9Z8tP3yGJXtPEG9RZwNpe+3oFeIZeAaA4vCV7KRyqwKKA2sXEIdvtEiNfLF3Hj3+0FPjdY1HACkM+zvzqUcBunVg2XmiTmZcv9NEjA2N30zLAo8u9K94i5rm9D30XA3W7f2IxWO5edRqnOCTgGor8OQNuNM8nC09+tgWDtmqxYt8+JZ8AHi7/O/nJTe1MaDcDgNtt7/HI4tN1UOw6yWIE3aLruv8AVAN7hQ==
+sidebar_class_name: "put api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update code of conduct acceptance"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/config/organisation/code-of-conduct"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update code of conduct acceptance
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"codeOfConduct":{"type":"boolean"}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"202":{"description":"Updated","content":{"application/json":{"schema":{"type":"object","properties":{"organisation":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"name":{"type":"string"},"sector":{"type":"string"},"location":{"type":"string"},"description":{"type":"string"},"policyUrl":{"type":"string","format":"uri"},"coverImageUrl":{"type":"string","format":"uri"},"logoUrl":{"type":"string","format":"uri"},"openApiUrl":{"type":"string","format":"uri"},"verificationRequestURLPrefix":{"type":"string"},"credentialOfferEndpoint":{"type":"string"},"accessPointEndpoint":{"type":"string"},"privacyDashboardUrl":{"type":"string"},"codeOfConduct":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"Organisation"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

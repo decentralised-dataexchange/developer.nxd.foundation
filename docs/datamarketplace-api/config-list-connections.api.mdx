@@ -1,0 +1,72 @@
+---
+id: config-list-connections
+title: "List connections"
+description: "List connections"
+sidebar_label: "List connections"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVk1T5DYQ/SsqXXIxM7MkJ58ChGxNaotQC1s5sBwauW1rkSUhtecjU/7vWy17ZjwMyVBwAazWe0/q7qfeSIIqyvxBKmdLXcnHTDqPAUg7Oy9kPnz/oiNdOWtR8UKUmYyo2qBpLfOHjbxECBguWqpl/vDYPWbSQ4AGCUNMARYalLl0ZRmRZCa1lbl8aTGsZSYLjCpoz8gyl1/xpcVIWAhtC1yJ0gURCQIJV4qA0bVBISsI+NLqgIXMSzARMxlVjQ3IfCNp7ZlOW8IKQ6IooTUk81nXZTs5Rjf6hJqbtnnCwNSasIkiILXBYiE8BuGhwo8K+TTr+J4CRu9sxMjR57MZ/zpUwFfP/Org+pWzhJY4HLw3WqWMTX9E3rM5VuCefqDis/rA+SXdM45B98EQAvBVpCOfBtHFKCZS0LaSXTbCnp8K+IrKheKY6SDojoDwTaACCO5SXbzJ1GWSNBn+tK/h9NlDpS30F33yqtoQ0NIt5/ztzI6zdtVHpxIRNhURKyVHYOavrvW/MO45eNi8r0BYgDbwZHCHx5I+gsfaoniCiIVwVvTd0GVDW5zGe90bu5boMllDvA240K4dK3tyziDYI6S5LbiCMQpdCqox4C9RgPADwhj1Blf0cUSLKxrQRlVxuy+Drv95DZea8LADG6TasUNWydE8sPnJae+X01HsNLllWGy9sA1G5rIm8jGfTsHriV0Vk9K1tug1HJMvUPQIkj1ja7133OR95scGvLsbppCDG6W7SkEyG/7404UGSObyr3/ujzgvlMIYBblntMJD5BpZaqpFz8SpKfVKaCuY1AX9b9IuaoSiL/VLiFqdUsQxR9xpp4CWarQ0OFt6Bv5muHOhjObWUgELDgATRWncMqVU29IlwiG1fwBB9KBQXIJ6RluIi9v5cbe6xhsk5EVRONU2aGnPSzWKY6AzAYKdR+BK1WArFGALscCgy61oTppWKHxwC11gmHy33yJGEdGUZ9EtMKCurNDpHLTOht3c3ePjZQm50JXmBl6CMUiCUNXWGVdpjEll0hKwak1PrvhQGqzCyXcuKi7A/rjns/PfJr9OPg3vCKjUUcOjqD8HsDTRTmYSG9BcrLH13gX6XVf7tcMy3q8kA1FoI45ALzyoGsX5ZHa0c7lcTiAtT1yopsPeOP0yv7q+ubs+4z3Jq12kBuwI9I2mPEjrruwIVzT1BrRldYl+MzTsbvDJ5CEST0K1i8Qhmw2b5Ldguo4/95MCt3KhI+dq//K/4t+90u+fat6U/Izr8fS0ANNykORZ5v0a3jPL/A/9dlrasz/yPyGVa5r7Mjm0P99Nv4l9xI93HU0rjLLz0s/XbEVw6BqvfCuhbycVux5hbzZ9xD27VtfJrfLkYrJ77LruJ+EWzvs=
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List connections"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/config/connections/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List connections
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"offset","in":"query","description":"Requested index for start of resources","required":false,"schema":{"type":"integer","default":0}},{"name":"limit","in":"query","description":"Number of items returned per page","required":false,"schema":{"type":"integer","default":10}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of connections","content":{"application/json":{"schema":{"type":"object","properties":{"connections":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string"},"connectionId":{"type":"string"},"connectionRecord":{"type":"object"},"connectionState":{"type":"string"},"dataSourceId":{"type":"string"}},"title":"Connection"}},"pagination":{"type":"object","properties":{"currentPage":{"type":"integer","description":"Current page number"},"totalItems":{"type":"integer","description":"Total number of items available"},"totalPages":{"type":"integer","description":"Total number of pages based on limit"},"limit":{"type":"integer","description":"Number of items per page"},"hasPrevious":{"type":"boolean","description":"Indicates if there's a previous page"},"hasNext":{"type":"boolean","description":"Indicates if there's a next page"}},"title":"Pagination"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

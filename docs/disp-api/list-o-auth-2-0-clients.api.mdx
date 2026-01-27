@@ -1,0 +1,72 @@
+---
+id: list-o-auth-2-0-clients
+title: "List OAuth2.0 Clients"
+description: "Lists OAuth2 Clients for use with a Data Marketplace."
+sidebar_label: "List OAuth2.0 Clients"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFV0tv4zYQ/ivEHPoAFDub9ORTs0kauN1NgyZFD4EPY2kscyORXJJy4gr678WQki1LSTcJUNSX2OTMx3l+M6khI5daabzUCmbwSTrvxO9nlV+fiPNCkvJOrLQVlSPxKP1aoLhAj+Iz2gfypsCUJpCAQYslebIOZvf1APQP+lqR85QJqTJ6CnjOo/VCr4QlpyubkhNeiyUJY/VGZkGW74xWjoTdISy3Ig1mQQKSwb9WZLeQgMKSYAZ6tXLEl6wiLWUwW2HhKAGXrqlEmNXgt4ZFpfKUk4WmSepOvZClHEEfenNdlUuybLr0VDphyVdWUSYMWWEwp4nYO6x2wu/1c/ImX9jYFVaFh9mH46ZZsG7Edix9cnzMfw4dGuZTWCqQbRiUQSHZMkgg1cpzBmY1oDGFTJGRpl8cw9U944zVhqyX8XGNDNei9WxHa5HDHMI5VothmGdjw+cXHFi/pkNLIemQnbdS5dAkLcgtpZb8GCievxHsOlTMEIpP3wh00QcYJWf/69WwuUXl77Ymxu8Q74rvRLgUWBT6kbLQj68C9rIk57E0Y9y77upZK0VqCaMPVhTovCh1Jldt5eyfkspzO/YK/n6f/0EWD/Jw4HTf0MUOWy+/UBrhDeZSYRfww3tW9gUf3OylkmFNVtaS8jeY0wtN2I/NeZQO5NAyQoim9ljMu6L/BsYdC/foJHIPblAWuCxoh8cmvQePbXNiiY4yoZWIPNgkLSF+G2/Iih0ZMsYa3Y2ljdRV37Kl1gWhGiHNVcZ1QU7IUEmWvncChWkR+qjX9OTfj6joybdo8ZPAmjALM6yG80hyR3cBux5TbqC7BOgJSxPqZcSFzagQepgivgXxYUdpZaXfhun5kdCS5f6B2f2CSdxjzoMVPqIjca7VSuaVDS85rvCS/FpnMIM89IVB1oTp5nSaBtlphh6PnMGUppGFj9KWhvlpu3l+bl9QqUW8hgQqW8AM1t4bN5tOMyr1ERo5kaHxJlIDj9EBr3puofwlDBevhzCLfThuOeixns+M/I22/bERD9pZ3UZztwdw9LSVf8f+bZKDoO4w2BJox2mooCAESfvlF21L9DCDX/+6G1XVWZqS42n+QEoYdNw5YUOKL3HBruQTj/cDW/Z5Z8tXOljTMs7F/PZGnN3MxYVOq5KU79iHExRfPTk++WlyOvkwJhldLiWvIayf9fUDv5/zDqC8+IwKc+I78cNZVkolvhPcHxuZVVj8KFBlowXveUlOqkzJTdqNANPQi2385VWXzwSoRMl5d5Ux2vqf97keVkS/mKCQKSlHPdAzg+maxMnkeKT5+Pg4wXA90Taftrpu+ml+fnl9e3nEOoH6tfMlqh4or7zttJocd8vOMLz1ful5947c1pynJz81BcpQlsGLum3Ze9icxmiuZM4m7NoWEhg07iKBtXaeleqaeftPWzQNH8e1NbSzdDwc9nvjiz79Vyv6sz4/cB/vN/UNFhULRQJ5tcn/wx7+L950/zjsnVnwDyvDdGYa76ZLyExUYgoxfa3xCOmz+9UlsxAeUtiAsgJ6x5Bq28Ou6yhxx4TVNNBZHggMmkXTNP8AOljiCA==
+sidebar_class_name: "get api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List OAuth2.0 Clients"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v3/config/data-space/oauth2-clients"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Lists OAuth2 Clients for use with a Data Marketplace.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Requested index for start of resources to be provided in response requested by client","in":"query","name":"offset","required":false,"schema":{"type":"integer"}},{"name":"limit","in":"query","description":"Number of items returned per page. Requested number of resources to be provided in response requested by client.","required":false,"schema":{"type":"integer","default":10}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Data Marketplace related OAuth2 Clients listed","content":{"application/json":{"schema":{"properties":{"oauth2Clients":{"type":"array","items":{"properties":{"clientId":{"description":"ID of the OAuth2 Client","type":"string"},"clientSecret":{"description":"Secret of the OAuth2 Client","type":"string"},"clientName":{"description":"Name of the OAuth2 Client","type":"string"},"clientDescription":{"description":"Description of the OAuth2 Client","type":"string"},"grantTypes":{"description":"Grant Types allowed for the OAuth2 Client","type":"string"},"timestamp":{"description":"Timestamp of the OAuth2 Client creation or last modification","type":"int"}},"required":["clientId","clientSecret","clientName","grantTypes","timestamp"],"type":"object"}},"pagination":{"type":"object","title":"Pagination","properties":{"currentPage":{"type":"integer","description":"Current page number"},"totalItems":{"type":"integer","description":"Total number of items available"},"totalPages":{"type":"integer","description":"Total number of pages based on limit"},"limit":{"type":"integer","description":"Number of items per page"},"hasPrevious":{"type":"boolean","description":"Indicates if there's a previous page"},"hasNext":{"type":"boolean","description":"Indicates if there's a next page"}}}}}}},"headers":{"Content-Type":{"schema":{"type":"json","example":"application/json"},"description":"Content-Type header"}}}}}
+>
+  
+</StatusCodes>
+
+
+      

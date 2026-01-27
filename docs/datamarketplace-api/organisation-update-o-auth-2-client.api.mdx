@@ -1,0 +1,72 @@
+---
+id: organisation-update-o-auth-2-client
+title: "Update OAuth2 client"
+description: "Update OAuth2 client"
+sidebar_label: "Update OAuth2 client"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVVFv2zYQ/ivEPa0AbWXZnvS0JMuGDMVWtAn2kBrFhTxLbGSSJSk7nqD/Xhwlx3LstMWeLJP33X33He+ug4RVhPIeXKjQmojJOAsLCc5TyH9uNJQHt3deY6J/LtpUn181hmwCCZFUG0zaQnnfwSVhoMAGUN4v+oUEjwFXlCjEbGBxRVCC0SDBWCjBY6pBQqAvrQmkoUyhJQlR1bRCKDtIW8+ImIKxFUhYurDCBCW0rdHQcwwGU0yXTm8Z8dKXcjYx17ID9L4xKidTfI7O8tlRKPfwmVQ6IHU/EOd8AuuTDEVGDOm8JNn3EpJJDR9N1boKhImg79kgUPTOxsHP+dkZ/2iKKhifK1HCIDcr9b8zOGTrppX7rrXRPyC/fE0CCSrH+XTKzf42kgqUTlqY+AlVMuup9wfnGkKbHWQx9cUJ8IQlKzhLZkUMaQdBfxzySh1zBXMRTxVMDKZC7TpkRal23Eu+zSrziy+hUM4uTVVMG6xwyNDZAC06o/sit1hY7xqoDQ2UUKfkY1kU6M3cPun50rVWDx38ktRbsyYxeABull2/fuBHM1R62rXPwnAIGBsxS5+NQI4ff+zk+uvf26OYF0pRjCK5R7LCY4ykxcakWgyRhA+0NE/CWMFBXTD/Ze6iJtRMU8IlRqO+x4htjmJnpGAdyaaxU8TShcOyCBVIswE2USwbt8nF5oZ6vx8m10+48g3tG336Ou3SZW7j+/gdE0aPisQlqkeyWly8uzkid+XYYSK+FNqpdkU27SmmmsSxo5lAoTGhoCdVo61IoNViTcEsd/lxfY0i4YNbG01h/tHeRYoiUrOcRbemQKaywuSU01aOaHxoaKqEzJ61qUzCRmywaSiJRKq2rnGVoZhZZi6BqrYZgitOyqBVNP/I74/f6pDu+dn5r/Nf5j+PIwxVmmhp/gxo09w4kEArNPyuY+u9C+k3U+3vDl/8/qaX0BhFNk4LdOFR1STO52dHyM1mM8d8PXehKkZsLN7eXF3//eF6xhh+BN7FtEI7cfpKXx+U9vmVJnpKhW/Q5CmVKXRjz9/D0PMgD5euhIO+BwllXpC8b2oXEyO77gEj3YWm7/n4S0uBV+5CwhpDLmQeD9pE/tZQLrGJdETyeZPAT+/H7fZGgDxNfjxEu+WqYtPyP5DwSNthh/eLXsLYtBx9uLgaYsxuGb4HHm2uXu4QPC98+qbtYjJH393xyHkY1/3KaYYE3PDKxs3A0eWU83jLZx00aKsWK7YdXHKx8XDEvBhyOamTKnTdYHHLI67vn0XJI4916fuviV08qQ==
+sidebar_class_name: "put api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update OAuth2 client"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/config/organisation/oauth2-client/{id}/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update OAuth2 client
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["name"],"properties":{"name":{"type":"string"}},"title":"OAuth2ClientCreate"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Updated","content":{"application/json":{"schema":{"type":"object","properties":{"oAuth2Client":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"name":{"type":"string"},"client_id":{"type":"string"},"client_secret":{"type":"string"},"is_active":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"OAuth2Client"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
