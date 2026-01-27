@@ -160,6 +160,11 @@ const config = {
             position: "left",
           },
           {
+            to: "/docs/getting-started",
+            position: "left",
+            label: "Getting Started",
+          },
+          {
             to: "/docs/developer-apis",
             label: "Developer APIs",
             position: "left",
