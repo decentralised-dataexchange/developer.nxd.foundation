@@ -102,16 +102,98 @@
   background-size: cover;
 }
 
-/* TODO: Responvsive button needs to enabled to display the menu */
-.navbar__toggle.clean-btn,
+/* Enable hamburger toggle on mobile, hide brand (we use custom logo) */
 .navbar__brand {
   display: none;
+}
+
+/* Make hamburger icon white */
+.navbar__toggle {
+  color: white;
+}
+
+.navbar__toggle svg {
+  fill: white;
+  stroke: white;
+}
+
+/* Left margin for Getting Started on desktop */
+@media (min-width: 996px) {
+  .navbar__link[href="/docs/getting-started"] {
+    margin-left: 1rem !important;
+  }
+}
+
+/* Desktop navbar hover state - 0.75 alpha */
+.navbar__link:hover {
+  color: rgba(255, 255, 255, 0.75) !important;
 }
 
 @media (min-width: 640px) {
   .navbar--fixed-top {
     padding: 10px 32px 10px 35.2px;
   }
+}
+
+/* ===== Mobile Sidebar Styles ===== */
+
+/* Mobile sidebar container */
+.navbar-sidebar.mobile-sidebar {
+  background-color: #03182b;
+  width: 80vw;
+  max-width: 320px;
+}
+
+/* Mobile sidebar header */
+.mobile-sidebar__header {
+  background-color: #03182b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Close button styling */
+.navbar-sidebar__close {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.navbar-sidebar__close:hover {
+  opacity: 0.75;
+}
+
+/* Mobile menu list */
+.mobile-menu__list {
+  padding: 1rem 0;
+}
+
+.mobile-menu__list .menu__list-item {
+  margin-top: 0.5rem;
+}
+
+.mobile-menu__list .menu__list-item:first-child {
+  margin-top: 1rem;
+}
+
+/* Mobile menu link styles - white text */
+.mobile-menu__link {
+  color: white !important;
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  display: block;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+/* Mobile menu hover state - 0.75 alpha */
+.mobile-menu__link:hover {
+  color: rgba(255, 255, 255, 0.75) !important;
+  text-decoration: none;
+  background: transparent;
 }
 
 /* API Card styling (similar to docs.igrant.io) */

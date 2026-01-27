@@ -17,6 +17,12 @@ const sidebars = {
   tutorialSidebar: [
     {
       type: "category",
+      label: "Getting Started",
+      collapsed: false,
+      items: ["overview"],
+    },
+    {
+      type: "category",
       label: "Developer APIs",
       link: {
         type: "doc",
@@ -35,12 +41,6 @@ const sidebars = {
           items: require("./docs/disp-api/sidebar.ts").default,
         },
       ],
-    },
-    {
-      type: "category",
-      label: "Getting Started",
-      collapsed: false,
-      items: ["overview"],
     },
   ],
 };
