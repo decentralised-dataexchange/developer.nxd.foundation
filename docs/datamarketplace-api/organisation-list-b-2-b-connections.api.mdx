@@ -1,0 +1,72 @@
+---
+id: organisation-list-b-2-b-connections
+title: "List B2B connections"
+description: "List B2B connections"
+sidebar_label: "List B2B connections"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVktz4zYM/iscXnqRH+v25FPjNN1xZyfN7GN6yOYAk5DEjUQyJOQ49ei/d0DJtmwnmzS5ODaBDx/x+IitJCiinN9KFwqwJgIZZ+VdJp3HkL4stZwfnX4ykRazxaWzFhX/EGUmI6omGHqS89utXCAEDBcNlXJ+e9feZdJDgBoJQ0wGFmpk1DyPSDKTxsq5fGgwPMlMaowqGJ+IzOVnfGgwEmphrMaNyF0QkSCQcLkIGF0TFDKDgA+NCajlPIcqYiajKrEGOd9KevIczljCAkMKkUNTkZxP2zbb06lMbV5hc93UKwwc2hDWUQSkJljUwmMQHgp8L5EP05bzFDB6ZyNGtp5Np/xxzICzz/HVUfqVs4SW2By8r4xKlZr8iOyzPWfgVj9Q8V194EKT6SKuZqtDWQfmEAJwMtKlX4cxemATKRhbyEzmLtRAci6bxmjZZkdNtXybyxHB53xObT6jckGfU24zqQICob6gn0bWQDgiUyO7NF7/P5c2k2SoYrujkUknHgpj4STVL6RUNSGgpRtusecbadgkl5116khhU88yfXIE1fKkhi9hfGXj3vnQ8LAGU8Gqwj0eU3oPHnOLYgURtXBWdMPXZv0Uvo53Oor7CWwzWUK8Cbg2rhkyWzlXIdgzpKXVPDAYhckFlRjwlyhA+B5hiHqNG3o/osUN9WiDxrg5tEHb/Z3CpZlfzBYnQ18jlY7VuUgi6oH1Vk6Us7kpJsPpmqxmq9HAeZIUO6x3etyESs5lSeTjfDIBb8Z2o8e5a6zuiJ0zWqPoECTr1k7+v7DQdO0wfAT2CeMQslfElMBkJLP+nz93I/TXP1/PYl4ohTEKcvdohYfIjfNoqBRdJK5XbjbCWMFBXTD/Ju6iRNBd/y8gGvUaI7Y5i508BTRUoqVeXdNT9DfDzYSqDM+bCqjZAKoo8so9pjobm7sUsK/3H0AQPSgUC1D3aLW4uFmej7CrfYWEfCi0U02Nlg5xqURxDjQSIDQQCNyoEmyBAqwWawwm35HmohmFwge3NhrD+Lv9FjGKiFU+im6NAU1hhUn3oKes9+aRH14vS8jaFIan+hGqCkkQqtK6yhUGY2KZuAQsmqoLrvhSBqzC8XduKm7A7rqz6ey38a/jD/1bBiqNWf8wm48BLI2Nk5nEGgw3a2y8d4F+N8Xh7LiNDydJVRTaiAPQCw+qRDEbT888Hx8fx5COxy4Uk943Tj4tL6+uv1yN2CcJuItUgx2AvjCpR6Xdtx7hhia+AmPT28IUtv0U38puiuXxKynT6zY6BudtrXSR2Gu7ZUH9Fqq25Z+7JYYnXJvIJTwsJSeU9gvE2xeuZ29xj0/DxW4NVcNGktest3N4y5r1k/C7Re4Q/Y6/hNTFaSXNZK8KnJvOieXFD73OFilG2WvuxytWKDgWkxM5S+i7Fco+DbC3287iK4tZ28od8yRusr1r2/Y/IpgHWA==
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List B2B connections"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/config/organisation/b2b-connections/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List B2B connections
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"offset","in":"query","description":"Requested index for start of resources","required":false,"schema":{"type":"integer","default":0}},{"name":"limit","in":"query","description":"Number of items returned per page","required":false,"schema":{"type":"integer","default":10}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of connections","content":{"application/json":{"schema":{"type":"object","properties":{"b2bConnection":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"organisationId":{"type":"string","format":"uuid"},"b2bConnectionId":{"type":"string"},"b2bConnectionRecord":{"type":"object"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"B2BConnection"}},"pagination":{"type":"object","properties":{"currentPage":{"type":"integer","description":"Current page number"},"totalItems":{"type":"integer","description":"Total number of items available"},"totalPages":{"type":"integer","description":"Total number of pages based on limit"},"limit":{"type":"integer","description":"Number of items per page"},"hasPrevious":{"type":"boolean","description":"Indicates if there's a previous page"},"hasNext":{"type":"boolean","description":"Indicates if there's a next page"}},"title":"Pagination"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

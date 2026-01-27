@@ -1,0 +1,72 @@
+---
+id: service-delete-all-records
+title: "Delete all consent records"
+description: "This endpoint is used to delete all consent records for an individual belonging to an organiation defined in the consent building block. This could be used, for example to exercise digital rights (Right to be forgotten) and deletes all consent records that shall not be retained and have a 'forgettable' data agreement. This may also delete an unsigned consent record, for instance in cases where the user exits the signing process."
+sidebar_label: "Delete all consent records"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVU1v4zYQ/SuDORRZQLHTdE8+1YnTwu1usdikaIGsD2NxIhGhSC05ykcN/fdiKNmxvcneC/SkD3KGb94bvtmg4VRG24oNHmd4U9sE7E0brBewCbrEBiSAYcfCQM5BGXxiLxC5DNEkuAsRyIP1xj5Y05GDNbvgK+srjSQPIVbkLekZYPjOejZgPUjNu2TrzjqjEWsXyvsJZCBl6JyBNWcURT6In6hpHWtifuJY2sRgbGWFHERb1ZLg5LM+dceaNaYKIuzfAXkzlpFerUNqEki1LvkgGhxZKIPV0JoeGAi+oKZkEVo7/oJgSAioiswNexmBN/QM5NILbR46n2yluQ6PHaqyPgn5kpWVkhIneKw5cmaoS6xlW0n5U7MoT20MJac0wQJDyzGTuzQ4w8TxwZa8yCfPnfs8lIcFthSpYeGYcHa7QauC10yGIxboqWGc4d+nlwO+i4vT5U7RpcECI3/tbGSDM4kdF5jKmhvC2QbludXYJNH6CvviqKle8sBygf1KU6VWj0kafX52po/DGCxGaLql7wt8/9quNWkjtZ3ArrajwL7AxGUXrTznoi+YIsd5JzXObld9scF5a3/n5/y1KlCoUnZwZAEG9nBVYMNSByV40DTzqVlwOjI+fbkB00FcLLIaW8IPsS+4CTAsY4FddKqGSJtm06nhJpxSaye2iuRlYgMq1MME10L5jr2RIw3Lx2lWL4Rcq4CDBlsSdlrS8KN4vUuUvxDtP7nrVPB9Wnc5FAmOfaLf67wJi/HllxAbEpzhb3/d4HHPzEvtbpBwzx5aSmpDj1ZqGE6CNvKdfdL7coAFRqSqu/V3IaOx4vT4xfL6E8w/LWERyk4v64C+QBVoOPX87Pz95KfJj9/AuQzNOjuBxpv9+Hx/t93ykTxV2QjgZG4a6+EHeOn+wYIWahgfKd6ztI5Kfn3n2FP5fpfBC5WitYz821+3ehbIDVnVPXVtG6L8/KL1cUfsNxM6W7JPvJd03lJZM5xPzr6JfHx8nFBenoRYTcfYNP2wvLz64/rqVGOU8jYkacjvJV28OTeOOd7kOtnL/2PovzmGxlsv/CTT1pHNxpD7aDNa5e12OGVf2eqUR8vWZeuQRDduNmtK/Gd0fa+/v3Ycs0cX+EDRatGDf2+tKfurTbpgcHZHLvF3+uvk8zjL3sHhcHqjinv1xu/NxgdynYZlf91NisXVh6ubKyyQDo3xyAgz+K3v+ue9dJvNsONGbbDvcYsk2yL2q77v/wWSfmdr
+sidebar_class_name: "delete api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete all consent records"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/service/individual/record"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint is used to delete all consent records for an individual belonging to an organiation defined in the consent building block. This could be used, for example to exercise digital rights (Right to be forgotten) and deletes all consent records that shall not be retained and have a "forgettable" data agreement. This may also delete an unsigned consent record, for instance in cases where the user exits the signing process.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"header","name":"X-ConsentBB-IndividualId","required":true,"schema":{"type":"string"},"description":"Individual ID"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"","headers":{}},"400":{"description":"bad input parameter","headers":{}}}}
+>
+  
+</StatusCodes>
+
+
+      

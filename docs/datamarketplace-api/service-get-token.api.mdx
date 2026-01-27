@@ -1,0 +1,72 @@
+---
+id: service-get-token
+title: "OAuth2 token endpoint"
+description: "Get access token using client credentials grant"
+sidebar_label: "OAuth2 token endpoint"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVd9v2zYQ/leIe5bt1OuTnpZ0XZChWIMlwR5cI7iQZ4mNRLIk5R8z9L8XR8qxPNcrML/IEvndfXf33d0eIlYBygUE8mstCZYFKArSaxe1NVDCLUWBUlIIItpXMqIL2lRCNppMFNKTIhM1NkFUHk2EAqwjj4y+U1AeDN9SfGQ4FBBIdl7HHZSLPdxg0PK6izWUi2W/LMDTt45CvLFqB+U+vWpPCsroOypAWhPJRD5C5xotk6fZdrLZbCYr69tJ5xsy0irG7CHImlrkf3HnCEqwL19JMs2j5QUk6s/pxrIA5zmEqCkwbnR2tBKi16aCAsh0LVvI+Xge5QOWffqxp+CsCdnc/OqKH6dJTqkROoSOFFwM8mvgy/8V0ynzXLbnVLZz7n0B6eRyaFtsXcOfbgg9eUbQ1mlP4VmPDWoTqSIP/5ZOjipBUgAi6paENiKQtEYF4OREHZOPzyyCeYL8NeQLcvre/yhjd2aNjVZZdCIRSVffXb56LtlEoKVYW1aqsyHlEFmMMBuEO4tvsvVr8iGptvMNlFDH6EI5m6HTU7NV05XtjEqRnqXik16TyBaAVX7ogQcuZa5WTnJuhbfUsgv2na5BCS+5EsXw53frW4xQwh9/P575vB53rcMQSImNjrXInoTztNJbrgc7tV7/k6tUE6pc7VFzXmbEd858J6TALtac6qxfsbJe5DL/aHysGrtJBdFmZZPDQRm/YcTgUJK4QflKRonr+7szjx8sizUSHwplZdeSiUe/sSZxbmgiUCiMKGgrazQVCTRKrMnr1YH0IAPhvF1rRX76xTwFCiJQs5oEuyZPujJCpzjirhjQ+NLQOLwiWVa60hEbscGmoSgiydrYxlaaQmKZuHiquiY7lxyURiNp+oVFxQLM4c6v5u+nv0zfDdMCZZoWBlNN9C13xVRb7uIWNYs1dM5ZH3/V1fHsVMbHk76ARkviFjwavXYoaxLz6dUZcrPZTDEdT62vZgM2zD7dffj458PHCWO4stxhLZqR0UEOWaNklLM67ZCT2u6PA/F/rKNBt5G2ceYa1IbDS/z3Q68ft98wEnkJ1DwNygXs9y8Y6Mk3fc+fv3XkeXMtC1ijT2VOm6uAoW14PLzSLikykZ48MgG+3nRM5Odrqy8OJriFXbwATuuAh8nbBLv//MBj4GXYna1VjBlZLsYvmTaetvehnfOTgxkO0OxGPFJW8mx4CuS5mn0PxUC7Gz6lSH6Gv8cQNtarEd4Nn6DnHfodO3UGxQ==
+sidebar_class_name: "post api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"OAuth2 token endpoint"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/service/token"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get access token using client credentials grant
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/x-www-form-urlencoded":{"schema":{"type":"object","required":["grant_type"],"properties":{"grant_type":{"type":"string","enum":["client_credentials"]}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Token issued","content":{"application/json":{"schema":{"type":"object","properties":{"access_token":{"type":"string"},"token_type":{"type":"string","example":"Bearer"},"expires_in":{"type":"integer","description":"Token expiration time in seconds"}},"title":"OAuth2TokenResponse"}}}},"400":{"description":"Invalid grant type"},"401":{"description":"Invalid client credentials"}}}
+>
+  
+</StatusCodes>
+
+
+      

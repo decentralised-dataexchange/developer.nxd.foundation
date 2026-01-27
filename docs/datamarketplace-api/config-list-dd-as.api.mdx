@@ -1,0 +1,72 @@
+---
+id: config-list-dd-as
+title: "List data disclosure agreements"
+description: "List data disclosure agreements"
+sidebar_label: "List data disclosure agreements"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFV0tz20YM/is7uPRCS47bk06V4yTjTib1JE57SHyAlyCJhNxldkFJrob/vYMl9XZiN5f6YlmLx4fXB3gNgmWE2Sew3hVcwl0GvqWAwt5d5zAbv3/LUa6u5hEyiGS7wPIAs09ruCQMFOadVDD7dNffZdBiwIaEQkwCDhuCGfiiiCSQATuYwbeOwgNkkFO0gVv1BTN4T986ikK5YZfTyhQ+mCgYxPjCBIq+C5YUQaBvHQfKYVZgHSmDaCtqEGZrkIdW3bETKikkFwV2tcDsvO+zLZyaG34CzbuuuaegrlmoiSaQdMFRbloKpsWSfhbIiwMkUVC6eAzlxE6UwK6EDMh1jZarczVrriADXCILu/K1D/O2DX6BtX6bPiaBQF/IDrI7pWAr1ue7DISlVidXV/MPA5xeKxkott5Fiorj4vxcfx3mSLtCMzR2hvVOyInKYdvWbFMXTb9EFV6fBuXvFRdk0AbtOeHBVY6CVxxt7WMXaF4GooacxD1NDAE1T6k0T1vk/LFUFj40KDCDruMc+gx8KNFx3Pb+M1SEmrZGocfE+wwWFCIP0Z+8fSfM92R9yE9j6rNNr/x/XZEBx7coFOWvk8Duva8JXUpKopQni7VJRZ+BDYRC+Vx+mPQchc6EG1InXZv/N5V+L6THU387FjPJtliyQzkM8jv9ZbsQyMmNssLjs78/NS8H6UQixiWaSVnzgvX1UY6+Z+NWhUflHUfhArnG+5q29hTSz9hTbNHcY6TceGcGvuyzkTiftnfMnlvS7DOoMN4EWrA/6OVN/xxbuna5EglFw4WRigL9Eg2adrSwb/UdreTnLTpayWhtr1Vudm3QDz/H5hIJ6jCbfNtSBneslUFDUnndpWVagS3qtoTpsFmnqnq2Uz3bqU7Ttg2LzS7tQg0zqETaOJtOseWJW+WTwncuHxCeQluQGSyAMvpmdX9QJh76Yn+BbzOnLjZbKGUyCUE2fni9ma4//r498Tm3lmI04r+SMy1G7aAlS2UGT1q4gleGnVGnPvA/CbupCPNhEC4xsn0Kkcqc+E6aBjupyMm4ftIZ8aeauzC2Zh08GyhXAayjKWq/TAVnV/jkcI8jYouWzCXar+RyM7+5Pp1l37Q1Cemjyb3ttHA7v1KROTV0ZnBoGFrZCl1JBl1uFhS42IDWorElo2zNOYXJZ/cxUjSR6uIs+gUF4tIZTnHIQzZq6+zvh5clyzmXrOO9xLomMUK2cr72JVNMKBOWQGVXD86tBsXoLE0+a1NttxhcnF/8Nvl18mJc9mjTvI2nDL8J6GTCXhdSg6zNGru29UF+53L3dtjGu5dEL5ZcpD2j8xZtReZicn6iuVwuJ5ieJz6U01E3Tt9ev3z17sOrM9VJTO6jNOj2jD49sgdV3nah0EqmbY2c1lxCsx7HeXtAD4v98YGGDHSzVj6KaqzXSrAfQ933+vVw/Omg5xy1kru78gjO9tB6/s38aARf6WH/Nl9g3akQ6H36fAzPuZR/4H5zi//Y+yC7vZZ3wnf6R0idn/4FyWBkEk3koKWU1O67OLlO1cqWpd+8UlbDQwI6osBkfXPfuIc92+v1IHGrBNj3sIGeCBH6u77v/wWOYawW
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List data disclosure agreements"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/config/data-disclosure-agreements/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List data disclosure agreements
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"offset","in":"query","description":"Requested index for start of resources","required":false,"schema":{"type":"integer","default":0}},{"name":"limit","in":"query","description":"Number of items returned per page","required":false,"schema":{"type":"integer","default":10}},{"name":"status","in":"query","schema":{"type":"string","enum":["unlisted","awaitingForApproval","approved","rejected","listed","archived"],"title":"DDAStatus"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of DDAs","content":{"application/json":{"schema":{"type":"object","properties":{"dataDisclosureAgreements":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"organisationId":{"type":"string","format":"uuid"},"templateId":{"type":"string"},"version":{"type":"string"},"dataDisclosureAgreementRecord":{"type":"object"},"status":{"type":"string","enum":["unlisted","awaitingForApproval","approved","rejected","listed","archived"],"title":"DDAStatus"},"isLatestVersion":{"type":"boolean"},"tags":{"type":"array","items":{"type":"string"}},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"DataDisclosureAgreementTemplate"}},"pagination":{"type":"object","properties":{"currentPage":{"type":"integer","description":"Current page number"},"totalItems":{"type":"integer","description":"Total number of items available"},"totalPages":{"type":"integer","description":"Total number of pages based on limit"},"limit":{"type":"integer","description":"Number of items per page"},"hasPrevious":{"type":"boolean","description":"Indicates if there's a previous page"},"hasNext":{"type":"boolean","description":"Indicates if there's a next page"}},"title":"Pagination"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

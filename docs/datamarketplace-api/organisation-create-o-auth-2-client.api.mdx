@@ -1,0 +1,72 @@
+---
+id: organisation-create-o-auth-2-client
+title: "Create OAuth2 client"
+description: "Create OAuth2 client"
+sidebar_label: "Create OAuth2 client"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVUuP2zYQ/ivEnOlH3Jx0qnezLbYImqC7QQ+OEYzJscSsTDIk5UcN/fdgKDmW490GQU6WOa9vHt/MERKWEYoFuFCiNRGTcRaWEpynkP/caygupLeBMNG7eZOq2W1tyCaQEEk1waQDFIsj3BAGCqwAxWLZLiUE+tJQTDdOH6A45r8mkIYihYYkKGcT+ymOgN7XRuVAk8/RWX6LqqIN8lc6eGI4q8+kOOzZ0QIsboiR+8DYk6HIFvn1bBlTMLaEtpWQTKr5aZhJlxu0LSsEit7Z2PmZTV/xj6aogvG5SgV06hp+IYNLtG5Y1R9qG32dmYS1CxtMUEDTGA2tfKkEElSO8+k5N2dpJBUoPath4idUyWyH3lfO1YQ2O+iqM3/GeIBSY6JRMhtik8brnzN5oY+5gyx8PZ1et+1N03WIRC4N6z3XV9F5FOo05BtKlWM6eBdzN5AnHCbK2bUpJ0OSTByy7aiznWSGhC2FmAnShBoKqFLysZhM0Jux3evx2jVWdwT8HtBbsyXReQDm04luDzxX3TAMSfetdhyCY2c17k5WAtl//HGq6F//Pl7FnCtFMYrknsgKjzGSFjuTKtFFEj7Q2uyFsYKDumD+y9hFRagZpoQbjEb9CBHrXMXOloJLSDb1ZBJrFy5bIlQgzQpYR7Gu3S63kjn3z3nf3O1x42s674LhANu1y9j6EXqDCaNHReIG1RNZLebv76/A3Tp2mIiFQjvVbMimM8RUkbh2NBIoNCYUtFcV2pIEWi22FMz6lB/31ygSPrit0RTGH+2HSFFEqtej6LYUyJRWmJxyOsjeGlc1DSshs2dtSpOwFjusa0oikaqsq11pKGaUGUugsqm74IqTMmgVjT/y/PGsdunOprPX49/Gr/othyoNamn+DGjT2DiQQBs0PNex8d6F9Lspz7LLiT9LWgm1UWTjsEFzj6oiMRtPryx3u90Ys3jsQjnpbePk7f3t3d8PdyO24SFghm7QDpy+wOmL1n6b0kT7NPE1mrzIMoRjT/cFdHQHeXkzJVxQHiTwMap4UxQLOB5XGOlDqNuWn780FPhWLiVsMeQW5lMpoWcPb4knOuRpy5dl9MjIWL1uGOHVlWnlyYKJ69P/6i4Hy+z9uwcm/6q/zRun2Sbgju8r7qAAzi1XKC+a/HaEGm3ZYMm6nU8uO16S/bt1k7PqRWgPA4THY6fxyMumbUH2qeTlA+2ybduv0YEAMQ==
+sidebar_class_name: "post api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create OAuth2 client"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/config/organisation/oauth2-client/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create OAuth2 client
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["name"],"properties":{"name":{"type":"string"}},"title":"OAuth2ClientCreate"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Created","content":{"application/json":{"schema":{"type":"object","properties":{"oAuth2Client":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"name":{"type":"string"},"client_id":{"type":"string"},"client_secret":{"type":"string"},"is_active":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"OAuth2Client"}}}}}},"400":{"description":"Duplicate name"}}}
+>
+  
+</StatusCodes>
+
+
+      

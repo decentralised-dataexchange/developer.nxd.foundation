@@ -22,10 +22,13 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* Custom link color for content (similar to docs.igrant.io) */
+  --nxd-link-color: #004a87;
+  --nxd-link-hover-color: black;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #03182b;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -34,6 +37,8 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --nxd-link-color: #5fa8d3;
+  --nxd-link-hover-color: white;
 }
 
 .navbar__title {
@@ -56,4 +61,131 @@
   .navbar--fixed-top {
     padding: 10px 32px 10px 35.2px;
   }
+}
+
+/* API Card styling (similar to docs.igrant.io) */
+.api-card {
+  border: 2px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 0.5rem 0;
+  background-color: white;
+  transition: 500ms all;
+}
+
+.api-card:hover {
+  border-color: black;
+}
+
+.api-card h2 {
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+
+.api-card-columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.api-card-column {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.api-card-column:last-child {
+  margin-right: 0;
+}
+
+.api-card-column h3 {
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+}
+
+.api-card-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.api-card-column li {
+  font-size: 12px;
+  margin-bottom: 0.5rem;
+}
+
+.api-card-column a {
+  color: var(--nxd-link-color);
+  text-decoration: none;
+}
+
+.api-card-column a:hover {
+  color: var(--nxd-link-hover-color);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .api-card-columns {
+    flex-direction: column;
+  }
+
+  .api-card-column {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .api-card-column:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* CSS to fix breadcrumb vertical alignment and layout */
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.breadcrumbs__item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.breadcrumbs__link {
+  display: inline-flex;
+  align-items: center;
+}
+/* CSS to fix typography for generated index pages */
+article header h1, 
+.markdown h1,
+.theme-doc-markdown h1,
+main .container header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+/* API Endpoint Heading Styling */
+.openapi-markdown__details-summary-header-body,
+.openapi-markdown__details-summary-header-params,
+.openapi-tabs__response-header,
+.openapi-explorer__request-title,
+.openapi-explorer__response-title,
+.openapi-tabs__heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-block: 1rem;
+  text-transform: capitalize;
+  display: block; /* Ensure it behaves like a header block */
+}
+
+/* Ensure consistent H2/H3 look */
+.openapi-markdown__details-summary-header-body,
+.openapi-markdown__details-summary-header-params {
+  font-size: 1.25rem; /* Slightly smaller for H3 "Body"/"Request" if preferred */
+  margin: 0; 
+  display: inline-block;
+}
+
+.openapi-tabs__response-header {
+  font-size: 1.5rem;
 }

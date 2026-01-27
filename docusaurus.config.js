@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer').themes.github;
-const darkCodeTheme = require('prism-react-renderer').themes.dracula;
+const lightCodeTheme = require("prism-react-renderer").themes.github;
+const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -45,7 +45,10 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: false,
+        docs: {
+          sidebarPath: require.resolve("./sidebars.js"),
+          docItemComponent: "@theme/ApiItem",
+        },
         blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -116,6 +119,25 @@ const config = {
         },
       };
     },
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "openapi",
+        docsPluginId: "default",
+        config: {
+          datamarketplace: {
+            specPath: "static/openapi/datamarketplace.yaml",
+            outputDir: "docs/datamarketplace-api",
+            sidebarOptions: { groupPathsBy: "tag", categoryLinkSource: "auto" },
+          },
+          disp: {
+            specPath: "static/openapi/disp.yaml",
+            outputDir: "docs/disp-api",
+            sidebarOptions: { groupPathsBy: "tag", categoryLinkSource: "auto" },
+          },
+        },
+      },
+    ],
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -127,6 +149,11 @@ const config = {
           {
             type: "custom-nordxdataspace-logo",
             label: "",
+            position: "left",
+          },
+          {
+            to: "/docs/developer-apis",
+            label: "Developer APIs",
             position: "left",
           },
           {
@@ -150,6 +177,7 @@ const config = {
         respectPrefersColorScheme: false,
       },
     }),
+  themes: ["docusaurus-theme-openapi-docs"],
 };
 
 module.exports = config;

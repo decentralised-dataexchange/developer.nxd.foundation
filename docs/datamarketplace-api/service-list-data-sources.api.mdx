@@ -1,0 +1,72 @@
+---
+id: service-list-data-sources
+title: "List data sources"
+description: "List data sources"
+sidebar_label: "List data sources"
+hide_title: true
+hide_table_of_contents: true
+api: eJydV01z2zYQ/SsYXHqhJcftSafKjptRJxN7/NEeEh/WwJLchAQQAJSlevjfMwtSEi2xthJdJBu77z0A+4VnGaEIcvZZBvRLUigfMmkdeohkzULL2WbhI4X4HiLc2sYrDDKTAVXjKa7l7PNDJh14qDGiZ7RnaaBGOZM2zwNGmUkycia/N+jXMpMag/LkmELO5A1+bzBE1IKMxpXIrRchgo/C5sJj2BJ6/N6QRy1nOVQBMxlUiTXI2bOMa8d0ZCIW6BNFDk0V5ey0bbOtnIpqekPNp6Z+RM/UFLEOwmNsvEEtHHrhoMBfFfLuhRK9PcqF3hd0gBaiJ1PItn1g7uCsCRh4/ez0lL9e7oBvivUzhdidnrImoolsD85VpNIVT78Gdno+JLWPX1HxYTnPARGpo9SDGNgZg/fA0tOZHQfynoKqbGg8zguPWKOJP4HYtpkER0c4bA8vG2h/WyLpQ4xM5tbXEOVMNg1p2Wb9dR6QpeyI1o8uVbY7+9HFF3c5su5sRWp976vX5XliY2WX6Bc1FHikQ2ULe6SpdWjmjo60XqKnvI+5PuHvbz5ee8xpNbpP5VGjiQTVVZ6jvzTaWerC98AWlMIQrnn9VTvnaQlq/R5C+WjB61Ht6dg0XuUX1uhGDZEera0QTC8PIur5CNFg8xoinkSqkV0ap3/Opc1kpFix3ZUvwFDowmbvOH8tll+kw2LcwHkMaGJiuVypEkxxjOlthDieFEOrG1TW6/HM3mz7n+E225aXHBRkjty3arxHE6+5ao/X5mHdvOisU5EXJrUB1hxthGqxV1T+D+OOjXvnXQ+BJVAFjxVu8VjSr+CxtiAeIaAW1oiun3Heph9v4+13t21TazNZQrj2uCTbhJGY30daGM0Xg0FQLmKJHn8LAoTrEYaon3A1lkVHIhpcxR5tEBnXuzBou88+XGqDez2wxlhaHmqKNJQ4iKWcyWk/4kzZ+qS3nqYJxy83A03DtUKWMbowm07B0cSs9CS3jdGdjEP+JYoOQXLj3oxLt9xou8s/R/Do5w2r2B4PU2yGgHRcyUhm/Y+/NoXi73/vDjjnqRCKaL+hEQ4Ch8kTxVJ0THw7Oa0EGcGk1tN/SbsoEXQX7ecQSL2liG0OuJOngCaWXLa7nE2z3BXDnQlVEWfXrq4HkVf2Kd0qmdwmwv52edAMDhSKc1Df0Ggxv14cJqytXYUReVFoq5p6U1sSbyxRHAKdCOiiAvuCJsBoMaynog8H4bxdkkY/+WLuAwYRsMpPArdUpMIISvuI66z35gQfbi9LyJoK4hx+gqrCKCKq0tjKFoQhqUxaPBZN1ZEr3hSBUTj5wkHFAdht9+z07I/J75N3/SwHXWvq50n64MHECVmZSayBOFhD45z18U8qdmsvw3i3kmqIQhNwADp3oEoUZ5PTA8+np6cJpOWJ9cW09w3Tj4uLy0+3lyfsk8q1DbEGMwAdy8vxoSfiKk5dBZRaXtM16y5nd++Vro2d7LD4BVPaENno+ZlL5b2v2pb/3Q3YnM2aAl/XboLfU7Adlo9/nYyK/obr4StoCVXDRpJfAsdrOOZN8gr95tXzOntnu/cu2bk88B8+BTk/+Liyd0WDj7Pz5erjhkQH7wxG2dbgD5d3sm1/AHbTDAw=
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List data sources"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/service/data-sources/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List data sources
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"offset","in":"query","description":"Requested index for start of resources","required":false,"schema":{"type":"integer","default":0}},{"name":"limit","in":"query","description":"Number of items returned per page","required":false,"schema":{"type":"integer","default":10}},{"name":"dataSourceId","in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of data sources","content":{"application/json":{"schema":{"type":"object","properties":{"dataSources":{"type":"array","items":{"type":"object","properties":{"dataDisclosureAgreements":{"type":"array","items":{"type":"object"}},"api":{"type":"array","items":{"type":"string"}},"dataSource":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"name":{"type":"string"},"sector":{"type":"string"},"location":{"type":"string"},"description":{"type":"string"},"policyUrl":{"type":"string","format":"uri"},"coverImageUrl":{"type":"string","format":"uri"},"logoUrl":{"type":"string","format":"uri"},"openApiUrl":{"type":"string","format":"uri"},"verificationRequestURLPrefix":{"type":"string"},"credentialOfferEndpoint":{"type":"string"},"accessPointEndpoint":{"type":"string"},"privacyDashboardUrl":{"type":"string"},"codeOfConduct":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"Organisation"},"verification":{"type":"object","properties":{"id":{"type":"string"},"dataSourceId":{"type":"string"},"presentationExchangeId":{"type":"string"},"presentationState":{"type":"string"},"presentationRecord":{"type":"object"}},"title":"Verification"}}}},"pagination":{"type":"object","properties":{"currentPage":{"type":"integer","description":"Current page number"},"totalItems":{"type":"integer","description":"Total number of items available"},"totalPages":{"type":"integer","description":"Total number of pages based on limit"},"limit":{"type":"integer","description":"Number of items per page"},"hasPrevious":{"type":"boolean","description":"Indicates if there's a previous page"},"hasNext":{"type":"boolean","description":"Indicates if there's a next page"}},"title":"Pagination"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

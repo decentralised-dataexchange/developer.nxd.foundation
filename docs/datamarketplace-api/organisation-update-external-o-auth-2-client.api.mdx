@@ -1,0 +1,72 @@
+---
+id: organisation-update-external-o-auth-2-client
+title: "Update external OAuth2 client"
+description: "Update external OAuth2 client"
+sidebar_label: "Update external OAuth2 client"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1Vktv4zYQ/ivEnFqAttK0J52apGmRYtFd7G7QQ9YoJuRY4kYiuSTlRwX998VQcmzH7qaH1hdLnPnm8c2D6iFhFaF8ABcqtCZiMs7CQoLzFPLLnYbySHrvNSa63SQKFpu3V12qL28aQzaBhEiqCyZtoXzo4ZowUGAFKB8Ww0KCx4AtJQoxK1hsCUowGiQYCyV4TDVICPSlM4E0lCl0JCGqmlqEsoe09YyIKRhbgYSlCy0mKKHrjIaBfTCYYrp2esuIl7aUs4ljLXtA7xujclLF5+gsn524co+fSXFqPjAnyVBk6Rj6y4AGCSpT8ZfR35JGUoHSGY384xyidzaOri4vLvhPU1TB+FygEsYqMHH/UUKHJT4q6qvIc6meVEb+X4xJUIGYiqsz0oMwmK5ZMi0xpBvZ+/eQQUIyqWG9t/9E1LCr3rlKCZoGRowYoXYj01KqHQ+Z7zK3PAIlFMrZpamKw7IUDhk6G6GzncWiN3oo8vCF1W60utBACXVKPpZFgd7M7UbPl66zepzxl2G+MSsSowXgMdpN8gfun7HQh/P8TBu7gGlE+f0xK4GcHn7dkfn7nx9PfF4pRTGK5J7ICo8xkhZrk2oxehI+0NJshLGCnbpg/s6xi5pQc5gSrjEa9VpErHPiOyMFE0o2TUMjli4c10eoQJoVsIli2bh1bgWerff7NXO7wdY3tF8L+1466O2Tw11LH7SysUuXM5l67RdMGD0qEteonshqcfXu7iSVG8fuE7FQaKe6lmzaJ5RqEqeGZgKFxoSCNqpGW5FAq8WKglnu2OBuMIqED25lNIX5J3sfKYpIzXIW3YoCmcoKkwlKWzmh8bGhQ95ktqxNZRI2Yo1NQ0kkUrV1jasMxRxljiVQ1TWjc8VJGbSK5p+4W7mzx3QvLy5/mv84/2HafajSAfPmt4A2zY0DCdSi4SmInfcupJ9NtZcdz8deMkhojCIbD8t55VHVJC7nFyfI9Xo9xyyeu1AVEzYWb+5ubv/4cDtjDLeMdzG1aA+MvrYXjmr83NyJNqnwDRqb9xjH0k874wHGnQHy+DaXcH5vgIQyX71839cuJjbR948Y6T40w8DHXzoKfJkvJKww5NLm9aJN5GcN5RKbSCfRPl9K8N376QL+XoA8n8V0iHbLdcam4zeQ8ETb8etgWAwSpqFn76PgZvQx+8jwPfDkEhzkDsH7xqdv6i4OFvK7e15Zj9OHROs0QwKu+QsF12OMLqec12M+66FBW3VYse5oksuPxyvqxZLMSZ1loe9HjY+8IofhmZS8MpmXYfgK7/NjVQ==
+sidebar_class_name: "put api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update external OAuth2 client"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/config/organisation/oauth2-client-external/{id}/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update external OAuth2 client
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"type":"string"},"client_id":{"type":"string"},"client_secret":{"type":"string"}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Updated","content":{"application/json":{"schema":{"type":"object","properties":{"organisationOAuth2Client":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"name":{"type":"string"},"client_id":{"type":"string"},"client_secret":{"type":"string"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"OrganisationOAuth2Client"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,72 @@
+---
+id: organisation-read-b-2-b-connection
+title: "Read B2B connection"
+description: "Read B2B connection"
+sidebar_label: "Read B2B connection"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVVFz2zYM/is8PK13tJV5e9LT4jTrZdfbdml7e0jzAJOwxEYmWRKyk/n033uglMSOc2vnF0siPuAj8AHYA2OTob6BkBr0LiO74OFWQ4iUysuVhfro9JrQLhfLi+A9mWKuIZPpk+MHqG/2sCRMlM57bqG+uR1uNURMuCGmlIuBxw1BDc6CBuehhojcgoZEX3uXyELNqScN2bS0Qaj3wA9REJmT8w1oWIe0QYYa+t5ZGCRGohyDz5TFfnF2Jn+WskkuFpI1PDNWlhhdl0GDCZ7Js1hjjJ0z5Y7VlyyQ/SmFsPpChkFDTJIidmPA1WJ1kJDvmjv7A7fSR2m/+jHIEZHXMC9trsmEZE8pDxpMImSy5/yfkS0yzdhtSCB9tP8PMmhgx53YHYtqGH/6RRFFfWq5WCpzqL8NcRtEqA2VZIueaqhM8GvXVIdprFaL1ewZW+2dHaqi4LR91GefOqihZY65riqMbu7v7Xwdem9xCnhM6r3bkho9gGjxsR0+iHrGih82xVNmJARMOpf3VTECPT38/pivP/75eBLz3BjKWXG4I68i5kxW7Ry3aoykYqK1u1fOKwkakvu3cFctoRWaGpaYnfkeI7E5iV2QCntuyfPUMmodkvpL3C2U6Rx5ViaRFQPsslp3YVeq7fw6lIBT1d8iY45oSC3R3JG36vzvq5OIF2ETO2KSQ2WD6Tfk+Tkut6ROHc0UKouMiu5Ni74hhd6qLSW3fiQtRXOGVExh6yyl+Wf/KVNWmbr1LIctJXKNV67cgx/0hMZVR4fX08WzdY1j7NQOu45YMZnWhy40jnJhWbgkavpuDG7kUg69oflnEZUIcLzu4mzx6/yX+c/TgEJT+ulxbr5L6HnuAmigDToRa+5jDIl/c83z2bGMn08GDZ0z5DMdOD2PaFpSi/nZCXK3282xHM9DaqoJm6v3VxeXf364nAlGKhtD5g36A6evN+tRZZ+Ux3TPVezQ+TJHhMF+auQbGBsZjicilEk2O/Jdl6UiC6wNmQW6368w06fUDYN8/tpTkjV1q2GLqRSy9Lx1WZ4t1GvsMp2wfNoT8NP1tKbeKNCvs58+on+QqmLXyxtouKOHce8Nt4OGqRMl+nggLR35AHKykWS4PM26d5cyFfC4gV+MkOL9VTr7/WjxUQbIMDyxKwNFCA7DNyVNy5g=
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Read B2B connection"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/config/organisation/b2b-connection/{id}/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Read B2B connection
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"id","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Connection details","content":{"application/json":{"schema":{"type":"object","properties":{"b2bConnection":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"organisationId":{"type":"string","format":"uuid"},"b2bConnectionId":{"type":"string"},"b2bConnectionRecord":{"type":"object"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"B2BConnection"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
