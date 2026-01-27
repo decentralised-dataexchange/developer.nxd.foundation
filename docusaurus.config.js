@@ -173,11 +173,6 @@ const config = {
             type: "custom-local-dropdown",
             position: "right",
           },
-          {
-            type: "custom-indy-nav-btn",
-            label: "Indy testnet",
-            position: "right",
-          },
         ],
       },
       prism: {
