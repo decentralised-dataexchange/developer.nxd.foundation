@@ -25,8 +25,8 @@ Unlike traditional data-sharing arrangements, a data marketplace provides a stru
 
 CRANE dHDSI provides a trusted framework for data exchange between verified organisations and individuals. The diagram below shows how verified organisations and individuals exchange data in CRANE dHDSI by setting Data Agreements, issuing Data Disclosure Agreements, and using EUDI Wallets, for businesses and individuals, to authorise, delegate, and audit sharing under marketplace governance.
 
-![Data Exchange Framework](/img/onboarding/image4.png)
-*Figure 1: Data Exchange Framework adopted in CRANE*
+![Data Exchange Framework](/img/onboarding/image24.png)
+_Figure 1: Data Exchange Framework adopted in CRANE_
 
 #### 1.2.1 Data Agreement - between individual and organisation
 
@@ -80,18 +80,18 @@ Visit **[https://dataspace.nxd.foundation/en/onboarding](https://dataspace.nxd.f
 
 **Step 1:** Enter the organisation administrator's details.
 
-![Provide organisation administrator details](/img/onboarding/image5.png)
-*Fig 1: Provide organisation administrator details*
+![Provide organisation administrator details](/img/onboarding/image8.png)
+_Fig 1: Provide organisation administrator details_
 
 **Step 2:** Enter your organisation's details.
 
-![Provide organisation details](/img/onboarding/image6.png)
-*Fig 2: Provide organisation details*
+![Provide organisation details](/img/onboarding/image15.png)
+_Fig 2: Provide organisation details_
 
 Once both steps are completed, your Data Marketplace account will be created.
 
-![Successful account creation](/img/onboarding/image7.png)
-*Fig 3: Successful account creation*
+![Successful account creation](/img/onboarding/image3.png)
+_Fig 3: Successful account creation_
 
 #### 2.2.2 Continue or login later
 
@@ -101,20 +101,20 @@ After account creation, the organisation administrator can either click CONTINUE
 
 In the next step, provide the Business Wallet Address obtained from your DISP account.
 
-![Provide business wallet address](/img/onboarding/image8.png)
-*Fig 4: Provide business wallet address*
+![Provide business wallet address](/img/onboarding/image27.png)
+_Fig 4: Provide business wallet address_
 
 The Business Wallet Address can be copied from the Base Configurations page under Digital Wallet (OpenID4VC) in the DISP portal.
 
-![Base configurations page](/img/onboarding/image9.png)
-*Fig 5: Base configurations page*
+![Base configurations page](/img/onboarding/image12.png)
+_Fig 5: Base configurations page_
 
 #### 2.2.4 Verify organisational legitimacy
 
 Once the organisation wallet is connected, the Data Marketplace will redirect to the wallet and request access to your Legal PID to verify the organisation's legitimacy. Click Confirm to approve.
 
-![Verify Legal PID](/img/onboarding/image10.png)
-*Fig 6: Verify Legal PID*
+![Verify Legal PID](/img/onboarding/image22.png)
+_Fig 6: Verify Legal PID_
 
 The administrator will then be redirected back to the Data Marketplace and shown a preview of the Legal PID.
 
@@ -122,13 +122,13 @@ The administrator will then be redirected back to the Data Marketplace and shown
 
 In the next step, the organisation administrator is presented with the Data Marketplace Code of Conduct. Review the document carefully, then click SIGN AND CONTINUE to proceed.
 
-![Review and sign code of conduct](/img/onboarding/image11.png)
-*Fig 7: Review and sign code of conduct*
+![Review and sign code of conduct](/img/onboarding/image20.jpg)
+_Fig 7: Review and sign code of conduct_
 
 Once signed, the organisation is successfully onboarded. The administrator will be redirected to the Getting Started page, where they can upload or update the organisation's logo and cover image.
 
-![Getting started page](/img/onboarding/image12.png)
-*Fig 8: Getting started page*
+![Getting started page](/img/onboarding/image44.png)
+_Fig 8: Getting started page_
 
 ### 2.3 Configuring the business wallet and OAuth 2.0 clients
 
@@ -138,41 +138,41 @@ To enable secure, bi-directional communication between the DISP and the Data Mar
 
 Navigate to the Developer APIs page in the Data Marketplace.
 
-![Developer APIs page](/img/onboarding/image13.png)
-*Fig 9: Developer APIs page*
+![Developer APIs page](/img/onboarding/image7.png)
+_Fig 9: Developer APIs page_
 
 #### 2.3.2 Configure organisation wallet
 
 Click CONFIGURE next to Organisation Wallet Configuration.
 
-![Organisation wallet configuration](/img/onboarding/image14.png)
-*Fig 10: Organisation wallet configuration*
+![Organisation wallet configuration](/img/onboarding/image17.png)
+_Fig 10: Organisation wallet configuration_
 
 Provide the following endpoints obtained from your DISP account:
 
-**Credential Offer Endpoint** – found under *Digital Wallet (OpenID4VC)* → *Base Configuration* in the DISP portal.
+**Credential Offer Endpoint** – found under _Digital Wallet (OpenID4VC)_ → _Base Configuration_ in the DISP portal.
 
-![Digital Wallet (OpenID4VC) page with Credential Offer Endpoint](/img/onboarding/image15.png)
-*Fig 11: Digital Wallet (OpenID4VC) page with Credential Offer Endpoint*
+![Digital Wallet (OpenID4VC) page with Credential Offer Endpoint](/img/onboarding/image12.png)
+_Fig 11: Digital Wallet (OpenID4VC) page with Credential Offer Endpoint_
 
-**Access Point Endpoint** – found under *Data Marketplace* → *Base Configuration* in the DISP portal.
+**Access Point Endpoint** – found under _Data Marketplace_ → _Base Configuration_ in the DISP portal.
 
-![Base Configurations page with Access Point Endpoint](/img/onboarding/image16.png)
-*Fig 12: Base Configurations page with Access Point Endpoint*
+![Base Configurations page with Access Point Endpoint](/img/onboarding/image10.png)
+_Fig 12: Base Configurations page with Access Point Endpoint_
 
 #### 2.3.3 Request a Software Statement
 
 Once both endpoints are configured, in the Data Marketplace, click Request Credential to initiate the issuance of a Software Statement to your connected business wallet.
 
-![Developer APIs and Credentials page with 'Request Credential'](/img/onboarding/image17.png)
-*Fig 13: Developer APIs and Credentials page with 'Request Credential'*
+![Developer APIs and Credentials page with 'Request Credential'](/img/onboarding/image13.png)
+_Fig 13: Developer APIs and Credentials page with 'Request Credential'_
 
-The Data Marketplace will issue the Software Statement, which can be reviewed and accepted within the DISP portal (found under *Digital Wallet (OpenID4VC)* → *Wallet Unit (Holder)*).
+The Data Marketplace will issue the Software Statement, which can be reviewed and accepted within the DISP portal (found under _Digital Wallet (OpenID4VC)_ → _Wallet Unit (Holder)_).
 
 Click 'Click to get the credential issued' link, followed by Accept or Reject as deemed appropriate.
 
-![Wallet Unit (Holder) page with Software Statement notification](/img/onboarding/image18.png)
-*Fig 14: Wallet Unit (Holder) page with Software Statement notification*
+![Wallet Unit (Holder) page with Software Statement notification](/img/onboarding/image6.png)
+_Fig 14: Wallet Unit (Holder) page with Software Statement notification_
 
 #### 2.3.4 Verify the Software Statement
 
@@ -182,35 +182,35 @@ Once accepted, the Software Statement will appear in the Organisation Wallet and
 
 Click CONFIGURE next to the Data Marketplace OAuth 2.0 client. Provide a name and optional description for the client, then click CREATE.
 
-![Configure OAuth 2.0 client in Developer APIs and Credentials page](/img/onboarding/image19.png)
-*Fig 15: Configure OAuth 2.0 client in Developer APIs and Credentials page*
+![Configure OAuth 2.0 client in Developer APIs and Credentials page](/img/onboarding/image18.png)
+_Fig 15: Configure OAuth 2.0 client in Developer APIs and Credentials page_
 
 Copy the generated Client ID and Client Secret using the copy buttons provided.
 
-![Developer APIs and credentials page with new OAuth 2.0 Client](/img/onboarding/image20.jpg)
-*Fig 16: Developer APIs and credentials page with new OAuth 2.0 Client*
+![Developer APIs and credentials page with new OAuth 2.0 Client](/img/onboarding/image5.png)
+_Fig 16: Developer APIs and credentials page with new OAuth 2.0 Client_
 
-In the DISP portal, navigate to *Data Marketplace* → *Base Configurations*, click CONFIGURE and paste these values. Set the base URL to **[https://demo-api.nxd.foundation/service](https://demo-api.nxd.foundation/service)**. Once all fields are filled in, click Save.
+In the DISP portal, navigate to _Data Marketplace_ → _Base Configurations_, click CONFIGURE and paste these values. Set the base URL to **[https://demo-api.nxd.foundation/service](https://demo-api.nxd.foundation/service)**. Once all fields are filled in, click Save.
 
-![Configure OAuth 2.0 Client from Data Marketplace](/img/onboarding/image21.png)
-*Fig 17: Configure OAuth 2.0 Client from Data Marketplace*
+![Configure OAuth 2.0 Client from Data Marketplace](/img/onboarding/image45.png)
+_Fig 17: Configure OAuth 2.0 Client from Data Marketplace_
 
 #### 2.3.6 Configure OAuth 2.0 client (DISP → Data Marketplace)
 
 Within your DISP account, create a new OAuth 2.0 client for the Data Marketplace. Provide a name and optional description, then click SAVE.
 
-![Configure OAuth 2.0 Client towards Data Marketplace](/img/onboarding/image22.png)
-*Fig 18: Configure OAuth 2.0 Client towards Data Marketplace*
+![Configure OAuth 2.0 Client towards Data Marketplace](/img/onboarding/image9.png)
+_Fig 18: Configure OAuth 2.0 Client towards Data Marketplace_
 
 Copy the generated Client ID and Client Secret.
 
-![Base Configurations page with new OAuth 2.0 Client](/img/onboarding/image23.png)
-*Fig 19: Base Configurations page with new OAuth 2.0 Client*
+![Base Configurations page with new OAuth 2.0 Client](/img/onboarding/image33.png)
+_Fig 19: Base Configurations page with new OAuth 2.0 Client_
 
 Return to the Data Marketplace and configure these under Organisation OAuth 2.0 Client.
 
-![Configure OAuth 2.0 Client from DISP](/img/onboarding/image24.png)
-*Fig 20: Configure OAuth 2.0 Client from DISP*
+![Configure OAuth 2.0 Client from DISP](/img/onboarding/image16.png)
+_Fig 20: Configure OAuth 2.0 Client from DISP_
 
 ### 2.4 Final verification
 
@@ -226,52 +226,52 @@ Before proceeding with this step, ensure that the prerequisites outlined in Appe
 
 Upon publication, each DDA appears on the Data Marketplace Dashboard in an unlisted state by default, as illustrated below.
 
-![Unlisted Data Disclosure Agreements on the Marketplace Dashboard](/img/onboarding/image25.png)
-*Fig 21: Unlisted Data Disclosure Agreements on the Marketplace Dashboard*
+![Unlisted Data Disclosure Agreements on the Marketplace Dashboard](/img/onboarding/image21.png)
+_Fig 21: Unlisted Data Disclosure Agreements on the Marketplace Dashboard_
 
 The administrator may then request a review of the DDA to make it available for discovery by Data Using Service Organisations. These organisations will then be able to sign or decline the agreement as part of their onboarding process.
 
 When a review is requested, the Data Marketplace initiates its own governance workflow. A designated Review Committee assesses the DDA for completeness, accuracy, and compliance with marketplace standards. The committee may either approve or reject the agreement should any discrepancies be identified.
 
-![Requesting a Review for a Data Disclosure Agreement](/img/onboarding/image26.png)
-*Fig 22: Requesting a Review for a Data Disclosure Agreement*
+![Requesting a Review for a Data Disclosure Agreement](/img/onboarding/image2.png)
+_Fig 22: Requesting a Review for a Data Disclosure Agreement_
 
 If the DDA is approved, it appears with an Approved status in the marketplace listings, as shown below.
 
-![Approved Data Disclosure Agreement in Marketplace Listings](/img/onboarding/image27.png)
-*Fig 23: Approved Data Disclosure Agreement in Marketplace Listings*
+![Approved Data Disclosure Agreement in Marketplace Listings](/img/onboarding/image11.png)
+_Fig 23: Approved Data Disclosure Agreement in Marketplace Listings_
 
 Following approval, the administrator can choose to list the agreement, making it discoverable by other verified organisations.
 
-![Listing an Approved Data Disclosure Agreement](/img/onboarding/image28.png)
-*Fig 24: Listing an Approved Data Disclosure Agreement*
+![Listing an Approved Data Disclosure Agreement](/img/onboarding/image40.png)
+_Fig 24: Listing an Approved Data Disclosure Agreement_
 
 Once listed, the DDA becomes visible on the public discovery page, where Data Using Service Organisations can access it for review and signing.
 
-![Data Disclosure Agreement Listed on Public Discovery Page](/img/onboarding/image29.png)
-*Fig 25: Data Disclosure Agreement Listed on Public Discovery Page*
+![Data Disclosure Agreement Listed on Public Discovery Page](/img/onboarding/image34.png)
+_Fig 25: Data Disclosure Agreement Listed on Public Discovery Page_
 
 ## 4.0 Reviewing and signing DDAs
 
 The Data Using Service organisation administrator can explore all available data sources by visiting the public discovery page on the Data Marketplace, as shown below.
 
 ![Public Discovery Page Displaying Available Data Sources](/img/onboarding/image30.png)
-*Fig 26: Public Discovery Page Displaying Available Data Sources*
+_Fig 26: Public Discovery Page Displaying Available Data Sources_
 
 To review a published DDA, the administrator selects View Data Disclosure Agreement corresponding to the desired data source.
 
-![Viewing a Data Disclosure Agreement](/img/onboarding/image31.png)
-*Fig 27: Viewing a Data Disclosure Agreement*
+![Viewing a Data Disclosure Agreement](/img/onboarding/image42.png)
+_Fig 27: Viewing a Data Disclosure Agreement_
 
 Within the detailed view, the administrator can access individual DDAs by clicking View Data Disclosure Agreements, as demonstrated below.
 
-![Viewing a single Data Disclosure Agreement](/img/onboarding/image32.png)
-*Fig 28: Viewing a single Data Disclosure Agreement*
+![Viewing a single Data Disclosure Agreement](/img/onboarding/image14.png)
+_Fig 28: Viewing a single Data Disclosure Agreement_
 
 Furthermore, the administrator can examine the APIs that are made available and protected under each DDA by selecting View APIs.
 
-![Viewing APIs Associated with a Data Disclosure Agreement](/img/onboarding/image33.png)
-*Fig 29: Viewing APIs Associated with a Data Disclosure Agreement*
+![Viewing APIs Associated with a Data Disclosure Agreement](/img/onboarding/image36.png)
+_Fig 29: Viewing APIs Associated with a Data Disclosure Agreement_
 
 By reviewing the available APIs, the administrator gains insight into how data sets are accessed and can test these interfaces using access tokens issued by the relevant Data Source.
 
@@ -279,15 +279,15 @@ To sign or withdraw from a DDA, the administrator must first log in. Once authen
 
 This action redirects the user to the Business Wallet, where the Data Source requests the Data Using Service to sign the agreement using a Software Statement issued by the Data Marketplace.
 
-![Signing a Data Disclosure Agreement using the Business Wallet](/img/onboarding/image34.png)
-*Fig 30: Signing a Data Disclosure Agreement using the Business Wallet*
+![Signing a Data Disclosure Agreement using the Business Wallet](/img/onboarding/image37.png)
+_Fig 30: Signing a Data Disclosure Agreement using the Business Wallet_
 
 Upon confirmation, the administrator digitally signs the agreement, and the signed copy is transmitted back to the Data Source. Optionally, the user may then be redirected to the Data Marketplace dashboard.
 
 The Signed Agreements page in the Data Marketplace provides a complete audit trail of all agreements the organisation has signed, ensuring full transparency and traceability.
 
-![Viewing Signed Agreements and Audit Trail](/img/onboarding/image35.png)
-*Fig 31: Viewing Signed Agreements and Audit Trail*
+![Viewing Signed Agreements and Audit Trail](/img/onboarding/image1.png)
+_Fig 31: Viewing Signed Agreements and Audit Trail_
 
 After successfully signing a DDA, the Data Using Service can begin retrieving data via the DISP, accessing the relevant datasets and APIs specified in the agreement.
 
@@ -313,36 +313,36 @@ To publish a Data Disclosure Agreement (DDA) on the Data Marketplace, a Data Agr
 
 Navigate to the Data Agreements page and click the Add (+) button to create a new agreement. Provide the Usage Purpose, Description, and **set Data Exchange to Data Source.** It means that the data is being used externally by third party providers.
 
-![Creating a new Data Agreement with usage purpose, description, and data exchange type](/img/onboarding/image36.png)
-*Fig A1: Creating a new Data Agreement with usage purpose, description, and data exchange type.*
+![Creating a new Data Agreement with usage purpose, description, and data exchange type](/img/onboarding/image32.png)
+_Fig A1: Creating a new Data Agreement with usage purpose, description, and data exchange type._
 
 #### A.1.2 Specify Lawful Basis and Configure the Data Policy
 
 Select the Lawful Basis applicable to the processing activity. In this example (Figure A.2), consent is required from the individual. Set Third-party Data Sharing to True to enable creation of a DDA based on this agreement.
 
-![Configuring lawful basis and data policy for a Data Agreement](/img/onboarding/image37.png)
-*Fig A2: Configuring lawful basis and data policy for a Data Agreement.*
+![Configuring lawful basis and data policy for a Data Agreement](/img/onboarding/image28.png)
+_Fig A2: Configuring lawful basis and data policy for a Data Agreement._
 
 #### A.1.3 Add Dataset and OpenAPI Specification
 
 Define the dataset by listing the data elements to be shared, allowing individuals to make informed decisions. In Figure A.3, two dataset entries are shown, each with a name and description. Next, provide an OpenAPI Specification, which outlines the APIs that Data Using Services will be able to access after signing a DDA linked to this DA.
 
-![Adding dataset fields and OpenAPI specification to a Data Agreement](/img/onboarding/image38.png)
-*Fig A3: Adding dataset fields and OpenAPI specification to a Data Agreement*
+![Adding dataset fields and OpenAPI specification to a Data Agreement](/img/onboarding/image41.png)
+_Fig A3: Adding dataset fields and OpenAPI specification to a Data Agreement_
 
 #### A.1.4 Save the Data Agreement
 
 Click Save to store the draft. The agreement will appear in draft form and can be modified prior to publication. An unpublished Data Agreement is not yet available to individuals, and a DDA cannot be derived from it.
 
-![Data Agreements page displaying a newly created draft](/img/onboarding/image39.png)
-*Fig A4: Data Agreements page displaying a newly created draft.*
+![Data Agreements page displaying a newly created draft](/img/onboarding/image31.png)
+_Fig A4: Data Agreements page displaying a newly created draft._
 
 #### A.1.5 Publish the Data Agreement
 
 Click Publish and follow the instructions to make the agreement available to individuals to create the DDA. Publishing can be performed during creation as well.
 
-![Data Agreements page displaying a published Data Agreement](/img/onboarding/image40.png)
-*Fig A5: Data Agreements page displaying a published Data Agreement.*
+![Data Agreements page displaying a published Data Agreement](/img/onboarding/image29.png)
+_Fig A5: Data Agreements page displaying a published Data Agreement._
 
 ### A.2 Creating a Data Disclosure Agreement from a Data Agreement
 
@@ -352,29 +352,29 @@ Once a Data Agreement has been published, a Data Disclosure Agreement (DDA) can 
 
 Navigate to Data Marketplace → Data Disclosure Agreements and click the Add (+) button. Under Connected Data Agreement, select the previously created DA to pre-fill relevant values. For Presentation Definition, choose To opt-in or out of DDA using Software Statement, requiring the Data Using Service to sign the agreement with a Software Statement issued by the Data Marketplace.
 
-![Connecting a Data Agreement to a new Data Disclosure Agreement](/img/onboarding/image41.png)
-*Fig A6: Connecting a Data Agreement to a new Data Disclosure Agreement.*
+![Connecting a Data Agreement to a new Data Disclosure Agreement](/img/onboarding/image43.png)
+_Fig A6: Connecting a Data Agreement to a new Data Disclosure Agreement._
 
 #### A.2.2 Configure the Data Disclosure Agreement
 
 Enter the Policy URL of the Data Controller and adjust other configurations as necessary.
 
-![Configuring the Data Disclosure Agreement](/img/onboarding/image42.png)
-*Fig A.7: Configuring the Data Disclosure Agreement.*
+![Configuring the Data Disclosure Agreement](/img/onboarding/image39.png)
+_Fig A.7: Configuring the Data Disclosure Agreement._
 
 #### A.2.3 Save the Data Disclosure Agreement
 
 Click Save to store the draft version. The DDA can be edited before publication; however, it will not appear in the Data Marketplace until published.
 
-![Data Disclosure Agreements page showing an unpublished DDA](/img/onboarding/image43.png)
-*Fig A8: Data Disclosure Agreements page showing an unpublished DDA.*
+![Data Disclosure Agreements page showing an unpublished DDA](/img/onboarding/image35.png)
+_Fig A8: Data Disclosure Agreements page showing an unpublished DDA._
 
 #### A.2.4 Publish the Data Disclosure Agreement
 
 Click Publish and follow the prompts to make the agreement available to the Data Marketplace. Subsequent approval and listing are managed by marketplace governance, after which the DDA becomes discoverable and signable by Data Using Services.
 
-![Data Disclosure Agreements page showing a published DDA](/img/onboarding/image44.png)
-*Fig A9: Data Disclosure Agreements page showing a published DDA*
+![Data Disclosure Agreements page showing a published DDA](/img/onboarding/image19.png)
+_Fig A9: Data Disclosure Agreements page showing a published DDA_
 
 ## Appendix B: Integrating the Consent Management SDK into Mobile Applications
 
