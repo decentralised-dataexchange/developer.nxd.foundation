@@ -1,0 +1,72 @@
+---
+id: update-o-auth-2-0-client
+title: "Update OAuth2.0 Client"
+description: "Updates an OAuth2 Client for use with a Data Marketplace."
+sidebar_label: "Update OAuth2.0 Client"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVk1z2zYQ/SuYPXSSGVp07Z54qiy7GbVNmont6cGjw4pcSYhJAAZAyQ6H/72zACWRkpyJ295IYvdhP96+ZQMFudxK46VWkMG9KdCTE6jEX+Pary7EpJSkvFhoK2pHYiP9SqC4Ro/iI9pH8qbEnEaQgEGLFXmyDrKHBhRWBBnkwX9aQAKSbzDoV5CApadaWiog87amBFy+ogoha8C/GPZz3kq1hLadRWNy/koXL2yRa+VJeX5EY0qZI0effnWcQtODMlYbsl6SC24hkk8hrOYg7y5LPhR6IfyKhvlDchhX0uFd93Fege3Z/CB626/QQz/02c5Wz79S7qFto7UzWrmY6cX5+XEshy0Tlkr0VBw0ug4M4Hb9yzJrZLgusX0/u2iTk02ZFsfxTq/f2Ilbyi35Y6D4/Y1gp2nyf/Pj7cRIYGlR+bsXE+s3xPvAZyIcCixLvaEiTO4PAXtZkfNYmWPcu+3RyShFbgljDlaU6LyodCEXHWH2V0nlX2F2kIdBFwd9GCTdD3TGcIcEs/Qk6w5+QMZZmJQVYRE0qoFJZPjZXUBojkUocD0BesbKlPzhaBDa5HDke5gi3tWNqKO8ttK/BHW8IrRkuYqQPcxY5DwuWTjhCh2JiVYLuaxtuMnx0FfkV7pgAa3DFLGMZpCuL9M82KYFejxzBnNKY9ZnsYJps61xCxyEXW8V+pCLlRbxGBKobQkZrLw3LkvTgip9hkaOZGjESGpok6M587iUavkahovHhzCzfWFuufyR1mMj/6CXXicwfuiWSFfXZLtkuI7aym+RcG0yKO8OgyOBbtXw+zwYQdI9/KZthR4y+P3vOzhs6zjPyTnh9SMpYdA5KuIujDcJY2khn4VUYhDLngFJINOX/Sa72ZJquJm2A3lSP3rTKtVCh9ykD8y8nt5+FuPPU3Gt87oi5bfDx+2OzhfnF7+MLkc/HyU30dVcKiqCf9H3D+ox4cWivPiICpfEZ+LduKikEj+JqSrkWhY1lu8FquLox+C0JVNE5uRG3ZrBPOh21035YcuOBKhCySxytTHa+l/3zDnkV5+aUMqclKMe6NhgviJxMTo/8txsNiMMxyNtl2nn69I/p5ObT7c3Z+zDDTTa+QpVDzT+LnVqODrfi2sxVP3dKv1PP1gdjT09+9SUKAPTQypNpwcPsL6MJV1IptBeEyCBgSpAAtlOe2cJrLTz7N80c3R0b8u25c9PNVkWrFkCa7QS58w1lg7p+LmAbIGlo+8k/O5Lp/bvxWspbEdc8Xyvsaz5DRJ4ZAXYb4h2tlPvEEM8Hmj43v2EUG89eJSN/65tX28/37MazLt/z0oX7GJxw5sGNzFSbaJOZ0381kCJalnjcrdEwgbAoR4d6E9I6mQtmiZa3LH6tO2uNEGNuC5t+w8Lgg+l
+sidebar_class_name: "put api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update OAuth2.0 Client"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/v3/config/data-space/oauth2-client/{clientId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Updates an OAuth2 Client for use with a Data Marketplace.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"clientId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"clientName":{"description":"Client Name of the OAuth2 Client","type":"string"},"clientDescription":{"description":"Client Description of the OAuth2 Client","type":"string"}},"required":["clientName"],"type":"object"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Data Marketplace related OAuth2 Client updated","content":{"application/json":{"schema":{"properties":{"oauth2Client":{"type":"object","properties":{"clientId":{"description":"ID of the OAuth2 Client","type":"string"},"clientSecret":{"description":"Secret of the OAuth2 Client","type":"string"},"clientName":{"description":"Name of the OAuth2 Client","type":"string"},"clientDescription":{"description":"Description of the OAuth2 Client","type":"string"},"grantTypes":{"description":"Grant Types allowed for the OAuth2 Client","type":"string"},"timestamp":{"description":"Timestamp of the OAuth2 Client creation or last modification","type":"int"}},"required":["clientId","clientSecret","clientName","grantTypes","timestamp"]}},"type":"object","reqiured":["oauth2Client"]}}},"headers":{"Content-Type":{"schema":{"type":"json","example":"application/json"},"description":"Content-Type header"}}}}}
+>
+  
+</StatusCodes>
+
+
+      

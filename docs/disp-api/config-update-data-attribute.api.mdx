@@ -1,0 +1,72 @@
+---
+id: config-update-data-attribute
+title: "Update data attribute"
+description: "This endpoint updates an existing data attribute defined in a data agreement. If updated, the associated data agreement revision is incremented automatically."
+sidebar_label: "Update data attribute"
+hide_title: true
+hide_table_of_contents: true
+api: eJztV0uP2zYQ/ivEHIoEkO3tNief6qy3hdsmCLK76GHXh7E0lplIJEOO1usI+u/FUPJD8iYoEhToITdR5Dz5zTfDGjIKqdeOtTUwhduNDopM5qw2rCqXIVNQaBQ96cDa5CpDRoXMXq8qJpXRWhvKlDYKu73cE5VkeKwW605FlijekMIQbKplPTiqPD3qoK1ROihtUh//UqawYlsi6xSLYjeGBKwjj+LsIoMppNasdX4XbcyRcbb3CxJw6LEkJh9gel8P4rwz+lNFajFXdi3h2dUHShkS0LLrkDeQgMGSYArZqeJFBgl4+lRpTxlM2VeUQEg3VCJMa+CdE5HAXpscmmbZHqbAr222kxOpNUyG5ROdK3Qao5l8COJXfaLKeYmVNQVZ9Zw4sXRwvB/fvHdLQYlV1EYFR6led0aDBE9PmHKxU9sNsmQ/tUVBKVMm2X4aGcsjbUZifoWBYLrGItBpCu7bPPU9WCYD/3V2np4E1taXyDAFSICesHQFtYuvRaMWc2j2t/PNOt9iSRJ/xOVedaLW1ittAqNJST1EIw+grFcPgDk9gFjuKfr2oI6rMz/ESiATNOtHzbsTKytrC0Lz783cHNWImX75ip0UmXLrd98RylWn4nkDIbXue27qRuTVHnDxhoZGmqbpQ7JfLstkUC57geCsCS1ALy8ufpTnj/L8UZ7/VXmeVeBQESSwIcxiw65l+1Vbkv1TK5Rhw1WsDg1+IBgvJ618vJn7Gl4TevKzijcwvV82SQ0zp/+kXVwJNWAuI0IL4x5plMQbK3OGqzhOFKICJu3UMZEoR4cRJnTrvfykHswNDYhf/vH5gWROpVXtNiRQ+QKmsGF2YTqZZFTaETo91rlHw2NtQaIYXANjLvPZF3SEdnuoZnnM1Y1QW8sG+/wcMIHtj248apN9HJAktdbrz5G1BFKnGT/oEE+gm5ViqcRDkHQfv+3R9sfft2cYm6UphaDYfiSjHIZAmdpq3qjWknKe1vpJhtCeL6rzVCAhDP7+OIpd7wH9DHcLGcIxvDNvYFD98uNYpnG7rSmIlrVZ25gHzbGC5oubd2r2bqHmNq0EOm3eEhBotBYuLy5fjX8Z/3xeyrZcxXlb5LNT+Vh4V9LODKs3aDBvJ+sXs6zURv2kFibTjzqrsHip0GQqwv0N+o/ErsCUnj8pcNIpBWk3sUulsTd2qdG/75GUAJWoBXGhcs56/vWIsiEWT2EMhU7JBDpROnOYbkhdji/OJLfb7Rjj9tj6fNLJhslfi6vrtzfXI5GRlDsbuERzorR9IwyZ6axZHNr///8l1JUV0xNPXIE6Vl5MV90x1X33PpIw+1x1+HOSienwnbNMYGMDi566lunizhdNI78/VeQjfSbwiF7jSnAtlKaDfGeHMeSL2X3xvusXL9UXn2LPBrgnJCNs9IhF1VXoR+Grs6das2z2vSE62J66at0Y3Yquo5azeU9ItpUQ/nH81bOn7eLdnVDYqnvxlTYTEY9beTritnXYxqxEuo3/aijQ5BXmcrZVKUjGPokOSDMG9WxK6ro9cSuU2TSHDEUKlbw0zT+EeIL7
+sidebar_class_name: "put api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update data attribute"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/config/data-agreements/data-attribute/{dataAttributeId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint updates an existing data attribute defined in a data agreement. If updated, the associated data agreement revision is incremented automatically.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Unique ID of an object","in":"path","name":"dataAttributeId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"dataAttribute":{"type":"object","description":"Data attributes contain specifications of exactly what is collected.","x-not-in-database":false,"required":["name","description"],"properties":{"id":{"type":"string","format":"","example":"","description":"Data attribute ID"},"name":{"type":"string","format":"","example":"","description":"Name of the attribute, for instance \"name\" or \"age\""},"description":{"type":"string","format":"","example":"","description":"Description of the attribute"},"sensitivity":{"type":"boolean","format":"","example":"","description":"Sensitivity of data attribute"},"category":{"type":"string","format":"","example":"","description":"Category of data attribute"},"scope":{"type":"string","format":"","example":"","description":"Scope required for data attribute"}}}},"required":["dataAttribute"],"type":"object"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"properties":{"dataAttribute":{"type":"object","description":"Data attributes contain specifications of exactly what is collected.","x-not-in-database":false,"required":["name","description"],"properties":{"id":{"type":"string","format":"","example":"","description":"Data attribute ID"},"name":{"type":"string","format":"","example":"","description":"Name of the attribute, for instance \"name\" or \"age\""},"description":{"type":"string","format":"","example":"","description":"Description of the attribute"},"sensitivity":{"type":"boolean","format":"","example":"","description":"Sensitivity of data attribute"},"category":{"type":"string","format":"","example":"","description":"Category of data attribute"},"scope":{"type":"string","format":"","example":"","description":"Scope required for data attribute"}}}},"type":"object"}}},"description":"","headers":{}},"400":{"description":"bad input parameter","headers":{}}}}
+>
+  
+</StatusCodes>
+
+
+      

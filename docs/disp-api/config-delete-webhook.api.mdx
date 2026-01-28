@@ -1,0 +1,72 @@
+---
+id: config-delete-webhook
+title: "Delete webhook"
+description: "This endpoint is used to delete an existing webhook that was defined to trigger events to an external IT system."
+sidebar_label: "Delete webhook"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFWEuP2zYQ/isED0UCaOXtpiefus1uCzdJW9Sb7mFhLMbUWGIskQxJ2esa+u/FkLIlr585BD1ZJr+Z+eZBakZrnqGxKMBjxoczKB0mPEMnrDReasWH/KGQjqHKjJbKM+lY7TBjXrMMS/TIQDF8kc5LlbMlTgut58wX4NkSHMtwJlWEeyvzHC3DBSrvaCVIerQKSjZ6YG7lPFYpT7g2aIHMjzI+5EKrmczvgrXHaIAn3ICFCj1ax4dPay6JqgFf8IQrqJAPeUtmlPGEW/xaS0s+eltjwp0osAI+XHO/MgR23kqV8ybhzq/KsCIrUyJvJiTtjFYOHQncXF/Tj9DKo/L0CMaUUgTCgy+OgrbuGTCW3PEySrek6LHj9MQNrEoN2Wdb8mSj+oGYJdzVU0rHFLP7EDme8Ew6mJZIjjkUFv0HXNHzXJqxK/9BK2ctH55wLyt0HirDJ8nGWz39gsKHTR+c7cV1h67M9mP0ukBaWTa6o/Bpm48uEPrT5qCkCyRbyV4MLrbZyjASanYj9806WmHmY9xR1RWlZi+7yc7Sy9VyubyaaVtd1bZEJXSGGZ80BxLXMdqL/4Ek7yZCUP0p/wkU5Fih8o9dIbVKwVqgMpAeK3fe/fHWZDySPZcz8JDWJgOPqVTSy3A9JDvrApTAMhZhSy6FstTLnRWq1L1FqL1+xhcjLdHVNk9r1QVgYydeL/v2M71UlK8DO1Giz2xXor9DZntGJ01D5yqXHspHKEv8vgGOhpbBUCq0UihIKvjEk1P7C+k3J/soim4WdCcVba60UxgQXi5OItBabU/zPa8kpm0fYTFD5SWUKR0F7aB8djGM54EWBcpFLIFjYD2boT2rMqIu0ddG/azGDe4Snd3js3Suvhj8jbpBzA9gjUXyJZTbmRwchh5lsQM/GbeDyMv09v9cxLoHv8zCIrxpv4nHJtLaoJLZ0XI8tt3jtQ85VCwnUcfJ9EAGVRavtxZ2KnnnIOni3RnUvocnYccVngr7GeCFSk9H5hCUFMc3DXj4BHaO3pQg8Hu/zKvOVEr/nzPpRKldbfEZcouho6CYahtehfFl2DaZnfGp1iWC2rM+ctvOfyPFtGVK+9BQb1vU824EKJvjis20ZaJAMae5AmpfUDkK6VdMz5gvkDldW4HBwIG+9zzp8VwaNh5/ZIueXDC78aVtKrsG+iz/9xajmk4mBnO374vx3e2HP/CEFwhZGGjWAeFQ1Fb6VRhwfkGwaG9rX/Dh06RJ1vzWyBDUpwnNKB5ymoS2nfwk4RX6QtMEtX3DhgFpyAdxpBq0jg7W21GpCSOFXWzGql2Sd1hpFrd5wmtq1HnhvXHDwSDDSl+BkanMLSifSs2J5KuYe8gpn0d0uLj9Ws2kC8WYxqrYEW/c745MXEjiLBhj2U2DFDlt5b+xPJpkJ6BbHcSEt+NhKJ4A4kn78Ku2FXg+5L8/Puwl/1YIdDTYzlExA47G5KX0BYuWmLE4ky9MKrbDhbVMKeNSzXRg044Fd6PxX+z2rxG706KuNrcJTzglKFq9ub75KX2X/rhfi7qahtmb5LO+fCjy97EZZ91Ewd7cZpVU7Ac2UplcyKyG8i0DlbE78MB619VhJCVVCnRpO8KCCNNxG3/52yafCccKZBmmHmO09T93uX5dEf1i4qUUSC1rp/TWgCiQ3aTXe5LL5TKFsJ1qmw9aWTf4OHp//8f4/opkKORGO1+B6imNXxo2t8DruPYm///j00hbpx5f/MCUIEMp13Fkjqf7qf1gwhPeuTDsPoZMEl5o5wm4Xk/B4WdbNg0tf63Rhvsk4Quwku7xeAls3wSHPhD1A/Lm7/abxlt2jOvmsCo6qQsoa/rHEz6ns9z7ZtPQCN0eDSIR9+mMGd+T3JvOm/7Fd3f/8f7hnib23WP+6lgHAweJrdcR8UCHumm2PMMhJ45N8x8YcPD+
+sidebar_class_name: "delete api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete webhook"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/config/webhook/{webhookId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint is used to delete an existing webhook that was defined to trigger events to an external IT system.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"in":"path","name":"webhookId","required":true,"schema":{"type":"string"},"style":"simple"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"properties":{"webhook":{"required":["payloadUrl","contentType","subscribedEvents","disabled","secretKey","skipSslVerification","timestamp"],"type":"object","title":"Webhook","properties":{"id":{"type":"string","description":"Webhook ID"},"orgId":{"type":"string","description":"Organisation ID"},"payloadUrl":{"type":"string","description":"Webhook payload Url"},"contentType":{"type":"string","description":"Webhook payload content type","enum":["application/json","application/x-www-form-urlencoded"]},"subscribedEvents":{"type":"object","title":"subscribedEvents","properties":{"consentManagementWebhook":{"type":"array","items":{"type":"string","description":"Subscribed event","enum":["data.update.initiated","data.update.cancelled","consent.allowed","consent.disallowed","consent.auto_expiry","org.unsubscribed","data.delete.initiated","data.download.initiated","data.delete.cancelled","data.download.cancelled","org.subscribed"]}},"digitalWalletWebhook":{"type":"array","items":{"type":"string","description":"Subscribed event","enum":["digitalwallet.connection.init","digitalwallet.connection.invitation","digitalwallet.connection.request","digitalwallet.connection.response","digitalwallet.connection.active","digitalwallet.connection.error","digitalwallet.connection.inactive","digitalwallet.connection.delete","digitalwallet.credential.proposal_sent","digitalwallet.credential.proposal_received","digitalwallet.credential.offer_sent","digitalwallet.credential.offer_received","digitalwallet.credential.request_sent","digitalwallet.credential.request_received","digitalwallet.credential.credential_issued","digitalwallet.credential.credential_received","digitalwallet.credential.credential_acked","digitalwallet.presentation.proposal_sent","digitalwallet.presentation.proposal_received","digitalwallet.presentation.request_sent","digitalwallet.presentation.request_received","digitalwallet.presentation.presentation_sent","digitalwallet.presentation.presentation_received","digitalwallet.presentation.verified","digitalwallet.presentation.presentation_acked","openid.credential.offer_sent","openid.credential.offer_received","openid.credential.credential_issued","openid.credential.credential_acked","openid.credential.credential_pending","openid.presentation.request_sent","openid.presentation.request_sent.v3","openid.presentation.request_received","openid.presentation.request_received.v3","openid.presentation.presentation_acked","openid.presentation.presentation_acked.v3","openid.presentation.presentation_pending","openid.presentation.presentation_pending.v3"]}},"dataMarketplaceWebhook":{"type":"array","items":{"type":"string","description":"Subscribed event","enum":["datamarketplace.data_disclosure_agreement_record"]}}}},"disabled":{"type":"boolean","description":"Is webhook disabled or not"},"secretKey":{"type":"string","description":"Secret key for checking authenticity of the source"},"skipSslVerification":{"type":"boolean","description":"Skip SSL verification for webhook Url"},"timestamp":{"type":"string","description":"Creation timestamp"}}}},"type":"object"}}},"description":"OK","headers":{}}}}
+>
+  
+</StatusCodes>
+
+
+      

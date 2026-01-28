@@ -1,0 +1,72 @@
+---
+id: read-o-auth-2-0-client
+title: "Read OAuth2.0 Client"
+description: "Reads a Data Marketplace related OAuth2 Client."
+sidebar_label: "Read OAuth2.0 Client"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVcGO2zYQ/RViDkUCyJbr7UmnOvZ24bZJg6yLHhY+jKWxzaxEcknK3o2gfy+Gkm3J2hSbnmxxyDePM/MeK8jIpVYaL7WCBL4QZk6gWKBH8RHtI3mTY0rCUo6eMvHXrPT7qZjnkpQfQwQGLRbkyTpIHipQWBAkkIb4MoMIJOMa9HuIwNJTKS1lkHhbUgQu3VOBkFTgXwyfc95KtYO6XvNmZ7Ry5Dg+nUz4p8/2bSyFJWQiqVaelGcYNCaXKTJM/NUxVtXhYqw2ZL1sMmtkrAaqw1RvvlLquQC93eeLD8guF0Jvhd9Tnx1E13ePWpB7Si35IVCz/oNgn0JfrqF49QeBFl2AQUMuX2+G3VlUfvVimvr18e44JkJQYJ7rI2Viq+3bgL0syHkszBB3dQq9ylKklrC5gxU5Oi8KncltOzCXVFJ5qOvuVD90B7/XxV4fepfuEl0z3PWAWXqSZQvfG8Z1zdv3hFlQXwXzZsJHq4BQDeUVZj0CesbC5LwwEEIdXZWqiymaXFCHxI7S0kr/EnT/gdCS5SpC8rBm+XrcsSXAB3Qk5lpt5a60IZODdQQF+b3OIIFdqE4wiATiw02chr1xhh5HzmBKcXPrUVPBuDrVuAYmYQ8n77mexUKLJgwRlDaHBPbeG5fEcUaFHqGRYxkaMZYa6migM487qXbfw3BN+BpmfSnMPZe/GeuZkX/QS6cT2Cy09tjWNTrZJ9dRW/mtGbg66pX3jMFMoDVR/t6ETRC1f37TtkAPCfz+zwqu2zpLU3JOeP1IShh0jjJxlH4vmkzCWNrKZyGV6HG5TAAz3+rARvowS4vl/Wcx+7wUC52WBSl/kgs3qMk6nUx/Gd+Mfx7QmetiIxVl4XzWPR/0Pud3QHnxERXuiGPi3SwrpBI/iaXK5EFmJebvBaps+HS9upObKlNy4/ZhwDQ4bVt/eXfqZwRUoOS+u9IYbf2vl15fT0R3mCCXKSlHHdCZwXRPYjqeDE4ej8cxhvBY213cnnXxn8v57af72xGf4ZIb7XyBqgPKD3brXuPJxQyzvkufn77/8cC3w+bp2ccmRxnmMdCvWtU+wOGmKeNW7jj5WbkQQU+7EEFydsh1BHvtPJ+vqg06+tvmdc3LTyVZtpV1BAe0Ejc8Xyxw6fh/BskWc0f/cc13X1pPfi++d4WTEBWr8IB5yV8QwSPr9OLj9frssYFDE2b5GN85ODTSrsfd3bICsS/fK7kG9FdJVVWzY8VireszxyBeJljX/wIezVrj
+sidebar_class_name: "get api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Read OAuth2.0 Client"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v3/config/data-space/oauth2-client/{clientId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Reads a Data Marketplace related OAuth2 Client.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"clientId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Data Marketplace related OAuth2 Client read","content":{"application/json":{"schema":{"properties":{"oauth2Client":{"type":"object","properties":{"clientId":{"description":"ID of the OAuth2 Client","type":"string"},"clientSecret":{"description":"Secret of the OAuth2 Client","type":"string"},"clientName":{"description":"Name of the OAuth2 Client","type":"string"},"clientDescription":{"description":"Description of the OAuth2 Client","type":"string"},"grantTypes":{"description":"Grant Types allowed for the OAuth2 Client","type":"string"},"timestamp":{"description":"Timestamp of the OAuth2 Client creation or last modification","type":"int"}},"required":["clientId","clientSecret","clientName","grantTypes","timestamp"]}},"type":"object","reqiured":["oauth2Client"]}}},"headers":{"Content-Type":{"schema":{"type":"json","example":"application/json"},"description":"Content-Type header"}}}}}
+>
+  
+</StatusCodes>
+
+
+      

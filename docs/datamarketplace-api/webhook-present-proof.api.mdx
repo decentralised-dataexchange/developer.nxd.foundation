@@ -1,0 +1,72 @@
+---
+id: webhook-present-proof
+title: "Present proof webhook"
+description: "Receive present proof webhook"
+sidebar_label: "Present proof webhook"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFVk1z2zYQ/SuYPdOkq/bEU+3U7bjN1Jo4mR4cj2YFrkjEFIAAS0muRv+9syBlSpbU6ERxv95i31twC4x1hPIJ1jRvnHuB5wwqijoYz8ZZKOETaTIrUj5QJMvKB+cWau+egfMUUHzvKyj3aaa981R8IYNIuguGX6F8es4g0PeOIt+66hXKbfprAlVQcugoA+0sk2Uxofet0Sl78S0KnC1E3dAS5YlfPUEJbv6NNEMGPggWNhTFWiHjDOtAtCTLM1MdhEQOxtawy4ADajqwzJ1rCa2YhoZT9dmA+bTsLoPOV8hUzZDPltCB/s9srGGD7MJZK3bsZgOS8zAjI9PZ2HcnII5dPOt51CptdIO2potH1gTC6pJVO2tJp0QXPIJrz+FNPyFH9M7GfoaT6+s0yiNCPvwF4rgkbpxQzruYpo/cQAnFwMCCnTe6GDqbJdYWiYphRUEov4UutFBCw+xjWRToTW43Vb5wna3SUcB7LXwUIfQZYPc88vpRONlDviUMFG46AfPWo5SQ2slNxpecIBsefndhKeyAP//5fFLzRmuKUbF7Ias8xkiVWhtuVF9JdLkwG2WskqIumH8TdtUQVgIzg1uMRv8Ikfic1E6RCjtuyPIgRLVwQT1IuonSrZGVoANV4oBtVIvWrdN8RK+fRqXfbXDp+8GfUeaeBW+C7FfBBQm+09wYfCi18e2BwsaXx8Lqyw1SGp0uKGh0uCycg45GvRwgPZbJaOjVcbQfFi4NznCy/IaM0aMmdYv6hWylbqb3J5P74OS0mcSoKqe75R5mmh83pE4TXSlU0rLad6LQVmpFwSz2wxfyGy23gVuZikL+1X6JFFWkdnEV3YoCmdoqk/jAr9kQjfOWDmmSpcyVqQ1jq9bYtsSKSTfWta42FBPKhCVQ3bV9cS1NGbSa8q8iThFy3+7kevJL/nP+U3+yjDotS4uJ2+aPgJZz4yADWqIR0cfOexf4V1OPtuN1MFp2GbRGk410kPTGo25ITfLrk8j1ep1jMucu1MUQG4uP9x/u/n68u5IYUYgsriXag6TTC3fs0Wy34w35w8t5UDvThgvfokk3RkK7HRbmePNnkFbmyOp+aUIG8lHQyJYtn2C7nWOkL6Hd7eT1947CcK2vMKQ5y79dBsP+kT37Qq+Jkgn11WfBJO5tJ9hO7nhZrG/LffrwKCtxPnwrLF0lMQHXIhVcQwnpE0Si0/pN77bQoq07rMW3zym//wC84SK2
+sidebar_class_name: "post api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Present proof webhook"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/webhook/topic/present_proof/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Receive present proof webhook
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"data_agreement_id":{"type":"string"},"trace":{"type":"boolean"},"presentation_request":{"type":"object"},"updated_at":{"type":"string"},"created_at":{"type":"string"},"initiator":{"type":"string"},"auto_present":{"type":"boolean"},"state":{"type":"string"},"data_agreement_status":{"type":"string"},"presentation_exchange_id":{"type":"string"},"thread_id":{"type":"string"},"connection_id":{"type":"string"},"role":{"type":"string"}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"}}}
+>
+  
+</StatusCodes>
+
+
+      

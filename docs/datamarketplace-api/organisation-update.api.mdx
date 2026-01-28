@@ -1,0 +1,72 @@
+---
+id: organisation-update
+title: "Update organisation"
+description: "Update organisation"
+sidebar_label: "Update organisation"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVk1T4zgQ/SsqnU3CZPeU0waGnWKLWigGag9MDh2pbfdgSxpJTsim/N+3WjbYmQSGPc1wCIn69Ydar5+0kxGKIOcP0voCDAWIZI1cZtI69OnHpZbzPeu90xBRZjKgajzFrZw/7OQZgke/aGIp5w/LdplJj98aDPHM6q2c79JP8qjlPPoGM6msiWgim8C5ilQKPv0arOG1oEqsgb/FrUMuYfUVVZSZdJ5ri4SBrXt1/xBtoMYRKkRPppBt2ku0/qipsur76INRY1Ce3Kt2ZytS23tfHbWu0VPe7/y2a9f97dWNx5yejjpYh2bh6LV4yqNGEwmq6zxHf2G0s9T1+AALSmEIN2x/E+c8rUFtP0IoVxa8Pp67/+NTD86a0LV7djrjf3tNkh1/tPxJFCB9WH4mc+triHIum4Y0b/tXYsq4PE/poO0a/WUNBb7TobKFfSf0LY4dov83hX8eR7ltGq/zc2t0o8aRVtZWCKYvj9m5OJJotHlm8EmkGtml6Qj9fpc2k5FixbjrMXdfhujYwIg9mmeyxlha1mbXJJIDK6+cKmtyKqZj8DRptV+jD0mqG+6OLGN0YT6dgqOJedKT3DZGPwffL+CK1ii6CJKV/Vn4P/OAdlM1lv+XJnAKzp1g3OYEkln/5c/n1vz1z91BzkU6ehHtIxrhIATUYkOxFF0m4RLDBBnBSa2nf1PtokTQXGYmzyCQ+lFFjDnInTwFNLFkonbcFrn14prDzYSqCE0UA5ODyCu7SQfL4nU73HwXT1C7Co/JVKcwA1OehWVYGfRkWNuv9GV5pB7D4tuzOeDGEz+svjqoA+TofI6KOjaWw5WRSTK5TafTT8NHiBAcKBRnoB7RaLG4uTzY9LnllkZko9BWNTWaOBxSLFEcBjoRIDREEPikSjAFCjBajDuUGE4KhfN2TRr95Iu5DxhEwCo/Cay4SIURlLoSt1nvDasKx1zIUmRNBUWoxAaqCqOIqEpjK1sQhlRlqsVj0VRdcsWbIjAKJ19Md3ah2+7sdPb75LfJh/7ChE65evbQJw8mTsjKTGINlBrcOGd9/IOKwbY/84OFrwZSaAKOgi4cqBLFbHJ64LnZbCaQzBPri2nvG6ZXl+cXf3++OGGfNt1mIdYw5vlxFTt+K0Z8ilNXASVJbjo17xTuQXYKx7TdD8Wv1tKGyJjdbgWB78a25eVvDXp+pi4zuQafTiy9UjPZywXL4iNuE7nSm+TkjitheNVwRQfvkzZ79mClcvFN7HIk1zf3LHar/lVcW80uHjYyS59zmQaSnZOwprWdrMAUDRSM7UJyk2Ff3L6T17Sp3gRmOypwt+sQdyyubSuzfidJbGW7bNv2P2RhPIY=
+sidebar_class_name: "put api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update organisation"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/config/organisation/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update organisation
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"organisation":{"type":"object","properties":{"name":{"type":"string"},"sector":{"type":"string"},"location":{"type":"string"},"description":{"type":"string"},"policyUrl":{"type":"string"},"verificationRequestURLPrefix":{"type":"string"},"openApiUrl":{"type":"string"},"credentialOfferEndpoint":{"type":"string"},"accessPointEndpoint":{"type":"string"},"privacyDashboardUrl":{"type":"string"}}}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"202":{"description":"Updated","content":{"application/json":{"schema":{"type":"object","properties":{"organisation":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"name":{"type":"string"},"sector":{"type":"string"},"location":{"type":"string"},"description":{"type":"string"},"policyUrl":{"type":"string","format":"uri"},"coverImageUrl":{"type":"string","format":"uri"},"logoUrl":{"type":"string","format":"uri"},"openApiUrl":{"type":"string","format":"uri"},"verificationRequestURLPrefix":{"type":"string"},"credentialOfferEndpoint":{"type":"string"},"accessPointEndpoint":{"type":"string"},"privacyDashboardUrl":{"type":"string"},"codeOfConduct":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"Organisation"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

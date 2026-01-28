@@ -1,0 +1,72 @@
+---
+id: config-update-open-api-url
+title: "Update Open API URL"
+description: "Update Open API URL"
+sidebar_label: "Update Open API URL"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVsFy4zYM/RUOzrKdpj3pVCebdtLJNJkknh6yPsAkJHEjkVySsuN69O8dUEqsrDXZ3OqDxyYA4gF8eOQBIpYB8ieQ1hS6hHUG1pHHqK25VpAP6yunMNKtI7N0euVryCCQbL2Oe8ifDnBB6Mkv21hB/rTu1hl4+t5SiBdW7SE/pL/ak4I8+pYy3jaSiWxC52otU8bFt2ANrwVZUYP8K+4dQQ52841khAycZ3xRU2CrwogPtvWSfu5rj+iPviF6bUrohg/jDs6a0Iecn52lLBSk144RQg59LxT8L0VodQo+g8L6BiPk0LZaQZeBwYYmqkynFq2fNNW2xz9pfNeCCbuztZb7yd6O4XnNztJuyV83WNInA2pb2k+6fnTKp95b8roYzu2+Z+zq/ubOU6FfJuuUnhSZqLG+LQryV0Y5q3sKnPiilBTCHds/9HNeb1Huv2CoNha9mmYot03RbXFpjWrleKeNtTWhGeAxN5cTiUbFM39nUTfEIW1P58+HdBlEHWv2u/UlGh162ryN0NS4CNYOsby7Fqv7G8igoVhZ1hfXJpIjKwcserVZ8CHO0OlFO0iN35IPSWl4JYcqRhfyxQKdnpsXNS9sa1QP48f8N3pLot8BWJhedeuBp7MfqrF6vfWAU3Du5MZdTk6QDT/+eO3MX/88nuRcppMX0T6TEQ5DICV2OlaizyRcIpjQRnBS6/W/CbuoCBXDzOACg5Y/Q8Q+J7lTpMA2VszTntqisF7c8nbnQtaaTBRHIgdR1HaXzpWV6/4o3Fcv2LiaTjVqPGRHCc1Am8ImwAM/vmDE4FCSuED5TEYxA04QX1rOEinRQ1nZNmTiEXesSJxuNBMoGJSgF1mhKUmgUWI8z+nQtSThvN1qRX7+1awCBRGoLmaBNYh0aYROfYj7bIjGTU3j9mRpZ6VLHbEWO6xriiKSrIytbakpJJQJi6eyrfvkkovSaCTNvzIpmcB9uedn57/Nf53/Mlwg2M9yr9ig//Ro4lxbyIAa1KnBrXPWx991ebS9H4OjhcVSSzKBRpsuHcqKxPn87CRyt9vNMZnn1peLITYsbq4vr/5+uJpxTJf0PcQGzWjT6bmevicivcSFq1EnkWp7fetn/u3l0Us3T/0Acp1BZUNkl8Nhg4Evi67j5e8teX53rDPYok8Hlp4dGQwDxELxTPvErXRFzx4ZCLvXLQM6ua677DWCZ9fFD33XI/26W/H4b4ZnTmMVh3jcQZa+c0iFcXCSmrR2gBpN2WLJvv2W3GN8P+4/CE4qajCh2Y8AHg69xyPLTddBNlSS5Ae6ddd1/wF/2G+j
+sidebar_class_name: "put api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update Open API URL"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/config/open-api/url"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update Open API URL
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"dataSource":{"type":"object","properties":{"openApiUrl":{"type":"string"}}}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Updated","content":{"application/json":{"schema":{"type":"object","properties":{"dataSource":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"name":{"type":"string"},"sector":{"type":"string"},"location":{"type":"string"},"description":{"type":"string"},"policyUrl":{"type":"string","format":"uri"},"coverImageUrl":{"type":"string","format":"uri"},"logoUrl":{"type":"string","format":"uri"},"openApiUrl":{"type":"string","format":"uri"},"verificationRequestURLPrefix":{"type":"string"},"credentialOfferEndpoint":{"type":"string"},"accessPointEndpoint":{"type":"string"},"privacyDashboardUrl":{"type":"string"},"codeOfConduct":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"Organisation"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

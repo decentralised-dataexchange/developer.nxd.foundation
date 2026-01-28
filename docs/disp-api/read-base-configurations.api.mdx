@@ -1,0 +1,64 @@
+---
+id: read-base-configurations
+title: "Read Base Configurations"
+description: "Reads Base Configurations related to a Data Marketplace."
+sidebar_label: "Read Base Configurations"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVcGO2zYQ/RViDk0LyNZ2tyed6tjbwG1SBPEGPRg+jKmxzKxEMiTl3a2gfy+G8q5lyQYC9GSZQ74Zvnlv2EBOXjplgzIaMvhCmHvxHj2JudE7VdQOOeSFoxID5SIYgWKBAcUndI8UbImSppCAI2+N9uQha+D25oZ/zsGHp67kwRwSkEYH0oFB0NpSyRhOv3lGasDLPVXIX9YZSy6oLu8WPZ0DjveofFzacgEJhBdLkIEPTukC2iSifXXlePvXLx+F2YmwpxEV77yoKGCOAS9BylKRDssLJcxjRCwX15Cvw61IOgpXIbvwj8O23MzvtXKUQ7Zmvk5U9G4wyL55wzHbbyTDCOdCbzYtb9oT5uRib+Zd2ycPEanf5yN2FEAC9IyVLXlhpI42GbLQwxRdLmhjYk+ydiq8QLZu4D2hIzerwx6y9aZNGphZ9Re9xH98OSw8X+OCaPnuFYW9ySGDggIkYJFxID3cpTLuTVkRE29RUspMTOQ5BFfjDpGG9cg4VBnRhSGBmhUJ+xCsz9I0p8pM0KqpKhzqMFUGuPZzgFXAQuniGobvwkOYzYmhFfehs88rK28twW4hAcWpjgQnoLHiKBNqnPo3XpOb0+f5DYMrYQpiGshgGzex7uLHH8ZVGCCDP/95gGF/Z1KS9yKYR9LCoveUiycV9qLLJKyjnXoWSouzWk5S4Mp3JlajQhTVYrn6LGafl2JhZF2RDl31CXCDuqy3N7e/Te+mv47KmZtqqzTl8XzePy92xrFyPJvyE2osiGPi51leKS1+Ekudq4PKayx/EajzkVUv7+SmKkl+ehybKOMoOPKvPrz2MwGqUHHffW2tceH3U6+HiuiLCUolSXvqgc4syj2J2+nN6OTT09MUY3hqXJEez/r043J+//fqfsJnmHJrfKhQ90D57bn0JAwZbk6Pw/95r47KC/QcUluiiuKsu2nfuXcNh7uO050quIo3Bx8H4tDDmwT2xgc+2TTHidm2vPy9JhcnSQIHdAq3LDOeMq9+YdM/sq2inC2PkAOW9eUJ1x83H+7ZEXhup4F9IvqrW/VLD7tpuh0PbJ62heRYRDQTtDyf/wNjts4r
+sidebar_class_name: "get api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Read Base Configurations"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v3/config/data-space/base-configurations"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Reads Base Configurations related to a Data Marketplace.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Data Marketplace Base Configurations read","content":{"application/json":{"schema":{"properties":{"baseConfigurations":{"properties":{"id":{"description":"ID","type":"string"},"baseUrl":{"description":"URL of the Data Marketplace's metadata","type":"string"},"clientId":{"description":"Client ID of the Data Marketplace","type":"string"},"clientSecret":{"description":"Client Secret of the Data Marketplace","type":"string"}},"required":["id","baseUrl","clientId","clientSecret"],"type":"object"}},"required":["baseConfigurations"]}}},"headers":{"Content-Type":{"schema":{"type":"json","example":"application/json"},"description":"Content-Type header"}}}}}
+>
+  
+</StatusCodes>
+
+
+      

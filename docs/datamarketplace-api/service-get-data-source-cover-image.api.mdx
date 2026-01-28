@@ -1,0 +1,72 @@
+---
+id: service-get-data-source-cover-image
+title: "Get data source cover image"
+description: "Get data source cover image"
+sidebar_label: "Get data source cover image"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1v4zYQ/SvEnNqCkVK3J52apGngYtEWzS562M1hQo4kIhLJJUd2XEP/fTGS/LFx0dYXU+TMvDdfbw+MTYbqI2RKG2cInjSESAnZBb+2UB0eHoh/RsbHMCRDd2FDad1jQ6AhkxmS4x1UH580REzYE1OSqHvw2BNUYI+uawsanIcKInILGhJ9HlwiCxWngTRk01KPUO2Bd1F8MyfnG9BQh9QjQwXD4CyM45M45xh8piz2q+tr+bOUTXJREoAKDixN8EyexcDJVfmdHP8H2LPzmHYwyk+/Cf5ArCQ1lafclJG6KLdA9sRtkBI2xKDnfCsol4KW4ng1O5b78wKN5RRnpjkVOG0O9RxSBxW0zDFXZYnRFf7VFnUYvJ1aBm8pvnMbUnMEkIoduvUomc91uyVMlG4GoXcshEDA0g35fp6MQC+HXw7l+fWv9xeYN8ZQzorDC3kVMWeyauu4VTOSiolq96qcVwIakvt74q5aQis0Ndxidua/GInNBfbkqXDgljw7MweuQ1K/S7iVMp0jz8oksmKAXVZ1F7YgzXW+DhOg404QZOBzREPqFs0Leatu/lhfIN6FPnbEJI/KBjP05PmEyy2py0BXCufJoVfTom9IobdKul4fSC9zomIKG2cpFZ/8h0xZZerqqywTQq7xyk158E4v3vjc0Xl6eopsXeMYO7XFriNWTKb1oQuNozyxnLgkaoZuBjeSlENvqPgkQyUDOKe7ul79WPxQfL/sFJppp5Y9dw8JPRcugAbq0cmw5iHGkPgn15zevh7j08uooXOGfKazoDcRTUtqVVxfeG632wKn5yKkplx8c/lufXf/2+P9lfhIZ2PI3KM/C/rvq/tVh48TyPTKZezQeSE6Mdkva30SUA1niw0aqjfad9pt0CBy24bMEmC/f8ZMH1I3jnL9eaC0aOoG09TWSQGsy3K2UNXYZbrgehQ6+ObPRVq/VaD/OYflEv1OeozdIF+g4YV2b1V7fBo1LBsqPGYTWfXIZ84HcRWtOQrgw/17GMcvOqA3EA==
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get data source cover image"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/service/data-source/{dataSourceId}/coverimage/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get data source cover image
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"dataSourceId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Image","content":{"image/*":{"schema":{"type":"string","format":"binary"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

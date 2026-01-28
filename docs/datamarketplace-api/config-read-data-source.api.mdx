@@ -1,0 +1,64 @@
+---
+id: config-read-data-source
+title: "Read data source"
+description: "Get the data source details for the organisation admin"
+sidebar_label: "Read data source"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVlFTIzcM/isePW8SSvuUp+aAMnSYwsDRPnA8CFu7q2Nj+2xvQprZ/96RdwkLydzRy0sy0Sfpky198hYSVhHm96CdLbmChwIMRR3YJ3YW5nBOSaWalMGEKro2aFKGEnITVelCtrlQoeWI4qLQLNlCAc5TyP9cGJgP4W8IzSkmvM1xoIBIug2cNjC/38InwkBh0aYa5vcP3UMBgaJ3NlKE+RaOj47k6y29031aUEi2RDYJHL1vWGcis69RfLYQdU1LlF9p4wnm4B6/kk5QgA9CO3Gf0bxS/SGWzQgTU2BbQQGlC0tMMIe2ZQNdARaXtA/s8kkkFw6aGtfzP2h8cxwH7N41rDd3ofk+vcAC1m5F4WKJFX3QoXGV+yDUebILzx9EryhwOdzbDX1rKaa7m8vrQCU/H6xTBzJkE2NzVZYUzqzxjvsW2MOi1hTjtdi/i/OBV6g3pxjrR4fBHOSej83QVXnirGn1ONKjcw2hHehhIrM4kGhUvMFEk8RLEpfWm//n0hWQODWCuxpN5Pvj/LlellbbjcPFYYAPFMmmnOXsWddoq49AbxOmw0MxRt2QdsHskx+X/fe4zK7/FLCkVDsRoYpyrSgCA7NekmZS1aRXkFlWpLCiELMgtXLfUKfk43w2Q89T+2ympWut6VO8F8tLXpHqI4Do14u83Yrg9Gc7FrldKZJCcmeYNE4GQTH8+OPlsv/85/NezkVuZpXcE1nlMUYyas2pVn0m5fPMKLZKkrrA//Y6XRMaoVnAJ4ysf8RIMHu5s6fCNtUyev25561wJeGOlW6YbFKvsxlV2bh1vjO2pcsJh7sTJY8eNalPqJ/IGrW4vtjLeOKWvqFEYlTG6Xb50h+7bbQfaKKw3180NKVCa9R4JvKlsSblg1uxoTD9Yu8iRRWpKSdRZJG4sopzHWlTDN742NC4vCJHNlxxwkatsWlkfZKurWtcxdTvzMwlUNU2fXItRTFaTdMv0lTSgH25x0fHv01/nf4y7DTs5aVfIsDnAW2asoMCaIkszRpb711Iv3P1anvbxq8W0W/WZCONgi486prU8fRoz3O9Xk8xm6cuVLPBN84uL07O/ro9m4hPl1dOTEu0o6Cy98cviPfXun3d2D//4Bg6N9FzmvkGOQtf20t2P/O7V06vZZMdGXn21C4mgWy3jxhl/3Wd/P2tpSDPk4cCVhjyhefXSQHDAIlQPNFmmEQvCrPCphUqe28P0YSdGp2fyTDj27l7N/k5+mBCuxnF3m57xGeZ+66DYiCRdQC6h67r/gMeU28C
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Read data source"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/config/data-source/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get the data source details for the organisation admin
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Data source details","content":{"application/json":{"schema":{"type":"object","properties":{"dataSource":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"name":{"type":"string"},"sector":{"type":"string"},"location":{"type":"string"},"description":{"type":"string"},"policyUrl":{"type":"string","format":"uri"},"coverImageUrl":{"type":"string","format":"uri"},"logoUrl":{"type":"string","format":"uri"},"openApiUrl":{"type":"string","format":"uri"},"verificationRequestURLPrefix":{"type":"string"},"credentialOfferEndpoint":{"type":"string"},"accessPointEndpoint":{"type":"string"},"privacyDashboardUrl":{"type":"string"},"codeOfConduct":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"Organisation"},"verification":{"type":"object","properties":{"id":{"type":"string"},"dataSourceId":{"type":"string"},"presentationExchangeId":{"type":"string"},"presentationState":{"type":"string"},"presentationRecord":{"type":"object"}},"title":"Verification"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,72 @@
+---
+id: onboard-refresh-token
+title: "Refresh token"
+description: "Refresh the access token using a refresh token"
+sidebar_label: "Refresh token"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVUtz2zYQ/iuYPdOkq+bEU+3U7TiTSTK2Mz04PqyAFYkYAhBgqUc1+u+dBalKiqbpdMoLH9j99tvXxx0wdhnaZwh+HjAZeKnAUNbJRrbBQwsPtEiUe8U9KdSaclYcXsmrIVvfKVTpYCBfoYIQKaE43xtoD7gTytNkk0kPyfIW2ueXChJ9GyjzbTBbaHfl1SYy0HIaqAIdPJNnOcIYndUFvfmahd8Osu5pifLE20gScv6VNEN1AvQME0vJLyahyJbyGG08OPpnTtZ3sC+XoOQYfB6tZ9fXcjsvUcnqUAcy8D8on3Mb6/1P1PYVLIn7IGWOIRd35B5aaKaqN6UnzcSsKYVPK0rS8R0MyUELPXPMbdNgtLXfmHoRBm8KXfh+FN7bFakRAfYvxy4+Sjoj41vCROlm4NOCSgiJXcyghXkxgmp6+C2kJTK08O6Pp4uYN6cjFzFnMmptuVdjJBUTLexGWa8kaEj2z8Jd9YRGaFZwi9nqf2MkNhexi6fCgXvyPPVQLUJSHwVuprSz5FnpREYM0GW1cGEN0hlp9cNxru82uIyOzgbu725WYP0iFHqWxQh+RcYcUZO6Rf1K3qibT/cX/N4GwWSSQ2WCHpbk+chSNvYS6EqhMsioaKN79B0p9EatKNnFIUVpsdWkYgorayjVX/znTFllcourHFaUyHZe2ZI1b6vJG+eOTotRFWRjO8vo1BqdI1ZMuvfBhc5SLiwLl0Td4MbgWpKy6DXVX2QEZVzHdGfXszf1z/VP036hLvvlsXTQ/p7Qc20DVEBLtDLaeYgxJP7Fdsez86E/nuwrcFaTz3QCehNR96Rm9fWF53q9rrEc1yF1zeSbm/f3b+8+PN5diY/MgSzmEv0J6MN3ennW091ROv678k7DzbThJjq0XrIqtHeTMhx1voKD12EeKxBx7EVI2mfY7eaY6XNy+718/jZQmtR6ham0Wt72FUyLJoLyStsylSWBqydhI+ZuEFYXOrivDh6y45F/aPtyonWfPj6KTsyn38UyGPFJuJZkcA0tlL+QeI8KL9924NB3A3ZiO2LK9Rc9LnD/
+sidebar_class_name: "post api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Refresh token"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/onboard/token/refresh/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Refresh the access token using a refresh token
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["refresh"],"properties":{"refresh":{"type":"string"}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Token refreshed","content":{"application/json":{"schema":{"type":"object","properties":{"access":{"type":"string"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

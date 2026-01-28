@@ -1,0 +1,72 @@
+---
+id: config-list-data-attribute
+title: "Read data attributes"
+description: "This endpoint reads all data attrinbutes defined in a data agreement."
+sidebar_label: "Read data attributes"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFV0tz2zYQ/isYHNpkhpYcNyeeqkZpRm3iemJnerB1WJErCgkJwMBSlqLhf+8sSIkPyXk47fQkkQS+/fb1YbGTKfrEKUvKaBnLm5XyAnVqjdIkHELqBeS5SIFAAJFTelESepHiUmlMhdICmq+ZQyxQ00hG0lh0wJizVMYyMXqpsrfK0xQIJgzDKDKSFhwUSOi8jG93AzIftLovUcymwiwFaGEWHzEhGUnFXy3QSkZSQ4EylkxhsmcwS2UkHd6XymEqY3IlRtInKyxAxjtJW8tbPHuTyaqKhobf432JnoJ7KW7E0jjhCRwxEYfelC5BL8iIBQrrzFqldSgcemu0R+EOCIutSHKF+sD7vkS3bYmb5dIj9fguIfenCCtNmKGrGTfbc1WoI+i+N5dlsUDH1BVh4YVDKh3nzqITFjIcidZhfVj8VD9H3+ULk11CmZOMX5xX1Zz31tieV1+cn/NPYjRxCOOdBGtzlYTaGn/07OCug24dVx6penfarbbwJkQgwOT5X8tQcw2hQ3H1gzc9FH5d98wElBbeYqKWDRHP8cINJJRvxcMKSChemeeYEKYckM2ZNnSm9BlTWoDHQ2TaUN3WOe0zmEcDn1R6XMKRXBpXAMlYykjiBgqbY/3wJW/EbCqrfSE+GfMSCmT/aYUtdBR6RmlPoBMUd8HInRTGiTsJGd5JttwDerpT7dMRD7biUXtFaq1o27GyMCZH0N9u5rqFYTNpL5RsJwHCzLjtD7jyqoE4bcAnxv5Ipq55v9gXXMjQ0EiQlhNNtFfWjvVDw3y9PqtI2tJZ40+wr9jmALOat6/AOdgGBMiUhkGtHEiQouD0VbtqyCwpnUNNV5DhI0LUS0W9Oghko4rMggxBPturyFcwbnhxR1Jr/YU1qBwWOR7wmNJT8JibFywnqTBa1GdBFTWHwtfxhifD/kBgjBX4K4drZUp/smv6SDOdshaiFyp0oMOfvQBhG4Qu6iVu6OmIGjfUoJ0qnGqoKtwFK4Q0TBg7/vyyPlL6qxbA55otGbuZSAYbg5AkpQsqcruTvyE4dJOSVjK+nXPbTKz6E7fhaR5Jgoxnmlpy25FnHskCaWV4LMrCuR/mmFiO6yFpzO12dpilxrvBYFM1C9pTjXm59ekJaoqFEfVnGcnS5TKWKyLr4/E4xcKcgVUjlTnQNFJGHk9C18T9lD2G4evPQ5h5G6trPprr4t7H55B6qF80w0sd7HYw4tAapz7XzVxFvYgfMJiJbOaLUE5hkYyaP7/vlfGPv2+OSmySJOh5vPmEWljw3EYPilaitsTVu1Qbnnd6XETDlEtC6aUJbBr5mc6ur8TkaiamJik5Y3sp4gTVVi/OL16Ofhm9OFYcUyzCTM370+7+INWveCjSJN6BhixUg3g2SQulxU+Cm2Wt0hLy5wJ0KkLRvQP3CcnmkODplZxUlaDnASXMNUlozCb+6s0+n5HEAhTn3ZfWGke/trkeVkS3mGSuEtS16O+TaiFZobgYnR/tfHh4GEH4PDIuGzd7/fjt7NXry+vXZ7yHQ26NpwJ0B/Q9Qjo4yfwwup0Z8l+75DQlSLihsc1BhSoNTu2arr5trj7MptfXMpLx8ZVl2NrzSK6MJ8bZ7VjmP7i8qvh1PemHhleez5J21H7U7f/qVnMyDJ+409vLzRryMswkQWK+mfL/cHX5gjf7u1brzJwfnAqH+fcl49n7Zgx7Lh695p6kstdOve0y2VMc1lSYpBq9YoL1KhY+2/Xk6FJVdc+pN69ZO6EvvAOh7V6l+tx2u3rFDctsVR2oBtllglX1DwA9upI=
+sidebar_class_name: "get api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Read data attributes"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/config/data-agreement/{dataAgreementId}/data-attributes"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint reads all data attrinbutes defined in a data agreement.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Unique ID of an object","in":"path","name":"dataAgreementId","required":true,"schema":{"type":"string"}},{"description":"Requested index for start of resources to be provided in response requested by client","in":"query","name":"offset","required":false,"schema":{"type":"integer"}},{"name":"limit","in":"query","description":"Number of items returned per page. Requested number of resources to be provided in response requested by client.","required":false,"schema":{"type":"integer","default":10}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"properties":{"dataAttributes":{"items":{"allOf":[{"type":"object","description":"Data attributes contain specifications of exactly what is collected.","x-not-in-database":false,"required":["name","description"],"properties":{"id":{"type":"string","format":"","example":"","description":"Data attribute ID"},"name":{"type":"string","format":"","example":"","description":"Name of the attribute, for instance \"name\" or \"age\""},"description":{"type":"string","format":"","example":"","description":"Description of the attribute"},"sensitivity":{"type":"boolean","format":"","example":"","description":"Sensitivity of data attribute"},"category":{"type":"string","format":"","example":"","description":"Category of data attribute"},"scope":{"type":"string","format":"","example":"","description":"Scope required for data attribute"}}},{"properties":{"dataAgreement":{"type":"object","properties":{"id":{"type":"string"},"purpose":{"type":"string"}}}},"type":"object"}]},"type":"array"},"pagination":{"type":"object","title":"Pagination","properties":{"currentPage":{"type":"integer","description":"Current page number"},"totalItems":{"type":"integer","description":"Total number of items available"},"totalPages":{"type":"integer","description":"Total number of pages based on limit"},"limit":{"type":"integer","description":"Number of items per page"},"hasPrevious":{"type":"boolean","description":"Indicates if there's a previous page"},"hasNext":{"type":"boolean","description":"Indicates if there's a next page"}}}},"type":"object"}}},"description":"","headers":{}},"400":{"description":"bad input parameter","headers":{}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,72 @@
+---
+id: service-list-organisations
+title: "List organisations"
+description: "List organisations"
+sidebar_label: "List organisations"
+hide_title: true
+hide_table_of_contents: true
+api: eJydV01z2zYQ/SsYXHqhJcftSacqiZtRx2N7knh6SHxYA0tyExJAFqAs1aP/3lmQtmhJtZXoItm7+/YB+4kHnaCKevZFR+QlGdS3hfYBGRJ5t7B69ii4oJiuuAJHMcuiLnRE0zGltZ59uS10AIYWE7LgPWgHLeqZ9mUZMelCk9Mz/aNDXutCW4yGKQiQnumP+KPDmNAqchZXqvSsYgJOypeKMfqODYpDxh8dMVo9K6GJWOhoamxBzx50WgdxRy5hhZxdlNA1Sc9ON5viiU5DLb3C5rJr75DFNSVso2JMHTu0KiCrABX+KpE3z5j40WUu7C6lPbyYmFylC116biHpme46snqzuRU2MXgXMYr+2empfD0/k0RPTuR3Imi8S+iSGEAIDZksmX6LYvWwz8LffUMj9xdYsiRR7/M57FYdmEFOky/ydRgLCd5TNI2PHeO8YsQWXfoJxM2m0BDoCIPhPsVgzP51kmSPiEoxRHnPXS6a5PmgqPFml8RW+CygB+TBN2TWN9y8TI9JlI1fIi9aqPBIg8ZX/khVH9DNAx2pvUSmcsi7oQ/cfLy4ZixpdfCchtGiSwTNVVkinzsbPPUpvKcLxmCM1yJ/US8wLcGs30Os7zywPcg9X5vFq/Kdd7YzY6Q77xsEN9CDhHZ+wNHo8BYSniRqUUy6YH/OZFPoRKkRvXFL1ju5vMj3JO35UJkcQvjUtS3wOssDVOSOrAnTMaNL19IcD7fAcTN612vnXqpc7rZCPfkEzWKnTP8P47MoD8bbVg1LoAbuGnzCE0q/gifcorqDiFZ5p/qxIXWQf7yOtztEnmbHptA1xGvGJfkuHsihXaSFs1IeGBWVKtXI+FtUoMKAMEa9xNWhrDwS0eEqDWij9LjepsGm/+zC9bNlZ7C0mGov60OVh3+AVOuZng7LxHSsPs2bBC8fF4dOik/XKYU4m04h0MSt7KT0nbM9j30CS1Q9gpZx+LiWfJLp1Uf/LQIjzzth8XQ/4uJx1Ob7ykq6GH789Vh5f//zec/nPHcWlfx3dCpAlDy5p1Sr3pOEp6SVIqfEqWf6N3NXNYLt0/0tRDKvMRKdPd/ZUkGXaqnvvnXmnelK4M6UaUjKa9sooyobf5/DSq702eEQ3veQIAYwqN6C+Y7Oqvn1Yr9ifRsaTChCZb3pZCxv/aYa1T7QiQIlE13hytTgKlTgrBr3ezWkgwrsl2SRJ1/dTcSoIjblSZQZhVQ5RUMjKwZrqfDx8YqMbKkiKeJ7aBpMKqGpnW98RRgzy8yFseqa3rmRQxE4g5OvklSSgP1xz07P/pj8PnkzLEjQ9/phb6MPDC5NyOtCYwskyRq7EDynP6nayp6n8VaSm4hBF3EEOg9galRnk9M9y/v7+wlk8cRzNR1s4/Ri8e788tP5idjkfu1jasGNQA8W5uE1IuEqTUMDlIdI14+/vmi3T4OdTanQ8liofUyi9PAgzfKGm81G/t3vsVLOlqLEa7sq7zB4WkGPfwYcJP0d1+PnxhKaTpS0rNzHczhm+X/B/ePz4mXvA9XdB8DW6Fb+4Jzn8raS7t73DbnQ3loaUBi72tvfBeWpDX84/6w3m/8AGDza+g==
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List organisations"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/service/organisation/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List organisations
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"offset","in":"query","description":"Requested index for start of resources","required":false,"schema":{"type":"integer","default":0}},{"name":"limit","in":"query","description":"Number of items returned per page","required":false,"schema":{"type":"integer","default":10}},{"name":"organisationId","in":"query","schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of organisations","content":{"application/json":{"schema":{"type":"object","properties":{"organisations":{"type":"array","items":{"type":"object","properties":{"dataDisclosureAgreements":{"type":"array","items":{"type":"object"}},"api":{"type":"array","items":{"type":"string"}},"organisation":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"name":{"type":"string"},"sector":{"type":"string"},"location":{"type":"string"},"description":{"type":"string"},"policyUrl":{"type":"string","format":"uri"},"coverImageUrl":{"type":"string","format":"uri"},"logoUrl":{"type":"string","format":"uri"},"openApiUrl":{"type":"string","format":"uri"},"verificationRequestURLPrefix":{"type":"string"},"credentialOfferEndpoint":{"type":"string"},"accessPointEndpoint":{"type":"string"},"privacyDashboardUrl":{"type":"string"},"codeOfConduct":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"Organisation"},"organisationIdentity":{"type":"object"}},"title":"OrganisationSummary"}},"pagination":{"type":"object","properties":{"currentPage":{"type":"integer","description":"Current page number"},"totalItems":{"type":"integer","description":"Total number of items available"},"totalPages":{"type":"integer","description":"Total number of pages based on limit"},"limit":{"type":"integer","description":"Number of items per page"},"hasPrevious":{"type":"boolean","description":"Indicates if there's a previous page"},"hasNext":{"type":"boolean","description":"Indicates if there's a next page"}},"title":"Pagination"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

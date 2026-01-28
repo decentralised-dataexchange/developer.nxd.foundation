@@ -1,0 +1,64 @@
+---
+id: service-read-organisation
+title: "Read organisation"
+description: "This endpoint is used to read the organisation information as configured by the organisation in the consent building block. This is used, for e.g., in the privacy dashboard."
+sidebar_label: "Read organisation"
+hide_title: true
+hide_table_of_contents: true
+api: eJzVVk1v4zYQ/SvEHIoW0Mpp2pNOdeN04W52EzQpeghyGJNjiRuJ5JKUE6+h/14MJSeynMK59mJT5HxxZt4b7kCR8yQxkoJijXWgDBQF6bWL2hoo4K7SQZBRzmoThQ6iDaREtMITKhErEtaXaHRAVhDarK1v+jUGIa1Z67L1pMRq+5Z02pPWBDJRrFpdK21KsaqtfMxF8j24zMTaekF5mWd7Nef1BuVWKAzVyqJXOWRgHflkfKmggEB+oyX9RaiuR44hA0/BsdsAxQ7Oz874T1oTyUReonO1lkl49jVwJnYQZEUN8sp5dhN1rz2+En/rSE06wLq+XkNxvwNP31rtOcn3YLAhyKC2ch/LOOMZOFtruf3b1/CQQdw6ggLs6ivJyIcHnrXi30EmRK9NCdMCju8tlgvosj6Ck4pfsCFh10dVYwsHkicj2HAV6ClV8C1rgWS0/rSh216uGyXvpM7VXrIbZ/ak2k0SFSzbdV22OypE1LGmSXovn6PHcFQlaTfklw2WtHxHvS5YWmgWH8r1qv+u0McGWo6f01XadwdwZUt74P9F+13uR+ptn70HzuABBA4a4KjLk/ikhT5BBhWhIs8pTRKBZOt13CaA/U7oyc/bWEFx/8AFmzv9ibbpiz1gGdjz9cRzQ7GyzBQlJXghG4DZwBsze0gavJ0iuN9NAlxQY0V/DBnwxQuoYnShmM0UNfYDOp3r0qOJubbAAU56O2LJ1PcfNkJ/PDXz8JqGW2anvuH2V38pFfYbGWh21ecR9jwAnDXr9fcXnIyT+WKDI+EUJDdQwCoJQTYs/ki0DwX8+c/dUU/MpaQQRLSPZITDwCPkScdK9J6E87TWz8zrB7GIIVKuNg+WFM2Au8Xy9kbMb5ZiYWXbkIn7GnGBeq/nZ+e/5r/kP7+BkGalDamkr8b6iaIuhnH0GQ2WxGfix7lqtBE/iKVReqNVi/VPAo0SC4woPqN/pOhqlPS25NBOgQcUDxmUacgM+dcf9/XMgBrUXPfQOmd9/O211tOOGDcT1FqSCTQyOncoKxLn+dmR5tPTU47pOLe+nA26YXa1vLj8cnv5gXW6RJchNmhGRnmOigkmJqPgZYb+714OQ59Heo4zV6NOUGh7yut54X7/nuB3xoRIKhsiS+x2KwzMlF3H299a8omEMtig17ji5mWC2qOQqeSRwZpA4piENli3PWonb5BuTFgfLxlneAjSCSiT9T0HmO3I9m7XS9wxJLsOsiGIBFFIlP0vGTCEJg==
+sidebar_class_name: "get api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Read organisation"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/service/organisation"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint is used to read the organisation information as configured by the organisation in the consent building block. This is used, for e.g., in the privacy dashboard.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"properties":{"organisation":{"items":{"allOf":[{"required":["name","location","description","policyUrl"],"type":"object","properties":{"id":{"type":"string","description":"Organisation ID"},"name":{"type":"string","description":"Name of the organisation"},"description":{"type":"string","description":"Overview for the organisation"},"sector":{"type":"string","description":"Sector"},"location":{"type":"string","description":"Location"},"policyUrl":{"type":"string","description":"Policy Url"}}},{"type":"object","title":"OrganisationExtras","properties":{"coverImageId":{"type":"string","description":"Cover image ID"},"coverImageUrl":{"type":"string","description":"Cover image url"},"logoImageId":{"type":"string","description":"Logo image ID"},"logoImageUrl":{"type":"string","description":"Logo image url"}}}]}}},"required":["organisation"],"type":"object"}}},"description":"OK","headers":{}}}}
+>
+  
+</StatusCodes>
+
+
+      

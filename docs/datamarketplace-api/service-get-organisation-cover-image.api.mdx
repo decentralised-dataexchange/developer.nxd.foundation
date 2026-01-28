@@ -1,0 +1,72 @@
+---
+id: service-get-organisation-cover-image
+title: "Get organisation cover image"
+description: "Get organisation cover image"
+sidebar_label: "Get organisation cover image"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1v3DYQ/SvEnJqAlpxtTzrVdl1jgyApmgQ9JD6MqZFEmCIZcrTr7UL/vRhJ611nCyR7WYrDmffm6+2Bsc1QfYFMaWMNwb2GECkh2+DXNVQHwx3xh9Sit3ky3YQNpXWPLYGGTGZIlndQfbnXEDFhT0xJ4u7BY09QQThxXtegwXqoICJ3oCHRt8EmqqHiNJCGbDrqEao98C6Kd+ZkfQsampB6ZKhgGGwN43gvzjkGnynL+9XlpfzVlE2yUcCgggNPEzyTZ3lg5ap8LcefAHuwHtMORvnp74LfEavT5JSR0ii7YPbEXZA6tsSg54QrKJeqlqee5f5lkcZyCjVTncqcNoeqDslBBR1zzFVZYrSFf6qLJgy+nrzhe5rv7IbUHAGkaoeefZTs59pdEyZKV4MwfC6GQMDSEfl+mB6BXg5/Hkr09p9PZ5hXxlDOisMjeRUxZ6rV1nKnZiQVEzX2SVmvBDQk++9cwY6wFpoarjFb8yNG8uYMe/JUOHBHnq2ZAzchqQ8SbqWMs+RZmUS1PECXVePCFqTB1jdhArTsBOEPZMwRDalrNI/ka3X11/oM8Sb00RGTGFUdzNCT5yMud6TOA10oVDUyKnoyHfqWFPpaSdebA+llVFRMYWNrSsVX/zlTVplcc5FlQsi2XtkpD97pxRsfHJ2mp6fItW0to1NbdI5YMZnOBxdaS3liOXFJ1A7uMMx9dBa9oeKrDJUM4Jzu6nL1W/Fr8WbZKzTTXi3bbu8Sei5sAA3Uo5VhzUOMIfHvtj3aXo7x0TJqcNaQz3QS9Cqi6Uitisszz+12W+BkLkJqy8U3l+/WN7fvP95eiI90NobMPfqToD9Y3xctfh5Bpicuo0PrhelEZb+s9lFJ9QvNAw3VmQYe9xs0iPR2IbPE2O8fMNPn5MZRrr8NlBZ13WCaWjupQG2znGuoGnSZzug+Cx788vcisa8U6P9PY7lEv5M+oxvkCzQ80u5cv8f7UcOyp8JkfiQLH/nE/SCzojjPSnh3+wnG8T9uNj8R
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get organisation cover image"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/service/organisation/{organisationId}/coverimage/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get organisation cover image
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"organisationId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Image","content":{"image/*":{"schema":{"type":"string","format":"binary"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

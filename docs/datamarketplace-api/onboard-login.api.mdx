@@ -1,0 +1,72 @@
+---
+id: onboard-login
+title: "Login"
+description: "Login as data source organisation admin"
+sidebar_label: "Login"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVU1z2zgM/SscnBXZdXvSqU6b3Ukns+006fSQ5gCTkMSGIlmSsuz1+L/vgJJje7zTbVcXSSQ+HoAHYAcJmwjVIzi7chgUPBWgKMqgfdLOQgV3rtFWYBQKE4ro+iBJuNCg1RFZRqDqtIUCnKeQT24VVAeDWR0KiCT7oNMWqsenAgL96Cmma6e2UO3yrw6koEqhpwKks4ls4iv03miZzc6+R0a0gyhb6pC/0tYT+1p9J5mgODH0CNShNlCAxxgHN4bmA4NMmiJrjxJHMzEFbRsooHahwwTVJLE/MfIz6RehfX4YTvTOxtHbYj7n13l273spKca6N8JMmfrfwZ8Hh9nwv+E9R/Dh64MYZUVyz2Qh464DxfbXlCfhg/a+gKSTYaUHPvk85QDGlLyZv7rMwq1do9FKyECKbNJoImTZ15eyS2ab6COFKKxLAo1xA6nsuKPUOiafdzFnBFMLFcwmLs5yimeZjWFNgYm/gz4YqKBNycdqNkOvS7tRZe16q3LmL4K+02sSowXYPx2pfc+VGZN/TRgoLPt0mkN2wb6zGFSwykJQTB9/HGj04evDhc/lSYUE84yUGHRqxehJ+EC13ghtBTt1Qf899mZLqBhmAdcYtfwvRCxz4TtrCuxTy7UZ6ShqF8RHNrcQ0miy6bR4ojZuyBVh1n4+NvvNBjvP3HhpPuBKvqXxvJSuO+3YF97tC9C2dhn6RK73mDB6lCSuUT6TVWL56fYC+zvHdhPxpVBO9h3ZdIwgtSQuDV0JHKcdbWSLtiGBVok1BV0fwufya0nCB7fWikL5zX6JFEUkU19Ft6ZAurFC54ykbTFp48rQaaKKbFnpRic0YkBjKIlEsrWOuUoxo8xYAjW9GZ1LDkqjlVR+Y3oylcdwF/PFm/J1+WoaIyjzGLGYq6v/DGhTqR0UL9mPvfcupLe6Od6dN8TxZl+A0ZK4l49Glx5lS2JRzi80h2EoMV+XLjSzSTfO7m7f3fx1f3PFOswRbtYO7YnRw9I4q+XuOBl/YylNTE+0STNvUOf5lnHupvFw3H0FHGYw74qWZ0j1CLvdCiN9CWa/5+MfPYVpi60x5Iry376Aqdd4pjzTNpMv4716YAwsbnrGcjHV98VBg9vcp5/KPp2MuU8f73lUrKY12jnFOgEHXoU4QAV5LbN2Hkv5bAcGbdNjw7KjTX7+AZ7iy1A=
+sidebar_class_name: "post api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Login"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/onboard/login/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Login as data source organisation admin
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["email","password"],"properties":{"email":{"type":"string","format":"email"},"password":{"type":"string","format":"password"}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful login","content":{"application/json":{"schema":{"type":"object","properties":{"access":{"type":"string","description":"JWT access token"},"refresh":{"type":"string","description":"JWT refresh token"}},"title":"TokenResponse"}}}},"401":{"description":"Invalid credentials"},"403":{"description":"Admin users not allowed"}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,72 @@
+---
+id: config-delete-connection
+title: "Delete connection"
+description: "Delete connection"
+sidebar_label: "Delete connection"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFVE1v2zgQ/SvEnHYBRsp6e9JpncS78CJoizbFHlIfJuRIIiKRLEnZcQ3992IoJbHjAHsSxfl4781w5gAJmwjVPShna9PARoLzFDAZZ9caqvn+hjpKdO2sJcUmkBBJDcGkPVT3B7giDBSWQ2qhut+MGwkeA/aUKMTsYLGnKducYa1BgrFQgcfUgoRAPwYTSEOVwkASomqpR6gOkPaeY2MKxjYgoXahxwQVDIPRMDJaoOidjRTZf3H5gT+aogrGZ7oVTArYXb5rEepYXE+pdSxfZyPIiWUF5VSP8tW7PByLGstcmrB9Fj6EDipoU/KxKkv0prBPuqjdYDXOYKd0bs2WxJQBWNpznb9yPSaBx9V+KQ9DwFw2/n/ITiDnw9/PRfv3v7szzKVSFKNI7pGs8BgjabEzqRUTkvCBavMkjBUM6oL5mbmLllAzTQlXGI36P0bsc4adIwUOqSWbjJoS1y6IT5xuIVRnyCahAml2wC6KunO73Ehja5cBTeoY4QYTRo+KxBWqR7JaLD+vzxCvXe9zy5ef10I7NfRk0ytuakmcJ7oQKDQmFPSkWrQNCbRabCmY+pk0N80oEj64rdEUiu/2W6QoInX1RXRbCmQaK0zWkfZyjsaHjo7lyZxZm8Yk7MQOu46SSKRa6zrXGIqZZeYSqBm6CVyxKINWUfGdHxU/wEnu4nLxofiz+AMkj19Clbhk80CafwLaVBgHEqhHw481Dt67kP4yzavt9Bm/WkYJnVFkIx0lXXpULYlFcXkWudvtCszmwoWmnGNjebu+Xn38urrgGO6sdzH1aI+SvjemJ319eXeJnlLpOzSW6WX8wzy/L3tOwkmi6s1i4j3Yupg44nB4wEjfQjeOfP1joMBLbyNhiyF3Lw+6NpHPGqoau0hn5Lj2ZHkCf/syr7rfBcj3Sc+XaPfcSuwG/gMJj7R/u0XHzXi0r25Wt6u7FUjA01l8sw0y43dBDofJ4453wTi+YObdwGDj+AvGpiUJ
+sidebar_class_name: "delete api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete connection"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/config/connection/{connectionId}/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete connection
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"connectionId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Deleted"}}}
+>
+  
+</StatusCodes>
+
+
+      

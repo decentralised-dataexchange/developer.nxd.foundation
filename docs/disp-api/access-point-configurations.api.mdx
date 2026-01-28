@@ -1,0 +1,72 @@
+---
+id: access-point-configurations
+title: "Access Point Configurations"
+description: "The Access Point Configuration Metadata endpoint for an organisation's capabilities in regards to a Data Marketplace."
+sidebar_label: "Access Point Configurations"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVk1v4zYQ/SvEHNpdQLbSpCed6jpp4HbTBkm2PQSGMZbGEjcSySUpO6mg/14MpXjlr3SLoujJMjkzfPNm5pENZORSK42XWkECDwWJSZqSc+JWS+XFVKuVzGuLbCBuyGOGHgWpzIT9lbYCldA2RyVdsPrWiRQNLmUpvSQnpBKWcrSZE14LFJcc4AbtE3lTYkpjiMCgxYo8WQfJY3ME1OxS6JXwBe0cBRFItjDoC4hAYUWQwNBilkEElj7X0lIGibc1ReDSgiqEpAH/YtjDeStVDm07Z2NntHLkeP/87Ix/dvFck3+DJLdlCSJItfKkPMdAY0qZBpP4k+NAzQCIsdqQZb6CbYi+CBQvXrk+xBvtAXujctuCfbz7AG0EWPtCW/ln2F04smuyf3/Ab5PaF2Iy9BX3wZfjhmY4KFEbQU5+sSYrV33+Cy4IuX+SGnP++yCEuOtC7CR2FEAkNgVZEiiGEEQPQaSoxJKEVNJL9JQxXqPdvwZ8q91/i9hSSnLNgNvoFYtefqLUdx0v69Dxjyea6UQLfE2xvoqgecu4CsIsDHUD024URg8BanM4hGEoIqBnrEzJCwcT0+6TPIwpurOgDQd7zFlKoO9VN+xVmEdQkS90BgmnG/THF5BAvL6ImQiZUswTPHIGU4qbXUVp4/GGynL0pPRGxR29o5D1KB0OHUTQsXpM1C6p0mJLem1LSKDw3rgkjjOq9AiNHMvcovJjqaGN9gPce8ylyk/FcN32fpg5Y0prK/3LPReg05uJkb/Qy6AW2C308tozuxXYHQHgqvxIaMny8iAGI4FebPn/MhhB1H/8pG2FHhL4+Y+HU0rm9RMpYdA5ysRG+kJ0JwljaSWf+WrZFaNtDzDylQ5opA/ddDm7vxWT25m41GldkfKvNeICdaeen51/P74Yf3cAZ6qrpVSUBf9s6B8GeMr3hfLiBhXmxHvi3SSrpBLfiJnK5FpmNZbvBars4PY7btk3oRv3dwimQXJ6/uX1az0joAol193Vxmjrf/hS6/2OGDYTlDIl5WgQdGIwLUicj88OPDebzRjD9ljbPO59XfxhNr369f5qxD5tr5sVqmHQ09fkPsnNl8vyf3uG9J3r6dnHpkQZmjtw0fQS8Qjri36uZUqcw1YmIILk4OkxUAqW3NNaMY+g0M7zCU2zREcfbdm2vPy5JvsCyeM8gjVaiUtuZ9YT6fg7g2SFpaM36Hx31z+A3os331JH039VBMVysMay5n8QwRMLxv5bq51vRT9g7Iy4lMYP3A+VfSjJ11cP0LZ/Aay/wFc=
+sidebar_class_name: "get api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Access Point Configurations"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v3/service/data-space/{organisationId}/.well-known/access-point-configuration"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+The Access Point Configuration Metadata endpoint for an organisation's capabilities in regards to a Data Marketplace.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"The ID of the organisation","in":"path","name":"organisationId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Get Access Point Configurations Metadata","content":{"application/json":{"schema":{"properties":{"access_point_endpoint":{"type":"string","description":"Access Point Configuration endpoint URL"},"authorization_server":{"type":"string","description":"OAuth Authorization Server URL for the organisation"},"get_verification_request_endpoint":{"type":"string","description":"Get Verification Request endpoint URL for the organisation, where a verification request can be initiated"},"post_verification_request_endpoint":{"type":"string","description":"Post Verification Request endpoint URL for the organisation, where a verification request can be received"}},"type":"object","reqiured":["access_point_endpoint","authorization_server","get_verification_request_endpoint","post_verification_request_endpoint"]}}},"headers":{"Content-Type":{"schema":{"type":"json","example":"application/json"},"description":"Content-Type header"}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,72 @@
+---
+id: create-base-configurations
+title: "Create Base Configurations"
+description: "Creates Base Configurations related to a Data Marketplace."
+sidebar_label: "Create Base Configurations"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk2T4jYQ/SuqPmSTKgOTmZx8CgOTFMluMrXMVg4Uh8ZujHZsSSvJMMTl/55q2YAxsJVKDrnkQhl9PHW/fv2kClJyiZXGS60ghokl9OTEIzoSE63WMist8qQTlnL0lAqvBYopehQf0L6SNzkmNIQILH0pyflHne4hriDRypPy/InG5DIJOKPPjk+qwCUbKpC/jNWGrJfk+J9M+fc8rNkUIvB7QxCD81aqDOoIVujok80vl3/6+F7otfAbuojznRMFeUzR4zXIJJek/OxKCJMwI2bTW8i34eaUWPI3IZvpvw9bN0xLSynEC+brREUng97pyyOOXn2mxENdN0jOaOUa6u/v7i6j7Ad0VRtJ0E049J9VnRM4x/xfGf+dMs5xrtRmGcSzIUzJhtpMmrIPXgJSt84tdhBABPSGhcl54EIdddRnoYMpmrNa1TpKSiv9HuJFBY+Eluy49BuIF8s6qmBs5K+0D/84Ocwcp3FFt5x7QX6jU4jBaOchAoMMBKPtwygJi0csiYEzmNCIqRgk5xgcjt0GHhYXzUOFFs00RFCyJGHjvXHxaJRSoQdo5FBmFpUfSg0c/DnA3GMmVXYLwzXTfZjliaI5F6LpnwMtx5pgMxCB5KNahiNQWPAsM6qt/DOkydXpEn3E4EiYgnAMxLAKi1h44eMnbQv0EMMvf7xAv8DjJCHnhNevpIRB5ygVO+k3ojlJGEtr+SakEmexnLQQBVl9PN07Twd5NW5x6IyOI5yGTh3dHzu0ZadfpVrrkLX0Qb3T2fxZjJ9nYqqTsiDlG5YiYCE02d3f3f8wfBh+f5H2RBcrqSgN+9PufrHWliXquPs/oMKMeE58O04LqcQ3YqZSuZVpifl3AlV64QnXV7J4ZEJu2PozJsFz2jrLnw+6iYAKlIGk0hht/Y8nTfWV1xUt5DIh5agDOjaYbEjcD+8udu52uyGG6aG22ajd60bvZ5On3+ZPA97DpeV+LFB1QJvXybULqM9x5/Xx7940rco9vfmRyVGGRiibq6VxigVsHxpe15IldHKLVnZ9v1hGsGGriRdQVa0u65qHv5Rkg21FsEUrccVSY0s79CYbzCu38Lnf8vK8vGGqhx3cbMZ/dW3XDZ9/n3PDrtrHXKFT3mNxxw893EEMEIE2x6s6jFWQo8pKzI6OH+wazy2jZxEhq4MjqX0nwqpqVrywQdQ1RG0qwTCg5kvoL2q3tek=
+sidebar_class_name: "post api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create Base Configurations"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v3/config/data-space/base-configurations"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Creates Base Configurations related to a Data Marketplace.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"id":{"description":"ID","type":"string"},"baseUrl":{"description":"URL of the Data Marketplace's metadata","type":"string"},"clientId":{"description":"Client ID of the Data Marketplace","type":"string"},"clientSecret":{"description":"Client Secret of the Data Marketplace","type":"string"}},"required":["id","baseUrl","clientId","clientSecret"],"type":"object"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Data Marketplace Base Configurations created","content":{"application/json":{"schema":{"properties":{"baseConfigurations":{"properties":{"id":{"description":"ID","type":"string"},"baseUrl":{"description":"URL of the Data Marketplace's metadata","type":"string"},"clientId":{"description":"Client ID of the Data Marketplace","type":"string"},"clientSecret":{"description":"Client Secret of the Data Marketplace","type":"string"}},"required":["id","baseUrl","clientId","clientSecret"],"type":"object"}},"required":["baseConfigurations"]}}},"headers":{"Content-Type":{"schema":{"type":"json","example":"application/json"},"description":"Content-Type header"}}}}}
+>
+  
+</StatusCodes>
+
+
+      

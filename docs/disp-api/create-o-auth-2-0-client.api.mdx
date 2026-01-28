@@ -1,0 +1,72 @@
+---
+id: create-o-auth-2-0-client
+title: "Create OAuth2.0 Client"
+description: "Creates an OAuth2 Client for use with a Data Marketplace."
+sidebar_label: "Create OAuth2.0 Client"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVk1v4zYQ/SvEHIoWUOw06UmnOk66cNvdDZoUPRg+jMWxzY1EMiQVxyvovxdDyrFkJ8Wm7c0mOY/z8d6jGpDkC6dsUEZDDlNHGMgL1OLzpA6bCzEtFekgVsaJ2pPYqrARKK4xoPiI7oGCLbGgEWTg6LEmH66M3EHeQGF0IB34J1pbqgL5jvEXzxc14IsNVci/rDOWXFDkY1i87xNWxP+Osku58KYwKxE2NMwSMgg7S5CDD07pNbRZh3fdx3kDtnfmG9HbVLRyJCGf91NfvJw1yy9UBGjbdNpbo32q9OL8/DSX48YKRyUGkkfjKOKcJGT/ts0GGa4rLG+Oss1eHcpMnuY7u37nJO6ocBROgdL6O8Fep8n/zY/3EyODtUMd7nc29W+I94H3RNwUWJZmSzLq65uAg6rIB6zsKe79fuvVLBNnYg1OlOiDqIxUq44wh6uUDm8wexb51p/iYA6DovuJLhjumGCOHlXdwQ/IuIhK2RBKcrF508Tws/uI0Kd0hxm5ngE9Y2VLXjgRQpsdS76HKdJdnUQ9FbVTYQf5vIErQkeOuwj5fNGyqnHtOeUr9CSmRq/UunbxJs+iryhsjIQcrPFRRsihMH66HBfx8FhiwDNvsaBxKvus2M/ak3uKNc9PGVgZkbYhg9qVkMMmBOvz8VhSZc7QqpGK7R8pA212oq6Aa6XXb2H4tH0Mszi0446bnsg8seo32vX6j2khA8VXdd3MQEdxAnfPOPU10azNBk19weBMuAXxGshhGQ9B1v34xbgKA+Tw61/3cDzMSVGQ9yKYB9LCovck0zuVbhLW0Uo9C6XFIJfD3LNIoT8O79fNnkrD92gvw1ddo6dRpVcm1qZC5OP17O5WTG5n4toUdUU67CXH407BF+cXP40uRz+eFDc11VJpkjFe9uOjZ0z5OdFBfESNa+I98f1EVkqL78RMS/WkZI3lDwK1PHm0Xz/JFFEF+VH3uGAR3bqbpvqwZ0cGVKFiFvnaWuPCzwfmHPOrT00oVUHaUw90YrHYkLgYnZ9EbrfbEcbtkXHrcRfrx7/Ppjef7m7OOIYHyHqrUPdA06dM54Gj84OlyqHXvzyg/+njp6NxoOcwtiWqyPRYStOZwByeLlNLV4opdDACyGBoBYsMNuwf+RyaZome/nRl2/LyY02OrWmRwRM6hUvm13zxYpjROx5YnUPb5ONl/YY37iNYRzb849m+xd1+vmMtLrvvvcpIjnG4ZXfHLeTAhdnkjXmT1hooUa9rXL8Yd3RdHLrBkfpjVXuz0btehk2TTtyz9tsWsq6U6AXQ8lvyN2G8wdc=
+sidebar_class_name: "post api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create OAuth2.0 Client"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v3/config/data-space/oauth2-client"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Creates an OAuth2 Client for use with a Data Marketplace.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"clientName":{"description":"Client Name of the OAuth2 Client","type":"string"},"clientDescription":{"description":"Client Description of the OAuth2 Client","type":"string"}},"required":["clientName"],"type":"object"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Data Marketplace related OAuth2 Client created","content":{"application/json":{"schema":{"properties":{"oauth2Client":{"type":"object","properties":{"clientId":{"description":"ID of the OAuth2 Client","type":"string"},"clientSecret":{"description":"Secret of the OAuth2 Client","type":"string"},"clientName":{"description":"Name of the OAuth2 Client","type":"string"},"clientDescription":{"description":"Description of the OAuth2 Client","type":"string"},"grantTypes":{"description":"Grant Types allowed for the OAuth2 Client","type":"string"},"timestamp":{"description":"Timestamp of the OAuth2 Client creation or last modification","type":"int"}},"required":["clientId","clientSecret","clientName","grantTypes","timestamp"]}},"type":"object","reqiured":["oauth2Client"]}}},"headers":{"Content-Type":{"schema":{"type":"json","example":"application/json"},"description":"Content-Type header"}}}}}
+>
+  
+</StatusCodes>
+
+
+      

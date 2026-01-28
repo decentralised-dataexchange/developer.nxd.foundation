@@ -1,0 +1,72 @@
+---
+id: delete-o-auth-2-0-client
+title: "Delete OAuth2.0 Client"
+description: "Deletes a Data Marketplace related OAuth2 Client."
+sidebar_label: "Delete OAuth2.0 Client"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVU1z2zYQ/SuYPXSSGVp07Z54qiKpGbVJmqnVycGjw5pcSYhJAAZA2Q6H/72zACWRopNxepKIxb59+/EWDRTkciuNl1pBBnMqyZMTKOboUXxEe0/elJiTsFSip0L8Pa397krMSknKTyABgxYr8mQdZLcNKKwIMsiDfVlAApKRDfodJGDpoZaWCsi8rSkBl++oQsga8M+G/Zy3Um2hbdd82RmtHDm2X11e8s8Z31exFEVIi7nkWnlSnpHQmFLmyEjpV8dwTY+OsdqQ9TIG18hwEa1HVt99pdxzDQa3j7mP+C7nQm+E39GQICTn6ScdyA3llvwYKJ7/JNin0JpzKD79SaB5H2DUk9PXq2G3FpVfPZtYvyHee7aJYBRYlvqRCrHR9nXAXlbkPFZmjLs6mF5kKXJLGHOwokTnRaULuekG5hRKKg9t2x/s2/7sD7o46MMg6T7RNcOdD5ilB1l38INhXLd8fUdYBAE2MIsTfrEKCM1YYWHWE6AnrEzJByMhtMlZqfqYIsaCNgR2lNdW+ucg/XeElixXEbLbNSvY45a3ArxDR2Km1UZuaxsiOVgnUJHf6QIyiAINy4SdId1fp3m4nhbo8cIZzCmNiV/EIqbNocwtMA+7P2yg83GstIhmSKC2JWSw8964LE0LqvQFGjmRoRcTqaFNRlLzuJVq+z0MF83nMOtTbW64A3Gyp0b+Rc+9ZmA86JZkV9rksES5lNrKb3Hm2mRQ4SMGM4FulfL3XbgESffnD20r9JDBn19WcN7ZaZ6Tc8Lre1LCoHNUiEfpdyJGEsbSRj4JqcSAy2kImPlGBzbSh3GaL28+i+nnpZjrvK5I+YNiuEEx6tXl1W+T68mvIzozXd1JRUXwL/r+QfIzfg2UFx9R4ZbYJt5Mi0oq8YtYqkLuZVFj+VagKsYP2Is3uakyJzfp3gbMw7Lt6i/fH/qZAFUoue+uNkZb//up1+cT0R8mKGVOylEPdGow35G4mlyOPB8fHycYzBNtt2nn69IPy9ni083ign245EY7X6HqgcaHu1thk8vTRiyGq/r4/v2vp74bOE9PPjUlyjCTIYWmU+4t7K9jKTdyy+GP6oUEBvqFBLLjolwnsNPOs3/T3KGjf23Ztnz8UJPl7bJOYI9W4h3PGItcOv5fQLbB0tEPEn3zT7ea34rvpXAQo2Il7rGs+QsSuGetntZ5uz6u2sAhmllCxvccx/u0v+rmiw+L1QISwKGKz1QbArzIq2nijRVrtm2PNIOGmWPb/gd8oGCp
+sidebar_class_name: "delete api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete OAuth2.0 Client"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/v3/config/data-space/oauth2-client/{clientId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Deletes a Data Marketplace related OAuth2 Client.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"clientId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Data Marketplace related OAuth2 Client deleted","content":{"application/json":{"schema":{"properties":{"oauth2Client":{"type":"object","properties":{"clientId":{"description":"ID of the OAuth2 Client","type":"string"},"clientSecret":{"description":"Secret of the OAuth2 Client","type":"string"},"clientName":{"description":"Name of the OAuth2 Client","type":"string"},"clientDescription":{"description":"Description of the OAuth2 Client","type":"string"},"grantTypes":{"description":"Grant Types allowed for the OAuth2 Client","type":"string"},"timestamp":{"description":"Timestamp of the OAuth2 Client creation or last modification","type":"int"}},"required":["clientId","clientSecret","clientName","grantTypes","timestamp"]}},"type":"object","reqiured":["oauth2Client"]}}},"headers":{"Content-Type":{"schema":{"type":"json","example":"application/json"},"description":"Content-Type header"}}}}}
+>
+  
+</StatusCodes>
+
+
+      

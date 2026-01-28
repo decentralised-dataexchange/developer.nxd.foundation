@@ -1,0 +1,72 @@
+---
+id: service-read-idp
+title: "Read IdP details"
+description: "This endpoint is used to read the IdP details configured by the organisation in the consent building block."
+sidebar_label: "Read IdP details"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VU1v4zYQ/SvEHIpdQLbTdE8+1Y3ThdrdItgk6CHwYSyOpdlIJENS+aih/14MJTuynWBve5LE+eDT8L3HLWgKhWcX2RqYw03FQZHRzrKJioNqA2kVrfKEWsWKVK6vlKaIXAdVWLPhsvWk1folRa0v0XBAaafYpLXCmkAmqnXLtWZTqnVti/spZGAd+ZSaa5hDIP/IBX0j1Ll2kIFDjw1F8gHmd9sjpLeGH1pS+VLZjUKj7Po7FREyYIk6jBVkYLAhmANrl2vIwNNDy540zKNvKYNQVNQgzLcQX5wkhujZlNB1K0kOTpAHiZ+fncmjsCaSifKKztVcJPSz70EgbUf9nJd/i9xXs3ajTfZInyfGxgmbicaIawwE8w3WgcZA74AFeW1L28ZbX0MGRc1kYq5hlZ3sc/ovGWysbzDCHCADesbG1dR/HA40X16pfAndeLM3uh0WfUmpSnK7EbIf1l2kzLRf13XZ0WjS0mEBZFAR6sSFrYQ/9SdymLVGrdi4Nqo9d44KuwwCFa3n+JJI9QehJ79oYwXzu1WXbWHh+G96SV+rDCKWwj7INZnI8UVdefvImrxMv6FYWaFuSTHxVbrAbCDyjLWbWUdmko5QVt+m8pIaq/owZNDK3KGK0YX5bKapsRN0POXSo4lTtiAgDxtcRyxFWO/0CH34uM3qdRTXQtyeQ7vf358g9guDsPpZvkpLJmc9/5eEIBwYD3TfQ5DAoDf5XqckyIaXP3cM/evfmxOqLIqCQlDR3pNRDoMY0hPHSvU7Kedpw89iNgdY1IBUTpzNxiY0HBP3l/n1lVpc5Wppi7YhE3v0GcgB9buen51/mv42/fWUubZZsyGd6vW4Xm2sVxeD2X1FgyVJTH1Y6IaN+kXlRvMj6xbrjwqNVkuMqL6iv6foaizo7cyBTUEMU/wHi+Q/O2v7vDvPDKhBlnMPrXPWx99fz/qYEWMyQc0FGTGffdOFw6IidT49O6l8enqaYgpPrS9nQ22YfckvLv+5vpxIjYzc2RAbNKOm4uvj2+N4siN3/cnX0EDSSM9x5mrkxOO2t79e03e7y0lkkO6mna5XGVQ2REnZbsXDb33ddbL80JJPNpLBI3rGtVBPtM9B3vXe7N+dwodvwzXwUb17272JfadcI7J9xLodDP9ehD3cht2q2zljgtXHRGwujqpOrrlu7HufL0WveCj2I3Gn7m8i2m77jBuRdtftASapC8Cu+x8Nf/HG
+sidebar_class_name: "get api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Read IdP details"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/service/idp/open-id"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint is used to read the IdP details configured by the organisation in the consent building block.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"Unique ID of an object","in":"path","name":"idpId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"properties":{"idp":{"type":"object","x-not-in-database":false,"required":["id","logoutUrl","clientId"],"properties":{"id":{"type":"string","format":"","example":"","description":"IDP ID"},"logoutUrl":{"type":"string","description":"Logout Url"},"clientId":{"type":"string","description":"Client ID"}}}},"type":"object"}}},"description":"","headers":{}},"400":{"description":"bad input parameter","headers":{}}}}
+>
+  
+</StatusCodes>
+
+
+      

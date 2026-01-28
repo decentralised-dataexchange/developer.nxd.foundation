@@ -1,0 +1,64 @@
+---
+id: config-read-webhook-event-types
+title: "Read webhook event types"
+description: "This endpoint is used to list all webhook event types."
+sidebar_label: "Read webhook event types"
+hide_title: true
+hide_table_of_contents: true
+api: eJydV9tu4zYQ/RViHooW0Mpptk96apqki3S77aJJkYcgCCbi2J6NRDIkZcc19O/F6BIrvm+eLJOHZw7nQg6XoMl5yjGShmyMRaAENIXcs4tsDWRwM+WgyGhn2UTFQVWBtIpWFRyiwqJQc3qcWvukaEYmqrhwFFJIwDryKCRXGjLIrRnz5B9CfdvCLwV9I2BIwFNw1gQKkC3h9OREfnJrIpkon+hcwXlDNvoWRNYSQj6lEuXLeTEVuV2dC4+JX9DghEoycdNetgSOVDYfIhcyCNGzmUACkWNBrd5DNAmQqUrI7npwikVh56QhWY1U0T7Qi2O/gAQ0Rkw1FRQpZcORG79345XTuG1c27kpLOo0R5NTUWys2Bh/XbHJ1doeruiVag69/Ps66f2C3uMC6gQ0TzhicYtFQe906QGKlTs74LwBprk1hnKJfbMfSPbNzzg2abIP5em5orCXqM/HfRjMI8/2Ish76/frPUzShmwT4UmTiYxFKvlvAxYPEsejgJ5y4lmbFrvAdjwmf5CyRR3D13n9IGOPO4Zz9fnAIVRHg7+TG/OnLVjnSfbSpNuBGGyH7lTxBr7Xb1uRx/EO/xylegA/zsKMPI/5u3T0nraODOud6bhreqBrE7ItWfaidosZgBwZ3R5zHWxf8A5B0tnHA6jNHe6F7Sbc5/YDwCNJ93tmG1SIt949GPEL+ieKrsCc3nn7HCIZ3D8YsVxBU/n/oDnkhQ2VpweceGp6AvGz9dsuzFp6mueKvfRVd8d1Ewfux/tXG/bxG+URarHytln7+zMkMCXU5MUZDSJQXnmOC8julvAboSd/VsUpZHf3dbKEM8efadH8Ews4CSK4My9GS4pTKy3chCSHHcpaGLUN3ahr/sKo6f4+xG4vgfys0XC3XJN4QaVV7TQkUPkCMpjG6EI2Gmkq7Qd0nPLEo4kpWxCJbwmuI07YTHZxhHZ6neZ+5Yhr6RzbrOk3/5o22A4kwGKq9SQkYLCUWfGb9fxf22LUyRt3vnKIEnFBYwYyeGxAkHQfv1tfYoQM/ri9gfUAnuU5haCifSKjHAbpteccp6q1pJynMb8oNuqNFtUplXizGdtGTZf4F1fXX9XZ1yt1YfOq7GsOEpAAtVZPT05/ST+mP2/IObflIxvSzXo9XK/G1qvzNq3VKq/Vj2e6ZKN+UFdG84x1hcVPCo1WFxhRDQpwO1KCynn7gJAHAObNA6DzP3/q45kAlcgS91A5Z338dRXr9YwYJhMUnJM0divSM4f5lNRperKxcj6fp9hMp9ZPRt3aMPrz6vzyr+vLD7JGXO5siCWaAak8dLY9jNY9PHjmvP+l1eVdpJc4cgVyk5rNTpZdud517y9IoC9YceGgZO8TmNoQBbpcPmKgf31R1zL8XJFvzocEZugZHyWr5Ozoy0Nq/EmqqMleJ4fEDIuqLae1h1s9PFA+XUoB4NvqWauWhr0vTrMYcC+XLeJGaqWuIelENLUD9X1d1/8DMd9r5g==
+sidebar_class_name: "get api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Read webhook event types"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/config/webhooks/event-types"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint is used to list all webhook event types.
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"content":{"application/json":{"schema":{"properties":{"consentManagementWebhookEventTypes":{"items":{"type":"string","title":"consentManagementWebhookEventTypes","enum":["consent.allowed","consent.auto_expiry","data.delete.initiated","data.update.initiated","data.download.cancelled","data.update.cancelled","data.download.initiated","data.delete.cancelled","consent.disallowed"]},"type":"array"},"digitalWalletWebhookEventTypes":{"items":{"type":"string","title":"digitalWalletWebhookEventTypes","enum":["digitalwallet.connection.init","digitalwallet.connection.invitation","digitalwallet.connection.request","digitalwallet.connection.response","digitalwallet.connection.active","digitalwallet.connection.error","digitalwallet.connection.inactive","digitalwallet.connection.delete","digitalwallet.credential.proposal_sent","digitalwallet.credential.proposal_received","digitalwallet.credential.offer_sent","digitalwallet.credential.offer_received","digitalwallet.credential.request_sent","digitalwallet.credential.request_received","digitalwallet.credential.credential_issued","digitalwallet.credential.credential_received","digitalwallet.credential.credential_acked","digitalwallet.presentation.proposal_sent","digitalwallet.presentation.proposal_received","digitalwallet.presentation.request_sent","digitalwallet.presentation.request_received","digitalwallet.presentation.presentation_sent","digitalwallet.presentation.presentation_received","digitalwallet.presentation.verified","digitalwallet.presentation.presentation_acked","openid.credential.offer_sent","openid.credential.offer_received","openid.credential.credential_issued","openid.credential.credential_acked","openid.credential.credential_pending","openid.presentation.request_sent","openid.presentation.request_sent.v3","openid.presentation.request_received","openid.presentation.request_received.v3","openid.presentation.presentation_acked","openid.presentation.presentation_acked.v3","openid.presentation.presentation_pending","openid.presentation.presentation_pending.v3"]},"type":"array"},"dataMarketplaceWebhookEventTypes":{"items":{"type":"string","title":"dataMarketplaceWebhookEventTypes","enum":["datamarketplace.data_disclosure_agreement_record"]},"type":"array"}},"required":["consentManagementWebhookEventTypes","digitalWalletWebhookEventTypes"],"type":"object"}}},"description":"OK","headers":{}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,72 @@
+---
+id: config-list-dda-history
+title: "List DDA history"
+description: "List DDA history"
+sidebar_label: "List DDA history"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVk1z2zYQ/SsYXNrO0JLi9sRT5chN1cmknsSZHhwf1uCSREwC9GIpydXwv3cWpCTasmPXukgiF2/ffj3sVjMUQadX2niX20JfJ9o3SMDWu2Wm0+H5Rxt4sZj/aQN7uteJDmhasnyv06utPkMgpHnLpU6vrrvrRDdAUCMjhWjgoEad6gwYFjaYyoeWcF4QYo2Ol5lOtHU61Q1wqRNNeNdawkynTC0mOpgSa9DpVvN9I0CBybpCd12yx/Z5HpB3QHctRpoZBkO2kWh0qj/jXYuBMVPWZbhRuScVGIiVzxVh8C0ZDA8I5FCFpxhYx1ggRRc5tBXrdDamU9navsDmU1vfIIlry1gHRcgtOcxUg6QaKPCtRN7NOqkBYWi8CxjE+nQ2k6+HDKSq4r/sy6oIjadMEmC8Y3QsR6BpKmtiQ0y/Bzm3PWbhb76jkXgbkvZh23sdgEeGQASSihjyMUDXSe8U1kFP8SUHpiVCxxeSradzMo73fW8dk6tcTL/uEs2eoVo+IvQcxqUYD4cPtYMV2ApuKtzjCaW34Am3oG4gYKa8U30fdcnQUC/jPe6qfTN1iS4hXBCurG/HzG68rxDcEdLSZVJ3DMrmiksk/CkoUM2AMEb9hBt+O6LDDQ9okj3LlYBcHNqg6z+P4WL7LhbzXf/qRNfIpRfZKqIWRD1J9bQXsanoz0m2F6AT2CnQdPusNHXTAX0aVY9WO01rqdKpLpmbkE6n0NiJ22ST3Lcu61kf012h6hG0zOdOQr/IMPW9MhbSfTbFhR4mP2Y3Gulk+PGHpxpYp/qvfy6PfM6NwRAU+1t0qoEgXbW2XKrekxQztxtlnRKnnuy/kbsqEbJ+OM4gWPMSI7E58h1PKmi5RMeDgkTJ/VvgTpWprAyjIczEAKqg8sqvYxNYl/vocGiGBTCEBgyqMzC36DI1v1gez7evmwoZ5aXKvGmlhAe/XKI6BjpRoKT6CjemBFegApepFZLNd6SlaNagasivbIY0+ea+BgwqYJWfBL9CQls4ZWMcfJ8Mp0UPxuElETmzhZWRX0NVIStGUzpf+cJiiCwjF8KirXrnRoKy4AxOvklTSQP24Z7OTn+b/Dp5N+g1mDiDwwVkPxA4nlivE401WGnW0DaNJ/7dFod3D9v48CZKjkEXcAQ6b8CUqE4ns6OT6/V6AvH1xFMxHc6G6cfl+/NPX85P5ExUdx+4BjcCfWKMH5R133aMG542FVgn7KL77TDi+/0l0c8OuU50+qMN5OBetqDSBxbc7Va0+CtVXSeP+6tc5j+zQQp8uJofkd5foa9fO56M8xbvx+vNCqpWjLQsG6/n8Jpl4wfud+vMwfu1/KHY4/8zHT9/HpaaX9RzTnfLgrsf+9yReb6I3bXcR712CaneXkSwGbM/Wmkkmv3V8eFcdBQeSt4j0Y3oT7LcbnuLS5HcrtuTjhIsBLvuP5Er/J8=
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List DDA history"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/config/data-disclosure-agreement/{dataDisclosureAgreementId}/history/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List DDA history
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"dataDisclosureAgreementId","in":"path","required":true,"schema":{"type":"string"}},{"name":"offset","in":"query","description":"Requested index for start of resources","required":false,"schema":{"type":"integer","default":0}},{"name":"limit","in":"query","description":"Number of items returned per page","required":false,"schema":{"type":"integer","default":10}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of history records","content":{"application/json":{"schema":{"type":"object","properties":{"history":{"type":"array","items":{"type":"object"}},"pagination":{"type":"object","properties":{"currentPage":{"type":"integer","description":"Current page number"},"totalItems":{"type":"integer","description":"Total number of items available"},"totalPages":{"type":"integer","description":"Total number of pages based on limit"},"limit":{"type":"integer","description":"Number of items per page"},"hasPrevious":{"type":"boolean","description":"Indicates if there's a previous page"},"hasNext":{"type":"boolean","description":"Indicates if there's a next page"}},"title":"Pagination"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

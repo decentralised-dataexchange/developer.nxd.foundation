@@ -1,0 +1,72 @@
+---
+id: config-create-data-source
+title: "Create data source"
+description: "Create a new data source"
+sidebar_label: "Create data source"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVktTIzcQ/isqncc2ITnNKYYlKVJUoHgkB9aHttQzo0UjaSWNjeOa/77V0mAP2GFJDgkHCqa/fqr7697yCHXg5SMX1lSq5ouCSwzCKxeVNbzk5x4hIgNmcM0kRGDBdl4gL7h16IFgl5KXg4EM/wQR7l5gAUXnVdzw8nHLzxA8+nkXG14+LvpFwT1+7TDEMys3vNymf5VHycvoOyzIbEQTSQTOaSWSx9mXQNFteRANtkB/xY1DXnK7/IIi8oI7T/FFhYGkch/Rd7EG2jEqRK9MzfuCa5u9HxW+KtsRubNaic2D10ekww8VIzhrQo7j9OQkhX7kPeSbp/gfqqTkYSIFr6xvIfKSd52SlPbfFjOgiNb/p3Ueh+cVgYVdob9socYPKmhb2w9CrUMzd+qD6BV6VQ3vdptH4uH26sZjpZ6P5ik8SjRRgb6uKvQXRjqrcgscYEEIDOGG5O/inFcrEJtPEJqlBS+PdyuVTeJ1dW6N7MTY0tJajWCG8KhP50ccjZKXEHESVYuk0jn5z1T6gkcVNeGufQ1Ghdw2b8r573qZWm03DpfHAc5jQBOTl4tn0YCpPwK9ixCPD8UYdYvCenkY/DjtP8Zp7likxdhY4mRnQ0oWiG75LFP0jNKaZOqYJX72K/Qh0XNHD86bGF0oZzNwamqe5bSynZHZx9v1cKVWyLIFTmz+QvZ3xDi5uGPK3+VCLsh3glHnJBAvhj9+eXnt3/68P/A5T93Mon1CwxyEgJKtVWxY9sRcGhqmDCOn1qu/UuysQZAUZsHPICjxvYgIc+A7aTLoYkOzlwvPKuvZNZk7ZUIrNJHthzOwStt1ejRi49v9trt4htZpPOTdTJn71t/T4f7b66h2n0fkt18uBVemsinVoW1oPwcHAtkZiCc0ks1vLg+snluKLyIJmbSia19aM2UcG2SHhiYM8m7CYR4YGMnG45jaRQlkztuVkuinn81DwMAC6moSiJFR1YapVMG4KQZtWGocF7ZIlqWqVQTN1qA1RhZRNMZqWysMKcoUi8e609m5oKQUGIHTz9TO1Po53dOT05+mP05/GNYpZGYbHkP96sHEqbK84NiCSgXunLM+/qzqvez1AO0ltDqUQBPGLzx3IBpkp9OTA831ej2FJJ5aX88G3TC7ujy/+P3uYkI6fdp2IbZgRkaHg+31ffBmae7OhffOu2EuIj7HmdOgEq92eSNkRtldjZkqJztVOiMb4p7ykW+3Swi0XvuePn/t0NMpuCj4Cnx61HQJFnwYT6KhJ9yk/ktRTu4pEILrjgI6OHD64kWDmMHFd7GLET3eXN8RuyyH07O1knQ8rHmRfpc8XbmknZgsfdtyDabuoCZstkkPAa/Z5A2fpawGEZjNKMLtNiPuic36nhdDKondeL/o+/4bodkNzw==
+sidebar_class_name: "post api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Create data source"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/config/data-source/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Create a new data source
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"dataSource":{"type":"object","properties":{"name":{"type":"string"},"location":{"type":"string"},"description":{"type":"string"},"policyUrl":{"type":"string"}}}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Created data source","content":{"application/json":{"schema":{"type":"object","properties":{"dataSource":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"name":{"type":"string"},"sector":{"type":"string"},"location":{"type":"string"},"description":{"type":"string"},"policyUrl":{"type":"string","format":"uri"},"coverImageUrl":{"type":"string","format":"uri"},"logoUrl":{"type":"string","format":"uri"},"openApiUrl":{"type":"string","format":"uri"},"verificationRequestURLPrefix":{"type":"string"},"credentialOfferEndpoint":{"type":"string"},"accessPointEndpoint":{"type":"string"},"privacyDashboardUrl":{"type":"string"},"codeOfConduct":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"Organisation"},"verification":{"type":"object","properties":{"id":{"type":"string"},"dataSourceId":{"type":"string"},"presentationExchangeId":{"type":"string"},"presentationState":{"type":"string"},"presentationRecord":{"type":"object"}},"title":"Verification"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

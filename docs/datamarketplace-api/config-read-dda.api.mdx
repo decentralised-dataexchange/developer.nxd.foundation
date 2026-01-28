@@ -1,0 +1,72 @@
+---
+id: config-read-dda
+title: "Read data disclosure agreement"
+description: "Read data disclosure agreement"
+sidebar_label: "Read data disclosure agreement"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVk1z2zYQ/SuYPbUzsOS6PfFUOU4y7njajp20h8SHNbAikZAAAiwluxr+986CEi1bstPqIg6xu+/t1wM3wFhnqD6BCX7parjVECIlZBf8pYVq+/6a0F5cLEBDJtMnxw9QfdrAOWGitOi5gerT7XCrIWLCjphSLgYeO4IKLDJeuGzakPtEizoRdeT50oIG56GCiNyAhkTfepfIQsWpJw3ZNNQhVBvghyiBMifnaxgGPcVeUcou+F2kbz2lB3jN9VZwcgw+U5bzs9NT+bOUTXJREocKLi4WyhKjazNoKQKTZzHDGFtnSn3mX7LYbg6xwt0XMgwaYpJqshuRXijD9x2dPUxEwzKkDhkq6HtnYdAQUo3e5al5/8GFqYstMh0zH/RU3GNnL2RzTSYke5jToCEzcp+P8SLfdzKFvW9dZpK5wDU6dr5+F9IixhRW2Mrb8lgMEknc8vjolEzj5PhWAztuaWzlzQg8aHD5Cpky/3WQ2F0ILaEvRSk7MZ1gSigj5Zi6I+yHQYNJhEx2wa8W3SLTCbuOBKSP9v+5DHspHS/9h20zYRh/+tlQyxYraZuyk7PCaQw1dMRNkK2vqQyhbGUF81ED5uJ58uh5MnnONy8u+DAvmpFWO0XoUwsVNMwxV/M5Rjfz93a2DL23ZW7hOekrtyI1RgDZ3Z0A3cjSjeuxL0NTLQVipwOlv8UI9Pbh3a7Cv/394QBzYQzlrDh8Ja8i5kxWrR03akRSMdHS3SvnlYCG5P4p3FVDaIWmhnPMznyPkdgcYBdPhT035HmrNGoZkvpDwp0p0zryrEwiKwbYZrVsw7rMh/PLUAD35iRHNKTO0Xwlb9Xiz8sDxDehiy0xyaGywfTSukdcbkgdBjpROI4S3ZsGfU0KvVUrSm65Iy1Nc4aUbKyzlGaf/cdMWWVqlyc5rCiRq71yJQ9+0FtvvGtpPz1dIltXO8ZWrbFtiRWTaXxoQ+0oF5aFS6K6b0dwI0k59IZmn2WoJiWDs9OzX2Y/z37a6jqasoHb28S9T+h55oKIUodOhjX3MYbEv7r68ezpGD+eDCJGhnymvaCLiKYhdTY7PfBcr9czLMezkOr51jfPry7fvP395u2J+EhnY8jcod8L+t1lftLkaQiZ7nkeW3RF6QqZzXbRp4+AUduPrjpoqF67zUV4m5BZom02d5jpY2qHQV6PN7NogHVZmmyhWmKbScNXenhyk6+w7YVsWfgVpjITx12fZTnd1PDD9fZj4kcF+nj2O333D/uYOzovpzncDhq2uy6kRnsRjch7kQ4+FSSbSWLfvxXdwacS8UykSvSjLDeb0eKDSNQwTKSLZAnBYfgX+rFstg==
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Read data disclosure agreement"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/config/data-disclosure-agreement/{dataDisclosureAgreementId}/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Read data disclosure agreement
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"dataDisclosureAgreementId","in":"path","required":true,"schema":{"type":"string"}},{"name":"version","in":"query","schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"DDA details","content":{"application/json":{"schema":{"type":"object","properties":{"dataDisclosureAgreement":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"organisationId":{"type":"string","format":"uuid"},"templateId":{"type":"string"},"version":{"type":"string"},"dataDisclosureAgreementRecord":{"type":"object"},"status":{"type":"string","enum":["unlisted","awaitingForApproval","approved","rejected","listed","archived"],"title":"DDAStatus"},"isLatestVersion":{"type":"boolean"},"tags":{"type":"array","items":{"type":"string"}},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"DataDisclosureAgreementTemplate"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

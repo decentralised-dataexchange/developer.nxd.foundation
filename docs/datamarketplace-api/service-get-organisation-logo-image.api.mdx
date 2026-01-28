@@ -1,0 +1,72 @@
+---
+id: service-get-organisation-logo-image
+title: "Get organisation logo image"
+description: "Get organisation logo image"
+sidebar_label: "Get organisation logo image"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1z2zYQ/SuYPbUdmHTdnniqnboedTxNp0mmh8SHNbgid0wCCLCUrGr43ztLUrIcdZLqIhCL3ff26+1BsMlQfYRMacOO4MFCiJRQOPhVDdXBcEfyNjXoOU+m+9CEVY8NgYVMbkgsO6g+PliImLAnoaRh9+CxJ6ggnPiuarDAHiqIKC1YSPR54EQ1VJIGspBdSz1CtQfZRfXOktg3YGEdUo8CFQwD1zCOD+qcY/CZsr6/urzUv5qySxwVDCo48HTBC3nRB6xX5Q96/B9gj+wx7WDUn/0i+B2JOU3OdKEJhhfInqQNWsWGBOycbwXlUtPy1LHcv67RWGqkmehU5LQ51HRIHVTQisRclSVGLvxzXazD4OvJGb4kec8bMnME0JodOvZOc58rd0OYKF0PSvBYCoWApR/6/Tg9ArscfjsU6Pe/359hXjtHORsJT+RNxJypNluW1sxIJiZa87NhbxQ0JP5nrl9LWCtNCzeY2X2Lkb45w548DQ7Skhd2c+B1SOathrsyrmPyYlyiWh9gl826C1vQ9rJfhwmQpVOEX1EwR3RkbtA9ka/N9Z+rM8Q3oY8dCanR1MENPXl5wZWWzHmgC4OmRkFDz65F35BBX5sNJV4fSC+TYmIKG64pFZ/8h0zZZOrWFzlsKBE33vCUh+zs4o2PHZ2mZ6fINTcs2Jktdh2JEXKtD11omPLEcuKSqBm6GdxpUozeUfFJh0oHcE736vLq5+Kn4sdlq9BNW7XsOt8l9FJwAAvUI+uw5iHGkOQXbl5sr8f4xTJa6NiRz3QS9Dqia8lcFZdnntvttsDJXITUlItvLu9Xb27/eHd7oT7a2Riy9OhPgn59eV91+DiBQs9Sxg7ZK9GJyX5Z7BcVta8EDyxUZwJ43G6woKrbhiwaYr9/xEwfUjeOev15oLQo6wbT1NhJA2rOeq6hWmOX6YztUezgu78Wef3egP3vLJZL9DvtMnaDfoGFJ9qda/f4MFpYtlSZzI903aOcuB8kVvXmKIN3t+9hHP8FoP086w==
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get organisation logo image"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/service/organisation/{organisationId}/logoimage/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get organisation logo image
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"organisationId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Image","content":{"image/*":{"schema":{"type":"string","format":"binary"}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

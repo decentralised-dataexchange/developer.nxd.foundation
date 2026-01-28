@@ -16,8 +16,6 @@ info:
 servers:
   - url: https://api.nxd.foundation
     description: Live server
-  - url: http://localhost:8000
-    description: Development server
 
 tags:
   - name: onboard
@@ -315,11 +313,11 @@ components:
         templateVersion:
           type: string
         dataController:
-          $ref: '#/components/schemas/DataController'
+          $ref: "#/components/schemas/DataController"
         agreementPeriod:
           type: number
         dataSharingRestrictions:
-          $ref: '#/components/schemas/DataSharingRestriction'
+          $ref: "#/components/schemas/DataSharingRestriction"
         purpose:
           type: string
         purposeDescription:
@@ -329,11 +327,11 @@ components:
         personalData:
           type: array
           items:
-            $ref: '#/components/schemas/PersonalData'
+            $ref: "#/components/schemas/PersonalData"
         codeOfConduct:
           type: string
         status:
-          $ref: '#/components/schemas/DDAStatus'
+          $ref: "#/components/schemas/DDAStatus"
 
     DDAStatus:
       type: string
@@ -361,7 +359,7 @@ components:
         dataDisclosureAgreementRecord:
           type: object
         status:
-          $ref: '#/components/schemas/DDAStatus'
+          $ref: "#/components/schemas/DDAStatus"
         isLatestVersion:
           type: boolean
         tags:
@@ -432,9 +430,9 @@ components:
             invitation:
               type: object
               properties:
-                '@type':
+                "@type":
                   type: string
-                '@id':
+                "@id":
                   type: string
                 serviceEndpoint:
                   type: string
@@ -520,15 +518,15 @@ components:
         organisations:
           type: array
           items:
-            $ref: '#/components/schemas/OrganisationSummary'
+            $ref: "#/components/schemas/OrganisationSummary"
         organisationsPagination:
-          $ref: '#/components/schemas/Pagination'
+          $ref: "#/components/schemas/Pagination"
         ddas:
           type: array
           items:
             type: object
         ddasPagination:
-          $ref: '#/components/schemas/Pagination'
+          $ref: "#/components/schemas/Pagination"
         searchMeta:
           type: object
           properties:
@@ -561,7 +559,7 @@ components:
           items:
             type: string
         organisation:
-          $ref: '#/components/schemas/Organisation'
+          $ref: "#/components/schemas/Organisation"
         organisationIdentity:
           type: object
 
@@ -619,15 +617,15 @@ paths:
                   type: string
                   format: password
       responses:
-        '200':
+        "200":
           description: Successful login
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TokenResponse'
-        '401':
+                $ref: "#/components/schemas/TokenResponse"
+        "401":
           description: Invalid credentials
-        '403':
+        "403":
           description: Admin users not allowed
 
   /onboard/register/:
@@ -686,7 +684,7 @@ paths:
                     verificationRequestURLPrefix:
                       type: string
       responses:
-        '201':
+        "201":
           description: Successfully registered
           content:
             application/json:
@@ -694,10 +692,10 @@ paths:
                 type: object
                 properties:
                   user:
-                    $ref: '#/components/schemas/User'
+                    $ref: "#/components/schemas/User"
                   organisation:
-                    $ref: '#/components/schemas/Organisation'
-        '400':
+                    $ref: "#/components/schemas/Organisation"
+        "400":
           description: Invalid request
 
   /onboard/token/refresh/:
@@ -720,7 +718,7 @@ paths:
                 refresh:
                   type: string
       responses:
-        '200':
+        "200":
           description: Token refreshed
           content:
             application/json:
@@ -739,7 +737,7 @@ paths:
       operationId: onboardListSectors
       security: []
       responses:
-        '200':
+        "200":
           description: List of sectors
           content:
             application/json:
@@ -749,7 +747,7 @@ paths:
                   sectors:
                     type: array
                     items:
-                      $ref: '#/components/schemas/Sector'
+                      $ref: "#/components/schemas/Sector"
 
   /onboard/code-of-conduct/:
     get:
@@ -760,14 +758,14 @@ paths:
       operationId: onboardGetCodeOfConduct
       security: []
       responses:
-        '200':
+        "200":
           description: PDF file
           content:
             application/pdf:
               schema:
                 type: string
                 format: binary
-        '404':
+        "404":
           description: No active code of conduct available
 
   # ==================== CONFIG ENDPOINTS ====================
@@ -781,12 +779,12 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: Admin details
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: "#/components/schemas/User"
 
     put:
       tags:
@@ -806,12 +804,12 @@ paths:
                 name:
                   type: string
       responses:
-        '200':
+        "200":
           description: Updated admin
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                $ref: "#/components/schemas/User"
 
   /config/admin/reset-password/:
     post:
@@ -840,7 +838,7 @@ paths:
                 new_password2:
                   type: string
       responses:
-        '200':
+        "200":
           description: Password changed
 
   /config/admin/reset/:
@@ -853,9 +851,9 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: Reset successful
-        '400':
+        "400":
           description: Error occurred
 
   /config/data-source/:
@@ -868,7 +866,7 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: Data source details
           content:
             application/json:
@@ -876,9 +874,9 @@ paths:
                 type: object
                 properties:
                   dataSource:
-                    $ref: '#/components/schemas/Organisation'
+                    $ref: "#/components/schemas/Organisation"
                   verification:
-                    $ref: '#/components/schemas/Verification'
+                    $ref: "#/components/schemas/Verification"
 
     post:
       tags:
@@ -907,7 +905,7 @@ paths:
                     policyUrl:
                       type: string
       responses:
-        '200':
+        "200":
           description: Created data source
           content:
             application/json:
@@ -915,9 +913,9 @@ paths:
                 type: object
                 properties:
                   dataSource:
-                    $ref: '#/components/schemas/Organisation'
+                    $ref: "#/components/schemas/Organisation"
                   verification:
-                    $ref: '#/components/schemas/Verification'
+                    $ref: "#/components/schemas/Verification"
 
     put:
       tags:
@@ -946,7 +944,7 @@ paths:
                     policyUrl:
                       type: string
       responses:
-        '202':
+        "202":
           description: Updated data source
           content:
             application/json:
@@ -954,9 +952,9 @@ paths:
                 type: object
                 properties:
                   dataSource:
-                    $ref: '#/components/schemas/Organisation'
+                    $ref: "#/components/schemas/Organisation"
                   verification:
-                    $ref: '#/components/schemas/Verification'
+                    $ref: "#/components/schemas/Verification"
 
   /config/data-source/coverimage/:
     get:
@@ -967,7 +965,7 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: Cover image
           content:
             image/*:
@@ -994,7 +992,7 @@ paths:
                   type: string
                   format: binary
       responses:
-        '200':
+        "200":
           description: Updated
 
   /config/data-source/logoimage/:
@@ -1006,7 +1004,7 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: Logo image
           content:
             image/*:
@@ -1033,7 +1031,7 @@ paths:
                   type: string
                   format: binary
       responses:
-        '200':
+        "200":
           description: Updated
 
   /config/data-source/verification/:
@@ -1046,7 +1044,7 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: Verification details
           content:
             application/json:
@@ -1054,7 +1052,7 @@ paths:
                 type: object
                 properties:
                   verification:
-                    $ref: '#/components/schemas/Verification'
+                    $ref: "#/components/schemas/Verification"
 
     post:
       tags:
@@ -1065,7 +1063,7 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: Verification created
           content:
             application/json:
@@ -1073,7 +1071,7 @@ paths:
                 type: object
                 properties:
                   verification:
-                    $ref: '#/components/schemas/Verification'
+                    $ref: "#/components/schemas/Verification"
 
   /config/open-api/url:
     put:
@@ -1096,7 +1094,7 @@ paths:
                     openApiUrl:
                       type: string
       responses:
-        '200':
+        "200":
           description: Updated
           content:
             application/json:
@@ -1104,7 +1102,7 @@ paths:
                 type: object
                 properties:
                   dataSource:
-                    $ref: '#/components/schemas/Organisation'
+                    $ref: "#/components/schemas/Organisation"
 
   /config/verification/templates:
     get:
@@ -1115,7 +1113,7 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: List of templates
           content:
             application/json:
@@ -1150,12 +1148,12 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: Connection created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CreateConnectionResponse'
+                $ref: "#/components/schemas/CreateConnectionResponse"
 
   /config/connections/:
     get:
@@ -1166,10 +1164,10 @@ paths:
       security:
         - BearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/OffsetParam'
-        - $ref: '#/components/parameters/LimitParam'
+        - $ref: "#/components/parameters/OffsetParam"
+        - $ref: "#/components/parameters/LimitParam"
       responses:
-        '200':
+        "200":
           description: List of connections
           content:
             application/json:
@@ -1179,9 +1177,9 @@ paths:
                   connections:
                     type: array
                     items:
-                      $ref: '#/components/schemas/Connection'
+                      $ref: "#/components/schemas/Connection"
                   pagination:
-                    $ref: '#/components/schemas/Pagination'
+                    $ref: "#/components/schemas/Pagination"
 
   /config/connection/{connectionId}/:
     delete:
@@ -1199,7 +1197,7 @@ paths:
             type: string
             format: uuid
       responses:
-        '204':
+        "204":
           description: Deleted
 
   /config/data-disclosure-agreements/:
@@ -1211,14 +1209,14 @@ paths:
       security:
         - BearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/OffsetParam'
-        - $ref: '#/components/parameters/LimitParam'
+        - $ref: "#/components/parameters/OffsetParam"
+        - $ref: "#/components/parameters/LimitParam"
         - name: status
           in: query
           schema:
-            $ref: '#/components/schemas/DDAStatus'
+            $ref: "#/components/schemas/DDAStatus"
       responses:
-        '200':
+        "200":
           description: List of DDAs
           content:
             application/json:
@@ -1228,9 +1226,9 @@ paths:
                   dataDisclosureAgreements:
                     type: array
                     items:
-                      $ref: '#/components/schemas/DataDisclosureAgreementTemplate'
+                      $ref: "#/components/schemas/DataDisclosureAgreementTemplate"
                   pagination:
-                    $ref: '#/components/schemas/Pagination'
+                    $ref: "#/components/schemas/Pagination"
 
   /config/data-disclosure-agreement/{dataDisclosureAgreementId}/:
     get:
@@ -1251,7 +1249,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: DDA details
           content:
             application/json:
@@ -1259,7 +1257,7 @@ paths:
                 type: object
                 properties:
                   dataDisclosureAgreement:
-                    $ref: '#/components/schemas/DataDisclosureAgreementTemplate'
+                    $ref: "#/components/schemas/DataDisclosureAgreementTemplate"
 
     delete:
       tags:
@@ -1275,7 +1273,7 @@ paths:
           schema:
             type: string
       responses:
-        '204':
+        "204":
           description: Deleted
 
   /config/data-disclosure-agreement/{dataDisclosureAgreementId}/status/:
@@ -1300,9 +1298,9 @@ paths:
               type: object
               properties:
                 status:
-                  $ref: '#/components/schemas/DDAStatus'
+                  $ref: "#/components/schemas/DDAStatus"
       responses:
-        '204':
+        "204":
           description: Updated
 
   /config/data-disclosure-agreement/{dataDisclosureAgreementId}/tags/:
@@ -1331,7 +1329,7 @@ paths:
                   items:
                     type: string
       responses:
-        '200':
+        "200":
           description: Updated
 
   /config/data-disclosure-agreement/{dataDisclosureAgreementId}/history/:
@@ -1348,10 +1346,10 @@ paths:
           required: true
           schema:
             type: string
-        - $ref: '#/components/parameters/OffsetParam'
-        - $ref: '#/components/parameters/LimitParam'
+        - $ref: "#/components/parameters/OffsetParam"
+        - $ref: "#/components/parameters/LimitParam"
       responses:
-        '200':
+        "200":
           description: List of history records
           content:
             application/json:
@@ -1363,7 +1361,7 @@ paths:
                     items:
                       type: object
                   pagination:
-                    $ref: '#/components/schemas/Pagination'
+                    $ref: "#/components/schemas/Pagination"
 
   /config/data-disclosure-agreement/{dataDisclosureAgreementId}/history/{historyId}/:
     delete:
@@ -1386,7 +1384,7 @@ paths:
             type: string
             format: uuid
       responses:
-        '204':
+        "204":
           description: Deleted
 
   # ==================== ORGANISATION ENDPOINTS ====================
@@ -1399,7 +1397,7 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: Organisation details
           content:
             application/json:
@@ -1407,7 +1405,7 @@ paths:
                 type: object
                 properties:
                   organisation:
-                    $ref: '#/components/schemas/Organisation'
+                    $ref: "#/components/schemas/Organisation"
 
     put:
       tags:
@@ -1447,7 +1445,7 @@ paths:
                     privacyDashboardUrl:
                       type: string
       responses:
-        '202':
+        "202":
           description: Updated
           content:
             application/json:
@@ -1455,7 +1453,7 @@ paths:
                 type: object
                 properties:
                   organisation:
-                    $ref: '#/components/schemas/Organisation'
+                    $ref: "#/components/schemas/Organisation"
 
   /config/organisation/code-of-conduct:
     put:
@@ -1475,7 +1473,7 @@ paths:
                 codeOfConduct:
                   type: boolean
       responses:
-        '202':
+        "202":
           description: Updated
           content:
             application/json:
@@ -1483,7 +1481,7 @@ paths:
                 type: object
                 properties:
                   organisation:
-                    $ref: '#/components/schemas/Organisation'
+                    $ref: "#/components/schemas/Organisation"
 
   /config/organisation/coverimage/:
     get:
@@ -1494,7 +1492,7 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: Image
           content:
             image/*:
@@ -1521,7 +1519,7 @@ paths:
                   type: string
                   format: binary
       responses:
-        '200':
+        "200":
           description: Updated
 
   /config/organisation/logoimage/:
@@ -1533,7 +1531,7 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: Image
           content:
             image/*:
@@ -1560,7 +1558,7 @@ paths:
                   type: string
                   format: binary
       responses:
-        '200':
+        "200":
           description: Updated
 
   /config/organisation/identity/:
@@ -1572,12 +1570,12 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: Identity details
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OrganisationIdentity'
+                $ref: "#/components/schemas/OrganisationIdentity"
 
     post:
       tags:
@@ -1587,12 +1585,12 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: Verification initiated
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OrganisationIdentity'
+                $ref: "#/components/schemas/OrganisationIdentity"
 
     delete:
       tags:
@@ -1602,9 +1600,9 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '204':
+        "204":
           description: Deleted
-        '404':
+        "404":
           description: Not found
 
   /config/organisation/software-statement/:
@@ -1616,12 +1614,12 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: Software statement
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SoftwareStatement'
+                $ref: "#/components/schemas/SoftwareStatement"
 
     post:
       tags:
@@ -1631,12 +1629,12 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '200':
+        "200":
           description: Created
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SoftwareStatement'
+                $ref: "#/components/schemas/SoftwareStatement"
 
     delete:
       tags:
@@ -1646,9 +1644,9 @@ paths:
       security:
         - BearerAuth: []
       responses:
-        '204':
+        "204":
           description: Deleted
-        '404':
+        "404":
           description: Not found
 
   # ==================== OAUTH2 CLIENT ENDPOINTS (INTERNAL) ====================
@@ -1665,9 +1663,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OAuth2ClientCreate'
+              $ref: "#/components/schemas/OAuth2ClientCreate"
       responses:
-        '201':
+        "201":
           description: Created
           content:
             application/json:
@@ -1675,8 +1673,8 @@ paths:
                 type: object
                 properties:
                   oAuth2Client:
-                    $ref: '#/components/schemas/OAuth2Client'
-        '400':
+                    $ref: "#/components/schemas/OAuth2Client"
+        "400":
           description: Duplicate name
 
   /config/organisation/oauth2-client/{id}/:
@@ -1695,7 +1693,7 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: Client details
           content:
             application/json:
@@ -1703,7 +1701,7 @@ paths:
                 type: object
                 properties:
                   oAuth2Client:
-                    $ref: '#/components/schemas/OAuth2Client'
+                    $ref: "#/components/schemas/OAuth2Client"
 
     put:
       tags:
@@ -1724,9 +1722,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/OAuth2ClientCreate'
+              $ref: "#/components/schemas/OAuth2ClientCreate"
       responses:
-        '200':
+        "200":
           description: Updated
           content:
             application/json:
@@ -1734,7 +1732,7 @@ paths:
                 type: object
                 properties:
                   oAuth2Client:
-                    $ref: '#/components/schemas/OAuth2Client'
+                    $ref: "#/components/schemas/OAuth2Client"
 
     delete:
       tags:
@@ -1751,7 +1749,7 @@ paths:
             type: string
             format: uuid
       responses:
-        '204':
+        "204":
           description: Deleted
 
   /config/organisation/oauth2-clients/:
@@ -1763,10 +1761,10 @@ paths:
       security:
         - BearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/OffsetParam'
-        - $ref: '#/components/parameters/LimitParam'
+        - $ref: "#/components/parameters/OffsetParam"
+        - $ref: "#/components/parameters/LimitParam"
       responses:
-        '200':
+        "200":
           description: List of clients
           content:
             application/json:
@@ -1776,9 +1774,9 @@ paths:
                   oAuth2Clients:
                     type: array
                     items:
-                      $ref: '#/components/schemas/OAuth2Client'
+                      $ref: "#/components/schemas/OAuth2Client"
                   pagination:
-                    $ref: '#/components/schemas/Pagination'
+                    $ref: "#/components/schemas/Pagination"
 
   # ==================== OAUTH2 CLIENT ENDPOINTS (EXTERNAL) ====================
   /config/organisation/oauth2-client-external/:
@@ -1803,7 +1801,7 @@ paths:
                 client_secret:
                   type: string
       responses:
-        '201':
+        "201":
           description: Created
           content:
             application/json:
@@ -1811,7 +1809,7 @@ paths:
                 type: object
                 properties:
                   organisationOAuth2Client:
-                    $ref: '#/components/schemas/OrganisationOAuth2Client'
+                    $ref: "#/components/schemas/OrganisationOAuth2Client"
 
   /config/organisation/oauth2-client-external/{id}/:
     get:
@@ -1829,7 +1827,7 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: Client details
           content:
             application/json:
@@ -1837,7 +1835,7 @@ paths:
                 type: object
                 properties:
                   organisationOAuth2Client:
-                    $ref: '#/components/schemas/OrganisationOAuth2Client'
+                    $ref: "#/components/schemas/OrganisationOAuth2Client"
 
     put:
       tags:
@@ -1867,7 +1865,7 @@ paths:
                 client_secret:
                   type: string
       responses:
-        '200':
+        "200":
           description: Updated
           content:
             application/json:
@@ -1875,7 +1873,7 @@ paths:
                 type: object
                 properties:
                   organisationOAuth2Client:
-                    $ref: '#/components/schemas/OrganisationOAuth2Client'
+                    $ref: "#/components/schemas/OrganisationOAuth2Client"
 
     delete:
       tags:
@@ -1892,7 +1890,7 @@ paths:
             type: string
             format: uuid
       responses:
-        '204':
+        "204":
           description: Deleted
 
   /config/organisation/oauth2-clients-external/:
@@ -1904,10 +1902,10 @@ paths:
       security:
         - BearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/OffsetParam'
-        - $ref: '#/components/parameters/LimitParam'
+        - $ref: "#/components/parameters/OffsetParam"
+        - $ref: "#/components/parameters/LimitParam"
       responses:
-        '200':
+        "200":
           description: List of clients
           content:
             application/json:
@@ -1917,9 +1915,9 @@ paths:
                   organisationOAuth2Client:
                     type: array
                     items:
-                      $ref: '#/components/schemas/OrganisationOAuth2Client'
+                      $ref: "#/components/schemas/OrganisationOAuth2Client"
                   pagination:
-                    $ref: '#/components/schemas/Pagination'
+                    $ref: "#/components/schemas/Pagination"
 
   # ==================== B2B CONNECTION ENDPOINTS ====================
   /config/organisation/b2b-connection/{id}/:
@@ -1938,7 +1936,7 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: Connection details
           content:
             application/json:
@@ -1946,7 +1944,7 @@ paths:
                 type: object
                 properties:
                   b2bConnection:
-                    $ref: '#/components/schemas/B2BConnection'
+                    $ref: "#/components/schemas/B2BConnection"
 
   /config/organisation/b2b-connections/:
     get:
@@ -1957,10 +1955,10 @@ paths:
       security:
         - BearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/OffsetParam'
-        - $ref: '#/components/parameters/LimitParam'
+        - $ref: "#/components/parameters/OffsetParam"
+        - $ref: "#/components/parameters/LimitParam"
       responses:
-        '200':
+        "200":
           description: List of connections
           content:
             application/json:
@@ -1970,9 +1968,9 @@ paths:
                   b2bConnection:
                     type: array
                     items:
-                      $ref: '#/components/schemas/B2BConnection'
+                      $ref: "#/components/schemas/B2BConnection"
                   pagination:
-                    $ref: '#/components/schemas/Pagination'
+                    $ref: "#/components/schemas/Pagination"
 
   # ==================== SIGNED AGREEMENT ENDPOINTS ====================
   /config/organisation/data-disclosure-agreement/{dataDisclosureAgreementId}/:
@@ -1990,7 +1988,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Verification request created
           content:
             application/json:
@@ -2020,7 +2018,7 @@ paths:
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: Status
           content:
             application/json:
@@ -2049,7 +2047,7 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: Record details
           content:
             application/json:
@@ -2057,7 +2055,7 @@ paths:
                 type: object
                 properties:
                   dataDisclosureAgreementRecord:
-                    $ref: '#/components/schemas/DataDisclosureAgreementRecord'
+                    $ref: "#/components/schemas/DataDisclosureAgreementRecord"
 
     delete:
       tags:
@@ -2074,7 +2072,7 @@ paths:
             type: string
             format: uuid
       responses:
-        '204':
+        "204":
           description: Deleted
 
   /config/organisation/data-disclosure-agreement-records/:
@@ -2086,10 +2084,10 @@ paths:
       security:
         - BearerAuth: []
       parameters:
-        - $ref: '#/components/parameters/OffsetParam'
-        - $ref: '#/components/parameters/LimitParam'
+        - $ref: "#/components/parameters/OffsetParam"
+        - $ref: "#/components/parameters/LimitParam"
       responses:
-        '200':
+        "200":
           description: List of records
           content:
             application/json:
@@ -2099,9 +2097,9 @@ paths:
                   dataDisclosureAgreementRecord:
                     type: array
                     items:
-                      $ref: '#/components/schemas/DataDisclosureAgreementRecord'
+                      $ref: "#/components/schemas/DataDisclosureAgreementRecord"
                   pagination:
-                    $ref: '#/components/schemas/Pagination'
+                    $ref: "#/components/schemas/Pagination"
 
   # ==================== SERVICE ENDPOINTS ====================
   /service/data-sources/:
@@ -2112,14 +2110,14 @@ paths:
       operationId: serviceListDataSources
       security: []
       parameters:
-        - $ref: '#/components/parameters/OffsetParam'
-        - $ref: '#/components/parameters/LimitParam'
+        - $ref: "#/components/parameters/OffsetParam"
+        - $ref: "#/components/parameters/LimitParam"
         - name: dataSourceId
           in: query
           schema:
             type: string
       responses:
-        '200':
+        "200":
           description: List of data sources
           content:
             application/json:
@@ -2140,11 +2138,11 @@ paths:
                           items:
                             type: string
                         dataSource:
-                          $ref: '#/components/schemas/Organisation'
+                          $ref: "#/components/schemas/Organisation"
                         verification:
-                          $ref: '#/components/schemas/Verification'
+                          $ref: "#/components/schemas/Verification"
                   pagination:
-                    $ref: '#/components/schemas/Pagination'
+                    $ref: "#/components/schemas/Pagination"
 
   /service/data-source/{dataSourceId}/coverimage/:
     get:
@@ -2161,7 +2159,7 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: Image
           content:
             image/*:
@@ -2184,7 +2182,7 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: Image
           content:
             image/*:
@@ -2200,15 +2198,15 @@ paths:
       operationId: serviceListOrganisations
       security: []
       parameters:
-        - $ref: '#/components/parameters/OffsetParam'
-        - $ref: '#/components/parameters/LimitParam'
+        - $ref: "#/components/parameters/OffsetParam"
+        - $ref: "#/components/parameters/LimitParam"
         - name: organisationId
           in: query
           schema:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: List of organisations
           content:
             application/json:
@@ -2218,9 +2216,9 @@ paths:
                   organisations:
                     type: array
                     items:
-                      $ref: '#/components/schemas/OrganisationSummary'
+                      $ref: "#/components/schemas/OrganisationSummary"
                   pagination:
-                    $ref: '#/components/schemas/Pagination'
+                    $ref: "#/components/schemas/Pagination"
 
   /service/organisation/{organisationId}/coverimage/:
     get:
@@ -2237,7 +2235,7 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: Image
           content:
             image/*:
@@ -2260,7 +2258,7 @@ paths:
             type: string
             format: uuid
       responses:
-        '200':
+        "200":
           description: Image
           content:
             image/*:
@@ -2324,16 +2322,16 @@ paths:
               - asc
               - desc
             default: desc
-        - $ref: '#/components/parameters/OffsetParam'
-        - $ref: '#/components/parameters/LimitParam'
+        - $ref: "#/components/parameters/OffsetParam"
+        - $ref: "#/components/parameters/LimitParam"
       responses:
-        '200':
+        "200":
           description: Search results
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SearchResponse'
-        '400':
+                $ref: "#/components/schemas/SearchResponse"
+        "400":
           description: Invalid request
 
   /service/.well-known/data-space-configuration/:
@@ -2344,12 +2342,12 @@ paths:
       operationId: serviceDataSpaceConfiguration
       security: []
       responses:
-        '200':
+        "200":
           description: Configuration
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DataSpaceConfiguration'
+                $ref: "#/components/schemas/DataSpaceConfiguration"
 
   /service/.well-known/oauth-authorization-server/:
     get:
@@ -2359,12 +2357,12 @@ paths:
       operationId: serviceOAuthServerMetadata
       security: []
       responses:
-        '200':
+        "200":
           description: Metadata
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OAuthAuthorizationServerMetadata'
+                $ref: "#/components/schemas/OAuthAuthorizationServerMetadata"
 
   /service/token:
     post:
@@ -2389,15 +2387,15 @@ paths:
                   enum:
                     - client_credentials
       responses:
-        '200':
+        "200":
           description: Token issued
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/OAuth2TokenResponse'
-        '400':
+                $ref: "#/components/schemas/OAuth2TokenResponse"
+        "400":
           description: Invalid grant type
-        '401':
+        "401":
           description: Invalid client credentials
 
   /service/notification:
@@ -2414,9 +2412,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NotificationPayload'
+              $ref: "#/components/schemas/NotificationPayload"
       responses:
-        '200':
+        "200":
           description: Notification processed
           content:
             application/json:
@@ -2426,11 +2424,11 @@ paths:
                   status:
                     type: string
                     example: ok
-        '400':
+        "400":
           description: Invalid request
-        '401':
+        "401":
           description: Unauthorized
-        '404':
+        "404":
           description: Data source not found
 
   # ==================== WEBHOOK ENDPOINTS ====================
@@ -2474,7 +2472,7 @@ paths:
                 their_label:
                   type: string
       responses:
-        '200':
+        "200":
           description: OK
 
   /webhook/topic/present_proof/:
@@ -2519,7 +2517,7 @@ paths:
                 role:
                   type: string
       responses:
-        '200':
+        "200":
           description: OK
 
   /webhook/topic/published_data_disclosure_agreement/:
@@ -2552,7 +2550,7 @@ paths:
                 dda:
                   type: object
       responses:
-        '200':
+        "200":
           description: OK
 
   /webhook/topic/ows/present_proof/:
@@ -2570,7 +2568,7 @@ paths:
             schema:
               type: object
       responses:
-        '200':
+        "200":
           description: OK
 
   /webhook/topic/ows/issue_credential/:
@@ -2588,5 +2586,5 @@ paths:
             schema:
               type: object
       responses:
-        '200':
+        "200":
           description: OK

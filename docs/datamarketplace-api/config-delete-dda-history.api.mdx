@@ -1,0 +1,72 @@
+---
+id: config-delete-dda-history
+title: "Delete DDA history entry"
+description: "Delete DDA history entry"
+sidebar_label: "Delete DDA history entry"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VcGO2zYQ/RViTi1ASxs3J53qjd3EwaINmg162PgwS44kYmVSISl7XUH/Xgwle73xZgv00JMkcjjvzZvhUw8RqwDFHShnS1PBRoJryWM0zq41FNP6khqKtFwuPpgQnT+AhECq8yYeoLjr4ZrQk190sYbibjNsJLTocUuRfEgBFrcEBWiMuDRBNS50nhaVJ9qSjWsNEoyFAlqMNUjw9K0znjQU0XckIaiatghFD/HQcqIQvbEVDIM85a5Hav85l4TS+S1GKKDrjIaBy/AUWmcDBY6fX73lh6agvGlZIihglIbD5Ys7YrlciImbIBuTeFuKtWN5dYoBOZItIB/1zlmomT4pNcOjVHn/Qw2HfILJ+5MWQ55a5XfHRnS+Ya1ibEOR59iazD7qrHSd1anp8H0VN2ZHYswArMix759ZxlGX8+6fVGUImNTm7/sUBHJ6+e2o9ce/bi8wF0pRCCK6B7KixRBIi72JtRiRROupNI/CWMGgzpu/E3dRE2qmKeEag1H/xohjLrDTSYFdrMlGo8bEpfPiD043F6oxZKNQnjQHYBNE2bh96r+xpUuAJjaMsMSIoUVF4hrVA1ktFp/WF4jv3LZNk7L4tBbaqY7b+YQbaxKXiWYCBU+CoEdVo61IoNViR96UR9LcNKNItN7tjCaffbVfAgURqClnwe3Ik6msMKmOeJDTabxv6Lw8mTJrU5mIjdhj01AUkVRtXeMqQyGxTFw8VV0zgisuyqBVlH3loeIBHMudX83fZr9kb0CyuURUkSWbLrF579HGzDiQQFs0PKyha1vn46+metp7PsZPO4OExiiygc6SLlpUNYl5dnVxcr/fZ5i2M+erfDob8pv1u9Xvn1czPsOdbV2IW7RnSV+53c/aexq/SI8xbxs0llkmGv107U/2K+GHFx8kFK/ZZ31y5uLcCdnRaxcig/T9PQb64pth4OVvHXm2742EHfrU92QR2gR+11CU2AS6qIe7xoQK+OnPyVt/FiBfrnNaRMvMdth0/AUSHujw6v+Ajf1/JPIk2bAZzvx5ubpZ3a5AAj73ku/cLOn2IkLfjxG37GXDcAJM3sZgw/APBhqa6g==
+sidebar_class_name: "delete api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Delete DDA history entry"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"delete"}
+  path={"/config/data-disclosure-agreement/{dataDisclosureAgreementId}/history/{historyId}/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Delete DDA history entry
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"dataDisclosureAgreementId","in":"path","required":true,"schema":{"type":"string"}},{"name":"historyId","in":"path","required":true,"schema":{"type":"string","format":"uuid"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"204":{"description":"Deleted"}}}
+>
+  
+</StatusCodes>
+
+
+      

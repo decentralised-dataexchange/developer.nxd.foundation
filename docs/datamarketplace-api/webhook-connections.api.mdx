@@ -1,0 +1,72 @@
+---
+id: webhook-connections
+title: "Connection webhook"
+description: "Receive connection invitation webhook"
+sidebar_label: "Connection webhook"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVktz2zYQ/iuYPdOkq/bEU23X6bjN1Jk4mR4cj2YFrkjEFIAAS8mqRv89syBl6uUmvIjcN/Dtt6sNMNYRykdY0axx7hmeMqgo6mA8G2ehhI+kySxJaWctaREqY5eGMb3u3DJwnkKS3VVQ7sLdvDpFyCCS7oLhNZSPTxkE+tZR5GtXraHcpE8TqIKSQ0cZaGeZLIsKvW+NTsGLr1Gq2kDUDS1Q3njtCUpws6+kGTLwQUphQ1G0xho2yC7smUYOxtawTUmG+qamOmuBWpPns6rgOja2nkZGprMWna+QqZri+QBvO+pA/+fIDZkwrd4oeYRn+kzrH5ksXHW+hsX6zQx9/hZn1J7Rp0fwjd7Z2MMwubyUn8PWuv8bxHBB3DhpGu9iAhC5gRKKoYcKdt7oYoQqFqmXwpKCtO4GutBCCQ2zj2VRoDe5fanyuetslc4Ixz39Xhq6jwDbp7ExH6Sp+oKvCQOFq05KeT2hpJDcyQxKmCUjyIaXdy4sBDH4699PJzmvtKYYFbtnsspjjFSpleFG9ZmUDzQ3L8pYJUldMP/1DGsIKykzg2uMRv+oIrE5yZ08FXbckOWBSWrugrqXcBOlW0OWlQ5UiQG2Uc1bt0roCOE+jlS9fcGFb+mIWjvsTxg1KnZEGiVH/BkV+7QZpSdm+yQZpXvcGIXHlDir6ZkwqnYEOI499P0BneYugWJYrgb+QMboUZO6Rv1MtlJXH+5OULlxcpNMolSV092CLI/YcEPqNNCFQlUho6IX3aCtSaGt1JKCme+AlcY2mpQPbmkqCvkX+zlSVJHa+UV0SwpkaqtMwprX2eCNs5b2WyBLkStTG8ZWrbBtiRWTbqxrXW0opipTLYHqru2TazmUQasp/yLEE5L2x51cTn7Lf81/6ZuEUafZZjH1rfkzoOXcOMiAFmjS/Xbeu8C/m3rUHVJ91GwzaI0mG2kv6JVH3ZCa5JcnnqvVKsekzl2oi8E3Fu/vbm7/ebi9EB/pfhlJC7R7QceVtrf8DoDdjLvrp7fnQGemFy58i8am9RHSeO3n4biiM0gT8YBssl5ldzcyQstH2GxmGOlzaLdbEX/rKAxrd4khQS1f2wyG8SJjtGfGTV/7xSepSMzbTio72cEyN18n94f7B5l4s2GXD0wKuBKa4wpKSP8Q+kpl2YtsAy3ausNabPuY8nwHs2MAEg==
+sidebar_class_name: "post api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Connection webhook"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/webhook/topic/connections/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Receive connection invitation webhook
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"initiator":{"type":"string"},"connection_id":{"type":"string"},"accept":{"type":"string"},"routing_state":{"type":"string"},"updated_at":{"type":"string"},"state":{"type":"string"},"created_at":{"type":"string"},"their_did":{"type":"string"},"invitation_key":{"type":"string"},"invitation_mode":{"type":"string"},"my_did":{"type":"string"},"their_label":{"type":"string"}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"OK"}}}
+>
+  
+</StatusCodes>
+
+
+      

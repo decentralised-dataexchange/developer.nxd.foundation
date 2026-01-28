@@ -1,0 +1,72 @@
+---
+id: config-update-dda-tags
+title: "Update DDA tags"
+description: "Update DDA tags"
+sidebar_label: "Update DDA tags"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFVU1z2zYQ/SuYPbUzlOi6PfFU2XI67mTaTGJPD44Pa2BFIiYBBFhKVjX875kFKcm2nEQXkdzdt28/8LADxjpBdQfau5Wt4b4AHygiW++uDVTT99tgkGm5XNyIewGJdB8tb6G628EFYaS46LmB6u5+uC8gYMSOmGLKDg47ggoMMi5t0q1PfaRFHYk6cnxtoADroIKA3EABkb72NpKBimNPBSTdUIdQ7YC3QYASR+tqGCSVOFPiC2+24vE6VnvH5FhMGEJrda6s/JK8k28n0P7hC2mGAkKUPrCllK25SwcvjBG3wpqpS28Ryz8hl4J3acQ4PzuTP0NJRxuEBlQwNtaAeL9lUcvlQvHY9I648TKT0GeG0q0KynFCpXR3Zg7tneG+v+Xuu40fSoEu80Djej+uPrZQQcMcUlWWGOzcPZn5yvfO5O7Ba6rv7ZrUiAAyk/12fJLujsU/35FDuyQFTPOV94fsBMX08M7HDhkq+Pu/m5OcC60pJcX+kZwKmBIZtbHcqDGTCpFW9klZpySpj/b/zF01hEZoFnCByeqfMRKfk9w5UmHPDTmeVkqtfFT/Cty50q0lx0pHMuKAbVKr1m/ykGXzPh539uoJu9DSccfu9kt0P8ipWPlssiw+sETGFFCTukD9SM6oxYfrE3qXXiCZxKiM170M+0iSG1KnQDOFSvZE0ZNu0NWk0Bm1pmhX+wplwlaTCtGvraE4/+xuEyWVqF3Nkl9TJFs7ZXPRvC2maHxo6XkvioxsbG0ZW7XBtiVWTLpxvvW1pZRZZi6R6r4dk2spyqLTNP8sGyjbOpZ7fnb+x/z3+W8wnnbU+bRPmmP/iuh4bj0UQB1a2ezUh+Aj/2nro+3lzh8tQwGt1eQSPQNdBNQNqfP52UnkZrOZYzbPfazLKTaV768vr/75dDWTGFmD4BN36J6Bnp73F1M9rCjTE5ehReuEXM6+m7TgoOIFfFcNoIDqR0I85ZaLoPGJBXS3e8BEt7EdBvn8tacown9fwBpjHm+WDWOTPBuoVtgmOuF/kGL45eOk0r8qyfhWXXuhdSKza2x7eYMCHmn7w5tkkGMznXEhNfpfjqlnN4J6xDu5EUS8Dir74VZU52G6WDpvJCTiRm4o3Ix0fK4uK1z+toMWXd1jLb4jpEwbX6rMK53LRN8seLcbPW5E5YbhUH9WPal1GL4BfPmw7A==
+sidebar_class_name: "put api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update DDA tags"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/config/data-disclosure-agreement/{dataDisclosureAgreementId}/tags/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Update DDA tags
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"dataDisclosureAgreementId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","properties":{"tags":{"type":"array","items":{"type":"string"}}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Updated"}}}
+>
+  
+</StatusCodes>
+
+
+      

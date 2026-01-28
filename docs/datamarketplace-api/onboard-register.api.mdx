@@ -1,0 +1,72 @@
+---
+id: onboard-register
+title: "Register"
+description: "Register a new organisation admin with their organisation"
+sidebar_label: "Register"
+hide_title: true
+hide_table_of_contents: true
+api: eJylV99T2zgQ/lc0ejYJ5fqUpwKlN9x0DgbK3APlYSOt7S22pEpyQi6T//1mZQc7OA3Qy0ts7U+tvv1WXssIRZCze2nN3ILX8iGTGoPy5CJZI2fyBgsKEb0AYXAprC/AUACWCtA1GbGkWIpYIvkdqcykdejT86WWs22IrUOZyYCq8RRXcnb/kEmPPxsM8czqlZyt0yt51HIWfYOZVNZENJFF4FxFKnme/gic5loGVWIN/BRXDjnc/AeqKLOBo3tpoEaZSayBKplJByEsrdcyuc/J19f9ys5mHjLpPO8nEgaOkjz10UL0ZAq52foeSTKZW19DlLNOYzMIf0j7WWkzTvKtdtahOXV05/cktnmx07dVMKCKls+wsmp73M5WpFYcZBdEb69d53Wf6DnOPmEfeZ90B9B75Av0lHd4umlBeHfz9dpjTk97DLoflyU4a0K7p5PjD/y32zy3jVIYQt5U1Ur4DvjYwe330LxbySagf12LhkghE7FA/06o/uLINpmMFCteugut09fAdCC1cfymIX0g/O8j5jVMHEDUMD1PbVsu0F/WUOAbDSpb2DeqHmrdsfY7oZxJ5VGjiQTVVZ6jvzDaWWpxOdKFBOZrlh/Uc54WoFafIZSJ8X/Vl8pqvMrPrdGNGnqaW1shmC49iKhP9wQabF5DxKNINbJJ4/T7TAYYvhpid9vmH4+Px519aRZQkRbd0Epeaoyl5UnnbEhIh1jKmZx2g2+6JYBp4k+/QM+jdy0bro8sY3RhNp2Co4l50pPcNkZvqXU3+FdaoGg9yM1DP0dvmTXavjpD8OhPG87guQwcgmMnNS50UpJZ9/BlW5y//vk2inmaDl9E+4hG8GxB3U7+NpJwCWOCjOCg1tO/7R2hRNAtMZxBIPVaRqwzip0sBTSxZKi26Ba59eKK3Z0IVRGaKHosB5FXdpkOhRn1pr9ZXDxB7Srsp1CPjY4NE6d+wlZvomw9vCcM1EezuBcNe3aw+oIYX8bfUlm/0jNYvzYgpn5xt1zPy4fZYEjiZHKbjqVrhM8QIThQKM5APaLR4vT6chTo3HKNIrJQaKuaGk3sTyeWKMaOjgQIDREEPqkSTIECjBbDVBO0SaFw3i5Io598N3cBgwhY5UeByRapMILSacdV1lnDvMIhCLLkWVNBESqxhKrCKCKq0tjKFoQhZZly8Vg0VRtc8aYIjMLJd9MWMbTbPTk++Tj5Y/KhG9/QklZ3jPSnBxMnZAdICo1z1sdPVPSy3WbvJTwVSKEJQ2yeOlAlipPJ8chyuVxOIIkn1hfTzjZMv16eX/x9e3HENps0yEKsYQi4wQX8xRR8vpT8r1t/19oRn+LUVUCJyJt2BrSU2H9u8CXqORu+KJZMnbN7uV7PIfA43Wx4+WeDvvtMWIBPJ81vm0x2/MI8+oirBMq0iaNvnAarVw2nM7plbbKtBVObiwd1Hwbsfn11y/Q4775TaqvZxsOSdwNLOZOJAtg6UXFaW8sKTNFAwbqtT/79Bwx+tiY=
+sidebar_class_name: "post api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Register"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/onboard/register/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Register a new organisation admin with their organisation
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["name","email","password","confirmPassword","organisation"],"properties":{"name":{"type":"string"},"email":{"type":"string","format":"email"},"password":{"type":"string","format":"password"},"confirmPassword":{"type":"string","format":"password"},"openApiUrl":{"type":"string"},"organisation":{"type":"object","required":["name","sector","location","policyUrl","description"],"properties":{"name":{"type":"string"},"sector":{"type":"string"},"location":{"type":"string"},"policyUrl":{"type":"string"},"description":{"type":"string"},"verificationRequestURLPrefix":{"type":"string"}}}}}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"201":{"description":"Successfully registered","content":{"application/json":{"schema":{"type":"object","properties":{"user":{"type":"object","properties":{"id":{"type":"integer"},"email":{"type":"string","format":"email"},"name":{"type":"string"}},"title":"User"},"organisation":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"name":{"type":"string"},"sector":{"type":"string"},"location":{"type":"string"},"description":{"type":"string"},"policyUrl":{"type":"string","format":"uri"},"coverImageUrl":{"type":"string","format":"uri"},"logoUrl":{"type":"string","format":"uri"},"openApiUrl":{"type":"string","format":"uri"},"verificationRequestURLPrefix":{"type":"string"},"credentialOfferEndpoint":{"type":"string"},"accessPointEndpoint":{"type":"string"},"privacyDashboardUrl":{"type":"string"},"codeOfConduct":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"Organisation"}}}}}},"400":{"description":"Invalid request"}}}
+>
+  
+</StatusCodes>
+
+
+      

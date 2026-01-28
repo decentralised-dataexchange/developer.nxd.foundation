@@ -1,0 +1,72 @@
+---
+id: organisation-list-o-auth-2-clients
+title: "List OAuth2 clients"
+description: "List OAuth2 clients"
+sidebar_label: "List OAuth2 clients"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVk1z4zYM/SscXHpRbG/ak09N0nQnnZ00081OD9nMDkJBEjcSyZCQ49Sj/74DSrbljzZpfLFlAg+P+HjCChjLCPM7cKFEayKycRbuM3CeQnq4ymG+c/rJRP7zrOXq9KI2ZDlCBpF0Gwy/wPxuBeeEgYJYwPzuvrvPwGPAhphCTAYWGxLQoojEkIGxMIenlsILZJBT1MH4xGMOf9FTS5EpV8bmtFSFCyoyBlauUIGia4MmYRDoqTWBcpgXWEfKIOqKGoT5CvjFSzhjmUoKKUSBbc0wn3VdtqFTm8a8wua6bR4oSGjD1EQViNtgKVeegvJY0nuJfJh1kqdA0TsbKYr16WwmX7sMJPkSX29Sr51lsiym6H1tdCrS9HsU+9VhdPfwnbTc0wepMZs+mtup6NYcQ0BJRLrw6zAmH9lEDsaWkEHhQoMMc2hbk0OXDSnfN+wy6O/17RjM9jSSDsRHLUz8hprNYoz+4FxNaBNAIGTKz444j1jmyHTCpiFxaX3+/1y6DNhwLXbjMUkHHktj+xl7NZW6DYEs30hbHW+ecWNc9NapC5VNfSrs2THWV3u1+zeMWzEenLdNjgs0NT7UtMETSu/BE25RPWCkXDmr+oHrsmHyXsfbH7/N1HUZVBhvAi2Ma+OR0u8jXdlcBoWiMoXiigL9FBUqPyCMUa9pye9HtLTkAW3UFzfbNuj6zz5cmvO+fUaz3hBXTvS4TLrpUSQWptrZwpTTsUhPHYrvyeA7TRodFmsFbkMNc6iYfZxPp+jNxC7zSeFam/e0DvksSPUIIEq1FvzPIi99M4xlf5MuCQGDBqb0JSPIhh+/r+fnj79vD2KeaU0xKnaPZJXHKG3zbLhSfSSpVmGWylglQV0w/yTuqiLM++4/x2j0a4zE5iB28lSSQ7I8aGp6+ezUROlAuRhgHVVRu+dUZWMLlwIO1f4NGaNHTeoc9SPZXJ3dXB0OsGt8TUxyqHKn24Ysb+NyReoQ6EShypFR0VJXaEtSaHO1oGCKNWkpmtGkfHALk1OYfLVfIkUVqS5OoltQIFNaZdI9+CUbvGXgx9fLEnJuSiMz/Yx1TayYdGVd7UpDMbFMXAKVbd0H13Ipg1bT5Ks0lTRgf93T2ekvk58nH4Y3GOo0ZMOr2HwMaHliHGRADRpp1th67wL/asrt2W4bb0+SpmiykUagZx51Rep0MjvwfH5+nmA6nrhQTgffOP10dXF5/fnyRHySfLvIDdoR6PE53anspvOYljz1NZr0KkoMVsMM30E/w5DtLmIZ7M4xZCDLWeUii9NqJWL6JdRdJ3/3S4vMd26iFHC7hOwx2iwNb1+wjl7ikV7Gi9wC61aMQNaqt3N4y1r1H+HXi9s2+r08hNTDaQXNYNAEyU3vJOLix14Hy5OgbAT346XoE+5KyZ6YJfT12mRfRtirVW9xK1LWdbBmnqQNuvuu634ANRsBOg==
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List OAuth2 clients"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/config/organisation/oauth2-clients/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List OAuth2 clients
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"offset","in":"query","description":"Requested index for start of resources","required":false,"schema":{"type":"integer","default":0}},{"name":"limit","in":"query","description":"Number of items returned per page","required":false,"schema":{"type":"integer","default":10}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of clients","content":{"application/json":{"schema":{"type":"object","properties":{"oAuth2Clients":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"name":{"type":"string"},"client_id":{"type":"string"},"client_secret":{"type":"string"},"is_active":{"type":"boolean"},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"OAuth2Client"}},"pagination":{"type":"object","properties":{"currentPage":{"type":"integer","description":"Current page number"},"totalItems":{"type":"integer","description":"Total number of items available"},"totalPages":{"type":"integer","description":"Total number of pages based on limit"},"limit":{"type":"integer","description":"Number of items per page"},"hasPrevious":{"type":"boolean","description":"Indicates if there's a previous page"},"hasNext":{"type":"boolean","description":"Indicates if there's a next page"}},"title":"Pagination"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
