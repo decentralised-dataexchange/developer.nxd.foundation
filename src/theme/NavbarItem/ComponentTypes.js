@@ -7,8 +7,8 @@ import Link from "@docusaurus/Link";
 function NordXDataspaceLogoAndTitle(props) {
   return (
     <Link href={"/"} className="flex items-center">
-      <img src={useBaseUrl("/img/nxd.jpg")} className={"w-[40px] h-[40px]"} />
-      <p className="text-[20px] md:text-[28px] text-white ml-2 font-semibold">
+      <img src={useBaseUrl("/img/nxd.jpg")} className="w-[58px] h-[58px] rounded-full -translate-y-[4px] -translate-x-[1px]" />
+      <p className="text-[20px] md:text-[28px] text-white ml-2 font-semibold font-sans">
         NordXDataspace
       </p>
     </Link>

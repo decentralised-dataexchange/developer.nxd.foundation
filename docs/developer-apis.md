@@ -1,6 +1,7 @@
 ---
 id: developer-apis
-title: Developer APIs
+title: Overview
+hide_title: true
 sidebar_label: Overview
 sidebar_position: 1
 sidebar_id: developerApisSidebar

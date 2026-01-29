@@ -27,10 +27,6 @@ const sidebars = {
     {
       type: "category",
       label: "Developer APIs",
-      link: {
-        type: "doc",
-        id: "developer-apis",
-      },
       items: [
         "developer-apis",
         {

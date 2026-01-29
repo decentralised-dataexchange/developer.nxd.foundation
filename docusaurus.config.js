@@ -64,7 +64,7 @@ const config = {
         },
         blog: false,
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve("./src/css/custom.scss"),
         },
       }),
     ],
@@ -151,6 +151,7 @@ const config = {
         },
       },
     ],
+    "docusaurus-plugin-sass",
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -185,6 +186,16 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: [
+          "ruby",
+          "csharp",
+          "php",
+          "swift",
+          "groovy",
+          "kotlin",
+          "bash",
+          "java",
+        ],
       },
       colorMode: {
         defaultMode: "light",

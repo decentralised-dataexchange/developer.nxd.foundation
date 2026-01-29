@@ -12,9 +12,11 @@ const ApiCard = ({
   return (
     <div className="api-card">
       <h2>{title}</h2>
-      <p className="text-gray-600 text-sm mb-3">{description}</p>
       <div className="api-card-column">
         <ul>
+          <li>
+            <strong>Overview:</strong> {description}
+          </li>
           <li>
             <strong>APIs:</strong>{" "}
             <Link href={specLink || link}>{linkText}</Link>

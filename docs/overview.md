@@ -1,6 +1,6 @@
 ---
 id: overview
-title: Getting Started
+title: Overview
 hide_title: true
 sidebar_label: Overview
 slug: /getting-started/
