@@ -1,0 +1,72 @@
+---
+id: service-read-data-sharing-ui
+title: "Read data sharing UI"
+description: "This endpoint is used to render the data sharing UI during a data exchange as defined by a (data source) organisation in the consent building block."
+sidebar_label: "Read data sharing UI"
+hide_title: true
+hide_table_of_contents: true
+api: eJzNVktv4zYQ/ivEHLoJoNhpuiefmk3ShdvsbpAHegh8GItjibBEakkqiWvovxdDyS/Fchynh55ihcOZj/P45puDJBdbVXhlNAzgPlVOkJaFUdoL5UTpSApvhCUtyQqfkpDoUbgUrdKJeBgKWYZfWB/QS5yiTkigE5ImSpMU45lAcVTfM6WN6VgYm6BWDjmuUDo4jo12pL0YlyqT7HKcmXjagwhMQTaYDiUMwJF9UjHdEspL9HhXQ3lQEEGBFnPyZB0MHuetxw0vxcTYGiYmlign7SECxYc/S7IziEBjTjAANjpf2AwlRGDpZ6ksSRh4W1IELk4pRxjMwc8KvuI8w4CqitqBz+OYnBPeTEkHCFj6lLRXcXhUBwQMt+750kb4CWbunfFvhmJKs2VoY5vMd0Uu1F80+2DQJttcWKWlelKyxKwj4Mqgler3h/2OOQkzCXF9qqw8KdD62UbDdaAI5jds/cMm7OdjVX+4vV5moAvJJycykxihckxoH1jXJjFDNn6w2QczdUtSWYq9WABtDfaOyViO3MJHG837R6Ruy39qQrgwsisbcX30nz58r5lYt+l69ptYRmztCiY6x+dnp6f8ZxPfjylEkBLKQGPzqorg8za7MUqhdFF6saS91sUqAkdxaZWfBT78QmjJcq5h8DjizJzXo85fowg8JkycwLQqmiLDKIKcfGqYehPygWXZAfQbIu5zS5w0jQNR4OftDHxJuRH1MURQ2gwGkHpfuEG/Lyk3J1ionkosat9TBl6X7s5jwt3Z4cPVx203o1Ua7rg0de4XT19WaUl7of51HlcNsNGhUEUbyVz6YCTQdAB/j4MRRM2PP4zN0cMA/vz7HqJda6JAx6v3WflU1JFEYWmiXnhbbk5Lg5SrrfTEBDTKZxz+cnh3I5j+L01c8ipbtDgXqI56dnr2ufdb79dXcC5MPg7rm+/L9fthaC6abf0NNSZhTYqjc5krLX4RwyWfHwvUUoR++oZ2Sr7IMKbtlk07Od74sdEeY89vWeyIr4t6RkA5Kq67K4vCWP/7qtbtjlhvJshUTNrRmtPzAuOUxFnv9NXN5+fnHobjnrFJv7nr+tfDi6vvd1cnfIdTXhjnc9RrTlmYbCHTjezOwwtZf/xvRVfT0Z5efL/IUIWmDzmaNwzwuJBi/Lp1DhhFkBrn2WI+H6PjbVVV/O+aVQMzKIfjbI01O/NzdNsQ7LHoknBbsU55urcouSfMSrau+WVvGG+ruB0oNsXcoQh26LhdsRe8dmDYLiW3I2RL0B0YeK3we8q6HZC2qbsDcR2i7PZF1hJ4H8/cHjLvjenpUHuHNvE2pbcDQSP4Doz2ptbbNTfdkm+FZsQfVjGcWlOtxNLXK97xuCkQWoIgUOFCf+j1IZ3Pa4vAGVUFy24JHFKNqqr6F/XocF0=
+sidebar_class_name: "get api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Read data sharing UI"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/service/data-sharing"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+This endpoint is used to render the data sharing UI during a data exchange as defined by a (data source) organisation in the consent building block.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID for data agreement","in":"query","name":"dataAgreementId","required":true,"schema":{"type":"string"}},{"description":"Access token for authentication","in":"query","name":"accessToken","required":false,"schema":{"type":"string"}},{"description":"API key for authorisation","in":"query","name":"apiKey","required":false,"schema":{"type":"string"}},{"description":"ID for the individual","in":"query","name":"individualId","required":false,"schema":{"type":"string"}},{"description":"Name of the third-party organisation","in":"query","name":"thirdPartyOrgName","required":true,"schema":{"type":"string"}},{"description":"URL for the third-party organisation's logo image","in":"query","name":"thirdPartyOrgLogoImageUrl","required":false,"schema":{"type":"string"}},{"description":"Redirect URL for data sharing UI","in":"query","name":"dataSharingUiRedirectUrl","required":true,"schema":{"type":"string"}},{"description":"Authorization Code","in":"query","name":"code","required":false,"schema":{"type":"string"}},{"description":"Redirect URL for authorisation","in":"query","name":"authorisationRedirectUrl","required":false,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Ok","headers":{}},"400":{"description":"bad input parameter","headers":{}}}}
+>
+  
+</StatusCodes>
+
+
+      

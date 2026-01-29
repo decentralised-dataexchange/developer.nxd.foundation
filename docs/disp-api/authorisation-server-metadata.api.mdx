@@ -1,0 +1,72 @@
+---
+id: authorisation-server-metadata
+title: "Authorisation Server Metadata"
+description: "The Authorisation Server Metadata endpoint for an organisation's capabilities in regards to a Data Marketplace."
+sidebar_label: "Authorisation Server Metadata"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVk1v4zYQ/SvEHNpdQLbSpCed6iZp4HbTBkkWewiMxVgcS9xIJJek7KSC/nsxlJzIdpLt9tKTJHI+HmfePKoFST53ygZlNGRwW5KYNaE0TnnkNXFDbk1OXFJAiQEFaWmN0kGsjBOohXEF6sH4Ry9ytLhUlQqKvFBaOCrQSS+CESjOOMAlunsKtsKcppCARYc1BXIesrv2BTjzM2FWIpS0kwoSUGxhMZSQgMaaIIOxxVxCAo6+NsqRhCy4hhLweUk1QtZCeLTs4YNTuoCuW7Cxt0Z78rx/fHTEj108FxTeLg8kkBsdSAd2RmsrlUfD9IvnCO0IgXXGkuNC8ZfyviF3iCzZgzCPdmIuSQe1UuRiI7g8fzGyLby/x/CgSyCYe9Kft937dp5btn/u9sfrD/8ykaNC+eDi8nfkux65/Ze0a6yUxECfv/egn0pyxEye5Tl5L/qDr5ypBYqrpqomkbbMJPJB5KjFksSaHFdfCtRS4EAJktBxqft8ZvmF8tCTUDWRhHfbNh/047W6vX6wRce5SkIZZ6eF0554k9uYvj3keqRgAvSAta144YCf3X5xxjFFnwu6mDhgwRMLL40DLBKoKZRGQgYFhTjmoYQM0vVJ6smtVU4pz8vEW8wpbXcHt0unG6qqyb02G50aLu8Ex32f+D5PAv3LS9pxRrURT3aNqyCDMgTrszSVVJsJWjVVhUMdpspAl+wHuAlYKF28FsP32/thFowpb5wKjzfcgH66Z1b9QY+jXmC/MKjYUNknHdshOXflV0JHjpdHMRgJDJrG38toBMnw8ptxNQbI4PdPtwesH8geOSUsek9SbFQoRZ9JWEcr9cAKvjtwTxxg5CsT0agQ2XQ2v7kSs6u5ODN5U5MOW6HmBvVZj4+Of56eTH86gHNq6qXSJKO/HPvH8T9lWdZBXKLGgnhPvJvJWmnxg5hrqdZKNli9j8O4f8m8bDmQ0E8HxcY8SsVQf3Wx7WcCVKPivvvGWuPCL8+93mfEmExQqZy0p1HQmcW8JHE8PTrw3Gw2U4zbU+OKdPD16Yf56fmfN+cT9uGSW+NDjXoc9Bu30U6Z2+fL6X+46QfWBnoIqa1QRWLHOrSDPNzB+mSYaZUTo3+SCEggO7jdRyoBCbyhE4sESuMDZ2jbJXr66Kqu4+WvDblHyO4WLLRO4ZKpzFqiPL9LyFZYeXqjkO+uh3+M9+LN35UXj79VA/3YK33DX5DAPYvF/u9Mt3gS/IixN+JJtmHkfqjqYzm+OL+FrvsHuod/+A==
+sidebar_class_name: "get api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Authorisation Server Metadata"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v3/service/data-space/{organisationId}/.well-known/oauth-authorization-server"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+The Authorisation Server Metadata endpoint for an organisation's capabilities in regards to a Data Marketplace.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"The ID of the organisation","in":"path","name":"organisationId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Get Authorisation Server Metadata","content":{"application/json":{"schema":{"properties":{"issuer":{"type":"string","description":"Issuer Identifier for the OAuth Authorization Server"},"token_endpoint":{"type":"string","description":"Token endpoint URL for the OAuth Authorization Server"},"registration_endpoint":{"type":"string","description":"Registration endpoint URL for the OAuth Authorization Server"},"validate_token_endpoint":{"type":"string","description":"Where an Access Token from a Pull-Data request can be verified and authorised"}},"type":"object","reqiured":["issuer","token_endpoint","registration_endpoint","validate_token_endpoint"]}}},"headers":{"Content-Type":{"schema":{"type":"json","example":"application/json"},"description":"Content-Type header"}}}}}
+>
+  
+</StatusCodes>
+
+
+      

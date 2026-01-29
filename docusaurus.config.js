@@ -1,8 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer').themes.github;
-const darkCodeTheme = require('prism-react-renderer').themes.dracula;
+const lightCodeTheme = require("prism-react-renderer").themes.github;
+const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -25,7 +25,20 @@ const config = {
   trailingSlash: false,
 
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: ({ url, sourceFilePath }) => {
+        console.warn(
+          `Broken markdown link to '${url}' found in '${sourceFilePath}'`,
+        );
+      },
+      onBrokenMarkdownImages: ({ url, sourceFilePath }) => {
+        console.warn(
+          `Broken markdown image '${url}' found in '${sourceFilePath}'`,
+        );
+      },
+    },
+  },
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -45,10 +58,13 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: false,
+        docs: {
+          sidebarPath: require.resolve("./sidebars.js"),
+          docItemComponent: "@theme/ApiItem",
+        },
         blog: false,
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve("./src/css/custom.scss"),
         },
       }),
     ],
@@ -116,6 +132,26 @@ const config = {
         },
       };
     },
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "openapi",
+        docsPluginId: "default",
+        config: {
+          datamarketplace: {
+            specPath: "static/openapi/datamarketplace.yaml",
+            outputDir: "docs/datamarketplace-api",
+            sidebarOptions: { groupPathsBy: "tag", categoryLinkSource: "auto" },
+          },
+          disp: {
+            specPath: "static/openapi/disp.yaml",
+            outputDir: "docs/disp-api",
+            sidebarOptions: { groupPathsBy: "tag", categoryLinkSource: "auto" },
+          },
+        },
+      },
+    ],
+    "docusaurus-plugin-sass",
   ],
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -130,12 +166,19 @@ const config = {
             position: "left",
           },
           {
-            type: "custom-local-dropdown",
-            position: "right",
+            to: "/docs/getting-started",
+            position: "left",
+            label: "Getting Started",
+            sidebarId: "gettingStartedSidebar",
           },
           {
-            type: "custom-indy-nav-btn",
-            label: "Indy testnet",
+            to: "/docs/developer-apis",
+            label: "Developer APIs",
+            position: "left",
+            sidebarId: "developerApisSidebar",
+          },
+          {
+            type: "custom-local-dropdown",
             position: "right",
           },
         ],
@@ -143,6 +186,16 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: [
+          "ruby",
+          "csharp",
+          "php",
+          "swift",
+          "groovy",
+          "kotlin",
+          "bash",
+          "java",
+        ],
       },
       colorMode: {
         defaultMode: "light",
@@ -150,6 +203,7 @@ const config = {
         respectPrefersColorScheme: false,
       },
     }),
+  themes: ["docusaurus-theme-openapi-docs"],
 };
 
 module.exports = config;

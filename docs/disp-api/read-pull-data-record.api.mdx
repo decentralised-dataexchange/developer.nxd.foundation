@@ -1,0 +1,72 @@
+---
+id: read-pull-data-record
+title: "Read Pull Data Record"
+description: "Reads a specific Pull Data Record."
+sidebar_label: "Read Pull Data Record"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVsFu4zYQ/RViDsUuoNhp0pNOdeN04bZbBHEWPQQ+jKWxxI1EcknKSSro34shZVu2vIssur5YlGbeDN/MPLKFnFxmpfFSK0jhnjB3AoUzlMmNzMRdU1Vijh7FPWXa5hNIwKDFmjxZB+lje4KwmAu9Eb6kkatYk38mUgLj26VubEYCVR7Xn5xUhViS3cqMIAHJcAZ9CQkorIlXTVWxbQRc5JCApS+NtJRD6m1DCbispBohbcG/GvZx3kpVQNet2NgZrRw5/n51ecl/x+mPkraEHCbTypPy7IDGVDJDdph+duzVDqIaqw1ZL2OM44QHWen1Z8o8JCP+Q1C9ETjgj/dIjq2P0WU+3sCP4/+EvwRy9DiXLqu0ayzNCktUk/IPVJsKPd3TVjqp1eKbWYVQBxSxhxE7HLEDEr5EL3LaSEVOcHTxjE4wp5QLLFCqQMpbE400/N80ezLPJ8muuDfdEb4H/G7KlVYZjfO8R5XrunoVBSmy6CkX0fIMRGaJDWZ+DPMga3Iea/PVlgnObLwHlsozqtdPpM4gliRmWUbOiQe2EI2jXGy0DVXjzXJtxml2w0F+5Mb+nnZ7e8V3jA5p2W1m1fEvgZIwD9rWwk2c+ouHkG07Fpcw/wnQC9am4hcjcehOR3yIKWIsiIEdZY2V/jWo6m+Eluys8SWkj6suaWFm5J/0GlarBDwWLL+wlIWi/NCfDlYJ1ORLnUMKBQXVYBFNYbq9nmZabWQxZb4unMGMplyYi7C2ga1pe6qyHXBudnte8OdUaxE/QwKNrSCF0nvj0uk0p1pfoJETWVhUfiI18E6OAZYeC+6Mr2C4+PkUZnXga8lViYq442hfIIwv+tOkp3t/njC92sp/Y493yRHrewzOBPqThdfrYARJ//C7tjV6SOGPfx5Ggt4PQ+gwYdDxODxLX4oYSRhLG/kipBJHuRwagzPf6JCN9KHF5ovlnZjdLcRcZw2XfDehXKAY9ery6pfJ9eTnUTo3ul7L0C93C5EP/cOQ3vDhqLz4iAqLqGHvZnktlfhJLFQutzJvsHp/ELCPaJ/ImwozOm/pora5SX+GYhZ0qOdfftjVMwGqUXLdXWOMtv7XQ61PO2LYTFDJjJSjAejMYFaSuJpcjjyfn58nGD5PtC2mva+b/rW4uf17eXvBPky50c7XqAagfDEayeMpve3hmvC2m1TfYJ5e/NRUKEMPhpTbfmgfYXsdqdvIohe6OLg81yejCwmkoyvSKoFSO89QbbtGR59s1XX8+ktDNuhJAlu0EtfcXjzf0vFzDukGK0ff2OS7+16034sffu84JmU3zopneYtVwytI4ImnfXwv7FZ7IQ9bimY8jMYPAMZqPRTPD7c8z3gsBifDH9DPJte20SKcg123zzUeNh2fNv8B/Cr62w==
+sidebar_class_name: "get api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Read Pull Data Record"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v3/config/data-space/pull-data-record/{pullDataRecordId}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Reads a specific Pull Data Record.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"description":"ID of the Pull Data Record between a Data Source and Data Using Service","in":"path","name":"pullDataRecordId","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Pull Data Record read","content":{"application/json":{"schema":{"properties":{"pullDataRecord":{"type":"object","description":"Record of a Pull Data request","properties":{"id":{"description":"ID of the Pull Data Record between a Data Source and Data Using Service","type":"string"},"dataDisclosureAgreementTemplateRevisionId":{"description":"ID of the Data Disclosure Agreement Template Revision that defines data was pulled against","type":"string"},"dataDisclosureAgreementRecordRevisionId":{"description":"ID of the Data Disclosure Agreement Record Revision that defines the agreement between the Data Source and Data Using Service","type":"string"},"nonce":{"description":"Randomly generated nonce","type":"string"},"createdAt":{"description":"Timestamp of the Pull Data Record creation","type":"int"},"token":{"description":"The Access Token used for pulling data","type":"string"}},"required":["id","dataDisclosureAgreementTemplateRevisionId","dataDisclosureAgreementRecordRevisionId","nonce","createdAt","token"]}}}}},"headers":{"Content-Type":{"schema":{"type":"json","example":"application/json"},"description":"Content-Type header"}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,72 @@
+---
+id: organisation-get-dda-signing-status
+title: "Get DDA signing status"
+description: "Get DDA signing status"
+sidebar_label: "Get DDA signing status"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFVcFy2zYQ/RXMntoZSHTUnniqHDkedzJtp06mB0eHNbgiEVMAAiwlqxr+e2dBSpasONVFpLDY93bf7tMeGOsE5QP4WKOzCdl6B0sNPlDML3cVlGent8SLxfze1s66+p6RuwQaEpkuWt5B+bCHa8JIcd5xA+XDsl9qCBhxTUwx5QCHa4ISKmRc2GRan7pI8zoSrcnxXQUarIMSAnIDGiJ962ykCkqOHWlIpqE1QrkH3gVJlDhaV0MvUJFS8C5RkvPZ1ZV8VZRMtCEXV8KRtPGOybFEYAitNbnA4muSsP0ljH/8SoZBQ4jSH7YDSBryXdDRQK5bS3eTrR1o6Fx+WPbDR7/idUusFou5SkNvVTrwXBM3XnSoKaNLV0oojHcrWxen4hTS0kl17OkED00t9m92uy8GpCLrGDcHlbrYQgkNc0hlUWCwU/dcTVe+c9UwJ68L+Gg3pIYMIFIchuJeGjn06nQ0jv0SCBhllffHHAR6fPjg4xoZSvj9n08XmHNjKCXF/omcCpgSVWpruVEDkgqRVvZZWacE1Ef7b+auGsJKaGq4xmTN/zGSmAvsfFNhxw05HqdHrXxUf0q6mTKtJcfKRKokANukVq3fgkhv3cpnQMutICyQMQU0pK7RPJGr1PyvuwvE934dWmKSQ1V504mCL7jckLpMNFGoRHxFz6ZBV5NCV6kNRbs6kBbRrCEVot/YiuL0i/ucKKlE7WqS/IYi2dopm+vgnR5v42NLp+XpnLmytWVs1Rbbllgxmcb51teWUmaZuUSqu3YAN1KURWdo+kWGSgZwKHd2Nft1+sv03biraPKuju5hbyM6nlovi7ZGK8OauhB85N9s/XJ2PsYvJ72G1hpyiU6SzgOahtRsenVxc7vdTjEfT32si/FuKj7evb/54/5mIndE2eATr9GdJH1zsc/EPQ4f0zMXoUXrhGMmsR+X/gGGpQd97tga3lx80FD+yGiPZMT2G59YUPb7R0z0ObZ9Lz9/6yiKtS81bDBm2bNDVDbJcwXlCttEFwUdDRZ++nv08J8V6O8XOv6IbiczgG0nb6DhiXY//K/ol72GcZ2F1BAvvhD4JNOFw4tDHZ319kasBc9d4JUP5ezfZbnfDxGfxIX6/kg6u5IQ7Pv/ALUwlfU=
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get DDA signing status"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/config/organisation/data-disclosure-agreement/{dataDisclosureAgreementId}/status/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get DDA signing status
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"dataDisclosureAgreementId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"string","enum":["sign","unsign"]}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

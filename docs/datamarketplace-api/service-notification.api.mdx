@@ -1,0 +1,72 @@
+---
+id: service-notification
+title: "Receive notifications"
+description: "Receive DDA template, DDA record, or B2B connection notifications"
+sidebar_label: "Receive notifications"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVktvGzcQ/ivEnGnJUX3aUyXbLVwEieEHenCEYESOdhlT5IbkSlYX+9+L4a4syXKTouhJ4nIe3zy+GbaQsIxQPEGksDaKYC5BU1TB1Ml4BwXckSKzJnF1NRWJVrXFRDKfAikftBQ+iNlkJpR3jhRrCeeTWRqFfIggwdcU8uFGQ7Fz9elACCREUk0waQvFUwszwkBh2qQKiqd5N5cQ6HtDMc283kLR5qMJpKFIoSEJyrtELvEV1rUdzI6/RY6hhagqWiH/S9uaoAC/+EYqgTww9NTfSaA1W5pLqAMDT4biXvPVQkzBuJLFXbNiba3x6y5BIPOxzxBIWEwWX/f5gXm38/IDeypQb6mp9WCSLCXK2hoTXpmorI9NoGkZiFbk0sPO/0mk/6xz14N8T2MxWVzuUZ9KdBKSSZY/HVbzFrfWo4auY4lAsfYu9kmcnJ/zz3GLHeqKOnhFMRKn7T9X9bhyMWFq4ru5fsFVnfH75wyXAV+8h/HGrdEaLYY+hCz34VTu0WGTKh/MX6R7oYtToStMKKJvgiLmilj6xumczhWlyjNJah9zIMgUgPHAmbF7S5qwphAzZ5pgoYAqpToW4zHWZuRe9Cib3okfo/jItO4tAFNsx8B7TmufuUMevmaPXbDvLAYFLLIQd3n+85sPK0xQwB9/Ppz4nCourkj+mZyokessNiZVovck6kBL8yKME9MhjX1XVISaYUqYYTTqZ4hY5sR31hRcHnJp125LH8RnNjcRyhpySahAmgXQRrG0fpPrwi13tx9B17u+eYXwhv0Du/ck/jlh/wVD36EkgzNu6TOUgYvcXrFGRWKG6pmcFtPbm5N0XHoOIRFfCu1Vw672SUkViVNDZwIFoxT0oip0JQl0Wqwp7Ak8tCoTeW00hdEX9xgpikh2eRb9mgKZ0gmTk5y2ctDGhaXD3MtsWZvSJLRig9ZSEolU5bz1paGYUWYsgcrG9s4VB2XQKRp94Y5ndvThTs4nF6NfRh+GsYIqjxWHuWHM7wFdGhnPpVuhYSbFpq59SL+acn93zLH9TSfBGkUu0oHRaY2qIjEZnZ9objabEebrkQ/leNCN4483l9ef7q/PWIcry1Nghe7A6G4dv12xR7Vt95Pzf9nfQ48neknj2qJxHHCOqB0m1P4BIeFoRs0lVDzKiido2wVGegy26/jz94YCb/u5hDWGXP+87CUMZOeh9kzb3Ko5mrOHfkGv0TaM52QndHKnwXOmTj+UnR9M29vP9zyrFsPrYuU16wTc8AsBN1BAfsX0+eDnB39rwaIrGyxZtrfJNcPj2fRmOuaohit02wOEbdtLPPBs7DqQQyh5VkI377rub3x0YOw=
+sidebar_class_name: "post api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Receive notifications"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/service/notification"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Receive DDA template, DDA record, or B2B connection notifications
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"required":true,"content":{"application/json":{"schema":{"type":"object","required":["type","event"],"properties":{"type":{"type":"string","enum":["dda_template","dda_record","b2b_connection"]},"event":{"type":"string","enum":["create","update","delete"]},"dataDisclosureAgreementTemplate":{"type":"object"},"dataDisclosureAgreementRecord":{"type":"object"},"b2bConnection":{"type":"object"}},"title":"NotificationPayload"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Notification processed","content":{"application/json":{"schema":{"type":"object","properties":{"status":{"type":"string","example":"ok"}}}}}},"400":{"description":"Invalid request"},"401":{"description":"Unauthorized"},"404":{"description":"Data source not found"}}}
+>
+  
+</StatusCodes>
+
+
+      

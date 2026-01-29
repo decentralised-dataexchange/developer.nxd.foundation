@@ -1,0 +1,72 @@
+---
+id: organisation-sign-dda
+title: "Sign DDA with business wallet"
+description: "Sign DDA with business wallet"
+sidebar_label: "Sign DDA with business wallet"
+hide_title: true
+hide_table_of_contents: true
+api: eJyFVU2T2zYM/SscnNoZWtq6PelUb5x2tpNpMtmkPTg+wBQsMSuRDEnZ62r03zugtF57lQ9fLIkAHoD3APYQsQpQbMD6Co0OGLU1sJVgHfn0cldCcXV6ryuzXq9AQiDVeR1PUGx6uCX05FddrKHYbIetBIceW4rkQzIw2BIUUGLEtQ6qsaHztKo8UUsm3pUgQRsowGGsQYKnL532VEIRfUcSgqqpRSh6iCfHgUL02lQwMJSn4KwJFPh8eXPDfyUF5bVLBRXwD3m91ypVIDg2hSiUJ4zEyMqaSCayHzrXTIb558DO/Rzc7j6TiiDBee5U1CP04QLl/QgydxokhIixC/NiJJDpWuYj6MqAhM6kh+0w/uSLqpgLsV6vxFHHWuy6oA2FII7YNMTZtRRrywQ6G1K23NsCcmXNXlf5Ja05E7Moz8ws8ImavP8mZ0OeZOAPTyR3voEC6hhdKPIcnc7MY5ntbWfKUVovK3ijDyTGCMBMPmnqnjs+NvVSWeeGMQRMquD3XTICOT38YX2LEQr4698PM8yVUtylaB/ICIchUDk2cEQSztNePwptBINar/8bZVMTlpymhFsMWv0oI7aZYSdPgV2sycQnPe6tF2853FKoRpNJyizZAJsg9o09AnOvzd4mQB0bRlhjxOBQkbhF9UCmFKt3dzPEV7Z1DUXiQ1Fa1TF1z7ixJjEPtBAomHVBj6pGU5FAU4pLeSfStCLhvD3oknz2yXwMFESgZr8I9kCeWJ061RFPcvLGXUOX5ckUudSVjthMyhWRVG1sYytNIWWZcvFUdc0IrrgojUZR9olFxQIcy13eLH/Lfs1+mYYaVZrAafnoPz2amGnLk9aiZrGGzjnr4++6ej67lvHzySCh0YpMoIugK4eqJrHMbmaex+Mxw3ScWV/lk2/I39y9ev33/esF+zCzPJ4tmougP5rsK47PGoz0GHPXoDacasqln4Z+A+PQg7ze9RK+OfggofjeuuZ7oubFUmyg73cY6KNvhoE/f+nI872wlXBAn0hP+6HUgZ9LKPbYBJrVcd7D8NP76QL4WYD8en3TRzQnVgA2Hb+BhAc6ffeiGbaDhGmYOanRnreCixeRZhcB76fzRn339p43C14vgRdrKIX/app9P1p84CU0DOes01LiDIfhf+gnqH8=
+sidebar_class_name: "post api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Sign DDA with business wallet"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/config/organisation/data-disclosure-agreement/{dataDisclosureAgreementId}/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Sign DDA with business wallet
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"dataDisclosureAgreementId","in":"path","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Verification request created","content":{"application/json":{"schema":{"type":"object","properties":{"verificationRequest":{"type":"object"},"status":{"type":"string","enum":["sign","unsign"]}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

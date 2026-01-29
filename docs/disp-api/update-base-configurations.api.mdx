@@ -1,0 +1,72 @@
+---
+id: update-base-configurations
+title: "Update Base Configurations"
+description: "Updates Base Configurations related to a Data Marketplace."
+sidebar_label: "Update Base Configurations"
+hide_title: true
+hide_table_of_contents: true
+api: eJztVk2T4jYQ/SuqPuSjyuDJTE4+hYFJimQ3NbXMVA4Uh8ZuQDu2pJVkGJbyf0+1bMDYkEptrrnZ+njqfv36SQfIyKVWGi+1ggReTYaenHhER2Ks1UquS4s86YSlHD1lwmuBYoIexUe0b+RNjikNIQJLX0py/lFne0gOkGrlSXn+RGNymQac+LPjkw7g0g0VyF/GakPWS3L8t0RHrzbnz05snz4IvRJ+Q73Tv3eiII8ZeoQI/N4QJOC8lWoNVQRpLkn5adbHHIcZMZ3cQr4NN6PUkr8JWU//e9iq5k9ayiCZn1hoBd85eHGC0MvPlHqoqhrEGa1czeX93V0/wG4sV4tdBiGEQ7+9jJeY/TXySkWmk2uU/y8KFoXkenyTMvri6tRmEcSzIczIhtqM67IPXgJSu84NdhBABPSOhcl5oKeOKuqy0MIU9VmNah2lpZV+D8n8AI+Eluyo9BtI5osqOsDIyD9oH/44OVw7TuOKbjn3gvxGZ5CAKT1EYJBxIN4+xGlYG7MiBs5gSjEzMUgvITgauw00zHu9Q4UW9TREULIiYeO9cUkcZ1ToARo5lGuLyg+lBo79EmDmcS3V+haGq6e7MIszQzOuQ90+R1ZOJcF6IALJRzUER6Cw4FkmVFv5NaTJxWnzfMLgSJiCcAwksAyLWHfh41dtC/SQwO9/vUC3vqM0JeeE12+khEHnKBM76TeiPkkYSyv5LqQSF7GcpRAFVX063yNPR3W17oVjd7RbuDt27MNWg0q10iFP6YNcJ9PZsxg9T8VEp2VByte8RMClr/O5v7v/efgw/KmX6FgXS6koC/uz9n6x0pY16bjdP6LCNfGc+GGUFVKJ78RUZXIrsxLzHwWqrGcC11eyXGRKbtgYMqbBZJrKyt+OSomACpSBpNIYbf0vZxV1tdaWKeQyJeWoBToymG5I3A/vejt3u90Qw/RQ23Xc7HXxh+n46c/Z04D3cDGNdr5A1QKt3xfXbpwux633w397lTS69vTuY5OjDNIv67uk9oY5bB9qXleSJXT2h8Zuuw6xiGCjneedh0Ojy6ri4S8l2eBTEWzRSlyy1NjDjt3IlvLGTXtpsLw8L2+46HEHt5fx/7i2bX/Pr9yhy+Y1VuiMt1jc8UsNd5AARKDN6WoOYwfIUa1LXJ8cPtgzXnpExxNCUkcLUvtWgIdDveKFHaGqIGoyCQ4BFV86fwPptKIz
+sidebar_class_name: "put api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Update Base Configurations"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"put"}
+  path={"/v3/config/data-space/base-configurations"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Updates Base Configurations related to a Data Marketplace.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"properties":{"baseUrl":{"description":"URL of the Data Marketplace's metadata","type":"string"},"clientId":{"description":"Client ID of the Data Marketplace","type":"string"},"clientSecret":{"description":"Client Secret of the Data Marketplace","type":"string"}},"required":["baseUrl","clientId","clientSecret"],"type":"object"}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Data Marketplace Base Configurations updated","content":{"application/json":{"schema":{"properties":{"baseConfigurations":{"properties":{"id":{"description":"ID","type":"string"},"baseUrl":{"description":"URL of the Data Marketplace's metadata","type":"string"},"clientId":{"description":"Client ID of the Data Marketplace","type":"string"},"clientSecret":{"description":"Client Secret of the Data Marketplace","type":"string"}},"required":["id","baseUrl","clientId","clientSecret"],"type":"object"}},"required":["baseConfigurations"]}}},"headers":{"Content-Type":{"schema":{"type":"json","example":"application/json"},"description":"Content-Type header"}}}}}
+>
+  
+</StatusCodes>
+
+
+      

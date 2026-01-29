@@ -1,0 +1,73 @@
+---
+id: pull-data-endpoint
+title: "Pull Data Endpoint"
+description: "The Pull Data endpoint allows a Data Using Service to Pull Data according to a  specific Data Disclosure Agreement record signed by themselves and a Data  Source, either anonymously or for a specific individual."
+sidebar_label: "Pull Data Endpoint"
+hide_title: true
+hide_table_of_contents: true
+api: eJzdVU1zGzcM/SscHDrtzFpy7Z72VMV2O2qb1hM504OrA8SFdhlzSYbkSlY0+987IFefjpMceqoOGi5BgMDDw+MWKgrSKxeVNVDCQ0PivtNa3GJEQaZyVpkoUGu7DgLz9vugTC1m5FdKkoj2yAOltL5ic7QChQiOpFoqma23KkhtQ+dJTGpP1JKJwhO7iKBqQ5VYbERsqA2kVxQEmmp3qZjZzksqBKnYkBdorNm0tgt6I6wXS+sFHq5TplIrVXWoR/8YKMDTx45CfGOrDZRbkNZEMpGX6JxWErn+8YfAIGwhyIZa5FXcOIIS7OIDyQgFOG8d+agosLXCiIea9iW9SxVNq6MAIXplaijO4H4dlRxDTG+hL+BQzbcEne5PJ/c+V688VVA+fjXned9nl+CsCbnOq8vLVO7JNbNOSgph2WkxSSvxYJ/ICE+aMBAU/xXKmKKn4F8vfkglplSiFQsSXaBKIEMaEoUSc8lDn38FBJKdV3ED5eMWJk79Tryc9/MCItaBUZtldu7hCjAvoKXY2ApKcDaktDE2UMJ4dT0OeTjGjPZFcChp7DqtL/gb+EbOIKQLzxhBrRXZDAV0XkMJTYwulONxRa29QKdGqvZo4khZ6IsXbYlY8/y9EiNk83mY+QGFGbclI7/DYg865g1mJMckrNIVBlu2TrrYWK8+pTYzb98QevK8fRSDM2EI0jVQwiIdgmJY/GJ9ixFK+O3vhy9312Hgzq5VbES+SThPS/UslBEnuYghU242s+/dQQ3unrF1mr5pmg+cOx3I3X6a1KVNtarIQeF2OrsXk/upuLWy42gZmwK4/bmmq8urn0bXox9fFHtj24VKrLufiurYP6ndDY+nieItGqyzaHw/qVplxHfiIAE/JA1NOvMW/RNFp1HS508OpA2jYXZRptkduqt+3bGlAGpRMatC55z18ecDk875dkxV0EqSCXQUdOJQNiSuRpcvPNfr9QiTeWR9PR58w/iP6c3dn7O7C/bhhvLwtWiOgh6eo7vhATvH9ugF+N8+ecO4RXqOY6dRpYlMEG8HpXqE1fUgRkqyYB/UitVsr1fzAhpWuPIRttsFBnrvdd/z9seOfNLKAlboFS6Y9I/zvthpAwvcE0sI3GTALx44LT6uu6woZw8DK1r24GF38Ytnj0X4/q8ZC8ZieOJbW7GPxzU//7iGEqAAmwiQxC3tbUGjqTus+WyOyZzCU8lCp56S7A0LrmpnMpujDE8VsBgK4X8u67Mu220W1b7fn8+mVz32sptPc2P50f4X+jFlPw==
+sidebar_class_name: "post api-method"
+info_path: docs/disp-api/disp-api-documentation
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Pull Data Endpoint"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/v3/service/data-space/pull-data"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+The Pull Data endpoint allows a Data Using Service to Pull Data according to a  specific Data Disclosure Agreement record signed by themselves and a Data  Source, either anonymously or for a specific individual.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"dataDisclosureAgreementRecordId":{"type":"string","description":"Data Disclosure Agreement Record ID"},"individualId":{"type":"string","description":"Individual ID"}},"required":["dataDisclosureAgreementRecordId"]}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Successful Access Token release","content":{"application/json":{"schema":{"type":"object","properties":{"accessToken":{"type":"string","description":"Access token to be used at Resource Server"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

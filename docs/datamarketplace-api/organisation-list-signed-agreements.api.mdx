@@ -1,0 +1,72 @@
+---
+id: organisation-list-signed-agreements
+title: "List signed agreement records"
+description: "List signed agreement records"
+sidebar_label: "List signed agreement records"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVsFSIzkM/RWXL3vpJAy7p5w2zLBT2ZpiKWBqDwwHYau7PXTbxlaHZFP971Nyd5IOAcLChSSWnp4t6UlrSVBEOb2VLhRgTQQyzsq7TDqPIX2ZazndO/1mIl2bwqKeFQGxRktRZjKiaoKhlZzeruUZQsAwa6iU09u79i6THgLUSBhiMrBQI+PmeUSSmTRWTuVjg2ElM6kxqmB8ojKVV/jYYCTUwliNS5G7ICJBIOFyETC6JihkBgEfGxNQy2kOVcRMRlViDXK6lrTyHM5YwgJDCpFDU5GcnrRttqVTmdocYXPR1PcYOLQhrKMISE2wqIXHIDwU+FEin05afqeA0TsbMbL16ckJ/9tnwO/fXV25oPniyllCS2wK3ldGpTxNfka2Xx9Gd/c/UfE9feA0k+miaSD4YqKqXGwCbpN7leIM3CEE4IdJD3Ac1gx9IwVjC5nJ3IUaSE5l0xgt22yvxObvc3kv4Z7Y6x43WPsKCF+Ke9zrChcmvsL6GMtXfJynuR2c3DtXIVg+igSELz0P2qbmTo6pN2UmG9t/vGszqQICoZ7Rmy+rgXBEpkaO1Hj9/1zaTJKhiu2+vJkatvRQGNvJzdESUk0IaOmS2+vlJho2yOfOOnWjsKlf+TrkCKr5s5p9DeOGjXvnXbPDAkwF9xVu8ZjSR/CYWxT3EFELZ0UnPG3WK9BxvOcytFWfNpMlxMuAC+Oa+EIJPUeaW82CgVGYXFCJAX+LAoTvEYaoF7ikjyNaXFKPNiiUy10ZtN3fc7ikd10lC9gU0kD9aqTS8ZAq0iTxwENHTpSzuSkmQ1mZcCuO9LYsR1u4UQ83SYMsLDZjqgmVnMqSyMfpZALejO1Sj3PXWN1xPiS7QNEhSJbzzVS8Zg3uKmU4G7dvySFkPyjS2yYjmfUf/tp029//3hzEnCmFMQpyD2iFh8g19WSoFF0kTmVulsJYwUFdMP8l7qJE0F1rnEE06hgjtjmInTwFNFSipX7wpAn9D8OdClUZzpYKqNkAqijyyj2lEjA2dyngQDOiB4XiDNQDWi1ml/PD7na1r5CQD4V2quH87eJSieIQaCRAcPIFLlUJtkABVosFBpNvSHPSjELhg1sYjWH8w36PGEXEKh9Ft8CAprDCpHvQKuu9WQ2G18sSsjaF4YZ/gqpCEoSqtK5yhcGYWCYuAYum6oIrvpQBq3D8g4uKC7C77unJ6R/j38ef+jEPKnVgv6+YrwEsjY1j+a/BcLHGxnsX6E9T7M72y3h3kgRHoY04AJ15UCWK0/HJgefT09MY0vHYhWLS+8bJt/nn84vr8xH7JG13kWqwA9BjTbyX420NEi5p4iswafIlLuu+wW9l1+Byf3OQ3bx9s8llJnnDLV0kxlmvWYa/h6pt+edu7ePm1yZydndr3DOS27Xr/Svqi/d6wNVwFV5A1bCR5MX0/Rzes5i+EX6z+u6i3/GXkAo8LfGZ7AWD36ZzYuXxQ6+D9ZNRtgL99ZzFC/Z15pnSJfTNomlXA+z1urO4YZ1rW7lhnnRPtndt2/4CgYp8Vw==
+sidebar_class_name: "get api-method"
+info_path: docs/datamarketplace-api/dataspace-backend-api
+custom_edit_url: null
+---
+
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import ParamsDetails from "@theme/ParamsDetails";
+import RequestSchema from "@theme/RequestSchema";
+import StatusCodes from "@theme/StatusCodes";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"List signed agreement records"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/config/organisation/data-disclosure-agreement-records/"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+List signed agreement records
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+>
+  <Translate id="theme.openapi.request.title">Request</Translate>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"offset","in":"query","description":"Requested index for start of resources","required":false,"schema":{"type":"integer","default":0}},{"name":"limit","in":"query","description":"Number of items returned per page","required":false,"schema":{"type":"integer","default":10}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"List of records","content":{"application/json":{"schema":{"type":"object","properties":{"dataDisclosureAgreementRecord":{"type":"array","items":{"type":"object","properties":{"id":{"type":"string","format":"uuid"},"organisationId":{"type":"string","format":"uuid"},"dataDisclosureAgreementRecord":{"type":"object"},"dataDisclosureAgreementTemplateId":{"type":"string"},"dataDisclosureAgreementTemplateRevisionId":{"type":"string"},"dataDisclosureAgreementRecordId":{"type":"string"},"optIn":{"type":"boolean"},"state":{"type":"string","enum":["signed","unsigned"]},"createdAt":{"type":"string","format":"date-time"},"updatedAt":{"type":"string","format":"date-time"}},"title":"DataDisclosureAgreementRecord"}},"pagination":{"type":"object","properties":{"currentPage":{"type":"integer","description":"Current page number"},"totalItems":{"type":"integer","description":"Total number of items available"},"totalPages":{"type":"integer","description":"Total number of pages based on limit"},"limit":{"type":"integer","description":"Number of items per page"},"hasPrevious":{"type":"boolean","description":"Indicates if there's a previous page"},"hasNext":{"type":"boolean","description":"Indicates if there's a next page"}},"title":"Pagination"}}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
